@@ -69,7 +69,7 @@ spotify_results['album'] = song_info['album']['name']
 spotify_results['release_date'] = song_info['album']['release_date']
 spotify_results['duration'] = song_info['duration_ms']
 
-## BAD request
+## BAD request to Spotify API
 
 url = 'https://api.spotify.com/v1/shmekels/many'
 headers = { 'Authorization' => "Bearer #{config['SPOTIFY_BEARER_TOKEN']}" }
