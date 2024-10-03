@@ -1,22 +1,26 @@
-# Spotify-API
+# Learn Chinese from Songs
 
-### interesting elements:
-- song
-    - some kind of id?
+Project that extracts lyrics
+
+### Spotify-API
+
+- **Elements:**
+    - id
     - title
-    - artists
+    - artist
     - language
     - cover image
     - album name 
 
+- **Entities:**
+    - song data
 
-### interesting business entities:
-- data is grouped by Song
+### LRCLIB-API (no need for authorization token yupiii)
 
-# Lyrics Genius-API
+- **Elements:**
+    - title
+    - artists
+    - lyrics
 
-### elements:
-- id?
-- title
-- artists
-- lyrics for songs
+- **Entities:**
+    - song data
