@@ -2,6 +2,7 @@
 
 require 'httparty'
 require 'json'
+require 'yaml'
 
 BASE_URL = 'https://lrclib.net/api/get'
 
@@ -31,3 +32,5 @@ if response.code == 200
 else
   puts "Error: #{response.body}"
 end
+
+File.write('spec/fixtures/lyrics.yml', response.body.to_yaml)
