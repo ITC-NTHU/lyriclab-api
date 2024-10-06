@@ -33,4 +33,4 @@ else
   puts "Error: #{response.body}"
 end
 
-File.write('spec/fixtures/lyrics.yml', response.body.to_yaml)
+File.write('spec/fixtures/lyrics-results.yml', response.body.to_yaml)
