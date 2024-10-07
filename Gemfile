@@ -7,4 +7,4 @@ gem 'http', '~> 5.2.0'
 gem 'httparty', '~> 0.22.0'
 
 # Development
-gem 'rubocop'
+gem 'minitest'
