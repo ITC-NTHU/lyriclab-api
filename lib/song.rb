@@ -1,0 +1,36 @@
+# frozen_string_literal: true
+
+require_relative 'lyrics'
+require_relative 'album'
+
+module GoodName
+  class Song
+    def initialize(song_data, data_source)
+      @song = song_data
+      @data_source = data_source
+      @album = Album.new(@song['tracks']['items'][0]['album'])
+    end
+
+    def name
+      @song['tracks']['items'][0]['name']
+    end
+
+    def artist_name
+      @song['tracks']['items'][0]['artists'][0]['name']
+    end
+
+    def popularity
+      @song['tracks']['items'][0]['popularity']
+    end
+
+    def preview_url
+      @song['tracks']['items'][0]['preview_url']
+    end
+
+    def lyrics
+      # TODO: Implement the lyrics method
+      # Lyrics.new(artist_name, name, data_source)
+      return
+    end
+  end
+end
