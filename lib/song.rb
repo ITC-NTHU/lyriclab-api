@@ -9,6 +9,7 @@ module GoodName
       @song = song_data
       @data_source = data_source
       @album = Album.new(@song['tracks']['items'][0]['album'])
+      @lyrics = LrclibApi.new.song_lyrics(name, artist_name)
     end
 
     def name
@@ -27,10 +28,5 @@ module GoodName
       @song['tracks']['items'][0]['preview_url']
     end
 
-    def lyrics
-      # TODO: Implement the lyrics method
-      # Lyrics.new(artist_name, name, data_source)
-      return
-    end
   end
 end

@@ -8,7 +8,7 @@ module GoodName
       @data_source = data_source
     end
 
-    def lyrics
+    def text
       return @lyrics['plainLyrics'] if @lyrics && @lyrics['plainLyrics']
 
       'Sorry... no lyrics found(('
