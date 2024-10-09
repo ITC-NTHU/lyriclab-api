@@ -2,6 +2,7 @@
 
 require 'http'
 require 'yaml'
+require 'json'
 
 def renew_token(config)
   url = 'https://accounts.spotify.com/api/token'
@@ -44,13 +45,13 @@ def get_song_info(song_id, config)
 end
 
 # Load the configuration
-config = YAML.safe_load_file('config/secrets.yml')
+config = YAML.safe_load_file('secrets.yml')
 
 # Renew the token if it's not alive
 unless token_is_alive?(config)
   puts 'Renewing the token...'
   config['SPOTIFY_BEARER_TOKEN'] = renew_token(config)
-  File.write('config/secrets.yml', config.to_yaml)
+  File.write('secrets.yml', config.to_yaml)
 end
 
 spotify_results = {}
@@ -64,10 +65,14 @@ song_info = get_song_info(song_id, config)
 puts "Found song info: #{song_info}"
 
 spotify_results['song_name'] = song_info['name']
-spotify_results['artist'] = song_info['artists'][0]['name']
+spotify_results['artist_name'] = song_info['artists'][0]['name']
 spotify_results['album'] = song_info['album']['name']
 spotify_results['release_date'] = song_info['album']['release_date']
 spotify_results['duration'] = song_info['duration_ms']
+
+#add to return popularity,preview_url
+spotify_results['popularity'] = song_info['popularity'] 
+spotify_results['preview_url'] = song_info['preview_url'] 
 
 ## BAD request to Spotify API
 
@@ -78,4 +83,4 @@ puts "bad request: #{bad_spotify_response.parse}"
 
 # Write the song info to a YAML file
 puts 'Writing song info to file...'
-File.write('spec/fixtures/song_info.yml', spotify_results.to_yaml)
+File.write('../spec/fixtures/spotify_results.yml', spotify_results.to_yaml)

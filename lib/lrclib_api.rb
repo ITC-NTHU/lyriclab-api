@@ -10,6 +10,7 @@ module GoodName
 
     def song_lyrics(song_ttl, artist_name)
       lyrics_data = Request.new(BASE_URL).req(song_ttl, artist_name).parse
+      raise Response::NotFound, 'Lyrics not found' if lyrics_data.nil? || lyrics_data.empty?
       Lyrics.new(lyrics_data, self)
     end
 
@@ -20,16 +21,16 @@ module GoodName
       end
 
       def req(song_ttl, artist_name)
-        call([song_ttl, artist_name])
+        call(song_ttl, artist_name)
       end
 
-      def call(song_data)
+      def call(song_ttl, artist_name)
         params = {
-          track_name: song_data[0],
-          artist_name: song_data[1]
+          track_name: song_ttl,
+          artist_name: artist_name
         }
 
-        http_response = HTTP.get(@resource_root.to_s, params:)
+        http_response = HTTP.get(@resource_root, params: params)
 
         Response.new(http_response).tap do |response|
           raise(response.error) unless response.successful?
