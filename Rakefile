@@ -10,7 +10,8 @@ end
 
 desc 'run tests'
 task :spec do
-  sh 'ruby spec/github_api_spec.rb'
+  sh 'ruby spec/lrclib_api_spec.rb'
+  sh 'ruby spec/spotify_api_spec.rb'
 end
 
 namespace :vcr do

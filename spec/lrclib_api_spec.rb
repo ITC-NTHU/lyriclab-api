@@ -12,7 +12,7 @@ describe 'Tests lrclib API library' do
     VCR.insert_cassette CASSETTE_FILE,
                         record: :new_episodes,
                         match_requests_on: %i[method uri headers]
-    @api = GoodName::LrclibApi.new 
+    @api = GoodName::LrclibApi.new
   end
 
   after do
@@ -21,12 +21,12 @@ describe 'Tests lrclib API library' do
 
   describe 'Lyric information' do
     it 'HAPPY: should provide correct lyric attributes' do
-      lyrics = @api.song_lyrics(SONG_TTL , ARTIST_NAME)
+      lyrics = @api.song_lyrics(SONG_TTL, ARTIST_NAME)
       _(lyrics.text).must_equal CORRECT
       refute_nil lyrics.text
     end
 
-    it 'SAD: should raise exception on incorrect lyrics' do
+    it 'SAD: should raise exception on incorrect song title' do
       _(proc do
         @api.song_lyrics('NOTTL', ARTIST_NAME)
       end).must_raise GoodName::LrclibApi::Response::NotFound
