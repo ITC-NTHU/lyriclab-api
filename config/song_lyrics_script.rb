@@ -13,13 +13,7 @@ def call_api(song_title, artist_name)
     :artist_name => artist_name
   }
 
-  HTTP.get(url, :params => params:)
-end
-
-#print JSON file
-def json_response(response)
-  json_data = JSON.parse(response.body.to_s)
-  File.write('../spec/fixtures/lrclib.api-response.json', JSON.pretty_generate(json_data))
+  HTTP.get(url, :params => params)
 end
 
 def get_lyrics(received)
@@ -33,10 +27,9 @@ song_title = '好不容易'
 artist_name = '告五人'
 
 response = call_api(song_title, artist_name)
-json_response(response)
 if response.code == 200
-  File.write('../spec/fixtures/lyrics-success-results.yml', get_lyrics(response).to_yaml)
+  File.write('spec/fixtures/lyrics-success-results.yml', get_lyrics(response).to_yaml)
 else
-  File.write('../spec/fixtures/lyrics-failure-results.yml', get_lyrics(response).to_yaml)
+  File.write('spec/fixtures/lyrics-failure-results.yml', get_lyrics(response).to_yaml)
 end
 

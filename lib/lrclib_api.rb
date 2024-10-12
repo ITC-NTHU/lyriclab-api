@@ -10,7 +10,7 @@ module GoodName
 
     def song_lyrics(song_ttl, artist_name)
       lyrics_data = Request.new(BASE_URL).req(song_ttl, artist_name).parse
-      raise Response::NotFound, 'Lyrics not found' if lyrics_data.nil? || lyrics_data.empty?
+      #raise Response::NotFound, 'Lyrics not found' if lyrics_data.nil? || lyrics_data.empty?
       Lyrics.new(lyrics_data, self)
     end
 

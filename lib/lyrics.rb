@@ -9,7 +9,7 @@ module GoodName
     end
 
     def text
-      return @lyrics['plainLyrics'] if @lyrics && @lyrics['plainLyrics']
+      return @lyrics['plainLyrics'] if @lyrics #&& @lyrics['plainLyrics']?
 
       'Sorry... no lyrics found(('
     end
