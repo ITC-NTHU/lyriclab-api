@@ -37,7 +37,7 @@ namespace :quality do
     sh 'reek'
   end
 
-  desc 'complexiy analysis'
+  desc 'complexity analysis'
   task :flog do
     sh "flog #{CODE}"
   end
