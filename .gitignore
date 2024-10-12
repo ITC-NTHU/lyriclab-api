@@ -1,5 +1,4 @@
-_*
+_snippets/
 config/secrets.yml
-spec/fixtures/*
-!spec/fixtures/.keep
-.vscode/*
+coverage/*
+!coverage/.resultset.json

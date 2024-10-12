@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
-require 'httparty'
 require 'json'
+require 'http'
 require 'yaml'
 
 BASE_URL = 'https://lrclib.net/api/get'
 
 def call_api(song_title, artist_name)
   url = BASE_URL.to_s
-  query = {
-    track_name: song_title,
-    artist_name:
+  params = {
+    :track_name => song_title, 
+    :artist_name => artist_name
   }
 
-  HTTParty.get(url, query:)
+  HTTP.get(url, :params => params)
 end
 
 def get_lyrics(received)
-  result = JSON.parse(received)
+  result = received.parse
   return result['plainLyrics'] if result && result['plainLyrics']
 
-  "No lyrics found for #{song_title} by #{artist_name}."
+  'Sorry... no lyrics found(('
 end
 
 song_title = '好不容易'
@@ -28,9 +28,8 @@ artist_name = '告五人'
 
 response = call_api(song_title, artist_name)
 if response.code == 200
-  puts get_lyrics(response.body)
+  File.write('spec/fixtures/lyrics-success-results.yml', get_lyrics(response).to_yaml)
 else
-  puts "Error: #{response.body}"
+  File.write('spec/fixtures/lyrics-failure-results.yml', get_lyrics(response).to_yaml)
 end
 
-File.write('spec/fixtures/lyrics-results.yml', response.body.to_yaml)
