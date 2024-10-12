@@ -1,4 +1,8 @@
 # frozen_string_literal: true
+
+require 'simplecov'
+SimpleCov.start
+
 require 'bundler/setup'
 Bundler.require(:default, :test)
 
@@ -14,7 +18,11 @@ require 'webmock'
 require_relative '../lib/lrclib_api'
 SONG_TTL = '好不容易'
 ARTIST_NAME = '告五人'
-CORRECT = YAML.safe_load(File.read(File.join(__dir__, 'fixtures', 'lyrics-success-results.yml')))
+CORRECT = YAML.safe_load_file(File.join(__dir__, 'fixtures', 'lyrics-success-results.yml'))
 
 CASSETTES_FOLDER = 'spec/fixtures/cassettes'
 CASSETTE_FILE = 'lrclib_api'
+
+# For spotify_API
+require_relative '../lib/spotify_api'
+CASSETTE_FILE_SP = 'spotify_api'
