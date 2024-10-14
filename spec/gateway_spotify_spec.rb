@@ -39,26 +39,14 @@ describe 'Test Spotify API library' do
   end
 
   describe 'Song information' do
-    # before do
-    #   @spotify_api = LyricLab::SpotifyApi.new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
-    #   @bad_api = LyricLab::SpotifyApi.new(SPOTIFY_CLIENT_ID, 'BAD_CLIENT_SECRET_ID')
-    # end
-
     it 'HAPPY: should provide correct song attributes' do
       song = LyricLab::Spotify::SongMapper
              .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
              .find(SONG_NAME)
-      _(song.name).must_equal CORRECT['song_name']
-      _(song.artist_name).must_equal CORRECT['artist_name']
+      _(song.title).must_equal CORRECT['song_name']
+      _(song.artists[0].name).must_equal CORRECT['artist_name']
       _(song.popularity).must_equal CORRECT['popularity']
     end
-
-    # DISCLAIMER: SPOTIFY will always return a song even though garbage is passed in
-    # it 'SAD: should raise exception on non-existant song' do
-    #   _(proc do
-    #     @spotify_api.song('8q823yucomwuaenoriuq932qcnui9273298572985792837wrcoinwhdfiskHrpiq2uawerh9q32h4r')
-    #   end).must_raise LyricLab::SpotifyApi::Response::NotFound
-    # end
 
     it 'SAD: should raise exception when unauthorized' do
       # bad_api = LyricLab::SpotifyApi.new(SPOTIFY_CLIENT_ID, 'BAD_CLIENT_SECRET_ID')
@@ -66,7 +54,7 @@ describe 'Test Spotify API library' do
         LyricLab::Spotify::SongMapper
           .new(SPOTIFY_CLIENT_ID, 'BAD_CLIENT_SECRET_ID')
           .find(SONG_NAME)
-      end).must_raise LyricLab::SpotifyApi::Response::BadRequest
+      end).must_raise LyricLab::Spotify::Api::Response::BadRequest
     end
   end
 end

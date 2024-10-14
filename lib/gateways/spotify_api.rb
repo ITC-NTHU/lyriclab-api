@@ -13,8 +13,7 @@ module LyricLab
       end
 
       def track_data(search_string)
-        song_response = Request.new(@sp_client_id, @sp_clientsecret).track(search_string).parse
-        Song.new(song_response, self)
+        Request.new(@sp_client_id, @sp_clientsecret).track(search_string).parse
       end
 
       # Sends out HTTP requests to Spotify

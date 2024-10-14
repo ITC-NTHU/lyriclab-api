@@ -13,11 +13,11 @@ module LyricLab
       end
 
       def find(search_string)
-        data = @gateway.song_data(search_string)
+        data = @gateway.track_data(search_string)
         build_entity(data)
       end
 
-      def self.build_entity(data)
+      def build_entity(data)
         DataMapper.new(data, @client_id, @client_secret, @gateway_class).build_entity
       end
 
@@ -30,7 +30,7 @@ module LyricLab
         def build_entity
           LyricLab::Entity::Song.new(
             title:,
-            artist:,
+            artists:,
             popularity:,
             album:,
             preview_url:

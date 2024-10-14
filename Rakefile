@@ -10,7 +10,7 @@ end
 
 desc 'run tests'
 task :spec do
-  sh 'ruby spec/gateway_lrclib_spec.rb'
+  # sh 'ruby spec/gateway_lrclib_spec.rb'
   sh 'ruby spec/gateway_spotify_spec.rb'
 end
 

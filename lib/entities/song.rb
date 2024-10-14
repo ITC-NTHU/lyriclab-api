@@ -14,7 +14,7 @@ module LyricLab
       include Dry.Types
 
       attribute :title, Strict::String
-      attribute :artist, Strict::Array.of(Artist)
+      attribute :artists, Strict::Array.of(Artist)
       attribute :popularity, Strict::Integer
       attribute :album, Album
       attribute :preview_url, Strict::String
