@@ -22,7 +22,7 @@ module LyricLab
       class DataMapper
         def initialize(data, gateway_class)
           @data = data
-          @member_mapper = MemberMapper.new(gateway_class)
+          @member_mapper = LyricsMapper.new(gateway_class)
         end
 
         def build_entity

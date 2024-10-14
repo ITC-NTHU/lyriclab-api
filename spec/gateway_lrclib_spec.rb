@@ -37,7 +37,7 @@ describe 'Tests lrclib API library' do
 
     it 'SAD: should raise exception on incorrect artist' do
       _(proc do
-        @api.search(SONG_TTL, 'NOARTIST')
+        @api.search(TRACK_NAME, 'NOARTIST')
       end).must_raise LyricLab::LrclibApi::Api::Response::NotFound
     end
   end
