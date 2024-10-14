@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module GoodName
+module LyricLab
   # provides lyrics
   class Lyrics
     def initialize(lyrics_data, data_source)

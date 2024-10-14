@@ -3,7 +3,7 @@
 require 'http'
 require_relative 'lyrics'
 
-module GoodName
+module LyricLab
   # library for lrclib API
   class LrclibApi
     BASE_URL = 'https://lrclib.net/api/get'

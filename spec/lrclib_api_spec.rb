@@ -20,7 +20,7 @@ describe 'Tests lrclib API library' do
 
   describe 'Lyric information' do
     before do
-      @api = GoodName::LrclibApi.new
+      @api = LyricLab::LrclibApi.new
     end
 
     it 'HAPPY: should provide correct lyric attributes' do
@@ -32,13 +32,13 @@ describe 'Tests lrclib API library' do
     it 'SAD: should raise exception on incorrect song title' do
       _(proc do
         @api.song_lyrics('NOTTL', ARTIST_NAME)
-      end).must_raise GoodName::LrclibApi::Response::NotFound
+      end).must_raise LyricLab::LrclibApi::Response::NotFound
     end
 
     it 'SAD: should raise exception on incorrect artist' do
       _(proc do
         @api.song_lyrics(SONG_TTL, 'NOARTIST')
-      end).must_raise GoodName::LrclibApi::Response::NotFound
+      end).must_raise LyricLab::LrclibApi::Response::NotFound
     end
   end
 end

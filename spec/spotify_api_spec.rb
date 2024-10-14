@@ -48,8 +48,8 @@ describe 'Test Spotify API library' do
 
   describe 'Song information' do
     before do
-      @spotify_api = GoodName::SpotifyApi.new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
-      @bad_api = GoodName::SpotifyApi.new(SPOTIFY_CLIENT_ID, 'BAD_CLIENT_SECRET_ID')
+      @spotify_api = LyricLab::SpotifyApi.new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
+      @bad_api = LyricLab::SpotifyApi.new(SPOTIFY_CLIENT_ID, 'BAD_CLIENT_SECRET_ID')
     end
 
     it 'HAPPY: should provide correct song attributes' do
@@ -63,14 +63,14 @@ describe 'Test Spotify API library' do
     # it 'SAD: should raise exception on non-existant song' do
     #   _(proc do
     #     @spotify_api.song('8q823yucomwuaenoriuq932qcnui9273298572985792837wrcoinwhdfiskHrpiq2uawerh9q32h4r')
-    #   end).must_raise GoodName::SpotifyApi::Response::NotFound
+    #   end).must_raise LyricLab::SpotifyApi::Response::NotFound
     # end
 
     it 'SAD: should raise exception when unauthorized' do
-      # bad_api = GoodName::SpotifyApi.new(SPOTIFY_CLIENT_ID, 'BAD_CLIENT_SECRET_ID')
+      # bad_api = LyricLab::SpotifyApi.new(SPOTIFY_CLIENT_ID, 'BAD_CLIENT_SECRET_ID')
       _(proc do
         @bad_api.song(SONG_NAME)
-      end).must_raise GoodName::SpotifyApi::Response::BadRequest
+      end).must_raise LyricLab::SpotifyApi::Response::BadRequest
     end
   end
 end

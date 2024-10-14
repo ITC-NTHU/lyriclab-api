@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 
-module GoodName
+module LyricLab
   class Album
     def initialize(album_data)
       @album = album_data

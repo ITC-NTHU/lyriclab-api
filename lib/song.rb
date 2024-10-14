@@ -3,7 +3,7 @@
 require_relative 'lyrics'
 require_relative 'album'
 
-module GoodName
+module LyricLab
   class Song
     def initialize(song_data, data_source)
       @song = song_data

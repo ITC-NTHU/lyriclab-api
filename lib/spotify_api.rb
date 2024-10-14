@@ -3,7 +3,7 @@
 require 'http'
 require_relative 'song'
 
-module GoodName
+module LyricLab
   # Library for Spotify Web API
 
   class SpotifyApi

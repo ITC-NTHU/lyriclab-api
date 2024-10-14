@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/irina/soa/week5/spotify-api-script/lib/lrclib_api.rb": {
+      "/home/tristan/soa/project/spotify-api/lib/lrclib_api.rb": {
         "lines": [
           null,
           null,
@@ -63,7 +63,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/lib/lyrics.rb": {
+      "/home/tristan/soa/project/spotify-api/lib/lyrics.rb": {
         "lines": [
           null,
           null,
@@ -84,7 +84,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/lib/spotify_api.rb": {
+      "/home/tristan/soa/project/spotify-api/lib/spotify_api.rb": {
         "lines": [
           null,
           null,
@@ -183,7 +183,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/lib/song.rb": {
+      "/home/tristan/soa/project/spotify-api/lib/song.rb": {
         "lines": [
           null,
           null,
@@ -219,7 +219,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/lib/album.rb": {
+      "/home/tristan/soa/project/spotify-api/lib/album.rb": {
         "lines": [
           null,
           null,
@@ -251,6 +251,6 @@
         ]
       }
     },
-    "timestamp": 1728726136
+    "timestamp": 1728897677
   }
 }
