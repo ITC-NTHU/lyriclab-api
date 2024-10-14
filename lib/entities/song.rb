@@ -1,32 +1,23 @@
 # frozen_string_literal: true
 
+require 'dry-types'
+require 'dry-struct'
+
 require_relative 'lyrics'
 require_relative 'album'
+require_relative 'artist'
 
 module LyricLab
-  class Song
-    def initialize(song_data, data_source)
-      @song = song_data
-      @data_source = data_source
-      @album = Album.new(@song['tracks']['items'][0]['album'])
-      @lyrics = LrclibApi.new.song_lyrics(name, artist_name)
-    end
+  module Entity
+    # Domain Entity for Songs
+    class Song < Dry::Struct
+      include Dry.Types
 
-    def name
-      @song['tracks']['items'][0]['name']
+      attribute :title, Strict::String
+      attribute :artist, Strict::Array.of(Artist)
+      attribute :popularity, Strict::Integer
+      attribute :album, Album
+      attribute :preview_url, Strict::String
     end
-
-    def artist_name
-      @song['tracks']['items'][0]['artists'][0]['name']
-    end
-
-    def popularity
-      @song['tracks']['items'][0]['popularity']
-    end
-
-    def preview_url
-      @song['tracks']['items'][0]['preview_url']
-    end
-
   end
 end

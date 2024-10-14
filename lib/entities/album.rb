@@ -1,27 +1,17 @@
 # frozen_string_literal: true
 
-
+require 'dry-types'
+require 'dry-struct'
 module LyricLab
-  class Album
-    def initialize(album_data)
-      @album = album_data
-    end
+  module Entity
+    # Domain Entity for Albums
+    class Album < Dry::Struct
+      include Dry.Types
 
-    def name
-      @album['name']
+      attribute :name, Strict::String
+      attribute :cover_image_url_big, Strict::String
+      attribute :cover_image_url_medium, Strict::String
+      attribute :cover_image_url_small, Strict::String
     end
-
-    def cover_image_url_big
-      @album['images'][0]['url']
-    end
-
-    def cover_image_url_medium
-      @album['images'][1]['url']
-    end
-
-    def cover_image_url_small
-      @album['images'][2]['url']
-    end
-
   end
 end
