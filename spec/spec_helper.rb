@@ -15,8 +15,10 @@ require 'vcr'
 require 'webmock'
 
 # For lrclib_API
-require_relative '../lib/lrclib_api'
-SONG_TTL = '好不容易'
+require_relative '../require_app'
+require_app
+
+TRACK_NAME = '好不容易'
 ARTIST_NAME = '告五人'
 CORRECT = YAML.safe_load_file(File.join(__dir__, 'fixtures', 'lyrics-success-results.yml'))
 

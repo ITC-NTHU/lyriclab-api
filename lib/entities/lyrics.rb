@@ -1,17 +1,14 @@
 # frozen_string_literal: true
 
+require 'dry-types'
+require 'dry-struct'
+
 module LyricLab
-  # provides lyrics
-  class Lyrics
-    def initialize(lyrics_data, data_source)
-      @lyrics = lyrics_data
-      @data_source = data_source
-    end
-
-    def text
-      return @lyrics['plainLyrics'] if @lyrics #&& @lyrics['plainLyrics']?
-
-      'Sorry... no lyrics found(('
+  module Entity
+    # Domain entity for lyrics
+    class Lyrics < Dry::Struct
+      include Dry.Types
+      attribute :lyrics, Strict::String
     end
   end
 end

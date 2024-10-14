@@ -5,6 +5,10 @@ source 'https://rubygems.org'
 # Networking
 gem 'http', '~> 5.2.0'
 
+# Validation
+gem 'dry-struct', '~> 1.6'
+gem 'dry-types', '~> 1.7'
+
 # Utilities
 gem 'logger'
 gem 'rake', '~> 13.2'
