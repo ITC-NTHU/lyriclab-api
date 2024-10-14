@@ -7,6 +7,9 @@ CODE = 'lib/'
 task :default do
   puts `rake -T`
 end
+task :run do
+  sh 'bundle exec puma'
+end
 
 desc 'run tests'
 task :spec do

@@ -5,13 +5,14 @@ source 'https://rubygems.org'
 # Validation
 gem 'dry-struct', '~> 1.6'
 gem 'dry-types', '~> 1.7'
+# Web Application
+gem 'puma', '~>5.0'
+gem 'roda', '~>3.0'
+gem 'slim', '~>4.0'
 
 # Networking
 gem 'http', '~> 5.2.0'
-
-# Validation
-gem 'dry-struct', '~> 1.6'
-gem 'dry-types', '~> 1.7'
+gem 'ruby-lsp'
 
 # Utilities
 gem 'logger'
