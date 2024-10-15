@@ -1,65 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header Styles */
 h1 {
-    font-weight: bold;
-  }
-  
-  .text-underline-hover {
-    text-decoration: none;
-  }
-  
-  .top-buffer { margin-top:20px; }
-  
-  .posting.body {
-    font-size: 1.2em;
-  }
-  
-  .project.attribute {
-    font-weight: bold;
-  }
-  
-  .project.detail {
-    color: grey;
-  }
-  
-  .project.owner {
-    font-weight: bold
-  }
-  
-  .project.name {
-    
-  }
-  
-  .vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-  }
-  
-  .vertical-align {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .vertical-align > [class^="col-"],
-  .vertical-align > [class*=" col-"] {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Optional, to align inner items 
-                                horizontally inside the column */
-  }
-  
-  .top-buffer { margin-top:20px; }
-  
-  .blank-row {
-    height: 30px;
-  }
-  
-  .query-bar {
-    background-color: #EEEEEE;
-    padding: 5px 5px 5px 5px;
-  }
-  
-  footer {
-    padding: 0.5in;
-    font-size:11px;
-    color:rgb(100, 100, 100);
-  }
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+h1 a:hover {
+  color: #34495e;
+}
+
+/* Form Styles */
+.query-bar {
+  margin-bottom: 30px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #27ae60;
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.card-subtitle {
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+/* Image Styles */
+.img-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Audio Player Styles */
+audio {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Lyrics Styles */
+.lyrics {
+  white-space: pre-wrap;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Button Styles */
+.btn-outline-primary {
+  color: #3498db;
+  border-color: #3498db;
+  background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+  color: white;
+  background-color: black
+}

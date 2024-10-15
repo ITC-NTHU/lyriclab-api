@@ -1,4 +1,4 @@
-# Learn Chinese from Songs
+# Learn Mandarin from Songs
 
 Project that extracts lyrics
 

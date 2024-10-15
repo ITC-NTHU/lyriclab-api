@@ -82,6 +82,7 @@ GEM
     minitest (5.25.1)
     minitest-rg (5.3.0)
       minitest (~> 5.0)
+    nio4r (2.7.3)
     parallel (1.26.3)
     parser (3.3.5.0)
       ast (~> 2.4.1)
@@ -89,7 +90,10 @@ GEM
     path_expander (1.1.3)
     prism (1.2.0)
     public_suffix (6.0.1)
+    puma (5.6.9)
+      nio4r (~> 2.0)
     racc (1.8.1)
+    rack (3.1.8)
     rainbow (3.1.1)
     rake (13.2.1)
     rbs (3.6.1)
@@ -101,6 +105,8 @@ GEM
       rexml (~> 3.1)
     regexp_parser (2.9.2)
     rexml (3.3.8)
+    roda (3.85.0)
+      rack
     rubocop (1.66.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -129,7 +135,12 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.13.1)
     simplecov_json_formatter (0.1.4)
+    slim (4.1.0)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 2.0.6, < 2.1)
     sorbet-runtime (0.5.11602)
+    temple (0.8.2)
+    tilt (2.0.11)
     unicode-display_width (2.6.0)
     vcr (6.3.1)
       base64
@@ -160,11 +171,14 @@ DEPENDENCIES
   logger
   minitest (~> 5.20)
   minitest-rg (~> 5.2)
+  puma (~> 5.0)
   rake (~> 13.2)
   reek
+  roda (~> 3.0)
   rubocop
   ruby-lsp
   simplecov (~> 0)
+  slim (~> 4.0)
   vcr (~> 6)
   webmock (~> 3)
 
