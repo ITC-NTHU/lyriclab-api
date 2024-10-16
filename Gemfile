@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 gem 'dry-struct', '~> 1.6'
 gem 'dry-types', '~> 1.7'
 # Web Application
-gem 'puma', '~>5.0'
+gem 'puma', '~>6.0'
 gem 'roda', '~>3.0'
 gem 'slim', '~>4.0'
 

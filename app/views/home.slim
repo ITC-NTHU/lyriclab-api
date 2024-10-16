@@ -1,5 +1,5 @@
 .container
-  form role="form" action="/search" method='GET' id='search-song-form'
+  form role="form" action="/song" method='POST' id='search-song-form'
     .row.vertical-align.query-bar
       .col-md-2.col-sm-3
         .text-right Search for songs:
@@ -13,25 +13,7 @@
         button{
           type='submit' id='song-search-submit' class='submit'
           class="btn btn-success"
-        } Search
+        } Show song
 
   .row
     .col-md-12.blank-row
-
-  / show search Results
-  - if @songs && !@songs.empty?
-    h2.mt-4.mb-3 Search Results
-    .row
-      - @songs.each do |song|
-        .col-md-6.mb-3
-          .card
-            .card-body
-              h5.card-title = song.title
-              h6.card-subtitle.mb-2.text-muted = song.artists.map(&:name).join(', ')
-              p.card-text Album: #{song.album.name}
-              audio controls=""
-                source src=song.preview_url type="audio/mpeg"
-              a.btn.btn-sm.btn-outline-primary href="/songs/#{song.object_id}" View Details
-
-  - elsif params[:query] && @songs.empty?
-    .alert.alert-info.mt-4 No songs found matching your search.
