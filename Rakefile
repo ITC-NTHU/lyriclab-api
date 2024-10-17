@@ -7,8 +7,15 @@ CODE = 'lib/'
 task :default do
   puts `rake -T`
 end
+
+desc 'Run web app'
 task :run do
   sh 'bundle exec puma'
+end
+
+desc 'Keep rerunnin web app upoon changes'
+task :rerun do
+  sh "rerun -c --ignore 'coverage/*' -- bundle exec puma"
 end
 
 desc 'run tests'

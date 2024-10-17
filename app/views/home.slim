@@ -1,11 +1,11 @@
 .container
-  form role="form" action="/song" method='POST' id='search-song-form'
+  form role="form" action="/search" method='POST' id='search-song-form'
     .row.vertical-align.query-bar
       .col-md-2.col-sm-3
         .text-right Search for songs:
       .col-md-8.col-sm-6
         input{
-          type='text' name='query'
+          type='text' name='search_query'
           id='song_query_input' class="form-control"
           placeholder="Enter song title or artist name"
         }

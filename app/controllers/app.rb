@@ -21,9 +21,6 @@ module LyricLab
     route do |r|
       r.assets
 
-      spotify_api = Spotify::Api.new(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
-      lrclib_api = LrclibApi::Api.new
-
       # GET /
       r.root do
         view 'home'
@@ -31,68 +28,25 @@ module LyricLab
 
       # GET /search
       r.on 'search' do
-        r.get do
-          query = r.params['query']
-          if query
-            begin
-              spotify_result = spotify_api.track_data(query)
-              track = spotify_result['tracks']['items'].first
-              if track
-                @song = Entity::Song.new(
-                  title: track['name'],
-                  artists: track['artists'].map { |artist| Entity::Artist.new(name: artist['name']) },
-                  popularity: track['popularity'],
-                  album: Entity::Album.new(
-                    name: track['album']['name'],
-                    cover_image_url_big: track['album']['images'][0]['url'],
-                    cover_image_url_medium: track['album']['images'][1]['url'],
-                    cover_image_url_small: track['album']['images'][2]['url']
-                  ),
-                  preview_url: track['preview_url']
-                )
-                @songs = [@song]
-              else
-                @songs = []
-              end
-            rescue StandardError => e
-              flash[:error] = "An error occurred: #{e.message}"
-              @songs = []
-            end
-          else
-            @songs = []
-          end
-          view 'home'
-        end
-      end
-
-      # GET /songs/:id
-      r.on 'songs', String do |id|
-        r.get do
-          begin
-            spotify_result = spotify_api.track_data(id)
-            track = spotify_result['tracks']['items'].first
-            if track
-              @song = Entity::Song.new(
-                title: track['name'],
-                artists: track['artists'].map { |artist| Entity::Artist.new(name: artist['name']) },
-                popularity: track['popularity'],
-                album: Entity::Album.new(
-                  name: track['album']['name'],
-                  cover_image_url_big: track['album']['images'][0]['url'],
-                  cover_image_url_medium: track['album']['images'][1]['url'],
-                  cover_image_url_small: track['album']['images'][2]['url']
-                ),
-                preview_url: track['preview_url']
-              )
-              lyrics_result = lrclib_api.lyric_data(@song.title, @song.artists.first.name)
-              @lyrics = Entity::Lyrics.new(lyrics: lyrics_result['lyrics'] || 'Lyrics not found')
-              view 'song'
-            else
-              r.halt(404, 'Song not found')
-            end
-          rescue StandardError => e
-            flash[:error] = "An error occurred: #{e.message}"
+        r.is do
+          # POST /search/
+          r.post do
+            search_string = r.params['search_query']
+            r.redirect "/search/#{search_string}" if search_string
             r.redirect '/'
+          end
+        end
+
+        # GET /search/:query
+        r.on String do |query|
+          r.get do
+            song = Spotify::SongMapper
+                   .new(SP_CLIENT_ID, SP_CLIENT_SECRET)
+                   .find(query)
+            lyrics = Lrclib::LyricsMapper
+                     .new
+                     .search(song.title, song.artists.first.name)
+            view 'song', locals: { song:, lyrics: }
           end
         end
       end

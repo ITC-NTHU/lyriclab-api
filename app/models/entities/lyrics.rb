@@ -8,7 +8,7 @@ module LyricLab
     # Domain entity for lyrics
     class Lyrics < Dry::Struct
       include Dry.Types
-      attribute :lyrics, Strict::String
+      attribute :text, Strict::String
     end
   end
 end

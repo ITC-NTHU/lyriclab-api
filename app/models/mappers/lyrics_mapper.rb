@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module LyricLab
-  module LrclibApi
+  module Lrclib
     # Data Mapper: LrcLib -> Lyrics entity
     class LyricsMapper
-      def initialize(gateway_class = LrclibApi::Api)
+      def initialize(gateway_class = Lrclib::Api)
         @gateway_class = gateway_class
         @gateway = @gateway_class.new
       end
@@ -27,11 +27,11 @@ module LyricLab
 
         def build_entity
           LyricLab::Entity::Lyrics.new(
-            lyrics:
+            text:
           )
         end
 
-        def lyrics
+        def text
           @data['plainLyrics']
         end
       end
