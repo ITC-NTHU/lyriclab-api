@@ -9,7 +9,8 @@ module LyricLab
       def initialize(sp_client_id, sp_client_secret, gateway_class = Spotify::Api)
         @client_id = sp_client_id
         @client_secret = sp_client_secret
-        @gateway = gateway_class.new(@client_id, @client_secret)
+        @gateway_class = gateway_class
+        @gateway = @gateway_class.new(@client_id, @client_secret)
       end
 
       def find(search_string)

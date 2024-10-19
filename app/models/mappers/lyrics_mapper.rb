@@ -4,25 +4,26 @@ module LyricLab
   module Lrclib
     # Data Mapper: LrcLib -> Lyrics entity
     class LyricsMapper
-      def initialize(gateway_class = Lrclib::Api)
+      def initialize(title, artist, gateway_class = Lrclib::Api)
+        @title = title
+        @artist = artist
         @gateway_class = gateway_class
-        @gateway = @gateway_class.new
+        @gateway = @gateway_class.new(@title, @artist)
       end
 
-      def search(title, artist)
-        data = @gateway.lyric_data(title, artist)
-        build_entity(data)
+      def search
+        data = @gateway.lyric_data
+        LyricsMapper.build_entity(data)
       end
 
-      def build_entity(data)
-        DataMapper.new(data, @gateway_class).build_entity
+      def self.build_entity(data)
+        DataMapper.new(data).build_entity
       end
 
       # Extracts entity specific elements from data structure
       class DataMapper
-        def initialize(data, gateway_class)
+        def initialize(data)
           @data = data
-          @member_mapper = LyricsMapper.new(gateway_class)
         end
 
         def build_entity
@@ -30,6 +31,8 @@ module LyricLab
             text:
           )
         end
+
+        private
 
         def text
           @data['plainLyrics']

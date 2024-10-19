@@ -2,7 +2,7 @@
 
 require 'rake/testtask'
 
-CODE = 'lib/'
+CODE = 'app/'
 
 task :default do
   puts `rake -T`
@@ -39,7 +39,7 @@ namespace :quality do
 
   desc 'code style linter'
   task :rubocop do
-    sh 'rubocop'
+    sh 'rubocop $(find . -name \'*.rb\')'
   end
 
   desc 'code smell detector'

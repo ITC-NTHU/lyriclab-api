@@ -18,28 +18,28 @@ module LyricLab
     plugin :halt
     plugin :flash
 
-    route do |r|
-      r.assets
+    route do |current|
+      current.assets
 
       # GET /
-      r.root do
+      current.root do
         view 'home'
       end
 
       # GET /search
-      r.on 'search' do
-        r.is do
+      current.on 'search' do
+        current.is do
           # POST /search/
-          r.post do
-            search_string = r.params['search_query']
-            r.redirect "/search/#{search_string}" if search_string
-            r.redirect '/'
+          current.post do
+            search_string = current.params['search_query']
+            current.redirect "/search/#{search_string}" if search_string
+            current.redirect '/'
           end
         end
 
         # GET /search/:query
-        r.on String do |query|
-          r.get do
+        current.on String do |query|
+          current.get do
             song = Spotify::SongMapper
                    .new(SP_CLIENT_ID, SP_CLIENT_SECRET)
                    .find(query)
