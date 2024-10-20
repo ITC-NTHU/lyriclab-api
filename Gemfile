@@ -2,8 +2,17 @@
 
 source 'https://rubygems.org'
 
+# Validation
+gem 'dry-struct', '~> 1.6'
+gem 'dry-types', '~> 1.7'
+# Web Application
+gem 'puma', '~>6.0'
+gem 'roda', '~>3.0'
+gem 'slim', '~>4.0'
+
 # Networking
 gem 'http', '~> 5.2.0'
+gem 'ruby-lsp'
 
 # Utilities
 gem 'logger'
