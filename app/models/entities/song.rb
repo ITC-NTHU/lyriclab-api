@@ -14,10 +14,13 @@ module LyricLab
       include Dry.Types
 
       attribute :title, Strict::String
-      attribute :artists, Strict::Array.of(Artist)
       attribute :popularity, Strict::Integer
-      attribute :album, Album
       attribute :preview_url, Strict::String
+      attribute :album_name, Strict::String
+      attribute :artist_name_string, Strict::String
+      attribute :cover_image_url_big, Strict::String
+      attribute :cover_image_url_medium, Strict::String
+      attribute :cover_image_url_small, Strict::String
 
       def to_attr_hash
         to_hash
