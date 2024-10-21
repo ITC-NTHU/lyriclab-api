@@ -12,6 +12,10 @@ module LyricLab
       attribute :cover_image_url_big, Strict::String
       attribute :cover_image_url_medium, Strict::String
       attribute :cover_image_url_small, Strict::String
+
+      def to_attr_hash
+        to_hash
+      end
     end
   end
 end

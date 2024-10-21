@@ -1,0 +1,1 @@
+/home/tristan/soa/project/spotify-api/db/local/migrations

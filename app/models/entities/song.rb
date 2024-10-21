@@ -18,6 +18,10 @@ module LyricLab
       attribute :popularity, Strict::Integer
       attribute :album, Album
       attribute :preview_url, Strict::String
+
+      def to_attr_hash
+        to_hash
+      end
     end
   end
 end

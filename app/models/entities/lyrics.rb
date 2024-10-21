@@ -9,6 +9,10 @@ module LyricLab
     class Lyrics < Dry::Struct
       include Dry.Types
       attribute :text, Strict::String
+
+      def to_attr_hash
+        to_hash
+      end
     end
   end
 end

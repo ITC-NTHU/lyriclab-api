@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# TODO: check the required changes
 require_relative 'spec_helper'
 
 describe 'Tests lrclib API library' do

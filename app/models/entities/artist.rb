@@ -10,6 +10,10 @@ module LyricLab
       include Dry.Types
 
       attribute :name, Strict::String
+
+      def to_attr_hash
+        to_hash
+      end
     end
   end
 end

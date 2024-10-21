@@ -15,3 +15,9 @@ Metrics/BlockLength:
   Enabled: true
   Exclude:
     - 'spec/**/*'
+    - 'Rakefile'
+
+Style/HashSyntax:
+  Enabled: true
+  Exclude:
+    - 'Rakefile'
