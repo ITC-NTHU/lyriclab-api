@@ -8,18 +8,12 @@ module LyricLab
         rebuild_entity Database::LyricsOrm.first(id:)
       end
 
-      def self.find_username(username)
-        rebuild_entity Database::LyricsOrm.first(username:)
-      end
-
       def self.rebuild_entity(db_record)
         return nil unless db_record
 
         Entity::Lyrics.new(
           id: db_record.id,
-          origin_id: db_record.origin_id,
-          username: db_record.username,
-          email: db_record.email
+          text: db_record.text
         )
       end
 

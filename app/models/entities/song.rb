@@ -14,6 +14,7 @@ module LyricLab
       include Dry.Types
 
       attribute :title, Strict::String
+      attribute :spotify_id, Strict::String
       attribute :popularity, Strict::Integer
       attribute :preview_url, Strict::String
       attribute :album_name, Strict::String
@@ -21,6 +22,7 @@ module LyricLab
       attribute :cover_image_url_big, Strict::String
       attribute :cover_image_url_medium, Strict::String
       attribute :cover_image_url_small, Strict::String
+      attribute :lyrics, Lyrics
 
       def to_attr_hash
         to_hash

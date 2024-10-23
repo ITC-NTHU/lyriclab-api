@@ -9,6 +9,7 @@ Sequel.migration do
       foreign_key :lyrics_id, :lyrics
 
       String     :title, null: false
+      String     :spotify_id, null: false
       Integer    :popularity, null: false
       String     :preview_url
       String     :album_name, null: false
