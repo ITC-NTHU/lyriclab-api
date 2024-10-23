@@ -4,7 +4,7 @@ module LyricLab
   module Lrclib
     # Data Mapper: LrcLib -> Lyrics entity
     class LyricsMapper
-      def initialize(title, artist, gateway_class = Lrclib::Api)
+      def initialize(title, artist, gateway_class = LyricLab::Lrclib::Api)
         @title = title
         @artist = artist
         @gateway_class = gateway_class
@@ -28,7 +28,7 @@ module LyricLab
 
         def build_entity
           LyricLab::Entity::Lyrics.new(
-            text:
+            text:text
           )
         end
 

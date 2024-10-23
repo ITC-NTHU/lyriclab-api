@@ -30,11 +30,11 @@ module LyricLab
 
         def build_entity
           LyricLab::Entity::Song.new(
-            title:,
-            artists:,
-            popularity:,
-            album:,
-            preview_url:
+            title:title,
+            artists:artist,
+            popularity:popularity,
+            album:album,
+            preview_url:preview_url
           )
         end
 
@@ -43,8 +43,7 @@ module LyricLab
         end
 
         def artists
-          @data['artists'].map do |artist_data|
-            ArtistMapper.build_entity(artist_data)
+          @data['artists'].map {|artist_data| artist_data['name'] }.join(', ')
           end
         end
 
