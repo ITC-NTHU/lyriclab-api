@@ -6,7 +6,8 @@ require 'webmock'
 # Setting up VCR
 module VcrHelper
   CASSETTES_FOLDER = 'spec/fixtures/cassettes'
-  GITUB_CASSETTE = 'github_api'
+  LRCLIB_CASSETTE = 'lrclib_api'
+  SPOTIFY_CASSETTE = 'spotify_api'
 
   def self.setup_vcr
     VCR.configure do |c|
@@ -40,7 +41,7 @@ module VcrHelper
     end
 
     VCR.insert_cassette(
-      GITUB_CASSETTE,
+      SPOTIFY_CASSETTE,
       record: :new_episodes,
       match_requests_on: %i[method uri body headers]
     )
@@ -48,7 +49,7 @@ module VcrHelper
 
   def self.configure_vcr_for_lrclib
     VCR.insert_cassette(
-      CASSETTE_FILE,
+      LRCLIB_CASSETTE,
       record: :new_episodes,
       match_requests_on: %i[method uri headers]
     )
