@@ -6,13 +6,8 @@ module LyricLab
   module Lrclib
     # library for lrclib API
     class Api
-      def initialize(track_name, artist_name)
-        @track_name = track_name
-        @artist_name = artist_name
-      end
-
-      def lyric_data
-        Request.new(@track_name, @artist_name).get.parse
+      def lyric_data(track_name, artist_name)
+        Request.new(track_name, artist_name).get.parse
       end
 
       # Sends out HTTP requests to API

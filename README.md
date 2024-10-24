@@ -1,14 +1,14 @@
 # LyricLab
 
-A web service that helps users learn new vocabulary from Chinese (TW) songs.
+A web service designed to help language learners expand their Mandarin vocabulary through Taiwanese songs. LyricLab's goal is to make learning more convenient and enjoyable.
 
 ## Overview
 
-LyricLab pulls **song data** (title, artist, popularity, album, and etc.) as well as **lyrics** from the Spotify and LrcLib APIs.
+LyricLab pulls **song information** (title, artist, popularity, album, and etc.) as well as **lyrics** from the Spotify and LrcLib APIs.
 
-Users can select one of the difficulty levels and search for a song. LyricLab will then generate a vocabulary list based on the selected level. Afterward, users can select specific words. LyricLab will provide translations, pinyin, and examples of how each word is used in a sentence.
+Users can select one of the **difficulty levels** and search for a song. LyricLab will then generate a **vocabulary list** based on the selected level. Afterward, users can select specific words. LyricLab will provide translations, pinyin, and examples of how each word is used in a sentence.
 
-*Disclaimer: This service is still a work in progress. Currently, LyricLab only supports the search function and displays song data along with lyrics.*
+#### Disclaimer: This service is still a work in progress. Currently, LyricLab only supports the search function and displays song data along with lyrics.
 
 We hope LyricLab will become an essential tool that helps people build confidence in their Chinese language skills.
 

@@ -18,7 +18,7 @@ module LyricLab
     plugin :halt
     plugin :flash
 
-    route do |current|
+    route do |current| # rubocop:disable Metrics/BlockLength
       current.assets
 
       # GET /

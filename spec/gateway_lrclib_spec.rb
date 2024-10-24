@@ -14,26 +14,26 @@ describe 'Tests lrclib API library' do
 
   describe 'Lyric information' do
     before do
-      @api = LyricLab::Lrclib::LyricsMapper.new(TRACK_NAME, ARTIST_NAME)
-      @api_no_title = LyricLab::Lrclib::LyricsMapper.new('BAD_NAME', ARTIST_NAME)
-      @api_no_artist = LyricLab::Lrclib::LyricsMapper.new(TRACK_NAME, 'NO_ARTIST')
+      @api = LyricLab::Lrclib::LyricsMapper.new
+      @api_no_title = LyricLab::Lrclib::LyricsMapper.new
+      @api_no_artist = LyricLab::Lrclib::LyricsMapper.new
     end
 
     it 'HAPPY: should provide correct lyric attributes' do
-      lyrics = @api.search
+      lyrics = @api.search(TRACK_NAME, ARTIST_NAME)
       _(lyrics.text).must_equal CORRECT
       refute_nil lyrics.text
     end
 
     it 'SAD: should raise exception on incorrect song title' do
       _(proc do
-        @api_no_title.search
+        @api_no_title.search('BAD_NAME', ARTIST_NAME)
       end).must_raise LyricLab::Lrclib::Api::Response::NotFound
     end
 
     it 'SAD: should raise exception on incorrect artist' do
       _(proc do
-        @api_no_artist.search
+        @api_no_artist.search(TRACK_NAME, 'NO_ARTIST')
       end).must_raise LyricLab::Lrclib::Api::Response::NotFound
     end
   end
