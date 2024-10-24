@@ -33,6 +33,7 @@ module LyricLab
         # rubocop:disable Metrics/MethodLength
         def build_entity
           LyricLab::Entity::Song.new(
+            id: nil,
             title:,
             spotify_id:,
             popularity:,

@@ -24,9 +24,9 @@ describe 'Integration Tests of Spotify API and Database' do
              .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
              .find(SONG_NAME)
 
-      print "this is in the database, songs: #{LyricLab::Database::SongOrm.all}"
-      print "this is in the database, lyrics: #{LyricLab::Database::LyricsOrm.all}"
-
+      # print "this is in the database, songs: #{LyricLab::Database::SongOrm.first}"
+      # print "this is in the database, lyrics: #{LyricLab::Database::LyricsOrm.first}"
+      # print "song entity: #{song.to_attr_hash}"
       rebuilt = LyricLab::Repository::For.entity(song).create(song)
 
       # TODO: check what we save into database
@@ -39,7 +39,7 @@ describe 'Integration Tests of Spotify API and Database' do
       _(rebuilt.cover_image_url_big).must_equal(song.cover_image_url_big)
       _(rebuilt.cover_image_url_medium).must_equal(song.cover_image_url_medium)
       _(rebuilt.cover_image_url_small).must_equal(song.cover_image_url_small)
-      _(rebuilt.lyrics).must_equal(song.lyrics)
+      _(rebuilt.lyrics.text).must_equal(song.lyrics.text)
     end
   end
 end

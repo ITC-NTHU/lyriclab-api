@@ -1,7 +1,7 @@
 ---
-song_name: 山海
-artist_name: No Party For Cao Dong
-album: 醜奴兒
+title: 山海
+artist_name_string: No Party For Cao Dong
+album_name: 醜奴兒
 release_date: '2016-02-19'
 duration: 251053
 popularity: 53

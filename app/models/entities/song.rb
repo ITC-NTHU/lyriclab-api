@@ -11,6 +11,7 @@ module LyricLab
     class Song < Dry::Struct
       include Dry.Types
 
+      attribute :id, Integer.optional
       attribute :title, Strict::String
       attribute :spotify_id, Strict::String
       attribute :popularity, Strict::Integer
@@ -23,7 +24,7 @@ module LyricLab
       attribute :lyrics, Lyrics
 
       def to_attr_hash
-        to_hash
+        to_hash.except(:id, :lyrics)
       end
     end
   end

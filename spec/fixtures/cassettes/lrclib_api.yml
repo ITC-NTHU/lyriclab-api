@@ -163,4 +163,40 @@ http_interactions:
       encoding: UTF-8
       string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
   recorded_at: Thu, 24 Oct 2024 04:08:45 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=NO_ARTIST&track_name=%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Thu, 24 Oct 2024 05:43:29 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '84'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
+  recorded_at: Thu, 24 Oct 2024 05:43:29 GMT
 recorded_with: VCR 6.3.1

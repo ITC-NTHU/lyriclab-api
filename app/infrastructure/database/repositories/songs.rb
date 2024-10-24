@@ -53,6 +53,7 @@ module LyricLab
         end
 
         def create_song
+          # puts("create song: #{@entity.to_attr_hash}")
           Database::SongOrm.create(@entity.to_attr_hash)
         end
 

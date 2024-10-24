@@ -26,6 +26,7 @@ module LyricLab
 
         def build_entity
           LyricLab::Entity::Lyrics.new(
+            id: nil,
             text:
           )
         end
