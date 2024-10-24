@@ -5,11 +5,15 @@ require 'sequel'
 module LyricLab
   module Database
     # Object Relational Mapper for Project Entities
-    class LyricsOrm < Sequel::Model(:songs)
+    class LyricsOrm < Sequel::Model(:lyrics)
       one_to_one :song,
                  class: :'LyricLab::Database::SongOrm'
 
       plugin :timestamps, update_on_create: true
+
+      def self.find_or_create(lyrics_info)
+        first(text: lyrics_info[:text]) || create(lyrics_info)
+      end
     end
   end
 end

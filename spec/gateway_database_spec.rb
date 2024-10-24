@@ -6,7 +6,6 @@ require_relative 'helpers/database_helper'
 
 describe 'Integration Tests of Spotify API and Database' do
   VcrHelper.setup_vcr
-
   before do
     VcrHelper.configure_vcr_for_spotify
   end
@@ -22,12 +21,15 @@ describe 'Integration Tests of Spotify API and Database' do
 
     it 'HAPPY: should be able to save song data from Spotify to database' do
       song = LyricLab::Spotify::SongMapper
-        .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
-        .find(SONG_NAME)
+             .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
+             .find(SONG_NAME)
+
+      print "this is in the database, songs: #{LyricLab::Database::SongOrm.all}"
+      print "this is in the database, lyrics: #{LyricLab::Database::LyricsOrm.all}"
 
       rebuilt = LyricLab::Repository::For.entity(song).create(song)
 
-      # TODO check what we save into database
+      # TODO: check what we save into database
       _(rebuilt.title).must_equal(song.title)
       _(rebuilt.spotify_id).must_equal(song.spotify_id)
       _(rebuilt.popularity).must_equal(song.popularity)
@@ -38,7 +40,6 @@ describe 'Integration Tests of Spotify API and Database' do
       _(rebuilt.cover_image_url_medium).must_equal(song.cover_image_url_medium)
       _(rebuilt.cover_image_url_small).must_equal(song.cover_image_url_small)
       _(rebuilt.lyrics).must_equal(song.lyrics)
-
     end
   end
 end

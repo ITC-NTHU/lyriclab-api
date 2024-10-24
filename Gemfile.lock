@@ -92,6 +92,7 @@ GEM
     minitest-rg (5.3.0)
       minitest (~> 5.0)
     nio4r (2.7.3)
+    ostruct (0.6.0)
     parallel (1.26.3)
     parser (3.3.5.0)
       ast (~> 2.4.1)
@@ -206,6 +207,7 @@ DEPENDENCIES
   logger (~> 1.6)
   minitest (~> 5.20)
   minitest-rg (~> 5.2)
+  ostruct
   pry
   puma (~> 6.0)
   rake

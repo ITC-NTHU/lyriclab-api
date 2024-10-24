@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'members'
-
 module LyricLab
   module Repository
     # Repository for Project Entities
@@ -18,7 +16,7 @@ module LyricLab
       end
 
       def self.find(entity)
-        find_origin_id(entity.origin_id)
+        find_spotify_id(entity.spotify_id)
       end
 
       def self.find_id(id)
@@ -54,7 +52,7 @@ module LyricLab
           @entity = entity
         end
 
-        def create_project
+        def create_song
           Database::SongOrm.create(@entity.to_attr_hash)
         end
 

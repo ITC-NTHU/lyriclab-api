@@ -49,14 +49,11 @@ def get_song_info(song_id, config)
 end
 
 # Load the configuration
-config = YAML.safe_load_file('secrets.yml')
+config = YAML.safe_load_file('config/secrets.yml')['development']
 
 # Renew the token if it's not alive
-unless token_is_alive?(config)
-  puts 'Renewing the token...'
-  config['SPOTIFY_BEARER_TOKEN'] = renew_token(config)
-  File.write('secrets.yml', config.to_yaml)
-end
+puts 'Renewing the token...'
+config['SPOTIFY_BEARER_TOKEN'] = renew_token(config)
 
 spotify_results = {}
 
@@ -87,4 +84,4 @@ puts "bad request: #{bad_spotify_response.parse}"
 
 # Write the song info to a YAML file
 puts 'Writing song info to file...'
-File.write('../spec/fixtures/spotify_results.yml', spotify_results.to_yaml)
+File.write('spec/fixtures/spotify_results.yml', spotify_results.to_yaml)

@@ -10,7 +10,7 @@ module LyricLab
         @client_id = client_id
         @client_secret = client_secret
         @gateway_class = gateway_class
-        @gateway = @gatetway_class.new(@client_id, @client_secret)
+        @gateway = @gateway_class.new(@client_id, @client_secret)
       end
 
       # get song information from Spotify API
@@ -19,7 +19,7 @@ module LyricLab
         build_entity(data)
       end
 
-      def self.build_entity(data)
+      def build_entity(data)
         DataMapper.new(data, @client_id, @client_secret, @gateway_class).build_entity
       end
 

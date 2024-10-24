@@ -4,8 +4,6 @@ require 'dry-types'
 require 'dry-struct'
 
 require_relative 'lyrics'
-require_relative 'album'
-require_relative 'artist'
 
 module LyricLab
   module Entity

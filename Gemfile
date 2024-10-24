@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 # Configuration and Utilities
 gem 'figaro', '~> 1.0'
+gem 'ostruct'
 gem 'pry'
 gem 'rake'
 
