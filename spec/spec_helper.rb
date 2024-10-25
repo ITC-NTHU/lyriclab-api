@@ -20,9 +20,10 @@ require_relative '../require_app'
 require_app
 
 # For lrclib_API
+CASSETTE_FILE = 'lrclib_api'
 TRACK_NAME = '好不容易'
 ARTIST_NAME = '告五人'
-CORRECT = YAML.safe_load_file(File.join(__dir__, 'fixtures', 'lyrics-success-results.yml'))
+CORRECT_LYRICS = File.read(File.join(__dir__, 'fixtures', 'lyrics-success-results.yml'))
 
 # For spotify_API
 CASSETTE_FILE_SP = 'spotify_api'

@@ -21,7 +21,7 @@ describe 'Tests lrclib API library' do
 
     it 'HAPPY: should provide correct lyric attributes' do
       lyrics = @api.find(TRACK_NAME, ARTIST_NAME)
-      _(lyrics.text).must_equal CORRECT
+      _(lyrics.text).must_equal CORRECT_LYRICS.strip
       refute_nil lyrics.text
     end
 
