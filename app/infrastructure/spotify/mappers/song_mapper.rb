@@ -43,7 +43,8 @@ module LyricLab
             cover_image_url_big:,
             cover_image_url_medium:,
             cover_image_url_small:,
-            lyrics:
+            lyrics:,
+            explicit:
           )
         end
         # rubocop:enable Metrics/MethodLength
@@ -87,6 +88,10 @@ module LyricLab
         def lyrics
           @lyrics_mapper.find(title, artist_name_string)
           # TODO: does it work with artist name string or should be just use a single artist?
+        end
+
+        def explicit
+          @data['explicit']
         end
       end
     end

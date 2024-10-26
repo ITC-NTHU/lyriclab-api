@@ -17,6 +17,7 @@ Sequel.migration do
       String     :cover_image_url_big
       String     :cover_image_url_medium
       String     :cover_image_url_small
+      Boolean    :explicit, null: false, default: false
 
       DateTime :created_at
       DateTime :updated_at

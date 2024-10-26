@@ -8,9 +8,9 @@ module LyricLab
         Database::SongOrm.all.map { |db_song| rebuild_entity(db_song) }
       end
 
-      def self.find_from_title_artist(title, artist_name)
+      def self.find_from_title_artist(title, artist_name_string)
         db_song = Database::SongOrm
-                  .where(title:, artist_name:)
+                  .where(title:, artist_name_string:)
                   .first
         rebuild_entity(db_song)
       end
