@@ -12,9 +12,13 @@ module LyricLab
                     css: 'style.css', js: 'table_row_click.js'
     plugin :common_logger, $stderr
     plugin :halt
-    #plugin :flash
+    # plugin :flash
 
-    route do |routing| # rubocop:disable Metrics/BlockLength
+    # Constants
+    SPOTIFY_CLIENT_ID = LyricLab::App.config.SPOTIFY_CLIENT_ID
+    SPOTIFY_CLIENT_SECRET = LyricLab::App.config.SPOTIFY_CLIENT_SECRET
+
+    route do |routing|
       routing.assets # load CSS
 
       # GET /
@@ -29,28 +33,30 @@ module LyricLab
           # POST /search/
           routing.post do
             search_string = routing.params['search_query']
-
             # Get song info from APIs
             song = Spotify::SongMapper
-                      .new(SP_CLIENT_ID, SP_CLIENT_SECRET)
-                      .find(search_string)
-
-            # Add song to database
-            Repository::For.entity(song).create(song)
+                   .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
+                   .find(search_string)
+            # Add song to database if it doesn't already exist
+            begin
+              Repository::For.entity(song).create(song)
+            rescue StandardError => e
+              # Handle the case where the song already exists
+              puts "Error: #{e.message}"
+            end
 
             # Redirect viewer to project page
-            routing.redirect "/search/#{song.title}/#{song.artist_name_string}" if search_string
+            routing.redirect "/search/#{song.spotify_id}/#{song.title}" if search_string
           end
         end
 
         # GET /search/:query
-        routing.on String, String do |title, artist_name|
+        routing.on String, String do |spotify_id, title|
           routing.get do
-            # Get project from database
-            song = Repository::For.klass(Entity::Song)
-              .find_from_title_artist(title, artist_name)
+            # Get song from database
+            song = Repository::For.klass(Entity::Song).find_spotify_id(spotify_id)
 
-            # Show viewer the project
+            # Show viewer the song
             view 'song', locals: { song: }
           end
         end
