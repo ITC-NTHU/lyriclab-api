@@ -24,9 +24,6 @@ describe 'Integration Tests of Spotify API and Database' do
              .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
              .find(SONG_NAME)
 
-      # print "this is in the database, songs: #{LyricLab::Database::SongOrm.first}"
-      # print "this is in the database, lyrics: #{LyricLab::Database::LyricsOrm.first}"
-      # print "song entity: #{song.to_attr_hash}"
       rebuilt = LyricLab::Repository::For.entity(song).create(song)
 
       # TODO: check what we save into database
