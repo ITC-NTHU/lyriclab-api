@@ -26,9 +26,15 @@ module LyricLab
 
         def build_entity
           LyricLab::Entity::Lyrics.new(
-            id: @data['id'],
-            text:@data['plainLyrics']
+            id: nil,
+            text:
           )
+        end
+
+        private
+
+        def text
+          @data['plainLyrics']
         end
       end
     end
