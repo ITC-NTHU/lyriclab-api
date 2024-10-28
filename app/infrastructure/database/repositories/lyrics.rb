@@ -14,6 +14,8 @@ module LyricLab
         Entity::Lyrics.new(
           id: db_record.id,
           text: db_record.text
+          is_instrumental: db_record.is_instrumental
+          is_mandarin: db_record.is_mandarin
         )
       end
 

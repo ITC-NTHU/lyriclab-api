@@ -11,7 +11,7 @@ module LyricLab
 
       attribute :id, Integer.optional
       attribute :text, Strict::String
-      attribute :is_mandarin, Strict::Bool
+      attribute :is_mandarin, Strict::Bool.optional
       attribute :is_instrumental, Strict::Bool
 
       def to_attr_hash
