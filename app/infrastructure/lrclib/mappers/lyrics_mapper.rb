@@ -28,11 +28,16 @@ module LyricLab
           LyricLab::Entity::Lyrics.new(
             id: nil,
             is_mandarin: nil,
-            text:
+            text:,
+            is_instrumental:
           )
         end
 
         private
+
+        def is_instrumental
+          @data['instrumental']
+        end
 
         def text
           @data['plainLyrics']
