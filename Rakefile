@@ -16,7 +16,7 @@ end
 
 desc 'Keep rerunnin web app upoon changes'
 task :rerun do
-  sh "rerun -c --ignore 'coverage/*' -- bundle exec puma"
+   sh "rerun -c --ignore 'coverage/*' --ignore 'repostore/*' -- bundle exec puma"
 end
 
 namespace :db do
@@ -44,7 +44,7 @@ namespace :db do
       return
     end
 
-    require_app('infrastructure')
+    require_app(%w[domain infrastructure])
     DatabaseHelper.wipe_database
   end
 
@@ -55,8 +55,8 @@ namespace :db do
       return
     end
 
-    FileUtils.rm(LyricLab::App.config.DB_FILENAME)
-    puts "Deleted #{LyricLab::App.config.DB_FILENAME}"
+    FileUtils.rm(app.config.DB_FILENAME)
+    puts "Deleted #{app.config.DB_FILENAME}"
   end
 end
 
@@ -69,6 +69,11 @@ desc 'Run tests once'
 Rake::TestTask.new(:spec) do |t|
   t.pattern = 'spec/*_spec.rb'
   t.warning = false
+end
+
+desc 'Keep rerunning tests upon changes'
+task :respec do
+  sh "rerun -c 'rake spec' --ignore 'coverage/*' --ignore 'repostore/*'"
 end
 
 namespace :vcr do

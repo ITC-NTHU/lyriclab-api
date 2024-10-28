@@ -27,6 +27,7 @@ module LyricLab
         def build_entity
           LyricLab::Entity::Lyrics.new(
             id: nil,
+            is_mandarin: nil,
             text:
           )
         end

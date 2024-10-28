@@ -6,7 +6,7 @@ require_relative 'lyrics'
 module LyricLab
   module Repository
     # Finds the right repository for an entity object or class
-    module For
+    class For
       ENTITY_REPOSITORY = {
         Entity::Song => Songs,
         Entity::Lyrics => Lyrics

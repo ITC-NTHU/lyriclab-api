@@ -58,7 +58,7 @@ module LyricLab
         end
 
         def call
-          lyrics = Lyrics.db_find_or_create(@entity.lyrics)
+          lyrics = Lyrics.find_or_create(@entity.lyrics)
 
           create_song.tap do |db_song|
             db_song.update(lyrics:)

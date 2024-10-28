@@ -8,6 +8,8 @@ Sequel.migration do
       primary_key :id
 
       String :text
+      Bool :is_mandarin
+      Bool :is_instrumental
 
       DateTime :created_at
       DateTime :updated_at

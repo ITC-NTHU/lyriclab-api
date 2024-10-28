@@ -23,7 +23,7 @@ module LyricLab
         end
       end
 
-      def self.db_find_or_create(entity)
+      def self.find_or_create(entity)
         Database::LyricsOrm.find_or_create(entity.to_attr_hash)
       end
     end

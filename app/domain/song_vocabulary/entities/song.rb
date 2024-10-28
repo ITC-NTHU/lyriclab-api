@@ -27,6 +27,15 @@ module LyricLab
       def to_attr_hash
         to_hash.except(:id, :lyrics)
       end
+
+      def relevant?
+        lyrics.relevant?
+      end
+
+      def increment_search_counter
+        self.search_counter += 1
+        Database::SongRepository.new.update(self)
+      end
     end
   end
 end
