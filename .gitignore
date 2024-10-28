@@ -3,4 +3,5 @@ config/secrets.yml
 coverage/*
 !coverage/.resultset.json
 vendor/*
+.bundle/
 *.db

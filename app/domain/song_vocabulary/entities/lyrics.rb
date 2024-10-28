@@ -11,6 +11,7 @@ module LyricLab
 
       attribute :id, Integer.optional
       attribute :text, Strict::String
+      attribute :is_instrumental, Strict::Boolean
 
       def to_attr_hash
         to_hash.except(:id)
