@@ -36,7 +36,9 @@ describe 'Integration Tests of Spotify API and Database' do
       _(rebuilt.cover_image_url_big).must_equal(song.cover_image_url_big)
       _(rebuilt.cover_image_url_medium).must_equal(song.cover_image_url_medium)
       _(rebuilt.cover_image_url_small).must_equal(song.cover_image_url_small)
+      _(rebuilt.explicit).must_equal(song.explicit)
       _(rebuilt.lyrics.text).must_equal(song.lyrics.text)
+      _(rebuilt.lyrics.is_instrumental).must_equal(song.lyrics.is_instrumental)
     end
   end
 end
