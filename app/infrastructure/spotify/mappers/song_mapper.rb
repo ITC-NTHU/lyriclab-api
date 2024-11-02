@@ -6,9 +6,10 @@ module LyricLab
     # Data Mapper: Spotify -> Song entity
     class SongMapper
       # initialize Spotify API information
-      def initialize(client_id, client_secret, gateway_class = Spotify::Api)
+      def initialize(client_id, client_secret, google_client_key, gateway_class = Spotify::Api)
         @client_id = client_id
         @client_secret = client_secret
+        @google_client_key = google_client_key
         @gateway_class = gateway_class
         @gateway = @gateway_class.new(@client_id, @client_secret)
       end
@@ -25,14 +26,14 @@ module LyricLab
       end
 
       def build_entity(data)
-        DataMapper.new(data, @client_id, @client_secret, @gateway_class).build_entity
+        DataMapper.new(data, @client_id, @client_secret, @google_client_key, @gateway_class).build_entity
       end
 
       # Extracts entity specific elements from data structure
       class DataMapper
-        def initialize(data, _client_id, _client_secret, _gateway_class)
+        def initialize(data, _client_id, _client_secret,  _google_client_key, _gateway_class)
           @data = data # right now we can only parse a single song
-          @lyrics_mapper = LyricLab::Lrclib::LyricsMapper.new
+          @lyrics_mapper = LyricLab::Lrclib::LyricsMapper.new(_google_client_key)
         end
 
         # rubocop:disable Metrics/MethodLength
@@ -40,15 +41,15 @@ module LyricLab
           LyricLab::Entity::Song.new(
             id: nil,
             title:,
+            artist_name_string:,
+            lyrics:,
             spotify_id:,
             popularity:,
             preview_url:,
             album_name:,
-            artist_name_string:,
             cover_image_url_big:,
             cover_image_url_medium:,
             cover_image_url_small:,
-            lyrics:,
             explicit:
           )
         end
@@ -93,6 +94,10 @@ module LyricLab
         def lyrics
           @lyrics_mapper.find(title, artist_name_string)
           # TODO: does it work with artist name string or should be just use a single artist?
+        end
+
+        def vocabulary
+
         end
 
         def explicit
