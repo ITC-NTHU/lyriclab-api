@@ -10,6 +10,7 @@ Sequel.migration do
       String     :characters, null: false
       String     :translation, null: false
       String     :pinyin, null: false
+      String     :word_type
 
       String     :easy_sentence, null: false
 

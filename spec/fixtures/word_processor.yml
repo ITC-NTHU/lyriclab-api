@@ -1,0 +1,82 @@
+words_to_filter:
+  - 你好
+  - 高
+  - 我
+  - 谢谢
+  - 愛
+  - 學
+  - 書
+  - 男
+  - 零
+  - 出生
+  - 哎
+  - 愛好
+  - 愛戴
+  - 電腦
+  - 電視
+  - 飛機
+  - 火車
+  - 汽車
+  - 自行車
+  - 醫院
+  - 學校
+  - 老師
+  - 學生
+  - 家
+  - 房子
+  - 門
+  - 窗
+  - 桌子
+  - 椅子
+  - 床
+  - 衣服
+  - 褲子
+  - 鞋子
+  - 帽子
+  - 手錶
+  - 眼鏡
+  - 電話
+  - 手機
+  - 錢
+  - 銀行
+  - 商店
+  - 超市
+  - 市場
+  - 餐廳
+  - 飯店
+  - 廚房
+  - 廁所
+  - 公園
+  - 花園
+  - 國
+  - 生日
+  - 禮拜天
+  - 問題
+  - 本來
+  - 被
+  - 日子
+  - 父親
+  - 按照
+  - 寶貴
+  - 抱怨
+  - 部長
+  - 超越
+  - 罪行
+  - 停留
+  - 首長
+
+
+
+language_levels: 
+- novice1
+- novice2
+- level1
+- level2
+- level3
+- level4
+- level5
+
+
+simplified_text: "在这个美丽的城市里，每天都有许多人来来往往。他们在公园里散步，在餐厅里享受美食，在商店里购物。这里的生活充满了活力和快乐，每个人都很幸福。"
+traditional_text: "在這個美麗的城市裏，每天都有許多人來來往往。他們在公園裏散步，在餐廳裏享受美食，在商店裏購物。這裏的生活充滿了活力和快樂，每個人都很幸福。"
+english_text: "In this beautiful city, there are many people coming and going every day. They walk in the park, enjoy delicious food in the restaurant, and shop in the store. Life here is full of vitality and happiness, and everyone is very happy."

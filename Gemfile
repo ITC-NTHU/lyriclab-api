@@ -24,11 +24,19 @@ gem 'http', '~> 5.2.0'
 
 # Database
 gem 'hirb'
+
+#
+gem 'rest-client'
 # gem 'hirb-unicode' # incompatible with new rubocop
 gem 'sequel', '~> 5.0'
 
+# Word Processing
+gem 'tradsim'
+gem 'csv'
+
 group :development, :test do
   gem 'sqlite3', '~> 1.0'
+  gem 'roo'
 end
 
 group :production do

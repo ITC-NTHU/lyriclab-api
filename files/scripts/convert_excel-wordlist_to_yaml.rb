@@ -27,18 +27,7 @@ xlsx = Roo::Spreadsheet.open("files/mandarin_word_list.xlsx")
           characters = row[0].to_s
           pinyin = row[1].to_s
           word_type = row[2].to_s
-          if characters.include?('/') and pinyin.include?('/')
-            characters = characters.split('/')
-            pinyin = pinyin.split('/')
-            characters.zip(pinyin).each do |char, pin|
-              word_list[list_names[index]].push([char, pin, word_type]) if !char.nil? and !pin.nil?
-            end
-          elsif characters.include?('/') and !pinyin.include?('/')
-            characters = characters.split('/')
-            characters.each do |char|
-              word_list[list_names[index]].push([char, pinyin, word_type])
-            end
-          else
+          if !characters.nil? and !pinyin.nil? and !characters.include?('/') and !pinyin.include?('/')
             word_list[list_names[index]].push([characters, pinyin, word_type])
           end
         end
@@ -46,6 +35,6 @@ xlsx = Roo::Spreadsheet.open("files/mandarin_word_list.xlsx")
 
       require 'yaml'
 
-      File.open("../mandarin_word_list.yml", "w") do |file|
+      File.open("files/mandarin_word_list.yml", "w") do |file|
         file.write(word_list.to_yaml)
       end
