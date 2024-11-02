@@ -11,13 +11,7 @@ module LyricLab
           raise ArgumentError, "Invalid language level: #{language_level}"
         end
         word_list = App.merged_word_list[0...App.list_indexes[LANGUAGE_LEVELS.index(language_level)]]
-        puts "language_level: #{language_level}"
-        # puts "indexes: #{App.list_indexes}"
-        puts "index: #{App.list_indexes[LANGUAGE_LEVELS.index(language_level)]}"
-        # puts "word_list: #{word_list}"
         words.filter { |word|
-          included_word = word_list.include?(word)
-          # puts "Word: #{word} is included: #{included_word}"
           !word_list.include?(word)
         }
       end

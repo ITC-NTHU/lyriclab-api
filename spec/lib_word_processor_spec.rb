@@ -14,7 +14,6 @@ describe 'Test Word Processor library' do
   filtered_words_list = [TEST_DATA['words_to_filter']]
     for cur_language_level in TEST_DATA['language_levels']
       filtered_words_list.append(WordProcessor.filter_relevant_words(@words_to_filter, cur_language_level))
-      # puts "Filtered words: #{filtered_words[-1].length}"
       _(filtered_words_list[-1]).wont_equal TEST_DATA['words_to_filter']
       _(filtered_words_list[-1]).wont_equal filtered_words_list[-2]
       _(filtered_words_list[-1]).wont_be_nil
