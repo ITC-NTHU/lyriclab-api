@@ -17,7 +17,7 @@ describe 'Test Spotify API library' do
   describe 'Song information' do
     it 'HAPPY: should provide correct song attributes' do
       song = LyricLab::Spotify::SongMapper
-             .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
+             .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
              .find(SONG_NAME)
       _(song.title).must_equal CORRECT['title']
       # _(song.artists[0].name).must_equal CORRECT['artist_name'] TODO check for artist_name_string
@@ -27,7 +27,7 @@ describe 'Test Spotify API library' do
     it 'SAD: should raise exception when unauthorized' do
       _(proc do
         LyricLab::Spotify::SongMapper
-          .new(SPOTIFY_CLIENT_ID, 'BAD_CLIENT_SECRET_ID')
+          .new(SPOTIFY_CLIENT_ID, 'BAD_CLIENT_SECRET_ID', GOOGLE_CLIENT_KEY)
           .find(SONG_NAME)
       end).must_raise LyricLab::Spotify::Api::Response::BadRequest
     end

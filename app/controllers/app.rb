@@ -17,7 +17,8 @@ module LyricLab
     # Constants
     SPOTIFY_CLIENT_ID = LyricLab::App.config.SPOTIFY_CLIENT_ID
     SPOTIFY_CLIENT_SECRET = LyricLab::App.config.SPOTIFY_CLIENT_SECRET
-
+    GOOGLE_CLIENT_KEY = LyricLab::App.config.GOOGLE_KEY
+    
     route do |routing|
       routing.assets # load CSS
 
@@ -35,7 +36,7 @@ module LyricLab
             search_string = routing.params['search_query']
             # Get song info from APIs
             song = Spotify::SongMapper
-                   .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
+                   .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
                    .find(search_string)
             # Add song to database if it doesn't already exist
             begin

@@ -22,6 +22,9 @@ gem 'slim', '~>4.0'
 # Networking
 gem 'http', '~> 5.2.0'
 
+# Google API
+gem 'google-cloud-translate-v2'
+
 # Database
 gem 'hirb'
 # gem 'hirb-unicode' # incompatible with new rubocop
