@@ -6,3 +6,7 @@ release_date: '2016-02-19'
 duration: 251053
 popularity: 53
 preview_url: https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=5d30be5477864b7a85c6b14a964d39a8
+cover_image_url_big: "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348"
+cover_image_url_medium: "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348"
+cover_image_url_small: "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348"
+explicit: false

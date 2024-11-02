@@ -3,7 +3,7 @@
 require 'dry-types'
 require 'dry-struct'
 
-require_relative 'word'
+require_relative '../values/word'
 
 module LyricLab
   module Entity

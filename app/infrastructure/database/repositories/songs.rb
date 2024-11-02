@@ -38,10 +38,11 @@ module LyricLab
 
       def self.rebuild_entity(db_record)
         return nil unless db_record
-
+        lyrics = Lyrics.rebuild_entity(db_record.lyrics)
         Entity::Song.new(
           db_record.to_hash.merge(
-            lyrics: Lyrics.rebuild_entity(db_record.lyrics)
+            lyrics: lyrics,
+            is_instrumental: db_record.lyrics.is_instrumental
           )
         )
       end
@@ -53,7 +54,6 @@ module LyricLab
         end
 
         def create_song
-          # puts("create song: #{@entity.to_attr_hash}")
           Database::SongOrm.create(@entity.to_attr_hash)
         end
 

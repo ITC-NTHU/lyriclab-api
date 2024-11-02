@@ -10,6 +10,7 @@ module LyricLab
                   class: :'LyricLab::Database::LyricsOrm'
 
       plugin :timestamps, update_on_create: true
+      plugin :whitelist_security
     end
   end
 end

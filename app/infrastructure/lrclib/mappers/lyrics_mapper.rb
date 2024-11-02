@@ -30,7 +30,7 @@ module LyricLab
           LyricLab::Entity::Lyrics.new(
             id: nil,
             text:,
-            #is_instrumental:,
+            is_instrumental:,
             is_mandarin:,
             unique_words:
           )

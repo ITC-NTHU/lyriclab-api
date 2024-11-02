@@ -13,7 +13,7 @@ describe 'Test Spotify API library' do
   after do
     VcrHelper.eject_vcr
   end
-
+  puts "Google key: #{GOOGLE_CLIENT_KEY}"
   describe 'Song information' do
     it 'HAPPY: should provide correct song attributes' do
       song = LyricLab::Spotify::SongMapper
@@ -22,11 +22,18 @@ describe 'Test Spotify API library' do
       _(song.title).must_equal CORRECT['title']
       _(song.artist_name_string).must_equal CORRECT['artist_name_string']
       _(song.popularity).must_equal CORRECT['popularity']
+      _(song.preview_url).must_equal CORRECT['preview_url']
+      _(song.album_name).must_equal CORRECT['album_name']
+      _(song.cover_image_url_big).must_equal CORRECT['cover_image_url_big']
+      _(song.cover_image_url_medium).must_equal CORRECT['cover_image_url_medium']
+      _(song.cover_image_url_small).must_equal CORRECT['cover_image_url_small']
+      _(song.explicit).must_equal CORRECT['explicit']
+
     end
 
     it 'HAPPY: should provide 2 search result songs' do
       songs = LyricLab::Spotify::SongMapper
-             .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
+             .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
              .find_n(SONG_NAME, 2)
       _(songs.length).must_equal 2
     end

@@ -38,11 +38,12 @@ module LyricLab
 
         # rubocop:disable Metrics/MethodLength
         def build_entity
+          lyrics = lyrics()
           LyricLab::Entity::Song.new(
             id: nil,
             title:,
             artist_name_string:,
-            lyrics:,
+            lyrics: lyrics,
             spotify_id:,
             popularity:,
             preview_url:,
@@ -50,6 +51,7 @@ module LyricLab
             cover_image_url_big:,
             cover_image_url_medium:,
             cover_image_url_small:,
+            is_instrumental: lyrics.is_instrumental,
             explicit:
           )
         end

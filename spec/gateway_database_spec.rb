@@ -23,7 +23,7 @@ describe 'Integration Tests of Spotify API and Database' do
       song = LyricLab::Spotify::SongMapper
              .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
              .find(SONG_NAME)
-
+      puts (song)
       rebuilt = LyricLab::Repository::For.entity(song).create(song)
 
       # TODO: check what we save into database
@@ -38,7 +38,7 @@ describe 'Integration Tests of Spotify API and Database' do
       _(rebuilt.cover_image_url_small).must_equal(song.cover_image_url_small)
       _(rebuilt.explicit).must_equal(song.explicit)
       _(rebuilt.lyrics.text).must_equal(song.lyrics.text)
-      _(rebuilt.lyrics.is_instrumental).must_equal(song.lyrics.is_instrumental)
+      _(rebuilt.is_instrumental).must_equal(song.is_instrumental)
     end
   end
 end

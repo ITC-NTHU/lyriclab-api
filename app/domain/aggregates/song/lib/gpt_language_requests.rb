@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../entities/song'
-require_relative '../entities/word'
+require_relative '../values/word'
 require_relative '../entities/vocabulary'
 
 module LyricLab
@@ -41,7 +41,7 @@ module LyricLab
             Example English: [English translation of the example sentence]
 
             Focus on words that would be valuable for language learners. Keep example sentences natural and practical.
-            
+
             Lyrics: #{song.lyrics.text}" }
         ]
 

@@ -28,8 +28,6 @@ gem 'google-cloud-translate-v2'
 # Database
 gem 'hirb'
 
-#
-gem 'rest-client'
 # gem 'hirb-unicode' # incompatible with new rubocop
 gem 'sequel', '~> 5.0'
 
