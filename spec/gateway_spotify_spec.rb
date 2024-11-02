@@ -20,8 +20,15 @@ describe 'Test Spotify API library' do
              .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
              .find(SONG_NAME)
       _(song.title).must_equal CORRECT['title']
-      # _(song.artists[0].name).must_equal CORRECT['artist_name'] TODO check for artist_name_string
+      _(song.artist_name_string).must_equal CORRECT['artist_name_string']
       _(song.popularity).must_equal CORRECT['popularity']
+    end
+
+    it 'HAPPY: should provide 2 search result songs' do
+      songs = LyricLab::Spotify::SongMapper
+             .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
+             .find_n(SONG_NAME, 2)
+      _(songs.length).must_equal 2
     end
 
     it 'SAD: should raise exception when unauthorized' do

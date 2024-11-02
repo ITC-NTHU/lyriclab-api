@@ -60173,4 +60173,2527 @@ http_interactions:
           }
         }
   recorded_at: Sat, 02 Nov 2024 04:34:34 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Nov 2024 04:46:11 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 49d598c3-6da0-4e9e-af88-abe3820659dd
+      Sp-Trace-Id:
+      - b813bafa6c108fe8
+      X-Envoy-Upstream-Service-Time:
+      - '15'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 02 Nov 2024 04:46:11 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '2887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 02 Nov 2024 04:46:11 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=1",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=1&limit=1",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Sat, 02 Nov 2024 04:46:11 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Nov 2024 04:46:13 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 2039ed31-c340-48cf-a8b0-fbdc4a51cefb
+      Sp-Trace-Id:
+      - 40c23399ffe5a946
+      X-Envoy-Upstream-Service-Time:
+      - '13'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 02 Nov 2024 04:46:13 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '2887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 02 Nov 2024 04:46:13 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=1",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=1&limit=1",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Sat, 02 Nov 2024 04:46:13 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Nov 2024 04:46:26 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 71fa279f-20f7-4c5e-90e2-a2ba8b3f197e
+      Sp-Trace-Id:
+      - cc4c94c35d2980e9
+      X-Envoy-Upstream-Service-Time:
+      - '9'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 02 Nov 2024 04:46:26 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '2887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 02 Nov 2024 04:46:26 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=1",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=1&limit=1",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Sat, 02 Nov 2024 04:46:26 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Nov 2024 04:46:28 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - d1c2fd8f-e136-456b-a1d6-4a85da0c37fd
+      Sp-Trace-Id:
+      - 770391ebaee9cb76
+      X-Envoy-Upstream-Service-Time:
+      - '12'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 02 Nov 2024 04:46:28 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '2887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 02 Nov 2024 04:46:28 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=1",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=1&limit=1",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Sat, 02 Nov 2024 04:46:28 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Nov 2024 04:47:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 2cb40998-ba19-4f8a-95e0-0e3a3d880ba6
+      Sp-Trace-Id:
+      - 2581d0d6130c0c6c
+      X-Envoy-Upstream-Service-Time:
+      - '11'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 02 Nov 2024 04:47:49 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '2887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 02 Nov 2024 04:47:49 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=1",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=1&limit=1",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Sat, 02 Nov 2024 04:47:49 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Nov 2024 04:47:50 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - e6206d95-0de6-4d19-b2b3-ea75a8ebb8c0
+      Sp-Trace-Id:
+      - 6469f8b5a45df2fb
+      X-Envoy-Upstream-Service-Time:
+      - '9'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 02 Nov 2024 04:47:50 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '2887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 02 Nov 2024 04:47:50 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=1",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=1&limit=1",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Sat, 02 Nov 2024 04:47:50 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Nov 2024 04:48:22 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 6cbae9d9-8792-4e4a-b062-e70772f418ed
+      Sp-Trace-Id:
+      - d11c4f3c75f4227d
+      X-Envoy-Upstream-Service-Time:
+      - '11'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 02 Nov 2024 04:48:22 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '2887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 02 Nov 2024 04:48:22 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=1",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=1&limit=1",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Sat, 02 Nov 2024 04:48:22 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Nov 2024 04:48:25 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - ee5a2109-9b24-4ee5-8882-1a5a977a9a2d
+      Sp-Trace-Id:
+      - e1b46992b6d96efe
+      X-Envoy-Upstream-Service-Time:
+      - '13'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 02 Nov 2024 04:48:25 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '2887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 02 Nov 2024 04:48:25 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=1",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=1&limit=1",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Sat, 02 Nov 2024 04:48:25 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Nov 2024 04:49:21 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 629c6d80-000a-48b5-9e69-ee63ce754783
+      Sp-Trace-Id:
+      - b2777231869e29cd
+      X-Envoy-Upstream-Service-Time:
+      - '15'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 02 Nov 2024 04:49:21 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '2887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 02 Nov 2024 04:49:21 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=1",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=1&limit=1",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Sat, 02 Nov 2024 04:49:21 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Nov 2024 04:49:23 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 2d57e72e-13f8-4249-898b-13fa15403e84
+      Sp-Trace-Id:
+      - a04fef9f5ca1593b
+      X-Envoy-Upstream-Service-Time:
+      - '9'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 02 Nov 2024 04:49:23 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '2887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 02 Nov 2024 04:49:23 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=1",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=1&limit=1",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Sat, 02 Nov 2024 04:49:23 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Nov 2024 04:49:41 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 0b1d625e-be00-40ef-83f4-1c9be454cd4e
+      Sp-Trace-Id:
+      - 4e86cd9434eb5d5b
+      X-Envoy-Upstream-Service-Time:
+      - '12'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 02 Nov 2024 04:49:41 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=2&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '5443'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 02 Nov 2024 04:49:41 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=2",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            }, {
+              "album" : {
+                "album_type" : "compilation",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0LyfQWJT6nXafLPZqxe9Of",
+                  "id" : "0LyfQWJT6nXafLPZqxe9Of",
+                  "name" : "Various Artists",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0LyfQWJT6nXafLPZqxe9Of"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/18pZZsD18yOnN4lzSEXGLU"
+                },
+                "href" : "https://api.spotify.com/v1/albums/18pZZsD18yOnN4lzSEXGLU",
+                "id" : "18pZZsD18yOnN4lzSEXGLU",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273e09d00145e887370586bc97a",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02e09d00145e887370586bc97a",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851e09d00145e887370586bc97a",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "歌手2018 (第九期 Live)",
+                "release_date" : "2018-03-16",
+                "release_date_precision" : "day",
+                "total_tracks" : 8,
+                "type" : "album",
+                "uri" : "spotify:album:18pZZsD18yOnN4lzSEXGLU"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1yAu2FQ7vCnzxZgaVnr3w6"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1yAu2FQ7vCnzxZgaVnr3w6",
+                "id" : "1yAu2FQ7vCnzxZgaVnr3w6",
+                "name" : "华晨宇",
+                "type" : "artist",
+                "uri" : "spotify:artist:1yAu2FQ7vCnzxZgaVnr3w6"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 309162,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "DGA0H2336646"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/5ZyNe74eXYnMCZoHWuZ973"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/5ZyNe74eXYnMCZoHWuZ973",
+              "id" : "5ZyNe74eXYnMCZoHWuZ973",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海 - Live",
+              "popularity" : 28,
+              "preview_url" : "https://p.scdn.co/mp3-preview/b1b18205e6d2d5df460c53cbe7327e4ae76d70c5?cid=<REDACTED>",
+              "track_number" : 5,
+              "type" : "track",
+              "uri" : "spotify:track:5ZyNe74eXYnMCZoHWuZ973"
+            } ],
+            "limit" : 2,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=2&limit=2",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 101
+          }
+        }
+  recorded_at: Sat, 02 Nov 2024 04:49:41 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=%E5%8D%8E%E6%99%A8%E5%AE%87&track_name=%E5%B1%B1%E6%B5%B7%20-%20Live
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Sat, 02 Nov 2024 04:49:42 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1479'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"id":9915013,"name":"山海 - Live","trackName":"山海 - Live","artistName":"华晨宇","albumName":"歌手2018
+        (第九期 Live)","duration":309.0,"instrumental":false,"plainLyrics":"我看著天真的我自己\n出現在沒有我的故事裡\n等待著我的回應\n一個為何至此的原因\n他明白\n他明白\n我給不起\n於是轉身向山里走去\n他明白\n他明白\n我給不起\n於是轉身向大海走去\n我聽著那少年的聲音\n在還有未來的過去\n渴望著美好結局\n卻沒能成為自己\n卻沒能成為自己\n他明白\n他明白\n我給不起\n於是轉身向山里走去\n他明白\n他明白\n我給不起\n於是轉身向大海走去\n頭頂強烈的太陽\n是獎賞還是耳光\n毀於大火的心臟\n從灰燼拔節茁壯\n鋪滿油垢的海洋\n打撈起尊嚴一兩\n殆盡溫度的高崗\n對試探回以凝望\n誤會天真的假想\n在永夜編織方向\n當黑暗掀翻燭光\n你是藏還是不藏\n長風破浪雲飛揚\n敵不過魂歸故鄉\n所愛隔山海茫茫\n為只為一聲迴響\n自己和鏡中對抗\n贏不回詩和遠方\n任世故欲蓋彌彰\n他奮力撕掉偽裝\n轉身間對視過往\n道一句怪人生無常\n他明白\n他明白\n我給不起\n於是轉身向山里走去\n他明白\n他明白\n我給不起\n於是轉身向大海走去\n他明白\n他明白\n他明白\n他明白\n他明白\n他明白\n我給不起\n於是轉身向大海走去\n於是轉身向大海走去","syncedLyrics":null}'
+  recorded_at: Sat, 02 Nov 2024 04:49:42 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Nov 2024 04:49:43 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - f6b8b616-b5f4-4003-9abc-5e4634358180
+      Sp-Trace-Id:
+      - bf4f799f947088c1
+      X-Envoy-Upstream-Service-Time:
+      - '10'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 02 Nov 2024 04:49:43 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '2887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 02 Nov 2024 04:49:43 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=1",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=1&limit=1",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Sat, 02 Nov 2024 04:49:43 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Nov 2024 04:49:46 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - bd9ef487-d896-4ab4-9377-0dc6b0f56050
+      Sp-Trace-Id:
+      - 2987c4f571c35c2c
+      X-Envoy-Upstream-Service-Time:
+      - '11'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 02 Nov 2024 04:49:46 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '2887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 02 Nov 2024 04:49:45 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=1",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=1&limit=1",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Sat, 02 Nov 2024 04:49:46 GMT
 recorded_with: VCR 6.3.1

@@ -15,8 +15,13 @@ module LyricLab
 
       # get song information from Spotify API
       def find(search_string)
-        data = @gateway.track_data(search_string)
-        build_entity(data)
+        data = @gateway.track_data(search_string, 1)
+        build_entity(data['tracks']['items'].first)
+      end
+
+      def find_n(search_string, n)
+        data = @gateway.track_data(search_string, n)
+        data['tracks']['items'].map { |track_data| build_entity(track_data) }
       end
 
       def build_entity(data)
@@ -26,7 +31,7 @@ module LyricLab
       # Extracts entity specific elements from data structure
       class DataMapper
         def initialize(data, _client_id, _client_secret, _gateway_class)
-          @data = data['tracks']['items'][0] # right now we can only parse a single song
+          @data = data # right now we can only parse a single song
           @lyrics_mapper = LyricLab::Lrclib::LyricsMapper.new
         end
 
