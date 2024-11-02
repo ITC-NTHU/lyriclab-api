@@ -11,9 +11,16 @@ module LyricLab
                   key: :lyrics_id
 
       plugin :timestamps, update_on_create: true
+      plugin :whitelist_security
+
+      set_allowed_columns :text, :is_mandarin, :is_instrumental
 
       def self.find_or_create(lyrics_info)
-        first(text: lyrics_info[:text]) || create(lyrics_info)
+        first(text: lyrics_info[:text]) || create(
+          text: lyrics_info[:text],
+          is_mandarin: lyrics_info[:is_mandarin],
+          is_instrumental: lyrics_info[:is_instrumental]
+        )
       end
     end
   end

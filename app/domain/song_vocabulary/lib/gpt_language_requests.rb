@@ -8,14 +8,14 @@ module LyricLab
   module Mixins
     # Analyze lyrics using ChatGPT
     module GptLanguageRequests
-      # iniialize with openai client and path to level mapping
+      # initialize with openai client and path to level mapping
       def initialize(openai, level_mapping_path)
         @openai = openai
         @level_mapping_path = level_mapping_path
         load_level_mapping
       end
 
-      # should get voabulary after filtering from google api
+      # should get vocabulary after filtering from google api
       def get_vocabulary(song)
         # Check if the song has valid lyrics for processing
         unless song.lyrics&.relevant?
@@ -23,45 +23,44 @@ module LyricLab
           return nil
         end
 
-      # Check if lyrics text is empty
-      if song.lyrics.text.nil? || song.lyrics.text.empty?
-        puts "Skipping vocabulary generation: Lyrics text is empty"
-        return nil
-      end
+        # Check if lyrics text is empty
+        if song.lyrics.text.nil? || song.lyrics.text.empty?
+          puts "Skipping vocabulary generation: Lyrics text is empty"
+          return nil
+        end
 
-      message = [
-        { role: 'system', content: 'You are a professional Chinese language teacher. Please analyze the vocabulary in these lyrics.' },
-        { role: 'user', content: "Please identify the vocabulary in these lyrics and respond in this format:
-          Word:[Chinese characters]
-          translate:[English translation]
-          Pinyin:[pinyin with tone marks]
-          Definition:[detailed definition in Chinese]
-          Example:[example sentence in Chinese]
-          Example Pinyin:[pinyin for the example sentence]
-          Example English: [English translation of the example sentence]
+        message = [
+          { role: 'system', content: 'You are a professional Chinese language teacher. Please analyze the vocabulary in these lyrics.' },
+          { role: 'user', content: "Please identify the vocabulary in these lyrics and respond in this format:
+            Word:[Chinese characters]
+            translate:[English translation]
+            Pinyin:[pinyin with tone marks]
+            Definition:[detailed definition in Chinese]
+            Example:[example sentence in Chinese]
+            Example Pinyin:[pinyin for the example sentence]
+            Example English: [English translation of the example sentence]
 
-          Focus on words that would be valuable for language learners. Keep example sentences natural and practical.
-          
-          Lyrics: #{song.lyrics.text}" }
-      ]
+            Focus on words that would be valuable for language learners. Keep example sentences natural and practical.
+            
+            Lyrics: #{song.lyrics.text}" }
+        ]
 
-      begin
-        response = @openai.chat_response(message)
+        begin
+          response = @openai.chat_response(message)
 
-        # Convert response to array of words
-        words = []
-        current_word = {} 
-        
-        response.split("\n").each do |line|
-          line = line.strip
-          if line.start_with?("Word:")
-            # before analyze new word, we should add previus word to words array
-            if current_word[:characters]
-              words << create_word_entity(current_word)
-            end
+          # Convert response to array of words
+          words = []
+          current_word = {}
 
-         # Start a new word
-         current_word = { characters: line.split(":")[1]&.strip }
+          response.split("\n").each do |line|
+            line = line.strip
+            if line.start_with?("Word:")
+              # before analyze new word, we should add previous word to words array
+              if current_word[:characters]
+                words << create_word_entity(current_word)
+              end
+              # Start a new word
+              current_word = { characters: line.split(":")[1]&.strip }
             elsif line.start_with?("English:")
               current_word[:english] = line.split(":")[1]&.strip
             elsif line.start_with?("Pinyin:")
@@ -80,82 +79,67 @@ module LyricLab
             end
           end
 
-            # Cause last word don't have next word to trigger add to words array
-            # so we should add it manually
-            if current_word[:characters]
-              words << create_word_entity(current_word)
-            end
-
-             # Filter words by target level
-             filtered_words = filter_words_by_level(all_words, target_level)
-             puts "Found #{filtered_words.length} words of #{target_level} level"
-            
-             # Return nil if no words match the target level
-             if filtered_words.empty?
-               puts "No vocabulary words found for level: #{target_level}"
-               return nil
-             end
-            
-             # Determine level based on vocabulary mapping
-             # TODO: need to implement this method with level mapping
-             vocabulary_level = determine_language_level(words)
-             Entity::Vocabulary.new(
-              id: nil,
-              language_level: vocabulary_level,
-              words: words
-            )
-
-          rescue StandardError => e
-            puts "Error processing GPT response: #{e.message}"
-            nil
+          # Add the last word
+          if current_word[:characters]
+            words << create_word_entity(current_word)
           end
-        end
 
+          # Filter words by target level
+          filtered_words = filter_words_by_level(words, target_level)
+          puts "Found #{filtered_words.length} words of #{target_level} level"
 
-        private
-
-        # Create new word entity
-        def filter_words_by_level(words, target_level)
-          words.select do |word|
-            @word_levels[word.characters] == target_level
+          # Return nil if no words match the target level
+          if filtered_words.empty?
+            puts "No vocabulary words found for level: #{target_level}"
+            return nil
           end
-        end
 
-        def create_word_entity(word_data)
-          Entity::Word.new(
+          # Determine level based on vocabulary mapping
+          vocabulary_level = determine_language_level(words)
+          Entity::Vocabulary.new(
             id: nil,
-            characters: word_data[:characters],
-            pinyin: word_data[:pinyin] || 'unknown',
-            translation: word_data[:translation] || 'unknown',
-            example_sentence_mandarin: word_data[:example_sentence_mandarin] || 'No example provided',
-            example_sentence_pinyin: word_data[:example_sentence_pinyin] || 'No pinyin provided',
-            example_sentence_english: word_data[:example_sentence_english] || 'No translation provided'
+            language_level: vocabulary_level,
+            words: words
           )
+        rescue StandardError => e
+          puts "Error processing GPT response: #{e.message}"
+          nil
         end
+      end
 
-        # combines English and Chinese definitions into a single string
-        def combine_definitions(english, chinese)
-          parts = []
-          parts << english if english
-          parts << chinese if chinese
-          parts.join(" | ")
+      private
+
+      def filter_words_by_level(words, target_level)
+        words.select do |word|
+          @word_levels[word.characters] == target_level
         end
+      end
 
-       # TODO:should add something for level mapping(EXCEL)
+      def create_word_entity(word_data)
+        Entity::Word.new(
+          id: nil,
+          characters: word_data[:characters],
+          pinyin: word_data[:pinyin] || 'unknown',
+          translation: word_data[:translation] || 'unknown',
+          example_sentence_mandarin: word_data[:example_sentence_mandarin] || 'No example provided',
+          example_sentence_pinyin: word_data[:example_sentence_pinyin] || 'No pinyin provided',
+          example_sentence_english: word_data[:example_sentence_english] || 'No translation provided'
+        )
+      end
 
+      def combine_definitions(english, chinese)
+        parts = []
+        parts << english if english
+        parts << chinese if chinese
+        parts.join(" | ")
+      end
+
+      def load_level_mapping
+        # TODO: should add something for level mapping(EXCEL)
+        @word_levels = {}
       rescue StandardError => e
         puts "Error loading level mapping file: #{e.message}"
         @word_levels = {}  # Use empty hash if loading fails
-      end
-
-      # TODO:add level mapping method
-
-
-
-      
-      rescue StandardError => e
-        puts "Error loading level mapping file: #{e.message}"
-        @word_levels = {}
       end
     end
   end
