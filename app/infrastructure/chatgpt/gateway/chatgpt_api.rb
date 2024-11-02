@@ -7,12 +7,14 @@
 # require 'http'
 # require 'openai'
 
-# module LyricLab
-#   # Library for OpenAI API
-#   class OpenAI
-#     def initialize(api_key)
-#       @api_key = api_key
-#     end
+module LyricLab
+  # Library for OpenAI API
+  class OpenAI
+    def initialize(api_key)
+      raise ArgumentError, "API key cannot be nil" if api_key.nil?
+      raise ArgumentError, "Invalid API key format" unless api_key.start_with?('sk-')
+      @api_key = api_key
+    end
 
 #     def chat_response(messages)
 #       Request.new(@api_key).chat(messages)
@@ -22,49 +24,67 @@
 #     class Request
 #       API_URL = 'https://api.openai.com/v1/chat/completions'
 
-#       def initialize(api_key)
-#         @api_key = api_key
-#       end
+      def initialize(api_key)
+        @api_key = api_key
+        # puts "Loaded API Key: #{@api_key}"
+      end
 
-#       def chat(messages)
-#         post(API_URL, { model: 'gpt-3.5-turbo', messages: messages })
-#       end
+      def chat(messages)
+        post(API_URL, { model: 'gpt-3.5-turbo', messages: messages })
+      end
 
-#       puts "Loaded API Key: #{@api_key}"
+      def post(url, payload)
+        begin
+          headers = {
+            'Authorization' => "Bearer #{@api_key}",
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json'
+          }
 
-#       def post(url, payload)
-#         body = payload
-#         http_response = RestClient::Request.execute(
-#             method: :post,
-#             url: url,
-#             payload: body.to_json,
-#             headers: {
-#               Authorization: "Bearer #{@api_key}",
-#               content_type: :json,
-#               accept: :json
-#             }
-#           )
+          http_response = RestClient::Request.execute(
+            method: :post,
+            url: url,
+            payload: payload.to_json,
+            headers: headers
+          )
 
-#         Response.new(http_response).tap do |response|
-#             raise(response.error, "HTTP #{response.code}: #{response.body}") unless response.successful?
-#           end.parse
-#         rescue StandardError => e
-#           puts "Error during request: #{e.message}"
-#           nil
-#       end
-#     end
+          Response.new(http_response).tap do |response|
+            unless response.successful?
+              raise(response.error, "HTTP #{response.code}: #{response.body}")
+            end
+          end.parse
 
-#     # Decorates HTTP responses from OpenAI with success/error reporting
-#     class Response < SimpleDelegator
-#       BadRequest = Class.new(StandardError)
-#       Unauthorized = Class.new(StandardError)
-#       NotFound = Class.new(StandardError)
+        rescue RestClient::ExceptionWithResponse => e
+          puts "REST client error: #{e.response}"
+          handle_api_error(e.response)
+          nil
+        rescue StandardError => e
+          puts "Unexpected error: #{e.message}"
+          nil
+        end
+      end
 
-#       HTTP_ERROR = {
-#         400 => BadRequest,
-#         401 => Unauthorized,
-#         404 => NotFound
-#       }.freeze
+private
+  def handle_api_error(response)
+    error_body = JSON.parse(response.body)
+    error_message = error_body['error']['message'] rescue "Unknown error"
+    puts "API Error: #{error_message}"
+  end
+  end
+
+    # Decorates HTTP responses from OpenAI with success/error reporting
+    class Response < SimpleDelegator
+      BadRequest = Class.new(StandardError)
+      Unauthorized = Class.new(StandardError)
+      NotFound = Class.new(StandardError)
+      # RateLimitExceeded = Class.new(StandardError)
+
+      HTTP_ERROR = {
+        '400' => BadRequest,
+        '401' => Unauthorized,
+        '404' => NotFound
+        # '429' => RateLimitExceeded
+      }.freeze
 
 #       def successful?
 #         HTTP_ERROR.keys.none?(code)
@@ -74,34 +94,42 @@
 #         HTTP_ERROR[code]
 #       end
 
-#       def parse
-#         JSON.parse(__getobj__.body)['choices'][0]['message']['content']
-#       end
-#     end
-#   end
-# end
-
-# # secret.yaml for api
-# secrets_path = File.expand_path('../../../../../config/secrets.yml', __FILE__)
-# secrets = YAML.load_file(secrets_path)
-# API_KEY = secrets['openai_api_key']
+      def parse
+        response_body = JSON.parse(__getobj__.body)
+        response_body['choices'][0]['message']['content']
+      rescue JSON::ParserError => e
+        nil
+      end
+    end
+  end
+end
 
 
-# api_client = LyricLab::OpenAI.new(API_KEY)
+# secret.yaml for api
+secrets_path = File.expand_path('../../../../../config/secrets.yml', __FILE__)
+secrets = YAML.load_file(secrets_path)
+environment = ENV['RACK_ENV'] || 'development'
 
-# # example
-# messages = [
-#   { role: 'user', content: '告五人，好不容易' }
-# ]
+API_KEY = if secrets.is_a?(Hash) && secrets.key?(environment)
+  secrets[environment]['OPENAI_API_KEY']
+else
+  secrets['OPENAI_API_KEY']
+end
+
+api_client = LyricLab::OpenAI.new(API_KEY)
+# example
+messages = [
+  { role: 'user', content: '好不容易歌詞' }
+]
 
 # response = api_client.chat_response(messages)
 
-# if response
-#   puts "response: #{response}"
+if response
+  output_path = File.expand_path('../../../../../spec/fixtures/chat_response.yml', __FILE__)
 
-#   File.open('spec/fixtures/chat_response.yml', 'w') do |file|
-#     file.write({ response: response }.to_yaml)
-#   end
-# else
-#   puts 'something wrong'
-# end
+  # puts "Writing response to: #{output_path}"
+
+  File.open(output_path, 'w') do |file|
+    file.write({ response: response }.to_yaml)
+  end
+    end

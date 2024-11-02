@@ -65,3 +65,7 @@ group :development do
   gem 'rubocop-rake'
   gem 'ruby-lsp'
 end
+
+# gpt language
+gem 'rest-client', '~> 2.1'
+gem 'ruby-openai', '~> 6.3'
