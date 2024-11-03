@@ -42,6 +42,7 @@ module LyricLab
           LyricLab::Entity::Song.new(
             id: nil,
             title:,
+            # vocabulary: nil,
             artist_name_string:,
             lyrics: lyrics,
             spotify_id:,
@@ -99,7 +100,7 @@ module LyricLab
         end
 
         def vocabulary
-
+          nil
         end
 
         def explicit
