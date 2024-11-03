@@ -34,6 +34,10 @@ module LyricLab
       def self.find_or_create(entity)
         Database::LyricsOrm.find_or_create(entity.to_attr_hash)
       end
+
+      def self.find_song_id(song_id)
+        Database::SongOrm.first(id: song_id).lyrics
+      end
     end
   end
 end

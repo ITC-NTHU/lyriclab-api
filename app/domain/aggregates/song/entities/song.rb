@@ -23,7 +23,7 @@ module LyricLab
       attribute :cover_image_url_medium, Strict::String.optional
       attribute :cover_image_url_small, Strict::String.optional
       attribute :is_instrumental, Strict::Bool.optional
-      # attribute :vocabulary, Vocabulary
+      attribute :vocabulary, Instance(Vocabulary)
       attribute :lyrics, Lyrics
       attribute :explicit, Strict::Bool
 
@@ -35,12 +35,12 @@ module LyricLab
       # end
 
       def to_attr_hash
-        to_hash.except(:id, :lyrics, :is_instrumental)
+        to_hash.except(:id, :lyrics, :is_instrumental, :vocabulary)
       end
 
-      def initialize_vocabulary(language_level)
-        @vocabulary = Vocabulary.new(language_level, @lyrics.unique_words)
-      end
+      # def initialize_vocabulary(language_level)
+      #   @vocabulary = Vocabulary.new(language_level, @lyrics.unique_words)
+      # end
 
       def relevant?
         !@is_instrumental and @lyrics.is_mandarin

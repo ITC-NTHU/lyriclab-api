@@ -9,8 +9,13 @@ module LyricLab
       many_to_one :lyrics,
                   class: :'LyricLab::Database::LyricsOrm'
 
+      many_to_one :vocabulary,
+                  class: :'LyricLab::Database::VocabularyOrm',
+                  key: :vocabulary_id,
+                  primary_key: :id,
+                  table: :vocabularies
+
       plugin :timestamps, update_on_create: true
-      plugin :whitelist_security
     end
   end
 end

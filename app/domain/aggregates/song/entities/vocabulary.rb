@@ -2,33 +2,31 @@
 
 require 'dry-types'
 require 'dry-struct'
+require 'dry-initializer'
 
 require_relative '../values/word'
 
 module LyricLab
   module Entity
-    # Domain Entity for Vocabulary
-    class Vocabulary < Dry::Struct
-      include Dry.Types
+    class Vocabulary
+      extend Dry::Initializer
 
-      def initialize(language_level, unfiltered_words)
-        @language_level = language_level
-        @filtered = to_filter(unfiltered_words)
-        @words = @filtered.map { |word_string| Value::Word.new(word_string) }
+      option :id, proc(&:to_i), optional: true
+      option :language_level, proc(&:to_s), optional: true
+      option :filtered_words, default: proc { [] }
+
+      attr_accessor :language_level, :filtered_words
+
+      def to_attr_hash
+        {
+          language_level: language_level,
+        }
       end
 
-      #def to_attr_hash
-      #  to_hash.except(:id, :words)
-      #end
-
-      def to_filter(unfiltered)
-        # returns list of strings
-        ['好', '不好']
+      def gen_filtered_words(text)
+        raise 'Language Level hasn\'t been defined yet' if language_level.nil?
+        self.filtered_words = LyricLab::Vocabulary::VocabularyFactory.new.create_filtered_words_from_text(text, language_level)
       end
-
-      # TODO
-      #implement filtering and adding word item
-
     end
   end
 end

@@ -11,8 +11,7 @@ Sequel.migration do
       String     :translation, null: false
       String     :pinyin, null: false
       String     :word_type
-
-      String     :easy_sentence, null: false
+      String     :example_sentence
 
       DateTime :created_at
       DateTime :updated_at

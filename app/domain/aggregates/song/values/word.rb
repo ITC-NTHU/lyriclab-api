@@ -5,7 +5,7 @@ require 'dry-struct'
 
 module LyricLab
   module Entity
-    # Value Entitiy for Word
+    # Domain entity for lyrics
     class Word < Dry::Struct
       include Dry.Types
 
@@ -14,13 +14,12 @@ module LyricLab
       attribute :translation, Strict::String
       attribute :pinyin, Strict::String
       attribute :word_type, Strict::String.optional
-      attribute :example_sentence_mandarin, Strict::String
-      attribute :example_sentence_pinyin, Strict::String
-      attribute :example_sentence_english, Strict::String
+      attribute :example_sentence, Strict::String.optional
 
       def to_attr_hash
-        to_hash.except(:id)
+       to_hash.except(:id)
       end
+
     end
   end
 end

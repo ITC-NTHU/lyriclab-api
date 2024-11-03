@@ -7,6 +7,7 @@ Sequel.migration do
     create_table(:songs) do
       primary_key :id
       foreign_key :lyrics_id, :lyrics
+      foreign_key :vocabulary_id, :vocabularies
 
       String     :title, null: false
       String     :spotify_id, null: false

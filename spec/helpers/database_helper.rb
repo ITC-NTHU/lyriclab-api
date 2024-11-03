@@ -8,6 +8,9 @@ module DatabaseHelper
     LyricLab::App.db.run('PRAGMA foreign_keys = OFF')
     LyricLab::Database::SongOrm.map(&:destroy) # TODO: check what has to be destroyed (all ORMs should be destroyed)
     LyricLab::Database::LyricsOrm.map(&:destroy)
+    LyricLab::Database::VocabularyOrm.map(&:destroy)
+    LyricLab::Database::WordOrm.map(&:destroy)
+    LyricLab::Database::RecommendationOrm.map(&:destroy)
     LyricLab::App.db.run('PRAGMA foreign_keys = ON')
   end
 end

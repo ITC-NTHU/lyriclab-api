@@ -8,6 +8,7 @@
 # require 'openai'
 
 module LyricLab
+  # TODO put the Class into the ChatGPT module
   # Library for OpenAI API
   class OpenAI
     def initialize(api_key)

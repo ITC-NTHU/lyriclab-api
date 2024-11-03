@@ -2,6 +2,8 @@
 
 require_relative 'songs'
 require_relative 'lyrics'
+require_relative 'vocabularies'
+require_relative 'words'
 
 module LyricLab
   module Repository
@@ -9,7 +11,9 @@ module LyricLab
     class For
       ENTITY_REPOSITORY = {
         Entity::Song => Songs,
-        Entity::Lyrics => Lyrics
+        Entity::Lyrics => Lyrics,
+        Entity::Vocabulary => Vocabularies,
+        Entity::Word => Words
       }.freeze
 
       def self.klass(entity_klass)

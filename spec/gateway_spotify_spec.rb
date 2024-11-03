@@ -13,7 +13,6 @@ describe 'Test Spotify API library' do
   after do
     VcrHelper.eject_vcr
   end
-  puts "Google key: #{GOOGLE_CLIENT_KEY}"
   describe 'Song information' do
     it 'HAPPY: should provide correct song attributes' do
       song = LyricLab::Spotify::SongMapper

@@ -39,15 +39,17 @@ module LyricLab
       def self.rebuild_entity(db_record)
         return nil unless db_record
         lyrics = Lyrics.rebuild_entity(db_record.lyrics)
+        vocabulary = Vocabularies.rebuild_entity(db_record.vocabulary)
         Entity::Song.new(
           db_record.to_hash.merge(
             lyrics: lyrics,
+            vocabulary: vocabulary,
             is_instrumental: db_record.lyrics.is_instrumental
           )
         )
       end
 
-      # Helper class to persist project and its members to database
+      # Helper class to persist song and its lyrics to database
       class PersistSong
         def initialize(entity)
           @entity = entity
@@ -59,9 +61,11 @@ module LyricLab
 
         def call
           lyrics = Lyrics.find_or_create(@entity.lyrics)
+          vocabulary = Vocabularies.find_or_create(@entity.vocabulary)
 
           create_song.tap do |db_song|
             db_song.update(lyrics:)
+            db_song.update(vocabulary:)
           end
         end
       end
