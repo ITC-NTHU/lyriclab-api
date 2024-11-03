@@ -24,8 +24,8 @@ module LyricLab
 
       # GET /
       routing.root do
-        songs = Repository::For.klass(Entity::Song).all
-        view 'home', locals: { songs: }
+        recommendations = Repository::For.klass(Entity::Recommendation).top_searched_songs
+        view 'home', locals: { recommendations: }
       end
 
       # GET /search
@@ -38,6 +38,9 @@ module LyricLab
             song = Spotify::SongMapper
                    .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
                    .find(search_string)
+
+            recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.spotify_id)
+            Repository::For.entity(recommendation).create(recommendation)
             # Add song to database if it doesn't already exist
             begin
               Repository::For.entity(song).create(song)

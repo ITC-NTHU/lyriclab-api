@@ -4,7 +4,7 @@ require 'sequel'
 
 module LyricLab
   module Database
-    # Object Relational Mapper for Project Entities
+    # Object Relational Mapper for Lyrics Entities
     class LyricsOrm < Sequel::Model(:lyrics)
       one_to_many :song,
                   class: :'LyricLab::Database::SongOrm',
