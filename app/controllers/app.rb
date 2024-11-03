@@ -17,8 +17,8 @@ module LyricLab
     # Constants
     SPOTIFY_CLIENT_ID = LyricLab::App.config.SPOTIFY_CLIENT_ID
     SPOTIFY_CLIENT_SECRET = LyricLab::App.config.SPOTIFY_CLIENT_SECRET
-    GOOGLE_CLIENT_KEY = LyricLab::App.config.GOOGLE_KEY
-    
+    GOOGLE_CLIENT_KEY = LyricLab::App.config.GOOGLE_CLIENT_KEY
+
     route do |routing|
       routing.assets # load CSS
 
