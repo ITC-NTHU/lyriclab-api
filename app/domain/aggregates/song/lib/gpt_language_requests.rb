@@ -121,9 +121,10 @@ module LyricLab
           characters: word_data[:characters],
           pinyin: word_data[:pinyin] || 'unknown',
           translation: word_data[:translation] || 'unknown',
-          example_sentence_mandarin: word_data[:example_sentence_mandarin] || 'No example provided',
-          example_sentence_pinyin: word_data[:example_sentence_pinyin] || 'No pinyin provided',
-          example_sentence_english: word_data[:example_sentence_english] || 'No translation provided'
+          example_sentence: word_data[:example_sentence] || 'No example provided'
+          #example_sentence_mandarin: word_data[:example_sentence_mandarin] || 'No example provided',
+          #example_sentence_pinyin: word_data[:example_sentence_pinyin] || 'No pinyin provided',
+          #example_sentence_english: word_data[:example_sentence_english] || 'No translation provided'
         )
       end
 
