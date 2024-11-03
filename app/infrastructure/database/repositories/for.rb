@@ -14,8 +14,7 @@ module LyricLab
         Entity::Song => Songs,
         Entity::Lyrics => Lyrics,
         Entity::Vocabulary => Vocabularies,
-        Entity::Word => Words
-        Entity::Lyrics => Lyrics,
+        Entity::Word => Words,
         Entity::Recommendation => Recommendations
       }.freeze
 
