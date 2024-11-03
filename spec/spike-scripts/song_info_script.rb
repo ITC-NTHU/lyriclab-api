@@ -65,11 +65,15 @@ puts "Found song id: #{song_id}"
 song_info = get_song_info(song_id, config)
 puts "Found song info: #{song_info}"
 
-spotify_results['song_name'] = song_info['name']
-spotify_results['artist_name'] = song_info['artists'][0]['name']
-spotify_results['album'] = song_info['album']['name']
+spotify_results['title'] = song_info['name']
+spotify_results['artist_name_string'] = song_info['artists'][0]['name']
+spotify_results['album_name'] = song_info['album']['name']
 spotify_results['release_date'] = song_info['album']['release_date']
 spotify_results['duration'] = song_info['duration_ms']
+spotify_results['cover_image_url_big'] = song_info['album']['images'][0]['url']
+spotify_results['cover_image_url_medium'] = song_info['album']['images'][1]['url']
+spotify_results['cover_image_url_small'] = song_info['album']['images'][2]['url']
+spotify_results['explicit'] = song_info['explicit']
 
 # add to return popularity,preview_url
 spotify_results['popularity'] = song_info['popularity']
