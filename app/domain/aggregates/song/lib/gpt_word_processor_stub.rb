@@ -8,7 +8,7 @@ module LyricLab
     class GptWordProcessorStub
       # hi carrie, you can start to implement the GPT library here
 
-      def initialize(@openai)
+      def initialize(openai)
         # do something
         @openai = openai
       end
@@ -22,12 +22,12 @@ module LyricLab
         你好
         風
         雲
-        天空 
-        
+        天空
+
         #{text}" }
         ]
-        
-        response = @openai.chat(extract_message)
+
+        response = @openai.chat_response(extract_message)
         response.split("\n")
       end
 
@@ -108,9 +108,10 @@ module LyricLab
           if current_word[:characters]
             words << current_word
           end
-
+        end
         return words
       end
+
       def combine_definitions(english, chinese)
         parts = []
         parts << english if english
@@ -118,5 +119,4 @@ module LyricLab
         parts.join(" | ")
       end
     end
-  # end
 end

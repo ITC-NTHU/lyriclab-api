@@ -23,9 +23,11 @@ module LyricLab
         }
       end
 
-      def gen_filtered_words(text)
+      def gen_filtered_words(text, openai_api_key)
         raise 'Language Level hasn\'t been defined yet' if language_level.nil?
-        self.filtered_words = LyricLab::Vocabulary::VocabularyFactory.new.create_filtered_words_from_text(text, language_level)
+        openai_api = LyricLab::OpenAI.new(openai_api_key)
+        voc_factory = LyricLab::Vocabulary::VocabularyFactory.new(openai_api)
+        self.filtered_words = voc_factory.create_filtered_words_from_text(text, language_level)
       end
     end
   end

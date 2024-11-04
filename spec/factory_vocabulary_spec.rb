@@ -24,9 +24,10 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
              .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
              .find(SONG_NAME)
       song.vocabulary.language_level = 'novice1'
-      song.vocabulary.gen_filtered_words(song.lyrics.text)
+      song.vocabulary.gen_filtered_words(song.lyrics.text, OPENAI_API_KEY)
 
       _(song.vocabulary.filtered_words).wont_be_empty
+      puts "Words: #{song.vocabulary.filtered_words.map{|word| word.inspect}}"
       _(song.vocabulary.language_level).must_equal('novice1')
     end
 
@@ -35,7 +36,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
              .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
              .find(SONG_NAME)
       song.vocabulary.language_level = 'novice1'
-      song.vocabulary.gen_filtered_words(song.lyrics.text)
+      song.vocabulary.gen_filtered_words(song.lyrics.text, OPENAI_API_KEY)
       # puts "Before: #{LyricLab::Database::VocabularyOrm.all[-1].filtered_words.first.characters}"
       # puts "Before: LL #{song.vocabulary.language_level}"
       # puts "Before: Words #{song.vocabulary.filtered_words.first.characters}"

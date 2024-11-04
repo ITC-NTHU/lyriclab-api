@@ -6,9 +6,9 @@ module LyricLab
     # Data Factory: Vocabulary from lyrics text
     class VocabularyFactory
       include Mixins::WordProcessor
-      def initialize()
+      def initialize(openai_api)
         # @GPT = LyricLab::Mixins:GptLanguageRequests.new(openai, level_mapping_path)
-        @GPT = GptWordProcessorStub.new()
+        @GPT = GptWordProcessorStub.new(openai_api)
       end
 
       def create_vocabulary_from_text(text, language_level)
@@ -32,9 +32,9 @@ module LyricLab
         # check which words we already have in the database
         database_word_objects, gpt_words = filter_existing_and_new_words(filtered_words)
 
-        gpt_word_data = @GPT.get_words_metadata(gpt_words)
+        gpt_word_data   = @GPT.get_words_metadata(gpt_words)
         # gpt_word_data should be a list of hashes in this format:
-        # [{id:,
+        # [{
         # characters:,
         # pinyin:,
         # translation:,
