@@ -8,6 +8,7 @@ module VcrHelper
   CASSETTES_FOLDER = 'spec/fixtures/cassettes'
   LRCLIB_CASSETTE = 'lrclib_api'
   SPOTIFY_CASSETTE = 'spotify_api'
+  OPENAI_CASSETTE = 'openai_api'
 
   def self.setup_vcr
     VCR.configure do |config|
@@ -54,6 +55,23 @@ module VcrHelper
       match_requests_on: %i[method uri headers]
     )
   end
+
+    # For Gpt
+    def self.configure_vcr_for_openai
+      VCR.configure do |config|
+        config.filter_sensitive_data('<GPT_API_KEY>') { ENV['GPT_API_KEY'] || OPENAI_API_KEY }
+        config.filter_sensitive_data('<AUTHORIZATION>') do |interaction|
+          auth_header = interaction.request.headers['Authorization']&.first
+          auth_header if auth_header
+        end
+      end
+
+      VCR.insert_cassette(
+        OPENAI_CASSETTE,
+        record: :new_episodes,
+        match_requests_on: %i[method uri headers]
+      )
+    end
 
   def self.eject_vcr
     VCR.eject_cassette

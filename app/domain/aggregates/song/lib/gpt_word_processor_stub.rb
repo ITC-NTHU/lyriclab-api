@@ -34,8 +34,8 @@ module LyricLab
           .reject(&:empty?)
           .uniq
         
-        puts "Extracted words:"
-        puts words
+        # puts "Extracted words:"
+        # puts words
       
         words
       end
@@ -74,10 +74,10 @@ module LyricLab
 
 
         begin
+          # response = @openai.chat_response(message)
+          # puts "Raw response from ChatGPT:"
+          # puts response
           response = @openai.chat_response(message)
-          puts "Raw response from ChatGPT:"
-          puts response
-
           words = []
           current_word = {}
 
