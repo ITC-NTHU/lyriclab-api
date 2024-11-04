@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'helpers/spec_helper'
-TEST_DATA = YAML.safe_load(File.read(File.join(File.dirname(__FILE__), 'fixtures', 'word_processor.yml')))
+TEST_DATA = YAML.safe_load_file(File.join(File.dirname(__FILE__), 'fixtures', 'word_processor.yml'))
 TEST_DATA['language_levels'].map!(&:to_sym)
 
 WordProcessor = LyricLab::Mixins::WordProcessor
@@ -11,15 +11,15 @@ describe 'Test Word Processor library' do
   end
 
   it "HAPPY: should filter the relevant words for language levels: #{TEST_DATA['language_levels']}" do
-  filtered_words_list = [TEST_DATA['words_to_filter']]
-    for cur_language_level in TEST_DATA['language_levels']
+    filtered_words_list = [TEST_DATA['words_to_filter']]
+    (TEST_DATA['language_levels']).each do |cur_language_level|
       filtered_words_list.append(WordProcessor.filter_relevant_words(@words_to_filter, cur_language_level))
       _(filtered_words_list[-1]).wont_equal TEST_DATA['words_to_filter']
       _(filtered_words_list[-1]).wont_equal filtered_words_list[-2]
       _(filtered_words_list[-1]).wont_be_nil
     end
   end
-  it "HAPPY: should filter nothing for the beginner level" do
+  it 'HAPPY: should filter nothing for the beginner level' do
     language_level = :beginner
     filtered_words = WordProcessor.filter_relevant_words(@words_to_filter, language_level)
     _(filtered_words).must_equal @words_to_filter
