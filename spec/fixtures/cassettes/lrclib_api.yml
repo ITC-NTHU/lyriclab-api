@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://lrclib.net/api/get?artist_name=NOARTIST&track_name=%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93
+    uri: https://lrclib.net/api/get?artist_name=NO_ARTIST&track_name=%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93
     body:
       encoding: ASCII-8BIT
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx/1.22.1
       Date:
-      - Tue, 08 Oct 2024 15:26:27 GMT
+      - Mon, 04 Nov 2024 13:51:28 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,7 +35,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
-  recorded_at: Tue, 08 Oct 2024 15:26:28 GMT
+  recorded_at: Mon, 04 Nov 2024 13:51:28 GMT
 - request:
     method: get
     uri: https://lrclib.net/api/get?artist_name=%E5%91%8A%E4%BA%94%E4%BA%BA&track_name=%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93
@@ -57,7 +57,7 @@ http_interactions:
       Server:
       - nginx/1.22.1
       Date:
-      - Tue, 08 Oct 2024 15:26:29 GMT
+      - Mon, 04 Nov 2024 13:51:30 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -90,43 +90,7 @@ http_interactions:
         Woo woo woo woo woo woo\n[04:01.70] \n[04:23.50] 我的心 你放在哪裡\n[04:28.23] 或許我
         也不再沈迷\n[04:33.61] 結束不安的遊戲\n[04:39.41] 認輸就可以 自由自在的掏心\n[04:45.29] 終於開口\n[04:49.30]
         說聲好不容易\n[04:53.81] "}'
-  recorded_at: Tue, 08 Oct 2024 15:26:29 GMT
-- request:
-    method: get
-    uri: https://lrclib.net/api/get?artist_name=%E5%91%8A%E4%BA%94%E4%BA%BA&track_name=NOTTL
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - lrclib.net
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - nginx/1.22.1
-      Date:
-      - Tue, 08 Oct 2024 15:26:30 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '84'
-      Connection:
-      - close
-      Vary:
-      - origin, access-control-request-method, access-control-request-headers
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
-  recorded_at: Tue, 08 Oct 2024 15:26:30 GMT
+  recorded_at: Mon, 04 Nov 2024 13:51:30 GMT
 - request:
     method: get
     uri: https://lrclib.net/api/get?artist_name=%E5%91%8A%E4%BA%94%E4%BA%BA&track_name=BAD_NAME
@@ -148,7 +112,7 @@ http_interactions:
       Server:
       - nginx/1.22.1
       Date:
-      - Thu, 24 Oct 2024 04:08:45 GMT
+      - Mon, 04 Nov 2024 13:51:31 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -162,229 +126,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
-  recorded_at: Thu, 24 Oct 2024 04:08:45 GMT
-- request:
-    method: get
-    uri: https://lrclib.net/api/get?artist_name=NO_ARTIST&track_name=%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - lrclib.net
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - nginx/1.22.1
-      Date:
-      - Thu, 24 Oct 2024 05:43:29 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '84'
-      Connection:
-      - close
-      Vary:
-      - origin, access-control-request-method, access-control-request-headers
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
-  recorded_at: Thu, 24 Oct 2024 05:43:29 GMT
-- request:
-    method: post
-    uri: https://translate.googleapis.com/language/translate/v2/detect?key=AIzaSyCvBPrMp04wj0TuRAlhiCODYz37TbI6EwI
-    body:
-      encoding: UTF-8
-      string: '{"q":[null]}'
-    headers:
-      User-Agent:
-      - gcloud-ruby/1.0.0
-      Google-Cloud-Resource-Prefix:
-      - projects/
-      Content-Type:
-      - application/json
-      X-Goog-Api-Client:
-      - gl-ruby/3.3.5 gccl/1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Vary:
-      - Origin
-      - Referer
-      - X-Origin
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Thu, 31 Oct 2024 08:29:17 GMT
-      Server:
-      - ESF
-      Cache-Control:
-      - private
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "error": {
-            "code": 400,
-            "message": "Required Text",
-            "errors": [
-              {
-                "message": "Required Text",
-                "domain": "global",
-                "reason": "required"
-              }
-            ],
-            "details": [
-              {
-                "@type": "type.googleapis.com/google.rpc.BadRequest",
-                "fieldViolations": [
-                  {
-                    "field": "q",
-                    "description": "No text queries provided."
-                  }
-                ]
-              }
-            ]
-          }
-        }
-  recorded_at: Thu, 31 Oct 2024 08:29:16 GMT
-- request:
-    method: get
-    uri: https://lrclib.net/api/get?artist_name=No%20Party%20For%20Cao%20Dong&track_name=%E5%B1%B1%E6%B5%B7
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - lrclib.net
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx/1.22.1
-      Date:
-      - Thu, 31 Oct 2024 10:45:18 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '1357'
-      Connection:
-      - close
-      Vary:
-      - origin, access-control-request-method, access-control-request-headers
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"id":9128396,"name":"山海","trackName":"山海","artistName":"No Party For
-        Cao Dong","albumName":"醜奴兒","duration":251.053,"instrumental":false,"plainLyrics":"我看著
-        天真的我自己\n出現在 沒有我的故事裡\n等待著 我的回應\n一個為何至此 的原因\n\n他明白 他明白 我給不起\n於是轉身向山裡走去\n他明白
-        他明白 我給不起\n於是轉身向大海走去\n\n我聽著那少年的聲音\n在還有未來的過去\n渴望著美好結局\n卻沒能成為自己\n\n他明白 他明白 我給不起\n於是轉身向山裡走去\n他明白
-        他明白 我給不起\n於是轉身向大海走去","syncedLyrics":"[00:25.23] 我看著 天真的我自己\n[00:35.07] \n[00:37.43]
-        出現在 沒有我的故事裡\n[00:49.28] 等待著 我的回應\n[00:58.75] 一個為何至此 的原因\n[01:09.44] \n[01:13.09]
-        他明白 他明白 我給不起\n[01:20.54] 於是轉身向山裡走去\n[01:25.19] 他明白 他明白 我給不起\n[01:32.57] 於是轉身向大海走去\n[01:38.02]
-        \n[02:37.19] 我聽著那少年的聲音\n[02:44.78] 在還有未來的過去\n[02:49.30] 渴望著美好結局\n[02:56.73]
-        卻沒能成為自己\n[03:00.97] 他明白 他明白 我給不起\n[03:08.56] 於是轉身向山裡走去\n[03:12.96] 他明白 他明白
-        我給不起\n[03:20.61] 於是轉身向大海走去\n[03:25.05] "}'
-  recorded_at: Thu, 31 Oct 2024 10:45:18 GMT
-- request:
-    method: post
-    uri: https://translate.googleapis.com/language/translate/v2/detect?key=AIzaSyBzhfxw2x0QOh6FNU4mhK4l05rJLkMSnlI
-    body:
-      encoding: UTF-8
-      string: '{"q":["城市滴答 小巷滴答 沈默滴答\n你的手慢熱的體溫\n方向錯亂 天氣預報 不準 雨傘忘了拿\n我的手無處安放\n包括我的心
-        像旋轉木馬\n\n或許這就是註定\n註定失敗的結局\n成熟帶來的孤寂\n如滾水在心中滿溢\n\n我的心 你放在哪裡\n或許你 根本就不在意\n錯把承諾當有趣\n怎麼對得起
-        你我炙熱的痕跡\n\n你的心 你放在哪裡\n再追究 也毫無意義\n接受慌亂的思緒\n總比到頭來 面對無聲的失去\n無法開口 說聲好不容易\n\n城市滴答
-        小巷滴答 沈默滴答\n你的手慢熱的體溫\n方向錯亂 天氣預報 不準 雨傘忘了拿\n我的手無處安放\n包括我的心 像旋轉木馬\n\n或許這就是註定\n註定失敗的結局\n成熟帶來的孤寂\n如滾水在心中滿溢\n\n我的心
-        你放在哪裡\n或許你 根本就不在意\n錯把承諾當有趣\n怎麼對得起 你我炙熱的痕跡\n\n你的心 你放在哪裡\n再追究 也毫無意義\n接受慌亂的思緒\n總比到頭來
-        面對無聲的失去\n無法開口 說聲好不容易\nWoo woo woo woo woo woo\n\n我的心 你放在哪裡\n或許我 也不再沈迷\n結束不安的遊戲\n認輸就可以
-        自由自在的掏心\n終於開口\n說聲好不容易"]}'
-    headers:
-      User-Agent:
-      - gcloud-ruby/1.0.0
-      Google-Cloud-Resource-Prefix:
-      - projects/
-      Content-Type:
-      - application/json
-      X-Goog-Api-Client:
-      - gl-ruby/3.3.5 gccl/1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Vary:
-      - Origin
-      - Referer
-      - X-Origin
-      Date:
-      - Sat, 02 Nov 2024 10:31:44 GMT
-      Server:
-      - ESF
-      Cache-Control:
-      - private
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "data": {
-            "detections": [
-              [
-                {
-                  "confidence": 1,
-                  "isReliable": false,
-                  "language": "zh-TW"
-                }
-              ]
-            ]
-          }
-        }
-  recorded_at: Sat, 02 Nov 2024 10:31:44 GMT
+  recorded_at: Mon, 04 Nov 2024 13:51:31 GMT
 recorded_with: VCR 6.3.1
