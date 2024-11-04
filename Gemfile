@@ -16,6 +16,7 @@ gem 'dry-types', '~> 1.7'
 # Web Application
 gem 'logger', '~> 1.6'
 gem 'puma', '~>6.0'
+gem 'rack-session', '~> 0.3'
 gem 'roda', '~>3.0'
 gem 'slim', '~>4.0'
 
@@ -51,6 +52,10 @@ group :test do
   gem 'simplecov', '~> 0'
   gem 'vcr', '~> 6'
   gem 'webmock', '~> 3'
+
+  gem 'headless', '~> 2.3'
+  gem 'selenium-webdriver', '~> 4.11'
+  gem 'watir', '~> 7.0'
 end
 
 # Development
@@ -61,6 +66,7 @@ group :development do
   gem 'rubocop'
   gem 'rubocop-minitest'
   gem 'rubocop-rake'
+  gem 'rubocop-sequel'
   gem 'ruby-lsp'
 end
 

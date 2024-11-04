@@ -1,0 +1,19 @@
+meta charset="UTF-8"
+.container
+  hr
+
+  - if suggestions.any?
+    .text-center
+      h2.mb-4 Suggested songs:
+    .table-responsive
+      table.table.table-striped.table-hover
+        thead
+          tr
+            th Title
+            th Artist
+        tbody
+          - puts suggestions
+          - suggestions.each do |suggestion|
+            tr
+              td.font-weight-bold= suggestion.title
+              td.font-weight-bold= suggestion.artist_name_string
