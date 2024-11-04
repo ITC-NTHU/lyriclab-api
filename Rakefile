@@ -16,7 +16,7 @@ end
 
 desc 'Keep rerunnin web app upoon changes'
 task :rerun do
-   sh "rerun -c --ignore 'coverage/*' --ignore 'repostore/*' -- bundle exec puma"
+  sh "rerun -c --ignore 'coverage/*' --ignore 'repostore/*' -- bundle exec puma"
 end
 
 desc 'Generates a 64 by secret for Rack::Session'
@@ -28,6 +28,7 @@ task :new_session_secret do
 end
 
 namespace :db do
+  desc 'Configure database'
   task :config do
     require 'sequel'
     require_relative 'config/environment' # load config info
@@ -35,7 +36,7 @@ namespace :db do
 
     require_relative 'spec/helpers/database_helper'
 
-    def app = LyricLab::App
+    def app = LyricLab::App # rubocop:disable Rake/MethodDefinitionInTask
   end
 
   desc 'Run migrations'

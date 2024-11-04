@@ -1,18 +1,23 @@
 # frozen_string_literal: true
 
+require 'rack'
 require 'roda'
 require 'slim'
+require 'slim/include'
 
 module LyricLab
   # Web App
   class App < Roda
+    plugin :halt
+    plugin :flash
+    plugin :all_verbs
     plugin :render, engine: 'slim', views: 'app/views'
     plugin :public, root: 'app/views/public'
     plugin :assets, path: 'app/views/assets',
                     css: 'style.css', js: 'table_row_click.js'
     plugin :common_logger, $stderr
-    plugin :halt
-    # plugin :flash
+
+    use Rack::MethodOverride # allows HTTP verbs beyond GET/POST (e.g., DELETE)
 
     # Constants
     SPOTIFY_CLIENT_ID = LyricLab::App.config.SPOTIFY_CLIENT_ID

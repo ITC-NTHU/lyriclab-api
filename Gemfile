@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 ruby File.read('.ruby-version').strip
 
 # Configuration and Utilities
-gem 'figaro', '~> 1.0'
+gem 'figaro', '~> 1.2'
 gem 'ostruct'
 gem 'pry'
 gem 'rake'
@@ -42,7 +42,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg' ~> 1.2
 end
 
 # Testing
