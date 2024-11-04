@@ -9,10 +9,8 @@ module LyricLab
     # Analyze lyrics using ChatGPT
     module GptLanguageRequests
       # initialize with openai client and path to level mapping
-      def initialize(openai, level_mapping_path)
-        @openai = openai
-        @level_mapping_path = level_mapping_path
-        load_level_mapping
+      def initialize(openai_api)
+        @openai_api = openai_api
       end
 
       # should get vocabulary after filtering from google api
@@ -21,16 +19,18 @@ module LyricLab
         unless song.lyrics&.relevant?
           puts "Skipping vocabulary generation: Song doesn't have valid Mandarin lyrics"
           return nil
+          @openai_api.chat('give me the vocabulary of this song')
         end
 
         # Check if lyrics text is empty
         if song.lyrics.text.nil? || song.lyrics.text.empty?
-          puts "Skipping vocabulary generation: Lyrics text is empty"
+          puts 'Skipping vocabulary generation: Lyrics text is empty'
           return nil
         end
 
         message = [
-          { role: 'system', content: 'You are a professional Chinese language teacher. Please analyze the vocabulary in these lyrics.' },
+          { role: 'system',
+            content: 'You are a professional Chinese language teacher. Please analyze the vocabulary in these lyrics.' },
           { role: 'user', content: "Please identify the vocabulary in these lyrics and respond in this format:
             Word:[Chinese characters]
             translate:[English translation]
@@ -54,35 +54,31 @@ module LyricLab
 
           response.split("\n").each do |line|
             line = line.strip
-            if line.start_with?("Word:")
+            if line.start_with?('Word:')
               # before analyze new word, we should add previous word to words array
-              if current_word[:characters]
-                words << create_word_entity(current_word)
-              end
+              words << current_word if current_word[:characters]
               # Start a new word
-              current_word = { characters: line.split(":")[1]&.strip }
-            elsif line.start_with?("English:")
-              current_word[:english] = line.split(":")[1]&.strip
-            elsif line.start_with?("Pinyin:")
-              current_word[:pinyin] = line.split(":")[1]&.strip
-            elsif line.start_with?("Definition:")
+              current_word = { characters: line.split(':')[1]&.strip }
+            elsif line.start_with?('English:')
+              current_word[:english] = line.split(':')[1]&.strip
+            elsif line.start_with?('Pinyin:')
+              current_word[:pinyin] = line.split(':')[1]&.strip
+            elsif line.start_with?('Definition:')
               current_word[:translation] = combine_definitions(
                 current_word[:english],
-                line.split(":")[1]&.strip
+                line.split(':')[1]&.strip
               )
-            elsif line.start_with?("Example Mandarin:")
-              current_word[:example_sentence_mandarin] = line.split(":")[1]&.strip
-            elsif line.start_with?("Example Pinyin:")
-              current_word[:example_sentence_pinyin] = line.split(":")[1]&.strip
-            elsif line.start_with?("Example English:")
-              current_word[:example_sentence_english] = line.split(":")[1]&.strip
+            elsif line.start_with?('Example Mandarin:')
+              current_word[:example_sentence] = line.split(':')[1]&.strip
+            elsif line.start_with?('Example Pinyin:')
+              current_word[:example_sentence_pinyin] = line.split(':')[1]&.strip
+            elsif line.start_with?('Example English:')
+              current_word[:example_sentence_english] = line.split(':')[1]&.strip
             end
           end
 
           # Add the last word
-          if current_word[:characters]
-            words << create_word_entity(current_word)
-          end
+          words << current_word if current_word[:characters]
 
           # Filter words by target level
           filtered_words = filter_words_by_level(words, target_level)
@@ -99,7 +95,7 @@ module LyricLab
           Entity::Vocabulary.new(
             id: nil,
             language_level: vocabulary_level,
-            words: words
+            words:
           )
         rescue StandardError => e
           puts "Error processing GPT response: #{e.message}"
@@ -122,9 +118,9 @@ module LyricLab
           pinyin: word_data[:pinyin] || 'unknown',
           translation: word_data[:translation] || 'unknown',
           example_sentence: word_data[:example_sentence] || 'No example provided'
-          #example_sentence_mandarin: word_data[:example_sentence_mandarin] || 'No example provided',
-          #example_sentence_pinyin: word_data[:example_sentence_pinyin] || 'No pinyin provided',
-          #example_sentence_english: word_data[:example_sentence_english] || 'No translation provided'
+          # example_sentence_mandarin: word_data[:example_sentence_mandarin] || 'No example provided',
+          # example_sentence_pinyin: word_data[:example_sentence_pinyin] || 'No pinyin provided',
+          # example_sentence_english: word_data[:example_sentence_english] || 'No translation provided'
         )
       end
 
@@ -132,7 +128,7 @@ module LyricLab
         parts = []
         parts << english if english
         parts << chinese if chinese
-        parts.join(" | ")
+        parts.join(' | ')
       end
 
       def load_level_mapping
@@ -140,7 +136,7 @@ module LyricLab
         @word_levels = {}
       rescue StandardError => e
         puts "Error loading level mapping file: #{e.message}"
-        @word_levels = {}  # Use empty hash if loading fails
+        @word_levels = {} # Use empty hash if loading fails
       end
     end
   end

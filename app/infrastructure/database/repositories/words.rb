@@ -9,17 +9,19 @@ module LyricLab
       end
 
       def self.find_by_characters(characters)
-        rebuild_entity Database::WordOrm.first(characters: characters)
+        rebuild_entity Database::WordOrm.first(characters:)
       end
 
-      def self.rebuild_entity(db_record)
+      def self.rebuild_entity(db_record) # rubocop:disable Metrics/MethodLength
         return nil unless db_record
 
         Entity::Word.new(
           id: db_record.id,
           characters: db_record.characters,
-          pinyin: db_record.pinyin,
           translation: db_record.translation,
+          pinyin: db_record.pinyin,
+          difficulty: db_record.difficulty,
+          definition: db_record.definition,
           word_type: db_record.word_type,
           example_sentence: db_record.example_sentence
         )
@@ -37,8 +39,10 @@ module LyricLab
         Entity::Word.new(
           id: word_hash[:id],
           characters: word_hash[:characters],
-          pinyin: word_hash[:pinyin],
           translation: word_hash[:translation],
+          pinyin: word_hash[:pinyin],
+          difficulty: word_hash[:difficulty],
+          definition: word_hash[:definition],
           word_type: word_hash[:word_type],
           example_sentence: word_hash[:example_sentence]
         )

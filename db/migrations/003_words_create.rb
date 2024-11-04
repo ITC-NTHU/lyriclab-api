@@ -10,6 +10,8 @@ Sequel.migration do
       String     :characters, null: false
       String     :translation, null: false
       String     :pinyin, null: false
+      String     :difficulty
+      String     :definition
       String     :word_type
       String     :example_sentence
 
