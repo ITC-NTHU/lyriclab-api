@@ -387,4 +387,73 @@ http_interactions:
           }
         }
   recorded_at: Sat, 02 Nov 2024 10:31:44 GMT
+- request:
+    method: post
+    uri: https://translate.googleapis.com/language/translate/v2/detect?key=AIzaSyAe9jp9yVxHXRiNLuqwmEj53PXteUbXQOk
+    body:
+      encoding: UTF-8
+      string: '{"q":["城市滴答 小巷滴答 沈默滴答\n你的手慢熱的體溫\n方向錯亂 天氣預報 不準 雨傘忘了拿\n我的手無處安放\n包括我的心
+        像旋轉木馬\n\n或許這就是註定\n註定失敗的結局\n成熟帶來的孤寂\n如滾水在心中滿溢\n\n我的心 你放在哪裡\n或許你 根本就不在意\n錯把承諾當有趣\n怎麼對得起
+        你我炙熱的痕跡\n\n你的心 你放在哪裡\n再追究 也毫無意義\n接受慌亂的思緒\n總比到頭來 面對無聲的失去\n無法開口 說聲好不容易\n\n城市滴答
+        小巷滴答 沈默滴答\n你的手慢熱的體溫\n方向錯亂 天氣預報 不準 雨傘忘了拿\n我的手無處安放\n包括我的心 像旋轉木馬\n\n或許這就是註定\n註定失敗的結局\n成熟帶來的孤寂\n如滾水在心中滿溢\n\n我的心
+        你放在哪裡\n或許你 根本就不在意\n錯把承諾當有趣\n怎麼對得起 你我炙熱的痕跡\n\n你的心 你放在哪裡\n再追究 也毫無意義\n接受慌亂的思緒\n總比到頭來
+        面對無聲的失去\n無法開口 說聲好不容易\nWoo woo woo woo woo woo\n\n我的心 你放在哪裡\n或許我 也不再沈迷\n結束不安的遊戲\n認輸就可以
+        自由自在的掏心\n終於開口\n說聲好不容易"]}'
+    headers:
+      User-Agent:
+      - gcloud-ruby/1.0.0
+      Google-Cloud-Resource-Prefix:
+      - projects/
+      Content-Type:
+      - application/json
+      X-Goog-Api-Client:
+      - gl-ruby/3.3.5 gccl/1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 04 Nov 2024 10:54:03 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "data": {
+            "detections": [
+              [
+                {
+                  "language": "zh-TW",
+                  "confidence": 1,
+                  "isReliable": false
+                }
+              ]
+            ]
+          }
+        }
+  recorded_at: Mon, 04 Nov 2024 10:54:04 GMT
 recorded_with: VCR 6.3.1
