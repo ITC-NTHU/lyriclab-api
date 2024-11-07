@@ -9,6 +9,7 @@ module LyricLab
   # Web App
   class App < Roda
     #plugin :sessions, secret: config.SESSION_SECRET
+    plugin :flash
     plugin :render, engine: 'slim', views: 'app/presentation/view_html'
     plugin :public, root: 'app/views/public'
     plugin :assets, path: 'app/views/assets',
@@ -54,12 +55,13 @@ module LyricLab
             end
 
             # Get song info from APIs
-            begin
+            begin 
               song = Spotify::SongMapper
-                    .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
-                    .find(search_string)
-            rescue BadRequest  => e
+                      .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
+                      .find(search_string)
+            rescue StandardError => err
               flash[:error] = MESSAGES[:songs_not_found]
+              routing.redirect '/'
             end
 
             unless song
@@ -72,14 +74,10 @@ module LyricLab
               routing.redirect '/'
             end
 
-
-
-
-
             # upload suggestion list to session
-            session[:suggestion] ||= []
-            session[:suggestion].append(song)
-            session[:suggestions] = suggestions
+            # session[:suggestion] ||= []
+            # session[:suggestion].append(song)
+            # session[:suggestions] = suggestions
 
             recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.spotify_id)
             Repository::For.entity(recommendation).create(recommendation)
@@ -102,9 +100,9 @@ module LyricLab
         # GET /search
       routing.on 'show-suggestions' do
         routing.get do
-          suggestions = session[:suggestions] || []
-          #puts s
-          view 'suggestion', locals: { suggestions: s}
+          # suggestions = session[:suggestions] || []
+          # #puts s
+          # view 'suggestion', locals: { suggestions: s}
         end 
       end
 
