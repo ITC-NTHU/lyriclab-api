@@ -3,7 +3,7 @@
 require 'sequel'
 
 Sequel.migration do
-  change do
+  up do
     create_table(:songs) do
       primary_key :id
       foreign_key :lyrics_id, :lyrics
@@ -24,5 +24,9 @@ Sequel.migration do
       DateTime :created_at
       DateTime :updated_at
     end
+  end
+
+  down do
+    drop_table(:songs)
   end
 end

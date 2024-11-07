@@ -3,7 +3,7 @@
 require 'sequel'
 
 Sequel.migration do
-  change do
+  up do
     create_table(:words) do
       primary_key :id
 
@@ -18,5 +18,9 @@ Sequel.migration do
       DateTime :created_at
       DateTime :updated_at
     end
+  end
+
+  down do
+    drop_table(:words)
   end
 end

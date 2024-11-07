@@ -38,7 +38,7 @@ module LyricLab
 
         private
 
-        def is_instrumental
+        def is_instrumental # rubocop:disable Naming/PredicateName
           @data['instrumental']
         end
 
@@ -46,7 +46,7 @@ module LyricLab
           @data['plainLyrics']
         end
 
-        def is_mandarin
+        def is_mandarin # rubocop:disable Naming/PredicateName
           data = @language.fetch_response(text)
           return true unless data != 'zh-TW'
 

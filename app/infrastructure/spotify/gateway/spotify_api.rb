@@ -12,9 +12,13 @@ module LyricLab
         @sp_clientsecret = client_secret
       end
 
-      def track_data(search_string, n)
-        raise ArgumentError, 'Maximum number of tracks must be in Range 0-50' if n <= 0 or n > 50
-        Request.new(@sp_client_id, @sp_clientsecret).track(search_string, n).parse
+      def track_data(search_string, number_of_tracks)
+        if number_of_tracks <= 0 || number_of_tracks > 50
+          raise ArgumentError,
+                'Maximum number of tracks must be in Range 0-50'
+        end
+
+        Request.new(@sp_client_id, @sp_clientsecret).track(search_string, number_of_tracks).parse
       end
 
       # Sends out HTTP requests to Spotify
@@ -33,8 +37,8 @@ module LyricLab
           # bearer token expires after 1h
         end
 
-        def track(search_string, n)
-          get("#{API_SEARCH_URL}?q=#{search_string}&type=track&market=TW&limit=#{n}")
+        def track(search_string, number_of_tracks)
+          get("#{API_SEARCH_URL}?q=#{search_string}&type=track&market=TW&limit=#{number_of_tracks}")
         end
 
         def get(url)

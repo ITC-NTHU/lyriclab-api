@@ -16,19 +16,18 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
 
   describe 'Extract words' do
     it 'HAPPY: should extract unique words from Mountain Sea lyrics' do
-      
       # Simulate GPT response
       mock_openai = Object.new
-      def mock_openai.chat_response(messages)
+      def mock_openai.chat_response(_messages)
         "為何\n轉身\n山裡\n大海\n過去\n美好\n結局\n少年\n聲音\n渴望\n未來"
       end
 
-      processor = LyricLab::GptWordProcessorStub.new(mock_openai)
-      
-      # extract unique words from 山海 
-      text = "為何 轉身 山裡 大海 過去 美好 結局 少年 聲音 渴望 未來"
+      processor = LyricLab::GptWordProcessor.new(mock_openai)
+
+      # extract unique words from 山海
+      text = '為何 轉身 山裡 大海 過去 美好 結局 少年 聲音 渴望 未來'
       result = processor.extract_words(text)
-      
+
       _(result).must_be_kind_of Array
       _(result).wont_be_empty
       _(result).must_include '山裡'
@@ -41,13 +40,13 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
 
     it 'HAPPY: should handle empty text' do
       mock_openai = Object.new
-      def mock_openai.chat_response(messages)
-        ""
+      def mock_openai.chat_response(_messages)
+        ''
       end
 
-      processor = LyricLab::GptWordProcessorStub.new(mock_openai)
-      result = processor.extract_words("")
-      
+      processor = LyricLab::GptWordProcessor.new(mock_openai)
+      result = processor.extract_words('')
+
       _(result).must_be_kind_of Array
       _(result).must_be_empty
     end
@@ -56,8 +55,8 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
   describe 'Create word entity' do
     it 'HAPPY: should create word entity with complete data' do
       mock_openai = Minitest::Mock.new
-      processor = LyricLab::GptWordProcessorStub.new(mock_openai)
-      
+      processor = LyricLab::GptWordProcessor.new(mock_openai)
+
       # words in 山海
       word_data = {
         characters: '山裡',
@@ -82,8 +81,8 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
 
     it 'HAPPY: should create word entity with default values for missing data' do
       mock_openai = Object.new
-      processor = LyricLab::GptWordProcessorStub.new(mock_openai)
-      
+      processor = LyricLab::GptWordProcessor.new(mock_openai)
+
       word_data = { characters: '大海' }
       word = processor.create_word_entity(word_data)
 
@@ -100,23 +99,23 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
   describe 'Get words metadata' do
     it 'HAPPY: should process single word metadata correctly' do
       mock_openai = Object.new
-      def mock_openai.chat_response(messages)
+      def mock_openai.chat_response(_messages)
         "Word:未來\n" \
-        "Translate:Future\n" \
-        "Pinyin:wèi lái\n" \
-        "Difficulty:beginner\n" \
-        "Definition:Future time or events\n" \
-        "Word type:N\n" \
-        "Example:讓我們一起期待未來"
+          "Translate:Future\n" \
+          "Pinyin:wèi lái\n" \
+          "Difficulty:beginner\n" \
+          "Definition:Future time or events\n" \
+          "Word type:N\n" \
+          'Example:讓我們一起期待未來'
       end
 
-      processor = LyricLab::GptWordProcessorStub.new(mock_openai)
+      processor = LyricLab::GptWordProcessor.new(mock_openai)
 
       result = processor.get_words_metadata(['未來'])
 
       _(result).must_be_kind_of Array
       _(result.length).must_equal 1
-      
+
       word = result[0]
       _(word[:characters]).must_equal '未來'
       _(word[:pinyin]).wont_be_nil
@@ -127,33 +126,33 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
 
     it 'HAPPY: should handle multiple words from Mountain Sea lyrics' do
       mock_openai = Object.new
-      def mock_openai.chat_response(messages)
+      def mock_openai.chat_response(_messages) # rubocop:disable Metrics/MethodLength
         [
-          "Word:山裡",
-          "Translate:In the mountains",
-          "Pinyin:shān lǐ",
-          "Difficulty:level1",
-          "Definition:Located in the mountains",
-          "Word type:N",
-          "Example:我們去山裡露營",
-          "",  # Separator between words
-          "Word:大海",
-          "Translate:Ocean",
-          "Pinyin:dà hǎi",
-          "Difficulty:novice1",
-          "Definition:The ocean or sea",
-          "Word type:N",
-          "Example:我喜歡看大海"
+          'Word:山裡',
+          'Translate:In the mountains',
+          'Pinyin:shān lǐ',
+          'Difficulty:level1',
+          'Definition:Located in the mountains',
+          'Word type:N',
+          'Example:我們去山裡露營',
+          '', # Separator between words
+          'Word:大海',
+          'Translate:Ocean',
+          'Pinyin:dà hǎi',
+          'Difficulty:novice1',
+          'Definition:The ocean or sea',
+          'Word type:N',
+          'Example:我喜歡看大海'
         ].join("\n")
       end
 
-      processor = LyricLab::GptWordProcessorStub.new(mock_openai)
+      processor = LyricLab::GptWordProcessor.new(mock_openai)
 
-      result = processor.get_words_metadata(['山裡', '大海'])
+      result = processor.get_words_metadata(%w[山裡 大海])
 
       _(result).must_be_kind_of Array
       _(result.length).must_equal 2
-      
+
       # check for 2 specific words
       mountain = result.find { |w| w[:characters] == '山裡' }
       _(mountain).wont_be_nil

@@ -7,7 +7,7 @@ module LyricLab
     class VocabularyFactory
       include Mixins::WordProcessor
       def initialize(openai_api)
-        @gpt = GptWordProcessorStub.new(openai_api)
+        @gpt = GptWordProcessor.new(openai_api)
       end
 
       def create_vocabulary_from_text(text, language_level)

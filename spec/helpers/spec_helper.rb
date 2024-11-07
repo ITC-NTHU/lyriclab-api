@@ -36,12 +36,8 @@ DURATION = '251053'
 SPOTIFY_CLIENT_ID = LyricLab::App.config.SPOTIFY_CLIENT_ID
 SPOTIFY_CLIENT_SECRET = LyricLab::App.config.SPOTIFY_CLIENT_SECRET
 
-
 # For google_API
 GOOGLE_CLIENT_KEY = LyricLab::App.config.GOOGLE_CLIENT_KEY
 
 # For chatgpt_API
 OPENAI_API_KEY = LyricLab::App.config.GPT_API_KEY
-
-
-
