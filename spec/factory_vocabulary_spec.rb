@@ -1,4 +1,3 @@
-
 # frozen_string_literal: false
 
 require_relative 'helpers/spec_helper'
@@ -28,7 +27,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       song.vocabulary.gen_filtered_words(song.lyrics.text, OPENAI_API_KEY)
 
       _(song.vocabulary.filtered_words).wont_be_empty
-      puts "Words: #{song.vocabulary.filtered_words.map(&:inspect)}"
+      # puts "Words: #{song.vocabulary.filtered_words.map(&:inspect)}"
       _(song.vocabulary.language_level).must_equal('novice1')
     end
 

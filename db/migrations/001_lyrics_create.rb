@@ -10,7 +10,6 @@ Sequel.migration do
       String :text
       Bool :is_mandarin
       Bool :is_instrumental
-      String :unique_words
 
       DateTime :created_at
       DateTime :updated_at

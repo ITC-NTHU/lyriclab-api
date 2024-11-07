@@ -5,7 +5,7 @@ module LyricLab
     # Data Mapper: LrcLib -> Lyrics entity
     class LyricsMapper
       def initialize(google_client_key, gateway_class = LyricLab::Lrclib::Api)
-        # TODO @GPT = LyricLab::Mixins::GptLanguageRequests.new(openai, level_mapping_path)
+        # TODO: @GPT = LyricLab::Mixins::GptLanguageRequests.new(openai, level_mapping_path)
         @google_client_key = google_client_key
         @gateway_class = gateway_class
         @gateway = @gateway_class.new
@@ -32,8 +32,7 @@ module LyricLab
             id: nil,
             text:,
             is_instrumental:,
-            is_mandarin:,
-            unique_words:
+            is_mandarin:
           )
         end
 
@@ -49,14 +48,9 @@ module LyricLab
 
         def is_mandarin
           data = @language.fetch_response(text)
-          return true unless data != "zh-TW"
-          return false
-        end
+          return true unless data != 'zh-TW'
 
-        def unique_words
-          # TODO implement ChatGPT api part
-          # @GPT.extract_words(text)
-          ['好', '不好', '還好']
+          false
         end
       end
     end
