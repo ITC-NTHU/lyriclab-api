@@ -96,7 +96,6 @@ module LyricLab
 
         def lyrics
           @lyrics_mapper.find(title, artist_name_string)
-          # TODO: does it work with artist name string or should be just use a single artist?
         end
 
         def vocabulary

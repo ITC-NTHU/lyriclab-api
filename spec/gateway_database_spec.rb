@@ -26,7 +26,6 @@ describe 'Integration Tests of Spotify API and Database' do
 
       rebuilt = LyricLab::Repository::For.entity(song).create(song)
 
-      # TODO: check what we save into database
       _(rebuilt.title).must_equal(song.title)
       _(rebuilt.spotify_id).must_equal(song.spotify_id)
       _(rebuilt.popularity).must_equal(song.popularity)

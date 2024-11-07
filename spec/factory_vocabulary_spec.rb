@@ -6,7 +6,7 @@ require_relative 'helpers/database_helper'
 
 describe 'Integration test of word processing and GPT to test vocabulary functions' do
   VcrHelper.setup_vcr
-  before do # TODO: add vcr for ChatGPT
+  before do
     VcrHelper.configure_vcr_for_gpt
   end
 
