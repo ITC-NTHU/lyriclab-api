@@ -30,7 +30,7 @@ module VcrHelper
         i.request.uri.sub!(%r{://.*#{Regexp.escape(u.host)}}, "://#{u.host}")
 
         if i.request.uri.include?("https://translate.googleapis.com/language/translate/v2/detect")
-          i.ignore!  
+          i.ignore!
         end
       end
 
@@ -67,11 +67,11 @@ module VcrHelper
         i.request.uri.sub!(%r{://.*#{Regexp.escape(u.host)}}, "://#{u.host}")
 
         if i.request.uri.include?("https://translate.googleapis.com/language/translate/v2/detect")
-          i.ignore!  
+          i.ignore!
         end
 
         if i.request.uri.include?("https://accounts.spotify.com/api/token")
-            i.ignore!  
+            i.ignore!
         end
       end
 
@@ -122,7 +122,7 @@ module VcrHelper
       end
 
       VCR.insert_cassette(
-        OPENAI_CASSETTE,
+        GPT_CASSETTE,
         record: :new_episodes,
         match_requests_on: %i[method uri headers]
       )
