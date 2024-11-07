@@ -336,7 +336,7 @@ DEPENDENCIES
   csv
   dry-struct (~> 1.6)
   dry-types (~> 1.7)
-  figaro (~> 1.0)
+  figaro (~> 1.2)
   flog
   google-cloud-translate-v2
   headless (~> 2.3)
@@ -346,7 +346,7 @@ DEPENDENCIES
   minitest (~> 5.20)
   minitest-rg (~> 5.2)
   ostruct
-  pg
+  pg (~> 1.2)
   pry
   puma (~> 6.0)
   rack-session (~> 0.3)

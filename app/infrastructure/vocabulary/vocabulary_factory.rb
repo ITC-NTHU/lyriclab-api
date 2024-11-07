@@ -32,19 +32,13 @@ module LyricLab
         database_word_objects, gpt_words = filter_existing_and_new_words(filtered_words)
 
         gpt_word_data = @gpt.get_words_metadata(gpt_words)
-        # gpt_word_data should be a list of hashes in this format:
-        # [{
-        # characters:,
-        # pinyin:,
-        # translation:,
-        # word_type:,
-        # example_sentence: db_record.example_sentence}]
+        # gpt_word_data should be a list of hashes that contains all the desired attributes of words
         gpt_word_objects = Repository::Words.rebuild_many_from_hash(gpt_word_data)
 
         database_word_objects.concat(gpt_word_objects)
       end
 
-      def filter_existing_and_new_words(words)
+      def filter_existing_and_new_words(words) # rubocop:disable Metrics/MethodLength
         existing_word_objects = []
         new_words = []
         words.each do |word|
