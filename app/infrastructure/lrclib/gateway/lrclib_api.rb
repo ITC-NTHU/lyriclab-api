@@ -6,6 +6,7 @@ module LyricLab
   module Lrclib
     # library for lrclib API
     class Api
+      # :reek:UtilityFunction
       def lyric_data(track_name, artist_name)
         Request.new(track_name, artist_name).get.parse
       end
