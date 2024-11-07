@@ -22,7 +22,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         "為何\n轉身\n山裡\n大海\n過去\n美好\n結局\n少年\n聲音\n渴望\n未來"
       end
 
-      processor = LyricLab::GptWordProcessor.new(mock_openai)
+      processor = LyricLab::OpenAI::GptWordProcessor.new(mock_openai)
 
       # extract unique words from 山海
       text = '為何 轉身 山裡 大海 過去 美好 結局 少年 聲音 渴望 未來'
@@ -44,7 +44,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         ''
       end
 
-      processor = LyricLab::GptWordProcessor.new(mock_openai)
+      processor = LyricLab::OpenAI::GptWordProcessor.new(mock_openai)
       result = processor.extract_words('')
 
       _(result).must_be_kind_of Array
@@ -55,7 +55,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
   describe 'Create word entity' do
     it 'HAPPY: should create word entity with complete data' do
       mock_openai = Minitest::Mock.new
-      processor = LyricLab::GptWordProcessor.new(mock_openai)
+      processor = LyricLab::OpenAI::GptWordProcessor.new(mock_openai)
 
       # words in 山海
       word_data = {
@@ -81,7 +81,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
 
     it 'HAPPY: should create word entity with default values for missing data' do
       mock_openai = Object.new
-      processor = LyricLab::GptWordProcessor.new(mock_openai)
+      processor = LyricLab::OpenAI::GptWordProcessor.new(mock_openai)
 
       word_data = { characters: '大海' }
       word = processor.create_word_entity(word_data)
@@ -109,7 +109,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
           'Example:讓我們一起期待未來'
       end
 
-      processor = LyricLab::GptWordProcessor.new(mock_openai)
+      processor = LyricLab::OpenAI::GptWordProcessor.new(mock_openai)
 
       result = processor.get_words_metadata(['未來'])
 
@@ -146,7 +146,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         ].join("\n")
       end
 
-      processor = LyricLab::GptWordProcessor.new(mock_openai)
+      processor = LyricLab::OpenAI::GptWordProcessor.new(mock_openai)
 
       result = processor.get_words_metadata(%w[山裡 大海])
 

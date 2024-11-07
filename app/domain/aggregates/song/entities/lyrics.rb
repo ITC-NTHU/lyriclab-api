@@ -17,9 +17,6 @@ module LyricLab
       def to_attr_hash
         to_hash.except(:id)
       end
-
-      # TODO
-      # should extract unique words on repository level
     end
   end
 end

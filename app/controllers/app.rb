@@ -60,7 +60,7 @@ module LyricLab
         end
 
         # GET /search/:query
-        routing.on String, String do |spotify_id, title|
+        routing.on String, String do |spotify_id, _title|
           routing.get do
             # Get song from database
             song = Repository::For.klass(Entity::Song).find_spotify_id(spotify_id)
