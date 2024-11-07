@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 module LyricLab
-  # module ChatGPT
-  # TODO put this in the module and in the infrastructure folder
   module OpenAI
     # line credit calculation methods
     class GptWordProcessor
