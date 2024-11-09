@@ -10,13 +10,14 @@ module LyricLab
 
       def self.rebuild_entity(db_record)
         return nil unless db_record
+
         filtered_words = db_record.filtered_words.map do |word|
           Words.rebuild_entity(word)
         end
         Entity::Vocabulary.new(
           id: db_record.id,
           language_level: db_record.language_level,
-          filtered_words: filtered_words
+          filtered_words:
         )
       end
 
@@ -52,18 +53,17 @@ module LyricLab
         end
 
         def call
-          unless @entity.filtered_words.nil?
+          if @entity.filtered_words.nil?
+            create_vocabulary
+          else
             create_vocabulary.tap do |db_vocabulary|
               @entity.filtered_words.each do |word|
                 db_vocabulary.add_filtered_word(Words.find_or_create(word))
               end
             end
-          else
-            create_vocabulary
           end
         end
       end
-
     end
   end
 end

@@ -3,20 +3,19 @@
 module LyricLab
   # module ChatGPT
   # TODO put this in the module and in the infrastructure folder
-
+  module OpenAI
     # line credit calculation methods
-    class GptWordProcessorStub
-
+    class GptWordProcessor
       def initialize(openai)
         # do something
         @openai = openai
       end
 
-      def extract_words(text)
+      def extract_words(text) # rubocop:disable Metrics/MethodLength
         # should return a list of unique words extracted by ChatGPT
-        extract_message =[
-        { role: 'system', content: '你是一個專業的繁體中文老師，可以從文本中提取有意義的繁體中文詞彙單位' },
-        { role: 'user', content: "Extract unique traditional chinese words from the following text:
+        extract_message = [
+          { role: 'system', content: '你是一個專業的繁體中文老師，可以從文本中提取有意義的繁體中文詞彙單位' },
+          { role: 'user', content: "Extract unique traditional chinese words from the following text:
         reply in this format (one word per line):
         你好
         風
@@ -29,15 +28,13 @@ module LyricLab
         response = @openai.chat_response(extract_message)
         response.split("\n")
 
-        words = response.split("\n")
+        response.split("\n")
           .map(&:strip)
           .reject(&:empty?)
           .uniq
-        
+
         # puts "Extracted words:"
         # puts words
-      
-        words
       end
 
       def create_word_entity(word_data)
@@ -53,9 +50,8 @@ module LyricLab
         )
       end
 
-      def get_words_metadata(input_words)
-
-            message = [
+      def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength
+        message = [
           { role: 'system', content: '現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字：' },
           { role: 'user', content: "Please identify these words and respond in this format:
             Word:[繁體中文字]
@@ -71,8 +67,6 @@ module LyricLab
             Words: #{input_words}" }
         ]
 
-
-
         begin
           # response = @openai.chat_response(message)
           # puts "Raw response from ChatGPT:"
@@ -86,36 +80,35 @@ module LyricLab
             case line
             when /^Word:\s*(.+)/
               words << current_word if current_word[:characters]
-              current_word = { characters: $1 }
+              current_word = { characters: ::Regexp.last_match(1) }
             when /^Translate:\s*(.+)/
-              current_word[:english] = $1
+              current_word[:english] = ::Regexp.last_match(1)
             when /^Pinyin:\s*(.+)/
-              current_word[:pinyin] = $1
+              current_word[:pinyin] = ::Regexp.last_match(1)
             when /^Difficulty:\s*(.+)/
-              current_word[:difficulty] = $1
+              current_word[:difficulty] = ::Regexp.last_match(1)
             when /^Definition:\s*(.+)/
-              current_word[:definition] = $1
-              current_word[:translation] = combine_definitions(current_word[:english], $1)
+              current_word[:definition] = ::Regexp.last_match(1)
+              current_word[:translation] = combine_definitions(current_word[:english], ::Regexp.last_match(1))
             when /^Word type:\s*(.+)/
-              current_word[:word_type] = $1
+              current_word[:word_type] = ::Regexp.last_match(1)
             when /^Example:\s*(.+)/
-              current_word[:example_sentence] = $1
+              current_word[:example_sentence] = ::Regexp.last_match(1)
             end
           end
 
           # Add the last word
-          if current_word[:characters]
-            words << current_word
-          end
+          words << current_word if current_word[:characters]
         end
-        return words
+        words
       end
 
       def combine_definitions(english, chinese)
         parts = []
         parts << english if english
         parts << chinese if chinese
-        parts.join(" | ")
+        parts.join(' | ')
       end
     end
+  end
 end

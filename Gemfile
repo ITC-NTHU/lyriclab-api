@@ -33,12 +33,13 @@ gem 'hirb'
 gem 'sequel', '~> 5.0'
 
 # Word Processing
-gem 'tradsim'
 gem 'csv'
+gem 'rexml', '>= 3.3.9'
+gem 'tradsim'
 
 group :development, :test do
-  gem 'sqlite3', '~> 1.0'
   gem 'roo'
+  gem 'sqlite3', '~> 1.0'
 end
 
 group :production do

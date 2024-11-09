@@ -33,7 +33,7 @@ module LyricLab
         end
       end
 
-      def self.rebuild_entity_from_hash(word_hash)
+      def self.rebuild_entity_from_hash(word_hash) # rubocop:disable Metrics/MethodLength
         return nil unless word_hash
 
         Entity::Word.new(

@@ -16,7 +16,7 @@ describe 'Test Spotify API library' do
   describe 'Song information' do
     before do
       @api = LyricLab::Spotify::SongMapper
-      .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
+        .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
     end
 
     it 'HAPPY: should provide correct song attributes' do
@@ -30,7 +30,6 @@ describe 'Test Spotify API library' do
       _(song.cover_image_url_medium).must_equal CORRECT['cover_image_url_medium']
       _(song.cover_image_url_small).must_equal CORRECT['cover_image_url_small']
       _(song.explicit).must_equal CORRECT['explicit']
-
     end
 
     it 'HAPPY: should provide 2 search result songs' do

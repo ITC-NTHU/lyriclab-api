@@ -18,11 +18,20 @@ module LyricLab
     plugin :common_logger, $stderr
 
     use Rack::MethodOverride # allows HTTP verbs beyond GET/POST (e.g., DELETE)
+    plugin :halt
 
     # Constants
     SPOTIFY_CLIENT_ID = LyricLab::App.config.SPOTIFY_CLIENT_ID
     SPOTIFY_CLIENT_SECRET = LyricLab::App.config.SPOTIFY_CLIENT_SECRET
     GOOGLE_CLIENT_KEY = LyricLab::App.config.GOOGLE_CLIENT_KEY
+
+    MESSAGES={
+      empty_search: 'Please enter a song name',
+      songs_not_found: 'Please search for another song',
+      # songs_exist : 'Songs already exist',
+      not_mandarin_songs: 'Please search for a Mandarin song',
+      no_lyrics_found: 'No lyrics found for this song'
+  }.freeze
 
     route do |routing|
       routing.assets # load CSS
@@ -44,6 +53,13 @@ module LyricLab
           # POST /search/
           routing.post do
             search_string = routing.params['search_query']
+           
+            unless !search_string.empty?
+              flash[:error] = MESSAGES[:empty_search]
+              response.status = 400
+              routing.redirect '/'
+            end
+
             # Get song info from APIs
             #song = Spotify::SongMapper
             #  .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
@@ -63,6 +79,37 @@ module LyricLab
               search_results.map { |song| Repository::For.entity(song).create(song) }
               #Repository::For.entity(song).create(song)
             rescue StandardError => e
+            begin 
+              song = Spotify::SongMapper
+                      .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
+                      .find(search_string)
+            rescue StandardError => err
+              flash[:error] = MESSAGES[:songs_not_found]
+              routing.redirect '/'
+            end
+
+            unless song
+              flash[:error] = MESSAGES[:songs_not_found]
+              routing.redirect '/'
+            end
+
+            unless song.lyrics.is_mandarin
+              flash[:error] = MESSAGES[:not_mandarin_songs]
+              routing.redirect '/'
+            end
+
+            # upload suggestion list to session
+            # session[:suggestion] ||= []
+            # session[:suggestion].append(song)
+            # session[:suggestions] = suggestions
+
+            recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.spotify_id)
+            Repository::For.entity(recommendation).create(recommendation)
+            
+            # Add song to database if it doesn't already exist
+            begin
+              Repository::For.entity(song).create(song)
+            rescue StandardError => e # TODO: why error?
               # Handle the case where the song already exists
               puts "Error: #{e.message}"
             end
@@ -89,6 +136,10 @@ module LyricLab
 
             recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.spotify_id)
             Repository::For.entity(recommendation).create(recommendation)
+            unless song
+              flash[:error] = MESSAGES[:empty_search]
+              routing.redirect '/'
+            end
 
             # Show viewer the song
             view 'song', locals: { song: }

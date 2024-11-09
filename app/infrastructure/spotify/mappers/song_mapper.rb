@@ -20,8 +20,8 @@ module LyricLab
         build_entity(data['tracks']['items'].first)
       end
 
-      def find_n(search_string, n)
-        data = @gateway.track_data(search_string, n)
+      def find_n(search_string, number_of_songs)
+        data = @gateway.track_data(search_string, number_of_songs)
         data['tracks']['items'].map { |track_data| build_entity(track_data) }
       end
 
@@ -31,9 +31,9 @@ module LyricLab
 
       # Extracts entity specific elements from data structure
       class DataMapper
-        def initialize(data, _client_id, _client_secret,  _google_client_key, _gateway_class)
+        def initialize(data, _client_id, _client_secret, google_client_key, _gateway_class)
           @data = data # right now we can only parse a single song
-          @lyrics_mapper = LyricLab::Lrclib::LyricsMapper.new(_google_client_key)
+          @lyrics_mapper = LyricLab::Lrclib::LyricsMapper.new(google_client_key)
         end
 
         # rubocop:disable Metrics/MethodLength
@@ -44,7 +44,7 @@ module LyricLab
             title:,
             vocabulary:,
             artist_name_string:,
-            lyrics: lyrics,
+            lyrics:,
             spotify_id:,
             popularity:,
             preview_url:,

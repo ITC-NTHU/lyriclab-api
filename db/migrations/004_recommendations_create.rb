@@ -3,10 +3,10 @@
 require 'sequel'
 
 Sequel.migration do
-  change do
+  up do
     create_table(:recommendations) do
       primary_key :id
-      #foreign_key :song_id, :songs, null: false
+      # foreign_key :song_id, :songs, null: false
 
       String     :title, null: false
       String     :artist_name_string, null: false
@@ -16,5 +16,9 @@ Sequel.migration do
       DateTime :created_at
       DateTime :updated_at
     end
+  end
+
+  down do
+    drop_table(:recommendations)
   end
 end
