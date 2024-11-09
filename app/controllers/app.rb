@@ -26,12 +26,12 @@ module LyricLab
     GOOGLE_CLIENT_KEY = LyricLab::App.config.GOOGLE_CLIENT_KEY
 
     MESSAGES={
-      empty_search: 'Please enter a song name',
+      empty_search: 'Empty search query',
       songs_not_found: 'Please search for another song',
       # songs_exist : 'Songs already exist',
       not_mandarin_songs: 'Please search for a Mandarin song',
       no_lyrics_found: 'No lyrics found for this song'
-  }.freeze
+    }.freeze
 
     route do |routing|
       routing.assets # load CSS
@@ -41,9 +41,7 @@ module LyricLab
       # GET /
       routing.root do
         recommendations = Repository::For.klass(Entity::Recommendation).top_searched_songs
-
         viewable_recommendations = Views::SongsList.new(recommendations)
-
         view 'home', locals: { recommendations: viewable_recommendations }
       end
 
@@ -54,7 +52,7 @@ module LyricLab
           routing.post do
             search_string = routing.params['search_query']
            
-            unless !search_string.empty?
+            if search_string.empty?
               flash[:error] = MESSAGES[:empty_search]
               response.status = 400
               routing.redirect '/'
@@ -66,9 +64,14 @@ module LyricLab
             #  .find(search_string)
 
             search_results = []
-            search_results = Spotify::SongMapper
-              .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
-              .find_n(search_string, 3)
+            begin
+              search_results = Spotify::SongMapper
+                .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
+                .find_n(search_string, 2)
+            rescue StandardError => err
+              flash[:error] = MESSAGES[:songs_not_found]
+              routing.redirect '/'
+            end
 
             # TODO check relevancy
             session[:search_result_ids] = search_results.map(&:spotify_id)
@@ -79,43 +82,26 @@ module LyricLab
               search_results.map { |song| Repository::For.entity(song).create(song) }
               #Repository::For.entity(song).create(song)
             rescue StandardError => e
-            begin 
-              song = Spotify::SongMapper
-                      .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
-                      .find(search_string)
-            rescue StandardError => err
-              flash[:error] = MESSAGES[:songs_not_found]
-              routing.redirect '/'
             end
 
-            unless song
-              flash[:error] = MESSAGES[:songs_not_found]
-              routing.redirect '/'
-            end
+            #unless song
+            #  flash[:error] = MESSAGES[:songs_not_found]
+            #  routing.redirect '/'
+            #end
 
-            unless song.lyrics.is_mandarin
-              flash[:error] = MESSAGES[:not_mandarin_songs]
-              routing.redirect '/'
-            end
+            #unless search_results.map { |song| song.lyrics.is_mandarin }
+            #  flash[:error] = MESSAGES[:not_mandarin_songs]
+            #  routing.redirect '/'
+            #end
 
-            # upload suggestion list to session
-            # session[:suggestion] ||= []
-            # session[:suggestion].append(song)
-            # session[:suggestions] = suggestions
-
-            recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.spotify_id)
-            Repository::For.entity(recommendation).create(recommendation)
-            
-            # Add song to database if it doesn't already exist
-            begin
-              Repository::For.entity(song).create(song)
-            rescue StandardError => e # TODO: why error?
-              # Handle the case where the song already exists
-              puts "Error: #{e.message}"
+            search_results.each do |song|
+              unless song.lyrics.is_mandarin
+                flash[:error] = MESSAGES[:not_mandarin_songs]
+                routing.redirect '/'
+              end
             end
 
             # Redirect viewer to search results page
-
             routing.redirect "search/search_results/#{search_results.map(&:spotify_id).join}" if search_string
           end
         end
@@ -130,17 +116,18 @@ module LyricLab
 
         routing.on 'result', String do |spotify_id|
           routing.get do
-            puts spotify_id
             # Get song from database
             song = Repository::For.klass(Entity::Song).find_spotify_id(spotify_id)
 
-            recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.spotify_id)
-            Repository::For.entity(recommendation).create(recommendation)
             unless song
               flash[:error] = MESSAGES[:empty_search]
               routing.redirect '/'
             end
 
+            # create recommendation
+            recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.spotify_id)
+            Repository::For.entity(recommendation).create(recommendation)
+ 
             # Show viewer the song
             view 'song', locals: { song: }
           end
