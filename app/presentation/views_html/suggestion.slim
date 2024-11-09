@@ -4,16 +4,21 @@ meta charset="UTF-8"
 
   - if suggestions.any?
     .text-center
-      h2.mb-4 Suggested songs:
+      h2.mb-4 Search Results:
     .table-responsive
-      table.table.table-striped.table-hover
+      table class="table table-hover" id="results_table"
         thead
           tr
+            th
             th Title
             th Artist
         tbody
           - puts suggestions
           - suggestions.each do |suggestion|
             tr
+            td 
+              a href=suggestion.result_link
+                button.recommendation-button
+                  i class="fa-regular fa-eye"
               td.font-weight-bold= suggestion.title
-              td.font-weight-bold= suggestion.artist_name_string
+              td.font-weight-bold= suggestion.artist
