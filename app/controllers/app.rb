@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rack'
+require 'rack' # for Rack::MethodOverride
 require 'roda'
 require 'slim'
 require 'slim/include'
@@ -8,7 +8,7 @@ require 'slim/include'
 module LyricLab
   # Web App
   class App < Roda
-    plugin :halt
+    # plugin :sessions, secret: config.SESSION_SECRET
     plugin :flash
     plugin :all_verbs # allows HTTP verbs beyond GET/POST (e.g., DELETE)
     plugin :render, engine: 'slim', views: 'app/presentation/views_html'
@@ -16,6 +16,7 @@ module LyricLab
     plugin :assets, path: 'app/presentation/assets',
                     css: 'style.css', js: 'table_row.js'
     plugin :common_logger, $stderr
+    plugin :halt
 
     use Rack::MethodOverride # allows HTTP verbs beyond GET/POST (e.g., DELETE)
     plugin :halt
