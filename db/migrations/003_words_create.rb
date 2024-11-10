@@ -18,6 +18,11 @@ Sequel.migration do
       DateTime :created_at
       DateTime :updated_at
     end
+
+    alter_table(:words) do
+      add_constraint(:difficulty_constraint,
+                     difficulty: %w[beginner novice1 novice2 level1 level2 level3 level4 level5])
+    end
   end
 
   down do
