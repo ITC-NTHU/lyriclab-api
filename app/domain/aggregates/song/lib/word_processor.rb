@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'tradsim'
 module LyricLab
   module Mixins
     # word processing methods

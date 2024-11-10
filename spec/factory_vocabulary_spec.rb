@@ -26,7 +26,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       song.vocabulary.gen_unique_words(song.lyrics.text, OPENAI_API_KEY)
 
       _(song.vocabulary.unique_words).wont_be_empty
-      # puts "Words: #{song.vocabulary.filtered_words.map(&:inspect)}"
+      puts "Words: #{song.vocabulary.unique_words.map(&:inspect)}"
       # _(song.vocabulary.language_level).must_equal('novice1')
     end
 
@@ -41,7 +41,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       # puts "Before: Words #{song.vocabulary.filtered_words.first.characters}"
       # puts "test: #{song.vocabulary.inspect}"
       rebuilt = LyricLab::Repository::For.entity(song).create(song)
-      # puts "After: Words #{LyricLab::Database::VocabularyOrm.all[-1].filtered_words.first.characters}"
+      puts "After: Words #{LyricLab::Database::VocabularyOrm.all[-1].unique_words.first.characters}"
       # puts "After: LL #{LyricLab::Database::VocabularyOrm.all[-1].language_level}"
 
       # _(rebuilt.vocabulary.language_level).must_equal(song.vocabulary.language_level)

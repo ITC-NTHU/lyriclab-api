@@ -16,7 +16,8 @@ module LyricLab
         end
         Entity::Vocabulary.new(
           id: db_record.id,
-          unique_words:
+          unique_words:,
+          sep_text: db_record.sep_text
         )
       end
 

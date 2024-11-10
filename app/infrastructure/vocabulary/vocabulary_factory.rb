@@ -16,7 +16,10 @@ module LyricLab
       end
 
       def extract_words_from_text(text)
-        unique_words = @gpt.extract_words(text)
+        sep_text = @gpt.extract_separated_text(text)
+        sep_text = Mixins::WordProcessor.convert_to_traditional(sep_text)
+        unique_words = sep_text.split.map(&:strip).reject(&:empty?).uniq
+        # TODO: get sep_text
         # filtered_words = Mixins::WordProcessor.filter_relevant_words(words, language_level.to_sym)
 
         # check which words we already have in the database
@@ -26,7 +29,7 @@ module LyricLab
         # gpt_word_data should be a list of hashes that contains all the desired attributes of words
         gpt_word_objects = Repository::Words.rebuild_many_from_hash(gpt_word_data)
 
-        database_word_objects.concat(gpt_word_objects)
+        [database_word_objects.concat(gpt_word_objects), sep_text]
       end
 
       def separate_existing_and_new_words(words) # rubocop:disable Metrics/MethodLength

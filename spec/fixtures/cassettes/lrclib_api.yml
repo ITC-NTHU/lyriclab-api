@@ -200,7 +200,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Sun, 10 Nov 2024 05:55:21 GMT
+      - Sun, 10 Nov 2024 08:16:20 GMT
       Server:
       - ESF
       Cache-Control:
@@ -223,13 +223,13 @@ http_interactions:
             "detections": [
               [
                 {
+                  "isReliable": false,
                   "confidence": 1,
-                  "language": "zh-TW",
-                  "isReliable": false
+                  "language": "zh-TW"
                 }
               ]
             ]
           }
         }
-  recorded_at: Sun, 10 Nov 2024 05:55:21 GMT
+  recorded_at: Sun, 10 Nov 2024 08:16:19 GMT
 recorded_with: VCR 6.3.1

@@ -1,0 +1,7 @@
+- vocabulary.sep_text.split.each do |word|
+    - unique_word = vocabulary.unique_words.find { |w| w.characters == word }
+    - if unique_word
+        span (data-bs-toggle="tooltip" title=unique_word.translation)
+            = "#{word} "
+    - else
+        = "#{word} "
