@@ -20,7 +20,7 @@ module LyricLab
           characters: db_record.characters,
           translation: db_record.translation,
           pinyin: db_record.pinyin,
-          difficulty: db_record.difficulty,
+          language_level: db_record.language_level,
           definition: db_record.definition,
           word_type: db_record.word_type,
           example_sentence: db_record.example_sentence
@@ -41,7 +41,7 @@ module LyricLab
           characters: word_hash[:characters],
           translation: word_hash[:translation],
           pinyin: word_hash[:pinyin],
-          difficulty: word_hash[:difficulty],
+          language_level: word_hash[:language_level],
           definition: word_hash[:definition],
           word_type: word_hash[:word_type],
           example_sentence: word_hash[:example_sentence]

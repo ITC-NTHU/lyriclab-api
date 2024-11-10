@@ -63,7 +63,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         pinyin: 'shān lǐ',
         translation: 'in the mountains',
         example_sentence: '我們去山裡露營',
-        difficulty: 'level1',
+        language_level: 'level1',
         definition: '在山區或山地中',
         word_type: 'N'
       }
@@ -74,7 +74,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       _(word.pinyin).must_equal 'shān lǐ'
       _(word.translation).must_equal 'in the mountains'
       _(word.example_sentence).must_equal '我們去山裡露營'
-      _(word.difficulty).must_equal 'level1'
+      _(word.language_level).must_equal 'level1'
       _(word.definition).must_equal '在山區或山地中'
       _(word.word_type).must_equal 'N'
     end
@@ -90,7 +90,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       _(word.pinyin).must_equal 'unknown'
       _(word.translation).must_equal 'unknown'
       _(word.example_sentence).must_equal 'No example provided'
-      _(word.difficulty).must_equal 'unknown'
+      _(word.language_level).must_equal 'unknown'
       _(word.definition).must_equal 'No definition provided'
       _(word.word_type).must_equal 'unknown'
     end
@@ -119,7 +119,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       word = result[0]
       _(word[:characters]).must_equal '未來'
       _(word[:pinyin]).wont_be_nil
-      _(word[:difficulty]).wont_be_nil
+      _(word[:language_level]).wont_be_nil
       _(word[:word_type]).wont_be_nil
       _(word[:example_sentence]).wont_be_nil
     end
@@ -158,13 +158,13 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       _(mountain).wont_be_nil
       _(mountain[:word_type]).must_equal 'N'
       _(mountain[:pinyin]).must_equal 'shān lǐ'
-      _(mountain[:difficulty]).must_equal 'level1'
+      _(mountain[:language_level]).must_equal 'level1'
 
       sea = result.find { |w| w[:characters] == '大海' }
       _(sea).wont_be_nil
       _(sea[:word_type]).must_equal 'N'
       _(sea[:pinyin]).must_equal 'dà hǎi'
-      _(sea[:difficulty]).must_equal 'novice1'
+      _(sea[:language_level]).must_equal 'novice1'
     end
   end
 end

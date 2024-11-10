@@ -10,7 +10,7 @@ Sequel.migration do
       String     :characters, null: false
       String     :translation, null: false
       String     :pinyin, null: false
-      String     :difficulty
+      String     :language_level
       String     :definition
       String     :word_type
       String     :example_sentence
@@ -20,8 +20,8 @@ Sequel.migration do
     end
 
     alter_table(:words) do
-      add_constraint(:difficulty_constraint,
-                     difficulty: %w[beginner novice1 novice2 level1 level2 level3 level4 level5])
+      add_constraint(:language_level_constraint,
+                     language_level: %w[beginner novice1 novice2 level1 level2 level3 level4 level5])
     end
   end
 

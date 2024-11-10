@@ -99,7 +99,7 @@ module LyricLab
         end
 
         def vocabulary
-          LyricLab::Entity::Vocabulary.new(id: nil, language_level: nil, filtered_words: [])
+          LyricLab::Entity::Vocabulary.new(id: nil, unique_words: [])
         end
 
         def explicit

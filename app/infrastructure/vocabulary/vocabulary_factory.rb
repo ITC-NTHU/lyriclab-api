@@ -10,26 +10,17 @@ module LyricLab
         @gpt = OpenAI::GptWordProcessor.new(openai_api)
       end
 
-      def create_vocabulary_from_text(text, language_level)
+      def create_unique_words_from_text(text)
         text = Mixins::WordProcessor.convert_to_traditional(text)
-        filtered_words = extract_words_from_text(text, language_level)
-        Entity::Vocabulary.new(
-          language_level:,
-          filtered_words:
-        )
+        extract_words_from_text(text)
       end
 
-      def create_filtered_words_from_text(text, language_level)
-        text = Mixins::WordProcessor.convert_to_traditional(text)
-        extract_words_from_text(text, language_level)
-      end
-
-      def extract_words_from_text(text, language_level)
-        words = @gpt.extract_words(text)
-        filtered_words = Mixins::WordProcessor.filter_relevant_words(words, language_level.to_sym)
+      def extract_words_from_text(text)
+        unique_words = @gpt.extract_words(text)
+        # filtered_words = Mixins::WordProcessor.filter_relevant_words(words, language_level.to_sym)
 
         # check which words we already have in the database
-        database_word_objects, gpt_words = filter_existing_and_new_words(filtered_words)
+        database_word_objects, gpt_words = separate_existing_and_new_words(unique_words)
 
         gpt_word_data = @gpt.get_words_metadata(gpt_words)
         # gpt_word_data should be a list of hashes that contains all the desired attributes of words
@@ -38,7 +29,7 @@ module LyricLab
         database_word_objects.concat(gpt_word_objects)
       end
 
-      def filter_existing_and_new_words(words) # rubocop:disable Metrics/MethodLength
+      def separate_existing_and_new_words(words) # rubocop:disable Metrics/MethodLength
         existing_word_objects = []
         new_words = []
         words.each do |word|
