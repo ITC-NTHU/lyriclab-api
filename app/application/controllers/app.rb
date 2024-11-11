@@ -107,7 +107,9 @@ module LyricLab
         routing.on 'search_results', String do |_search_ids|
           routing.get do
             search_results = session[:search_result_ids].map do |id|
-              Repository::For.klass(Entity::Song).find_spotify_id(id)
+              song = Repository::For.klass(Entity::Song).find_spotify_id(id)
+              LyricLab::Repository::For.entity(song).create(song)
+              song
             end
             viewable_search_results = Views::SongsList.new(search_results)
             view 'suggestion', locals: { suggestions: viewable_search_results }
@@ -128,7 +130,9 @@ module LyricLab
             recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.spotify_id)
             Repository::For.entity(recommendation).create(recommendation)
 
-            song.vocabulary.gen_unique_words(song.lyrics.text, GPT_API_KEY)
+            song.vocabulary.gen_unique_words(song.lyrics.text, GPT_API_KEY) if song.vocabulary.unique_words.empty?
+            LyricLab::Repository::For.entity(song).create(song)
+
             puts "Vocabulary: #{song.vocabulary.inspect}"
             viewable_song = Views::Song.new(song)
 
