@@ -47,7 +47,6 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       song.vocabulary.gen_unique_words(song.lyrics.text, GPT_API_KEY)
 
       LyricLab::Repository::For.entity(song).create(song)
-
       rebuilt = LyricLab::Repository::For.klass(LyricLab::Entity::Song).find_spotify_id(song.spotify_id)
       rebuilt.vocabulary.gen_unique_words(rebuilt.lyrics.text, GPT_API_KEY) if rebuilt.vocabulary.unique_words.empty?
 
@@ -66,6 +65,23 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
 
       _(rebuilt.vocabulary.unique_words.length).wont_equal(0)
       _(rebuilt.vocabulary.unique_words.first.characters).wont_be_empty
+    end
+
+    it 'HAPPY: should be able to retrieve empty vocabulary from db populate it and then persist' do
+      song = LyricLab::Spotify::SongMapper
+        .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
+        .find(CORRECT_SONG['title'])
+      LyricLab::Repository::For.entity(song).create(song)
+
+      rebuilt = LyricLab::Repository::For.klass(LyricLab::Entity::Song).find_spotify_id(song.spotify_id)
+      rebuilt.vocabulary.gen_unique_words(rebuilt.lyrics.text, GPT_API_KEY) if rebuilt.vocabulary.unique_words.empty?
+      LyricLab::Repository::For.entity(rebuilt).create(rebuilt)
+
+      rebuilt2 = LyricLab::Repository::For.klass(LyricLab::Entity::Song).find_spotify_id(song.spotify_id)
+
+      _(rebuilt2.vocabulary.unique_words.length).wont_equal(0)
+      _(rebuilt2.vocabulary.unique_words.length).must_equal(rebuilt.vocabulary.unique_words.length)
+      _(rebuilt2.vocabulary.unique_words.first.characters).wont_be_empty
     end
   end
 end
