@@ -7,9 +7,9 @@ module LyricLab
     # Object Relational Mapper for Project Entities
     class VocabularyOrm < Sequel::Model(:vocabularies)
       many_to_many :filtered_words,
-      class: :'LyricLab::Database::WordOrm',
-      join_table: :vocabularies_filtered_words,
-      left_key: :vocabulary_id, right_key: :filtered_word_id
+                   class: :'LyricLab::Database::WordOrm',
+                   join_table: :vocabularies_filtered_words,
+                   left_key: :vocabulary_id, right_key: :filtered_word_id
 
       one_to_many :song,
                   class: :'LyricLab::Database::SongOrm',

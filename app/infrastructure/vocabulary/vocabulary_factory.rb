@@ -7,16 +7,15 @@ module LyricLab
     class VocabularyFactory
       include Mixins::WordProcessor
       def initialize(openai_api)
-        # @GPT = LyricLab::Mixins:GptLanguageRequests.new(openai, level_mapping_path)
-        @GPT = GptWordProcessorStub.new(openai_api)
+        @gpt = OpenAI::GptWordProcessor.new(openai_api)
       end
 
       def create_vocabulary_from_text(text, language_level)
         text = Mixins::WordProcessor.convert_to_traditional(text)
         filtered_words = extract_words_from_text(text, language_level)
         Entity::Vocabulary.new(
-          language_level: language_level,
-          filtered_words: filtered_words
+          language_level:,
+          filtered_words:
         )
       end
 
@@ -26,26 +25,20 @@ module LyricLab
       end
 
       def extract_words_from_text(text, language_level)
-        words = @GPT.extract_words(text)
+        words = @gpt.extract_words(text)
         filtered_words = Mixins::WordProcessor.filter_relevant_words(words, language_level.to_sym)
 
         # check which words we already have in the database
         database_word_objects, gpt_words = filter_existing_and_new_words(filtered_words)
 
-        gpt_word_data   = @GPT.get_words_metadata(gpt_words)
-        # gpt_word_data should be a list of hashes in this format:
-        # [{
-        # characters:,
-        # pinyin:,
-        # translation:,
-        # word_type:,
-        # example_sentence: db_record.example_sentence}]
+        gpt_word_data = @gpt.get_words_metadata(gpt_words)
+        # gpt_word_data should be a list of hashes that contains all the desired attributes of words
         gpt_word_objects = Repository::Words.rebuild_many_from_hash(gpt_word_data)
 
         database_word_objects.concat(gpt_word_objects)
       end
 
-      def filter_existing_and_new_words(words)
+      def filter_existing_and_new_words(words) # rubocop:disable Metrics/MethodLength
         existing_word_objects = []
         new_words = []
         words.each do |word|
@@ -58,7 +51,6 @@ module LyricLab
         end
         [existing_word_objects, new_words]
       end
-
     end
   end
 end

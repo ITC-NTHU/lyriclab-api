@@ -6,7 +6,7 @@ module DatabaseHelper
   def self.wipe_database
     # Ignore foreign key constraints when wiping tables
     LyricLab::App.db.run('PRAGMA foreign_keys = OFF')
-    LyricLab::Database::SongOrm.map(&:destroy) # TODO: check what has to be destroyed (all ORMs should be destroyed)
+    LyricLab::Database::SongOrm.map(&:destroy)
     LyricLab::Database::LyricsOrm.map(&:destroy)
     LyricLab::Database::VocabularyOrm.map(&:destroy)
     LyricLab::Database::WordOrm.map(&:destroy)

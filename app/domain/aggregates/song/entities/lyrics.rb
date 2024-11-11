@@ -13,17 +13,10 @@ module LyricLab
       attribute :text, Strict::String
       attribute :is_mandarin, Strict::Bool.optional
       attribute :is_instrumental, Strict::Bool.optional
-      attribute :unique_words, Strict::Array.optional
-
-
 
       def to_attr_hash
-       to_hash.except(:id)
+        to_hash.except(:id)
       end
-
-      # TODO
-      # should extract unique words on repository level
-
     end
   end
 end

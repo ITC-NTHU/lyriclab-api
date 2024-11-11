@@ -1,0 +1,37 @@
+
+.container
+  .row
+    .col-md-8.offset-md-2
+      .card
+        .card-body
+          h2.card-title = song.title
+          h4.card-subtitle.mb-2.text-muted = song.artist_name_string
+          
+          p.mb-2
+            strong Album: 
+            = song.album_name
+
+          p.mb-2
+            strong Popularity: 
+            = song.popularity
+          
+          - if song.explicit
+            p.mb-2
+              strong Explicit
+
+          .mt-3
+            img src=song.cover_image_url_medium alt="Album Cover"
+
+          .mt-3
+            - if song.preview_url
+              audio controls=""
+                source src=song.preview_url type="audio/mpeg"
+
+          hr
+          h3.mt-4 Lyrics
+          pre.lyrics
+            = song.lyrics.text
+
+  .row.mt-4
+    .col-md-8.offset-md-2
+      a.btn.btn-primary href="/" Back to Search

@@ -7,9 +7,9 @@ module LyricLab
   module Entity
     # Domain Entity for Songs
     class Recommendation
-
       attr_accessor :spotify_id, :search_cnt, :artist_name_string, :title
 
+      # TODO: @Irina maybe make the attributes read only? (code smell) use attr_reader
       def initialize(title, artist_name_string, search_cnt, spotify_id)
         @title = title
         @artist_name_string = artist_name_string

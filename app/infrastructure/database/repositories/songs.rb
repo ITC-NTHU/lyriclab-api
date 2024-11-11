@@ -10,8 +10,8 @@ module LyricLab
 
       def self.find_from_title_artist(title, artist_name_string)
         db_song = Database::SongOrm
-                  .where(title:, artist_name_string:)
-                  .first
+          .where(title:, artist_name_string:)
+          .first
         rebuild_entity(db_song)
       end
 
@@ -30,7 +30,8 @@ module LyricLab
       end
 
       def self.create(entity)
-        raise 'Song already exists' if find(entity)
+        # raise 'Song already exists' if find(entity)
+        return entity if find(entity)
 
         db_song = PersistSong.new(entity).call
         rebuild_entity(db_song)
@@ -38,12 +39,13 @@ module LyricLab
 
       def self.rebuild_entity(db_record)
         return nil unless db_record
+
         lyrics = Lyrics.rebuild_entity(db_record.lyrics)
         vocabulary = Vocabularies.rebuild_entity(db_record.vocabulary)
         Entity::Song.new(
           db_record.to_hash.merge(
-            lyrics: lyrics,
-            vocabulary: vocabulary,
+            lyrics:,
+            vocabulary:,
             is_instrumental: db_record.lyrics.is_instrumental
           )
         )

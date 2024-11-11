@@ -38,10 +38,6 @@ module LyricLab
         to_hash.except(:id, :lyrics, :is_instrumental, :vocabulary)
       end
 
-      # def initialize_vocabulary(language_level)
-      #   @vocabulary = Vocabulary.new(language_level, @lyrics.unique_words)
-      # end
-
       def relevant?
         !@is_instrumental and @lyrics.is_mandarin
       end

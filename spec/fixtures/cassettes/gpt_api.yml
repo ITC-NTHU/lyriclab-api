@@ -1,0 +1,393 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '2887'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 04 Nov 2024 16:13:12 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=1",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                  "id" : "3HXSUfI76zVZk71UMAeVfp",
+                  "name" : "No Party For Cao Dong",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+                } ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
+                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
+                  "width" : 64
+                } ],
+                "is_playable" : true,
+                "name" : "醜奴兒",
+                "release_date" : "2016-02-19",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
+                "id" : "3HXSUfI76zVZk71UMAeVfp",
+                "name" : "No Party For Cao Dong",
+                "type" : "artist",
+                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
+              } ],
+              "disc_number" : 1,
+              "duration_ms" : 251053,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "TWBN31600010"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
+              "id" : "0VUORVhLmsxKTSwg4P9CrB",
+              "is_local" : false,
+              "is_playable" : true,
+              "name" : "山海",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=1&limit=1",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Mon, 04 Nov 2024 16:13:11 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=No%20Party%20For%20Cao%20Dong&track_name=%E5%B1%B1%E6%B5%B7
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Mon, 04 Nov 2024 16:13:13 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1357'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"id":9128396,"name":"山海","trackName":"山海","artistName":"No Party For
+        Cao Dong","albumName":"醜奴兒","duration":251.053,"instrumental":false,"plainLyrics":"我看著
+        天真的我自己\n出現在 沒有我的故事裡\n等待著 我的回應\n一個為何至此 的原因\n\n他明白 他明白 我給不起\n於是轉身向山裡走去\n他明白
+        他明白 我給不起\n於是轉身向大海走去\n\n我聽著那少年的聲音\n在還有未來的過去\n渴望著美好結局\n卻沒能成為自己\n\n他明白 他明白 我給不起\n於是轉身向山裡走去\n他明白
+        他明白 我給不起\n於是轉身向大海走去","syncedLyrics":"[00:25.23] 我看著 天真的我自己\n[00:35.07] \n[00:37.43]
+        出現在 沒有我的故事裡\n[00:49.28] 等待著 我的回應\n[00:58.75] 一個為何至此 的原因\n[01:09.44] \n[01:13.09]
+        他明白 他明白 我給不起\n[01:20.54] 於是轉身向山裡走去\n[01:25.19] 他明白 他明白 我給不起\n[01:32.57] 於是轉身向大海走去\n[01:38.02]
+        \n[02:37.19] 我聽著那少年的聲音\n[02:44.78] 在還有未來的過去\n[02:49.30] 渴望著美好結局\n[02:56.73]
+        卻沒能成為自己\n[03:00.97] 他明白 他明白 我給不起\n[03:08.56] 於是轉身向山裡走去\n[03:12.96] 他明白 他明白
+        我給不起\n[03:20.61] 於是轉身向大海走去\n[03:25.05] "}'
+  recorded_at: Mon, 04 Nov 2024 16:13:13 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"system","content":"You
+        are a helpful assistant that extracts unique traditional chinese words from
+        a given text."},{"role":"user","content":"Extract unique traditional chinese
+        words from the following text:\n        reply in this format (one word per
+        line):\n        你好\n        風\n        雲\n        天空\n\n        我看著 天真的我自己\n出現在
+        沒有我的故事裡\n等待著 我的回應\n一個為何至此 的原因\n\n他明白 他明白 我給不起\n於是轉身向山裡走去\n他明白 他明白 我給不起\n於是轉身向大海走去\n\n我聽著那少年的聲音\n在還有未來的過去\n渴望著美好結局\n卻沒能成為自己\n\n他明白
+        他明白 我給不起\n於是轉身向山裡走去\n他明白 他明白 我給不起\n於是轉身向大海走去"}]}'
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.3.5p100
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '851'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 Nov 2024 16:13:15 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - itc-sizmvs
+      Openai-Processing-Ms:
+      - '717'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '10000'
+      X-Ratelimit-Limit-Tokens:
+      - '200000'
+      X-Ratelimit-Remaining-Requests:
+      - '9999'
+      X-Ratelimit-Remaining-Tokens:
+      - '199800'
+      X-Ratelimit-Reset-Requests:
+      - 8.64s
+      X-Ratelimit-Reset-Tokens:
+      - 60ms
+      X-Request-Id:
+      - req_340cc6bb34347c466a83544706a9223b
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8dd5e3e67c136b62-TPE
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJpZCI6ICJjaGF0Y21wbC1BUHR6WExFNG5qeElMenlxak52QXFiSjlSSGt6YyIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczMDczNjc5NSwKICAibW9kZWwiOiAiZ3B0LTMuNS10dXJiby0wMTI1IiwKICAiY2hvaWNlcyI6IFsKICAgIHsKICAgICAgImluZGV4IjogMCwKICAgICAgIm1lc3NhZ2UiOiB7CiAgICAgICAgInJvbGUiOiAiYXNzaXN0YW50IiwKICAgICAgICAiY29udGVudCI6ICLntZDlsYBcbui9iei6q1xu5bGx6KOhXG7lm57mh4lcbuiHquW3sVxu5LuW5piO55m9XG7pgY7ljrtcbuiBsumfs1xu5pyq5L6GXG7nrYnlvoUiLAogICAgICAgICJyZWZ1c2FsIjogbnVsbAogICAgICB9LAogICAgICAibG9ncHJvYnMiOiBudWxsLAogICAgICAiZmluaXNoX3JlYXNvbiI6ICJzdG9wIgogICAgfQogIF0sCiAgInVzYWdlIjogewogICAgInByb21wdF90b2tlbnMiOiAyOTUsCiAgICAiY29tcGxldGlvbl90b2tlbnMiOiA0MCwKICAgICJ0b3RhbF90b2tlbnMiOiAzMzUsCiAgICAicHJvbXB0X3Rva2Vuc19kZXRhaWxzIjogewogICAgICAiY2FjaGVkX3Rva2VucyI6IDAKICAgIH0sCiAgICAiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6IHsKICAgICAgInJlYXNvbmluZ190b2tlbnMiOiAwCiAgICB9CiAgfSwKICAic3lzdGVtX2ZpbmdlcnByaW50IjogbnVsbAp9Cg==
+  recorded_at: Mon, 04 Nov 2024 16:13:15 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"system","content":"You
+        are a professional Mandarin language teacher. Please analyze the vocabulary
+        in these words."},{"role":"user","content":"Please identify these words and
+        respond in this format:\n            Word:[Traditional chinese characters]\n            translate:[English
+        translation]\n            Pinyin:[pinyin with tone marks]\n            Definition:[detailed
+        definition in Traditional chinese]\n            Example:[example sentence
+        in Traditional chinese]\n            Example Pinyin:[pinyin for the example
+        sentence]\n            Example English: [English translation of the example
+        sentence]\n\n            Focus on words that would be valuable for language
+        learners. Keep example sentences natural and practical.\n\n            Words:
+        [\"結局\", \"轉身\", \"山裡\", \"回應\", \"自己\", \"他明白\", \"過去\", \"聲音\", \"未來\",
+        \"等待\"]"}]}'
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.3.5p100
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '927'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 Nov 2024 16:13:28 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - itc-sizmvs
+      Openai-Processing-Ms:
+      - '12622'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '10000'
+      X-Ratelimit-Limit-Tokens:
+      - '200000'
+      X-Ratelimit-Remaining-Requests:
+      - '9998'
+      X-Ratelimit-Remaining-Tokens:
+      - '199782'
+      X-Ratelimit-Reset-Requests:
+      - 16.231s
+      X-Ratelimit-Reset-Tokens:
+      - 65ms
+      X-Request-Id:
+      - req_83b3ab8cd659baa6ca4f27c0f5669ae3
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8dd5e3eeb880313b-TPE
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJpZCI6ICJjaGF0Y21wbC1BUHR6WU9jeEZIY1hRQjZsNGxSdE93UFRNTURsRCIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczMDczNjc5NiwKICAibW9kZWwiOiAiZ3B0LTMuNS10dXJiby0wMTI1IiwKICAiY2hvaWNlcyI6IFsKICAgIHsKICAgICAgImluZGV4IjogMCwKICAgICAgIm1lc3NhZ2UiOiB7CiAgICAgICAgInJvbGUiOiAiYXNzaXN0YW50IiwKICAgICAgICAiY29udGVudCI6ICJXb3JkOiDntZDlsYBcblRyYW5zbGF0ZTogQ29uY2x1c2lvbjsgZW5kaW5nXG5QaW55aW46IGppw6kgasO6XG5EZWZpbml0aW9uOiDmn5DkuovnianmiJbkuovku7blj5HlsZXliLDkuIDlrprnqIvluqbnu4jnu5PnmoTpg6jliIbjgIJcbkV4YW1wbGU6IOaVheS6i+eahOe1kOWxgOiuk+S6uuaEn+WIsOaEj+WkluOAglxuRXhhbXBsZSBQaW55aW46IEfDuXNow6wgZGUgamnDqSBqw7ogcsOgbmcgcsOpbiBnx45uZMOgbyB5w6x3w6BpLlxuRXhhbXBsZSBFbmdsaXNoOiBUaGUgZW5kaW5nIG9mIHRoZSBzdG9yeSBzdXJwcmlzZWQgcGVvcGxlLlxuXG5Xb3JkOiDovYnouqtcblRyYW5zbGF0ZTogVHVybiBhcm91bmRcblBpbnlpbjogemh1x45uIHNoxJNuXG5EZWZpbml0aW9uOiDouqvkvZPmiJbohLjpg6jmnJ3lj6blpJbkuIDkuKrmlrnlkJHjgIJcbkV4YW1wbGU6IOWluei9iei6q+mboumWi+S6huaIv+mWk+OAglxuRXhhbXBsZSBQaW55aW46IFTEgSB6aHXHjm4gc2jEk24gbMOta8SBaSBsZSBmw6FuZ2ppxIFuLlxuRXhhbXBsZSBFbmdsaXNoOiBTaGUgdHVybmVkIGFyb3VuZCBhbmQgbGVmdCB0aGUgcm9vbS5cblxuV29yZDog5bGx6KOhXG5UcmFuc2xhdGU6IEluIHRoZSBtb3VudGFpbnNcblBpbnlpbjogc2jEgW4gbMeQXG5EZWZpbml0aW9uOiDmjIfkvY3kuo7lsbHljLrkuYvkuK3jgIJcbkV4YW1wbGU6IOaYpeWkqeaZgu+8jOaIkeWWnOatoeWOu+WxseijoemHjumkkOOAglxuRXhhbXBsZSBQaW55aW46IENoxatudGnEgW4gc2jDrSwgd8eSIHjHkGh1xIFuIHHDuSBzaMSBbiBsx5AgecSbY8SBbi5cbkV4YW1wbGUgRW5nbGlzaDogSSBsaWtlIHRvIGhhdmUgYSBwaWNuaWMgaW4gdGhlIG1vdW50YWlucyBpbiBzcHJpbmcuXG5cbldvcmQ6IOWbnuaHiVxuVHJhbnNsYXRlOiBSZXNwb25kOyByZXNwb25zZVxuUGlueWluOiBodcOtIHnDrG5nXG5EZWZpbml0aW9uOiDlr7nliKvkurrnmoTor53miJbkuovku7bkvZzlh7rnm7jmh4nnmoTlj43mh4njgIJcbkV4YW1wbGU6IOiAgeW4q+WwjeWtuOeUn+eahOWVj+mhjOWBmuWHuuS6huWPiuaZgueahOWbnuaHieOAglxuRXhhbXBsZSBQaW55aW46IEzHjm9zaMSrIGR1w6wgeHXDqXNoxJNuZyBkZSB3w6hudMOtIHp1w7IgY2jFqyBsZSBqw61zaMOtIGRlIGh1w60gecOsbmcuXG5FeGFtcGxlIEVuZ2xpc2g6IFRoZSB0ZWFjaGVyIHJlc3BvbmRlZCBwcm9tcHRseSB0byB0aGUgc3R1ZGVudCdzIHF1ZXN0aW9uLlxuXG5Xb3JkOiDoh6rlt7FcblRyYW5zbGF0ZTogT25lc2VsZjsgc2VsZlxuUGlueWluOiB6w6wgaseQXG5EZWZpbml0aW9uOiDmnKzouqvnmoTkurrvvJvmjIfoh6rlt7HjgIJcbkV4YW1wbGU6IOmAmeS7tuS6i+aIkeW+l+iHquW3seino+axuuOAglxuRXhhbXBsZSBQaW55aW46IFpow6ggamnDoG4gc2jDrCB3x5IgZMOpIHrDrCBqx5AgamnEm2p1w6kuXG5FeGFtcGxlIEVuZ2xpc2g6IEkgaGF2ZSB0byBzb2x2ZSB0aGlzIGJ5IG15c2VsZi5cblxuV29yZDog5LuW5piO55m9XG5UcmFuc2xhdGU6IEhlIHVuZGVyc3RhbmRzXG5QaW55aW46IHTEgSBtw61uZ2LDoWlcbkRlZmluaXRpb246IOS7luaHguW+l++8m+S7lueQhuino+OAglxuRXhhbXBsZTog5LuW5piO55m95LqG5oiR55qE5oSP5oCd44CCXG5FeGFtcGxlIFBpbnlpbjogVMSBIG3DrW5nYsOhaSBsZSB3x5IgZGUgecOsc2kuXG5FeGFtcGxlIEVuZ2xpc2g6IEhlIHVuZGVyc3Rvb2Qgd2hhdCBJIG1lYW50LlxuXG5Xb3JkOiDpgY7ljrtcblRyYW5zbGF0ZTogVGhlIHBhc3RcblBpbnlpbjogZ3XDsiBxw7lcbkRlZmluaXRpb246IOi/h+WOu+WPkeeUn+eahOS6i+aDheOAglxuRXhhbXBsZTog5LiN6KaB5oC75piv5oOz552A6YGO5Y6744CCXG5FeGFtcGxlIFBpbnlpbjogQsO5IHnDoG8geseSbmcgc2jDrCB4aceObmd6aGUgZ3XDsnHDuS5cbkV4YW1wbGUgRW5nbGlzaDogRG9uJ3QgYWx3YXlzIGR3ZWxsIG9uIHRoZSBwYXN0LlxuXG5Xb3JkOiDogbLpn7NcblRyYW5zbGF0ZTogU291bmQ7IHZvaWNlXG5QaW55aW46IHNoxJNuZyB5xKtuXG5EZWZpbml0aW9uOiDniankvZPpnIfliqjlj5Hlh7rnmoTlo7Dms6LjgIJcbkV4YW1wbGU6IOWlueeahOiBsumfs+W+iOWlveWQrOOAglxuRXhhbXBsZSBQaW55aW46IFTEgSBkZSBzaMSTbmcgecSrbiBoxJtuIGjHjm8gdMSrbmcuXG5FeGFtcGxlIEVuZ2xpc2g6IEhlciB2b2ljZSBpcyB2ZXJ5IHBsZWFzYW50IHRvIGxpc3RlbiB0by5cblxuV29yZDog5pyq5L6GXG5UcmFuc2xhdGU6IEZ1dHVyZVxuUGlueWluOiB3w6hpIGzDoWlcbkRlZmluaXRpb246IOaMh+WwhuimgeWIsOadpeeahOaXtumXtOOAglxuRXhhbXBsZTog5oiR5a+55pyq5L6G5YWF5ru/5biM5pyb44CCXG5FeGFtcGxlIFBpbnlpbjogV8eSIGR1w6wgd8OoaSBsw6FpIGNoxY1uZ23Hjm4geMSrd8OgbmcuXG5FeGFtcGxlIEVuZ2xpc2g6IEkgYW0gaG9wZWZ1bCBmb3IgdGhlIGZ1dHVyZS5cblxuV29yZDog562J5b6FXG5UcmFuc2xhdGU6IFdhaXQ7IHdhaXRpbmdcblBpbnlpbjogZMSbbmcgZMOgaVxuRGVmaW5pdGlvbjog5LiN5Yqo5oiW5LiN5YGa5YW25LuW5LqL5oOF77yM55u05Yiw54m55a6a55qE5pe26Ze05oiW5LqL5Lu25Y+R55Sf44CCXG5FeGFtcGxlOiDmiJHmnIPlnKjpgJnoo6HnrYnlvoXkvaDnmoTliLDkvobjgIJcbkV4YW1wbGUgUGlueWluOiBXx5IgaHXDrCB6w6BpIHpow6hsx5AgZMSbbmcgZMOgaSBux5AgZGUgZMOgb2zDoWkuXG5FeGFtcGxlIEVuZ2xpc2g6IEkgd2lsbCB3YWl0IGhlcmUgZm9yIHlvdXIgYXJyaXZhbC4iLAogICAgICAgICJyZWZ1c2FsIjogbnVsbAogICAgICB9LAogICAgICAibG9ncHJvYnMiOiBudWxsLAogICAgICAiZmluaXNoX3JlYXNvbiI6ICJzdG9wIgogICAgfQogIF0sCiAgInVzYWdlIjogewogICAgInByb21wdF90b2tlbnMiOiAxNzYsCiAgICAiY29tcGxldGlvbl90b2tlbnMiOiA5NTEsCiAgICAidG90YWxfdG9rZW5zIjogMTEyNywKICAgICJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOiB7CiAgICAgICJjYWNoZWRfdG9rZW5zIjogMAogICAgfSwKICAgICJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjogewogICAgICAicmVhc29uaW5nX3Rva2VucyI6IDAKICAgIH0KICB9LAogICJzeXN0ZW1fZmluZ2VycHJpbnQiOiBudWxsCn0K
+  recorded_at: Mon, 04 Nov 2024 16:13:28 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 Nov 2024 05:13:56 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 6fefcdb7-88cd-4faa-b9ac-0f82b1973c45
+      Sp-Trace-Id:
+      - 7396b37cca51ebae
+      X-Envoy-Upstream-Service-Time:
+      - '9'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sun, 10 Nov 2024 05:13:56 GMT
+recorded_with: VCR 6.3.1
