@@ -22,30 +22,50 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
     it 'HAPPY: should be able to get song data from Spotify and add filtered_words to vocabulary' do
       song = LyricLab::Spotify::SongMapper
         .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
-        .find(SONG_NAME)
-      song.vocabulary.gen_unique_words(song.lyrics.text, OPENAI_API_KEY)
+        .find(CORRECT_SONG['title'])
+      song.vocabulary.gen_unique_words(song.lyrics.text, GPT_API_KEY)
 
       _(song.vocabulary.unique_words).wont_be_empty
-      puts "Words: #{song.vocabulary.unique_words.map(&:inspect)}"
-      # _(song.vocabulary.language_level).must_equal('novice1')
     end
 
     it 'HAPPY: should be able to persist vocabulary to database' do
       song = LyricLab::Spotify::SongMapper
         .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
-        .find(SONG_NAME)
-      # song.vocabulary.language_level = 'novice1'
-      song.vocabulary.gen_unique_words(song.lyrics.text, OPENAI_API_KEY)
-      # puts "Before: #{LyricLab::Database::VocabularyOrm.all[-1].filtered_words.first.characters}"
-      # puts "Before: LL #{song.vocabulary.language_level}"
-      # puts "Before: Words #{song.vocabulary.filtered_words.first.characters}"
-      # puts "test: #{song.vocabulary.inspect}"
-      rebuilt = LyricLab::Repository::For.entity(song).create(song)
-      puts "After: Words #{LyricLab::Database::VocabularyOrm.all[-1].unique_words.first.characters}"
-      # puts "After: LL #{LyricLab::Database::VocabularyOrm.all[-1].language_level}"
+        .find(CORRECT_SONG['title'])
 
-      # _(rebuilt.vocabulary.language_level).must_equal(song.vocabulary.language_level)
+      song.vocabulary.gen_unique_words(song.lyrics.text, GPT_API_KEY)
+      rebuilt = LyricLab::Repository::For.entity(song).create(song)
+
       _(rebuilt.vocabulary.unique_words).wont_be_empty
+    end
+
+    it 'HAPPY: should be able to retrieve song vocabulary from a song with vocabulary by spotify_id' do
+      song = LyricLab::Spotify::SongMapper
+        .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
+        .find(CORRECT_SONG['title'])
+
+      song.vocabulary.gen_unique_words(song.lyrics.text, GPT_API_KEY)
+
+      LyricLab::Repository::For.entity(song).create(song)
+
+      rebuilt = LyricLab::Repository::For.klass(LyricLab::Entity::Song).find_spotify_id(song.spotify_id)
+      rebuilt.vocabulary.gen_unique_words(rebuilt.lyrics.text, GPT_API_KEY) if rebuilt.vocabulary.unique_words.empty?
+
+      _(rebuilt.vocabulary.unique_words.length).must_equal(song.vocabulary.unique_words.length)
+      _(rebuilt.vocabulary.unique_words.first.characters).must_equal(song.vocabulary.unique_words.first.characters)
+    end
+
+    it 'HAPPY: should be able to retrieve song vocabulary from a song WITHOUT vocabulary by spotify_id' do
+      song = LyricLab::Spotify::SongMapper
+        .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
+        .find(CORRECT_SONG['title'])
+      LyricLab::Repository::For.entity(song).create(song)
+
+      rebuilt = LyricLab::Repository::For.klass(LyricLab::Entity::Song).find_spotify_id(song.spotify_id)
+      rebuilt.vocabulary.gen_unique_words(rebuilt.lyrics.text, GPT_API_KEY) if rebuilt.vocabulary.unique_words.empty?
+
+      _(rebuilt.vocabulary.unique_words.length).wont_equal(0)
+      _(rebuilt.vocabulary.unique_words.first.characters).wont_be_empty
     end
   end
 end

@@ -27,11 +27,7 @@ CORRECT_LYRICS = File.read(File.join(__dir__, '../fixtures', 'lyrics-success-res
 
 # For spotify_API
 CASSETTE_FILE_SP = 'spotify_api'
-SONG_NAME = '山海'
-ARTIST = 'No Party For Cao Dong'
-ALBUM = '醜奴兒'
-RELEASE_DATE = '2016-02-19'
-DURATION = '251053'
+CORRECT_SONG = YAML.safe_load_file(File.join(__dir__, '../fixtures', 'spotify_results.yml'))
 
 SPOTIFY_CLIENT_ID = LyricLab::App.config.SPOTIFY_CLIENT_ID
 SPOTIFY_CLIENT_SECRET = LyricLab::App.config.SPOTIFY_CLIENT_SECRET
@@ -40,4 +36,4 @@ SPOTIFY_CLIENT_SECRET = LyricLab::App.config.SPOTIFY_CLIENT_SECRET
 GOOGLE_CLIENT_KEY = LyricLab::App.config.GOOGLE_CLIENT_KEY
 
 # For chatgpt_API
-OPENAI_API_KEY = LyricLab::App.config.GPT_API_KEY
+GPT_API_KEY = LyricLab::App.config.GPT_API_KEY
