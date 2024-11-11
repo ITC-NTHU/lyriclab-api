@@ -9,17 +9,27 @@ gem 'ostruct'
 gem 'pry'
 gem 'rake'
 
-# Data Validation
+# PRESENTATION LAYER
+gem 'slim', '~> 5.0'
+
+# APPLICATION LAYER
+# Web application related
+gem 'logger', '~> 1.6'
+gem 'puma', '~> 6.0'
+gem 'rack-session', '~> 0.3'
+gem 'roda', '~> 3.0'
+
+# Controllers and services
+gem 'dry-monads', '~> 1.4'
+gem 'dry-transaction', '~> 0.13'
+gem 'dry-validation', '~> 1.7'
+
+# DOMAIN LAYER
+# Validation
 gem 'dry-struct', '~> 1.6'
 gem 'dry-types', '~> 1.7'
 
-# Web Application
-gem 'logger', '~> 1.6'
-gem 'puma', '~>6.0'
-gem 'rack-session', '~> 0.3'
-gem 'roda', '~>3.0'
-gem 'slim', '~>4.0'
-
+# INFRASTRUCTURE LAYER
 # Networking
 gem 'http', '~> 5.2.0'
 
@@ -28,7 +38,6 @@ gem 'google-cloud-translate-v2'
 
 # Database
 gem 'hirb'
-
 # gem 'hirb-unicode' # incompatible with new rubocop
 gem 'sequel', '~> 5.0'
 
@@ -54,7 +63,9 @@ group :test do
   gem 'vcr', '~> 6'
   gem 'webmock', '~> 3'
 
+  # Acceptance Tests
   gem 'headless', '~> 2.3'
+  gem 'page-object', '~> 2.0'
   gem 'selenium-webdriver', '~> 4.11'
   gem 'watir', '~> 7.0'
 end
