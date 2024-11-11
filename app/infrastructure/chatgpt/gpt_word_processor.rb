@@ -13,7 +13,7 @@ module LyricLab
         # should return a list of unique words extracted by ChatGPT
         extract_message = [
           { role: 'system', content: '你是一個專業的繁體中文老師，可以從文本中提取有意義的繁體中文詞彙單位' },
-          { role: 'user', content: "Extract unique traditional chinese words from the following text:
+          { role: 'user', content: "Extract every single unique traditional chinese word from the following text:
         reply in this format (one word per line):
         你好
         風
@@ -35,6 +35,20 @@ module LyricLab
         # puts words
       end
 
+      def extract_separated_text(text)
+        # should return a list of unique words extracted by ChatGPT
+        extract_message = [
+          { role: 'system', content: '你是一個專業的繁體中文老師，可以從文本中提取有意義的繁體中文詞彙單位' },
+          { role: 'user', content: "Separate all the words in the following text from each other and:
+        reply in this format (words separated by spaces):
+        你好 風 雲 天空 I am cool
+
+        #{text}" }
+        ]
+
+        @openai.chat_response(extract_message)
+      end
+
       def create_word_entity(word_data)
         Entity::Word.new(
           id: nil,
@@ -42,7 +56,7 @@ module LyricLab
           pinyin: word_data[:pinyin] || 'unknown',
           translation: word_data[:translation] || 'unknown',
           example_sentence: word_data[:example_sentence] || 'No example provided',
-          difficulty: word_data[:difficulty] || 'unknown',
+          language_level: word_data[:language_level] || 'unknown',
           definition: word_data[:definition] || 'No definition provided',
           word_type: word_data[:word_type] || 'unknown'
         )
@@ -55,7 +69,7 @@ module LyricLab
             Word:[繁體中文字]
             translate:[English translation]
             Pinyin:[標註聲調的拼音]
-            Difficulty:[選擇難度：beginner、novice1、novice2、level1、level2、level3、level4 或 level5]
+            Difficulty:[select one of those：beginner、novice1、novice2、level1、level2、level3、level4, level5]
             Definition:[英文的詳細定義]
             Word type:[選擇詞性：N,V,Adj,Adv,Pron,Prep,Conj,Num,Int,Classifier,Idiom,Other]
             Example:[實用的20字內繁體中文例句]
@@ -84,7 +98,7 @@ module LyricLab
             when /^Pinyin:\s*(.+)/
               current_word[:pinyin] = ::Regexp.last_match(1)
             when /^Difficulty:\s*(.+)/
-              current_word[:difficulty] = ::Regexp.last_match(1)
+              current_word[:language_level] = ::Regexp.last_match(1)
             when /^Definition:\s*(.+)/
               current_word[:definition] = ::Regexp.last_match(1)
               current_word[:translation] = combine_definitions(current_word[:english], ::Regexp.last_match(1))

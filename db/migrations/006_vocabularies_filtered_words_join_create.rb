@@ -4,16 +4,16 @@ require 'sequel'
 
 Sequel.migration do
   up do
-    create_table(:vocabularies_filtered_words) do
-      primary_key [:vocabulary_id, :filtered_word_id] # rubocop:disable Style/SymbolArray
+    create_table(:vocabularies_unique_words) do
+      primary_key [:vocabulary_id, :unique_word_id] # rubocop:disable Style/SymbolArray
       foreign_key :vocabulary_id, :vocabularies
-      foreign_key :filtered_word_id, :words
+      foreign_key :unique_word_id, :words
 
-      index [:vocabulary_id, :filtered_word_id] # rubocop:disable Style/SymbolArray
+      index [:vocabulary_id, :unique_word_id] # rubocop:disable Style/SymbolArray
     end
   end
 
   down do
-    drop_table(:vocabularies_filtered_words)
+    drop_table(:vocabularies_unique_words)
   end
 end

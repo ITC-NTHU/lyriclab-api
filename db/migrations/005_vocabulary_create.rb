@@ -7,7 +7,7 @@ Sequel.migration do
     create_table(:vocabularies) do
       primary_key :id
 
-      String :language_level
+      String :sep_text, null: false
 
       DateTime :created_at
       DateTime :updated_at

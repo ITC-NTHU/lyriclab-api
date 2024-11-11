@@ -13,23 +13,21 @@ module LyricLab
       extend Dry::Initializer
 
       option :id, proc(&:to_i), optional: true
-      option :language_level, proc(&:to_s), optional: true
-      option :filtered_words, default: proc { [] }
+      option :unique_words, default: proc { [] }
+      option :sep_text, default: proc { '' }
 
-      attr_accessor :language_level, :filtered_words
+      attr_accessor :unique_words, :sep_text
 
       def to_attr_hash
         {
-          language_level:
+          sep_text:
         }
       end
 
-      def gen_filtered_words(text, openai_api_key)
-        raise 'Language Level hasn\'t been defined yet' if language_level.nil?
-
-        openai_api = LyricLab::OpenAI::API.new(openai_api_key)
+      def gen_unique_words(text, gpt_api_key)
+        openai_api = LyricLab::OpenAI::API.new(gpt_api_key)
         voc_factory = LyricLab::Vocabulary::VocabularyFactory.new(openai_api)
-        self.filtered_words = voc_factory.create_filtered_words_from_text(text, language_level)
+        self.unique_words, self.sep_text = voc_factory.create_unique_words_from_text(text)
       end
     end
   end

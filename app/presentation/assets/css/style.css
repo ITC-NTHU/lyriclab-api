@@ -110,3 +110,36 @@ audio {
   color: white;
   background-color: black
 }
+
+/* Vocabulary Styles beginner novice1 novice2 level1 level2 level3 level4 level5*/
+span.beginner-class {
+  color: #00ff3c;
+}
+
+span.novice1-class {
+  color: #15d200;
+}
+
+span.novice2-class {
+  color: #a2ff00;
+}
+
+span.level1-class {
+  color: #a1e600;
+}
+
+span.level2-class {
+  color: #dee500;
+}
+
+span.level3-class {
+  color: #e9a700;
+}
+
+span.level4-class {
+  color: #e74c3c;
+}
+
+span.level5-class {
+  color: red;
+}

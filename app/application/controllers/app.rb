@@ -25,6 +25,7 @@ module LyricLab
     SPOTIFY_CLIENT_ID = LyricLab::App.config.SPOTIFY_CLIENT_ID
     SPOTIFY_CLIENT_SECRET = LyricLab::App.config.SPOTIFY_CLIENT_SECRET
     GOOGLE_CLIENT_KEY = LyricLab::App.config.GOOGLE_CLIENT_KEY
+    GPT_API_KEY = LyricLab::App.config.GPT_API_KEY
 
     MESSAGES = {
       empty_search: 'Empty search query',
@@ -127,8 +128,12 @@ module LyricLab
             recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.spotify_id)
             Repository::For.entity(recommendation).create(recommendation)
 
+            song.vocabulary.gen_unique_words(song.lyrics.text, GPT_API_KEY)
+            puts "Vocabulary: #{song.vocabulary.inspect}"
+            viewable_song = Views::Song.new(song)
+
             # Show viewer the song
-            view 'song', locals: { song: }
+            view 'song', locals: { song: viewable_song }
           end
         end
       end

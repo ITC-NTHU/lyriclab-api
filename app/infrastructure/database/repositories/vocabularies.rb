@@ -11,13 +11,13 @@ module LyricLab
       def self.rebuild_entity(db_record)
         return nil unless db_record
 
-        filtered_words = db_record.filtered_words.map do |word|
+        unique_words = db_record.unique_words.map do |word|
           Words.rebuild_entity(word)
         end
         Entity::Vocabulary.new(
           id: db_record.id,
-          language_level: db_record.language_level,
-          filtered_words:
+          unique_words:,
+          sep_text: db_record.sep_text
         )
       end
 
@@ -41,7 +41,7 @@ module LyricLab
         Database::VocabularyOrm.find_or_create_song_id(song_id, entity.to_attr_hash)
       end
 
-      # Helper class to persist vocabularies and its filtered_words to database
+      # Helper class to persist vocabularies and its unique_words to database
       class PersistVocabulary
         def initialize(entity)
           @entity = entity
@@ -53,12 +53,12 @@ module LyricLab
         end
 
         def call
-          if @entity.filtered_words.nil?
+          if @entity.unique_words.nil?
             create_vocabulary
           else
             create_vocabulary.tap do |db_vocabulary|
-              @entity.filtered_words.each do |word|
-                db_vocabulary.add_filtered_word(Words.find_or_create(word))
+              @entity.unique_words.each do |word|
+                db_vocabulary.add_unique_word(Words.find_or_create(word))
               end
             end
           end

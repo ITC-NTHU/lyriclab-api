@@ -29,8 +29,8 @@
 
           hr
           h3.mt-4 Lyrics
-          pre.lyrics
-            = song.lyrics.text
+          p.lyrics
+            == render 'rich_text', locals: { vocabulary: song.vocabulary }
 
   .row.mt-4
     .col-md-8.offset-md-2

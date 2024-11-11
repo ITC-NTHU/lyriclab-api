@@ -8,7 +8,7 @@ module LyricLab
     class WordOrm < Sequel::Model(:words)
       many_to_many :vocabularies,
                    class: :'LyricLab::Database::VocabularyOrm',
-                   join_table: :vocabularies_filtered_words,
+                   join_table: :vocabularies_unique_words,
                    left_key: :filtered_word_id, right_key: :vocabulary_id
 
       plugin :timestamps, update_on_create: true
