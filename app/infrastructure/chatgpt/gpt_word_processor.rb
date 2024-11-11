@@ -69,7 +69,7 @@ module LyricLab
             Word:[繁體中文字]
             translate:[English translation]
             Pinyin:[標註聲調的拼音]
-            Language_level:[select one of those：beginner、novice1、novice2、level1、level2、level3、level4, level5]
+            Difficulty:[select one of those：beginner、novice1、novice2、level1、level2、level3、level4, level5]
             Definition:[英文的詳細定義]
             Word type:[選擇詞性：N,V,Adj,Adv,Pron,Prep,Conj,Num,Int,Classifier,Idiom,Other]
             Example:[實用的20字內繁體中文例句]

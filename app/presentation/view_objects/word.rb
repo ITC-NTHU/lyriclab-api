@@ -18,5 +18,9 @@ module Views
     def translation
       @word.translation
     end
+
+    def language_level
+      "#{@word.language_level}-class"
+    end
   end
 end
