@@ -22,7 +22,7 @@ describe 'Integration Tests of Spotify API and Database' do
     it 'HAPPY: should be able to save song data from Spotify to database' do
       song = LyricLab::Spotify::SongMapper
         .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
-        .find(SONG_NAME)
+        .find(CORRECT_SONG['title'])
 
       rebuilt = LyricLab::Repository::For.entity(song).create(song)
 
