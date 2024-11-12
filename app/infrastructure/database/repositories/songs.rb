@@ -37,6 +37,12 @@ module LyricLab
         rebuild_entity(db_song)
       end
       # TODO write code for when we want to update the song entity
+      def self.update(entity)
+        db_song = Database::SongOrm.first(id: entity.id)
+        db_song.update(entity.to_attr_hash)
+        Vocabularies.update(entity.vocabulary)
+        Lyrics.update(entity.lyrics)
+      end
 
       def self.rebuild_entity(db_record)
         return nil unless db_record

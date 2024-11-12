@@ -23,7 +23,7 @@ module LyricLab
       class DataMapper
         def initialize(data, google_client_key)
           @data = data
-          @language = LyricLab::Google::Api.new(google_client_key)
+          @google_translate_api = LyricLab::Google::Api.new(google_client_key)
         end
 
         def build_entity
@@ -46,7 +46,7 @@ module LyricLab
         end
 
         def is_mandarin # rubocop:disable Naming/PredicateName
-          data = @language.fetch_response(text)
+          data = @google_translate_api.detect_language(text)
           return true unless data != 'zh-TW'
 
           false

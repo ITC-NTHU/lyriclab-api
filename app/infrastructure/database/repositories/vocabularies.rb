@@ -37,6 +37,18 @@ module LyricLab
         # old: Database::VocabularyOrm.find_or_create(entity.to_attr_hash)
       end
 
+      def self.update(entity)
+        db_vocabulary = Database::VocabularyOrm.first(id: entity.id)
+        db_vocabulary.update(entity.to_attr_hash)
+        entity.unique_words.each do |word|
+          if db_vocabulary.unique_words.include?(word)
+            Words.update(word)
+          else
+            db_vocabulary.add_unique_word(Words.find_or_create(word))
+          end
+        end
+      end
+
       def self.find_or_create_song_id(song_id, entity)
         Database::VocabularyOrm.find_or_create_song_id(song_id, entity.to_attr_hash)
       end
@@ -53,7 +65,7 @@ module LyricLab
         end
 
         def call
-          if @entity.unique_words.nil?
+          if @entity.unique_words.empty?
             create_vocabulary
           else
             create_vocabulary.tap do |db_vocabulary|

@@ -7,10 +7,6 @@ module Views
       @word = word
     end
 
-    def vocabulary_info
-      view :vocabulary_info, locals: { word: @word }
-    end
-
     def characters
       @word.characters
     end
