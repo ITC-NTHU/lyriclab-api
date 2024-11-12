@@ -1,0 +1,35 @@
+# frozen_string_literal: true
+
+require 'dry/transaction'
+
+module LyricLab
+  module Service
+    # Transaction to store project from Github API to database
+    class LoadVocabulary
+      include Dry::Transaction
+
+      GPT_API_KEY = LyricLab::App.config.GPT_API_KEY
+
+      step :populate_vocabulary
+      step :store_vocabulary
+
+      private
+
+      def populate_vocabulary(input_song)
+        if input_song.vocabulary.unique_words.empty?
+          input_song.vocabulary.gen_unique_words(input_song.lyrics.text, GPT_API_KEY)
+        end
+        Success(input_song)
+      rescue StandardError => e
+        Failure(e.to_s)
+      end
+
+      def store_vocabulary(input)
+        LyricLab::Repository::For.entity(input).update(input)
+        Success(input)
+      rescue StandardError => e
+        Failure(e.to_s)
+      end
+    end
+  end
+end
