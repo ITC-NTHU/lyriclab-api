@@ -75,9 +75,8 @@ module LyricLab
               routing.redirect '/'
             end
 
-            # TODO: check relevancy
             session[:search_result_ids] = search_results.map(&:spotify_id)
-            puts search_results.map(&:spotify_id).join
+            # puts search_results.map(&:spotify_id).join
 
             # Add song to database if it doesn't already exist
             search_results.map { |song| Repository::For.entity(song).create(song) }

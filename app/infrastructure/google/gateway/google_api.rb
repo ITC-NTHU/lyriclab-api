@@ -10,7 +10,7 @@ module LyricLab
         @client = ::Google::Cloud::Translate::V2.new(key: client_key)
       end
 
-      def fetch_response(input)
+      def detect_language(input)
         @client.detect(input).language
       rescue ::Google::Cloud::Error => e
         handle_error(e)

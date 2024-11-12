@@ -340,4 +340,54 @@ http_interactions:
       string: !binary |-
         ewogICJpZCI6ICJjaGF0Y21wbC1BUHR6WU9jeEZIY1hRQjZsNGxSdE93UFRNTURsRCIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczMDczNjc5NiwKICAibW9kZWwiOiAiZ3B0LTMuNS10dXJiby0wMTI1IiwKICAiY2hvaWNlcyI6IFsKICAgIHsKICAgICAgImluZGV4IjogMCwKICAgICAgIm1lc3NhZ2UiOiB7CiAgICAgICAgInJvbGUiOiAiYXNzaXN0YW50IiwKICAgICAgICAiY29udGVudCI6ICJXb3JkOiDntZDlsYBcblRyYW5zbGF0ZTogQ29uY2x1c2lvbjsgZW5kaW5nXG5QaW55aW46IGppw6kgasO6XG5EZWZpbml0aW9uOiDmn5DkuovnianmiJbkuovku7blj5HlsZXliLDkuIDlrprnqIvluqbnu4jnu5PnmoTpg6jliIbjgIJcbkV4YW1wbGU6IOaVheS6i+eahOe1kOWxgOiuk+S6uuaEn+WIsOaEj+WkluOAglxuRXhhbXBsZSBQaW55aW46IEfDuXNow6wgZGUgamnDqSBqw7ogcsOgbmcgcsOpbiBnx45uZMOgbyB5w6x3w6BpLlxuRXhhbXBsZSBFbmdsaXNoOiBUaGUgZW5kaW5nIG9mIHRoZSBzdG9yeSBzdXJwcmlzZWQgcGVvcGxlLlxuXG5Xb3JkOiDovYnouqtcblRyYW5zbGF0ZTogVHVybiBhcm91bmRcblBpbnlpbjogemh1x45uIHNoxJNuXG5EZWZpbml0aW9uOiDouqvkvZPmiJbohLjpg6jmnJ3lj6blpJbkuIDkuKrmlrnlkJHjgIJcbkV4YW1wbGU6IOWluei9iei6q+mboumWi+S6huaIv+mWk+OAglxuRXhhbXBsZSBQaW55aW46IFTEgSB6aHXHjm4gc2jEk24gbMOta8SBaSBsZSBmw6FuZ2ppxIFuLlxuRXhhbXBsZSBFbmdsaXNoOiBTaGUgdHVybmVkIGFyb3VuZCBhbmQgbGVmdCB0aGUgcm9vbS5cblxuV29yZDog5bGx6KOhXG5UcmFuc2xhdGU6IEluIHRoZSBtb3VudGFpbnNcblBpbnlpbjogc2jEgW4gbMeQXG5EZWZpbml0aW9uOiDmjIfkvY3kuo7lsbHljLrkuYvkuK3jgIJcbkV4YW1wbGU6IOaYpeWkqeaZgu+8jOaIkeWWnOatoeWOu+WxseijoemHjumkkOOAglxuRXhhbXBsZSBQaW55aW46IENoxatudGnEgW4gc2jDrSwgd8eSIHjHkGh1xIFuIHHDuSBzaMSBbiBsx5AgecSbY8SBbi5cbkV4YW1wbGUgRW5nbGlzaDogSSBsaWtlIHRvIGhhdmUgYSBwaWNuaWMgaW4gdGhlIG1vdW50YWlucyBpbiBzcHJpbmcuXG5cbldvcmQ6IOWbnuaHiVxuVHJhbnNsYXRlOiBSZXNwb25kOyByZXNwb25zZVxuUGlueWluOiBodcOtIHnDrG5nXG5EZWZpbml0aW9uOiDlr7nliKvkurrnmoTor53miJbkuovku7bkvZzlh7rnm7jmh4nnmoTlj43mh4njgIJcbkV4YW1wbGU6IOiAgeW4q+WwjeWtuOeUn+eahOWVj+mhjOWBmuWHuuS6huWPiuaZgueahOWbnuaHieOAglxuRXhhbXBsZSBQaW55aW46IEzHjm9zaMSrIGR1w6wgeHXDqXNoxJNuZyBkZSB3w6hudMOtIHp1w7IgY2jFqyBsZSBqw61zaMOtIGRlIGh1w60gecOsbmcuXG5FeGFtcGxlIEVuZ2xpc2g6IFRoZSB0ZWFjaGVyIHJlc3BvbmRlZCBwcm9tcHRseSB0byB0aGUgc3R1ZGVudCdzIHF1ZXN0aW9uLlxuXG5Xb3JkOiDoh6rlt7FcblRyYW5zbGF0ZTogT25lc2VsZjsgc2VsZlxuUGlueWluOiB6w6wgaseQXG5EZWZpbml0aW9uOiDmnKzouqvnmoTkurrvvJvmjIfoh6rlt7HjgIJcbkV4YW1wbGU6IOmAmeS7tuS6i+aIkeW+l+iHquW3seino+axuuOAglxuRXhhbXBsZSBQaW55aW46IFpow6ggamnDoG4gc2jDrCB3x5IgZMOpIHrDrCBqx5AgamnEm2p1w6kuXG5FeGFtcGxlIEVuZ2xpc2g6IEkgaGF2ZSB0byBzb2x2ZSB0aGlzIGJ5IG15c2VsZi5cblxuV29yZDog5LuW5piO55m9XG5UcmFuc2xhdGU6IEhlIHVuZGVyc3RhbmRzXG5QaW55aW46IHTEgSBtw61uZ2LDoWlcbkRlZmluaXRpb246IOS7luaHguW+l++8m+S7lueQhuino+OAglxuRXhhbXBsZTog5LuW5piO55m95LqG5oiR55qE5oSP5oCd44CCXG5FeGFtcGxlIFBpbnlpbjogVMSBIG3DrW5nYsOhaSBsZSB3x5IgZGUgecOsc2kuXG5FeGFtcGxlIEVuZ2xpc2g6IEhlIHVuZGVyc3Rvb2Qgd2hhdCBJIG1lYW50LlxuXG5Xb3JkOiDpgY7ljrtcblRyYW5zbGF0ZTogVGhlIHBhc3RcblBpbnlpbjogZ3XDsiBxw7lcbkRlZmluaXRpb246IOi/h+WOu+WPkeeUn+eahOS6i+aDheOAglxuRXhhbXBsZTog5LiN6KaB5oC75piv5oOz552A6YGO5Y6744CCXG5FeGFtcGxlIFBpbnlpbjogQsO5IHnDoG8geseSbmcgc2jDrCB4aceObmd6aGUgZ3XDsnHDuS5cbkV4YW1wbGUgRW5nbGlzaDogRG9uJ3QgYWx3YXlzIGR3ZWxsIG9uIHRoZSBwYXN0LlxuXG5Xb3JkOiDogbLpn7NcblRyYW5zbGF0ZTogU291bmQ7IHZvaWNlXG5QaW55aW46IHNoxJNuZyB5xKtuXG5EZWZpbml0aW9uOiDniankvZPpnIfliqjlj5Hlh7rnmoTlo7Dms6LjgIJcbkV4YW1wbGU6IOWlueeahOiBsumfs+W+iOWlveWQrOOAglxuRXhhbXBsZSBQaW55aW46IFTEgSBkZSBzaMSTbmcgecSrbiBoxJtuIGjHjm8gdMSrbmcuXG5FeGFtcGxlIEVuZ2xpc2g6IEhlciB2b2ljZSBpcyB2ZXJ5IHBsZWFzYW50IHRvIGxpc3RlbiB0by5cblxuV29yZDog5pyq5L6GXG5UcmFuc2xhdGU6IEZ1dHVyZVxuUGlueWluOiB3w6hpIGzDoWlcbkRlZmluaXRpb246IOaMh+WwhuimgeWIsOadpeeahOaXtumXtOOAglxuRXhhbXBsZTog5oiR5a+55pyq5L6G5YWF5ru/5biM5pyb44CCXG5FeGFtcGxlIFBpbnlpbjogV8eSIGR1w6wgd8OoaSBsw6FpIGNoxY1uZ23Hjm4geMSrd8OgbmcuXG5FeGFtcGxlIEVuZ2xpc2g6IEkgYW0gaG9wZWZ1bCBmb3IgdGhlIGZ1dHVyZS5cblxuV29yZDog562J5b6FXG5UcmFuc2xhdGU6IFdhaXQ7IHdhaXRpbmdcblBpbnlpbjogZMSbbmcgZMOgaVxuRGVmaW5pdGlvbjog5LiN5Yqo5oiW5LiN5YGa5YW25LuW5LqL5oOF77yM55u05Yiw54m55a6a55qE5pe26Ze05oiW5LqL5Lu25Y+R55Sf44CCXG5FeGFtcGxlOiDmiJHmnIPlnKjpgJnoo6HnrYnlvoXkvaDnmoTliLDkvobjgIJcbkV4YW1wbGUgUGlueWluOiBXx5IgaHXDrCB6w6BpIHpow6hsx5AgZMSbbmcgZMOgaSBux5AgZGUgZMOgb2zDoWkuXG5FeGFtcGxlIEVuZ2xpc2g6IEkgd2lsbCB3YWl0IGhlcmUgZm9yIHlvdXIgYXJyaXZhbC4iLAogICAgICAgICJyZWZ1c2FsIjogbnVsbAogICAgICB9LAogICAgICAibG9ncHJvYnMiOiBudWxsLAogICAgICAiZmluaXNoX3JlYXNvbiI6ICJzdG9wIgogICAgfQogIF0sCiAgInVzYWdlIjogewogICAgInByb21wdF90b2tlbnMiOiAxNzYsCiAgICAiY29tcGxldGlvbl90b2tlbnMiOiA5NTEsCiAgICAidG90YWxfdG9rZW5zIjogMTEyNywKICAgICJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOiB7CiAgICAgICJjYWNoZWRfdG9rZW5zIjogMAogICAgfSwKICAgICJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjogewogICAgICAicmVhc29uaW5nX3Rva2VucyI6IDAKICAgIH0KICB9LAogICJzeXN0ZW1fZmluZ2VycHJpbnQiOiBudWxsCn0K
   recorded_at: Mon, 04 Nov 2024 16:13:28 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 12 Nov 2024 12:42:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 2598ca4f-99ce-4e44-8517-3086a9163583
+      Sp-Trace-Id:
+      - cc24229f58284c92
+      X-Envoy-Upstream-Service-Time:
+      - '13'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Tue, 12 Nov 2024 12:42:03 GMT
 recorded_with: VCR 6.3.1

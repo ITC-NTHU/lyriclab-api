@@ -33,6 +33,11 @@ module LyricLab
         end
       end
 
+      def self.update(entity)
+        db_word = Database::WordOrm.first(id: entity.id)
+        db_word.update(entity.to_attr_hash)
+      end
+
       def self.rebuild_entity_from_hash(word_hash) # rubocop:disable Metrics/MethodLength
         return nil unless word_hash
 
