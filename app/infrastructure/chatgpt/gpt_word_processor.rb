@@ -49,19 +49,6 @@ module LyricLab
         @openai.chat_response(extract_message)
       end
 
-      def create_word_entity(word_data)
-        Entity::Word.new(
-          id: nil,
-          characters: word_data[:characters],
-          pinyin: word_data[:pinyin] || 'unknown',
-          translation: word_data[:translation] || 'unknown',
-          example_sentence: word_data[:example_sentence] || 'No example provided',
-          language_level: word_data[:language_level] || 'unknown',
-          definition: word_data[:definition] || 'No definition provided',
-          word_type: word_data[:word_type] || 'unknown'
-        )
-      end
-
       def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength
         message = [
           { role: 'system', content: '現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字：' },
@@ -95,25 +82,49 @@ module LyricLab
               current_word = { characters: ::Regexp.last_match(1) }
             when /^Translate:\s*(.+)/
               current_word[:english] = ::Regexp.last_match(1)
-              current_word[:translation] = ::Regexp.last_match(1)
+              current_word[:translation] = ::Regexp.last_match(1) || 'unknown'
             when /^Pinyin:\s*(.+)/
-              current_word[:pinyin] = ::Regexp.last_match(1)
+              current_word[:pinyin] = ::Regexp.last_match(1) || 'unknown'
             when /^Difficulty:\s*(.+)/
-              current_word[:language_level] = ::Regexp.last_match(1)
+              current_word[:language_level] = ::Regexp.last_match(1) || 'unknown'
             when /^Definition:\s*(.+)/
-              current_word[:definition] = ::Regexp.last_match(1)
+              current_word[:definition] = ::Regexp.last_match(1) || 'unknown'
               # current_word[:translation] = combine_definitions(current_word[:english], ::Regexp.last_match(1))
             when /^Word type:\s*(.+)/
-              current_word[:word_type] = ::Regexp.last_match(1)
+              current_word[:word_type] = ::Regexp.last_match(1) || 'unknown'
             when /^Example:\s*(.+)/
-              current_word[:example_sentence] = ::Regexp.last_match(1)
+              current_word[:example_sentence] = ::Regexp.last_match(1) || 'No example provided'
             end
           end
 
           # Add the last word
           words << current_word if current_word[:characters]
+          
+          # check every word has all the required fields for default
+          words.map do |word|
+            word[:translation] ||= 'unknown'
+            word[:pinyin] ||= 'unknown'
+            word[:language_level] ||= 'unknown'
+            word[:definition] ||= 'unknown'
+            word[:word_type] ||= 'unknown'
+            word[:example_sentence] ||= 'No example provided'
+            word
+          end
         end
         words
+      end
+
+      def create_word_entity(word_data)
+        Entity::Word.new(
+          id: nil,
+          characters: word_data[:characters],
+          pinyin: word_data[:pinyin] || 'unknown',
+          translation: word_data[:translation] || 'unknown',
+          example_sentence: word_data[:example_sentence] || 'No example provided',
+          language_level: word_data[:language_level] || 'unknown',
+          definition: word_data[:definition] || 'No definition provided',
+          word_type: word_data[:word_type] || 'unknown'
+        )
       end
 
       # def combine_definitions(english, chinese)
