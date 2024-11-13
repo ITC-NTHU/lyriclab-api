@@ -59,7 +59,7 @@ h1 a:hover {
 .card {
   background-color: white;
   border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
 
@@ -92,7 +92,7 @@ audio {
 /* Lyrics Styles */
 .lyrics {
   white-space: pre-wrap;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   background-color: #f9f9f9;
   padding: 15px;
   border-radius: 4px;
@@ -108,38 +108,121 @@ audio {
 
 .btn-outline-primary:hover {
   color: white;
-  background-color: black
+  background-color: black;
 }
 
 /* Vocabulary Styles beginner novice1 novice2 level1 level2 level3 level4 level5*/
-span.beginner-class {
-  color: #00ff3c;
-}
-
-span.novice1-class {
-  color: #15d200;
-}
-
+span.beginner-class,
+span.novice1-class,
 span.novice2-class {
-  color: #a2ff00;
+  color: #15a837; /* Basic green */
 }
 
-span.level1-class {
-  color: #a1e600;
-}
-
-span.level2-class {
-  color: #dee500;
-}
-
+span.level1-class,
+span.level2-class,
 span.level3-class {
-  color: #e9a700;
+  color: #d8780b; /* Intermediate orange */
 }
 
-span.level4-class {
-  color: #e74c3c;
-}
-
+span.level4-class,
 span.level5-class {
-  color: red;
+  color: #9b2518; /* Advanced red */
+}
+
+.card-title .beginner-class,
+.card-title .novice1-class,
+.card-title .novice2-class {
+  color: #15a837;
+}
+
+.card-title .level1-class,
+.card-title .level2-class,
+.card-title .level3-class {
+  color: #d8780b;
+}
+
+.card-title .level4-class,
+.card-title .level5-class {
+  color: #9b2518;
+}
+
+/* click section*/
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hover\:bg-gray-100:hover {
+  background-color: #f3f4f6;
+}
+
+.word-card button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+/* vocabulary-detail */
+.vocabulary-details strong {
+  display: inline-block;
+  width: 70px;
+  font-size: 1.1rem;
+}
+
+.vocabulary-details span {
+  font-size: 1.1rem;
+}
+
+.detail-item {
+  line-height: 1.6;
+}
+#vocabulary-details::-webkit-scrollbar {
+  width: 8px;
+}
+
+#vocabulary-details::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+#vocabulary-details::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+#vocabulary-details::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* song slim */
+.container-fluid {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.lyrics-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 0 15px;
+  }
+}
+
+.song-info strong {
+  color: #666;
+}
+
+.song-info p {
+  margin-bottom: 1rem;
 }

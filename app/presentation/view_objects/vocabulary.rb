@@ -19,7 +19,8 @@ module Views
     end
 
     def rich_text
-      view :rich_text, locals: { vocabulary: @vocabulary }
+      Slim::Template.new('app/presentation/views_html/rich_text.slim')
+      .render(Object.new, vocabulary: self)
     end
   end
 end

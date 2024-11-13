@@ -1,37 +1,34 @@
+/ song.slim
+.container-fluid
 
-.container
+  / 歌曲基本信息
+  .card.mb-4
+    .card-body
+      .row.align-items-center
+        .col-md-4
+          img.img-fluid.mb-3 src=song.cover_image_url_medium alt="Album Cover"
+          - if song.preview_url
+            audio.w-100.mb-3 controls=""
+              source src=song.preview_url type="audio/mpeg"
+        
+        .col-md-8
+          h2.card-title.mb-4 style="font-size: 2.5rem;" = song.title
+          h3.card-subtitle.mb-4.text-muted style="font-size: 2rem;" = song.artist_name_string
+          .song-info style="font-size: 1.5rem;"
+            p.mb-3
+              strong.me-2 Album:
+              span = song.album_name
+            p
+              strong.me-2 Popularity in Spotify:
+              span = song.popularity
+
+  / 歌詞區域
   .row
-    .col-md-8.offset-md-2
+    .col-md-7
       .card
         .card-body
-          h2.card-title = song.title
-          h4.card-subtitle.mb-2.text-muted = song.artist_name_string
-          
-          p.mb-2
-            strong Album: 
-            = song.album_name
-
-          p.mb-2
-            strong Popularity: 
-            = song.popularity
-          
-          - if song.explicit
-            p.mb-2
-              strong Explicit
-
-          .mt-3
-            img src=song.cover_image_url_medium alt="Album Cover"
-
-          .mt-3
-            - if song.preview_url
-              audio controls=""
-                source src=song.preview_url type="audio/mpeg"
-
-          hr
-          h3.mt-4 Lyrics
-          p.lyrics
-            == render 'rich_text', locals: { vocabulary: song.vocabulary }
-
-  .row.mt-4
-    .col-md-8.offset-md-2
-      a.btn.btn-primary href="/" Back to Search
+          h3.mb-4 Lyrics
+          == song.vocabulary.rich_text
+    
+    .col-md-5
+      #vocabulary-details.sticky-top style="top: 20px; max-height: 80vh; overflow-y: auto;"
