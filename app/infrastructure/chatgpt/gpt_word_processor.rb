@@ -67,7 +67,7 @@ module LyricLab
           { role: 'system', content: '現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字：' },
           { role: 'user', content: "Please identify these words and respond in this format:
             Word:[繁體中文字]
-            translate:[English translation]
+            translate:[English translation ONLY]
             Pinyin:[標註聲調的拼音]
             Difficulty:[select one of those：beginner、novice1、novice2、level1、level2、level3、level4, level5]
             Definition:[英文的詳細定義]
@@ -95,13 +95,14 @@ module LyricLab
               current_word = { characters: ::Regexp.last_match(1) }
             when /^Translate:\s*(.+)/
               current_word[:english] = ::Regexp.last_match(1)
+              current_word[:translation] = ::Regexp.last_match(1)
             when /^Pinyin:\s*(.+)/
               current_word[:pinyin] = ::Regexp.last_match(1)
             when /^Difficulty:\s*(.+)/
               current_word[:language_level] = ::Regexp.last_match(1)
             when /^Definition:\s*(.+)/
               current_word[:definition] = ::Regexp.last_match(1)
-              current_word[:translation] = combine_definitions(current_word[:english], ::Regexp.last_match(1))
+              # current_word[:translation] = combine_definitions(current_word[:english], ::Regexp.last_match(1))
             when /^Word type:\s*(.+)/
               current_word[:word_type] = ::Regexp.last_match(1)
             when /^Example:\s*(.+)/
@@ -115,12 +116,12 @@ module LyricLab
         words
       end
 
-      def combine_definitions(english, chinese)
-        parts = []
-        parts << english if english
-        parts << chinese if chinese
-        parts.join(' | ')
-      end
+      # def combine_definitions(english, chinese)
+      #   parts = []
+      #   parts << english if english
+      #   parts << chinese if chinese
+      #   parts.join(' | ')
+      # end
     end
   end
 end
