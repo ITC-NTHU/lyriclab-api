@@ -70,7 +70,7 @@ module LyricLab
             translate:[English translation ONLY]
             Pinyin:[標註聲調的拼音]
             Difficulty:[select one of those：beginner、novice1、novice2、level1、level2、level3、level4, level5]
-            Definition:[英文的詳細定義]
+            Definition:[English detailed translation ONLY]
             Word type:[選擇詞性：N,V,Adj,Adv,Pron,Prep,Conj,Num,Int,Classifier,Idiom,Other]
             Example:[實用的20字內繁體中文例句]
 
