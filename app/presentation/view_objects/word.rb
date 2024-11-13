@@ -15,6 +15,18 @@ module Views
       @word.translation
     end
 
+    def pinyin
+      @word.pinyin
+    end
+
+    def definition
+      @word.definition
+    end
+
+    def example_sentence
+      @word.example_sentence
+    end
+
     def language_level
       "#{@word.language_level}-class"
     end
