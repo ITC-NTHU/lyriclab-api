@@ -34,7 +34,7 @@ namespace :db do
     require_relative 'config/environment' # load config info
     require_relative 'spec/helpers/database_helper'
 
-    def app = CodePraise::App # rubocop:disable Rake/MethodDefinitionInTask
+    def app = LyricLab::App # rubocop:disable Rake/MethodDefinitionInTask
   end
 
   desc 'Run migrations'
