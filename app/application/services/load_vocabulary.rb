@@ -25,7 +25,11 @@ module LyricLab
       end
 
       def store_vocabulary(input)
-        LyricLab::Repository::For.entity(input).update(input)
+        if Repository::For.entity(input).find(input)
+          Repository::For.entity(input).update(input)
+        else
+          Repository::For.entity(input).create(input)
+        end
         Success(input)
       rescue StandardError => e
         Failure(e.to_s)

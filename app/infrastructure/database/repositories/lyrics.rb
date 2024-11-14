@@ -30,6 +30,7 @@ module LyricLab
       end
 
       def self.update(entity)
+        # puts "UPDATE LYRICS: #{entity}"
         db_lyrics = Database::LyricsOrm.first(id: entity.id)
         db_lyrics.update(entity.to_attr_hash)
       end

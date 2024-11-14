@@ -361,17 +361,17 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 12 Nov 2024 12:42:03 GMT
+      - Thu, 14 Nov 2024 03:32:59 GMT
       Content-Type:
       - application/json
       Content-Length:
       - '174'
       X-Request-Id:
-      - 2598ca4f-99ce-4e44-8517-3086a9163583
+      - df2eb5be-6165-4622-b0df-f3be98f5b20b
       Sp-Trace-Id:
-      - cc24229f58284c92
+      - 79600181bef777c3
       X-Envoy-Upstream-Service-Time:
-      - '13'
+      - '11'
       Server:
       - envoy
       Strict-Transport-Security:
@@ -389,5 +389,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
-  recorded_at: Tue, 12 Nov 2024 12:42:03 GMT
+  recorded_at: Thu, 14 Nov 2024 03:32:59 GMT
 recorded_with: VCR 6.3.1

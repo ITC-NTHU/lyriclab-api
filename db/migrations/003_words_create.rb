@@ -7,7 +7,7 @@ Sequel.migration do
     create_table(:words) do
       primary_key :id
 
-      String     :characters, null: false
+      String     :characters, null: false, unique: true
       String     :translation, null: false
       String     :pinyin, null: false
       String     :language_level

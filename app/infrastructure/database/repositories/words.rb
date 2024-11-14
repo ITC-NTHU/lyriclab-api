@@ -34,7 +34,8 @@ module LyricLab
       end
 
       def self.update(entity)
-        db_word = Database::WordOrm.first(id: entity.id)
+        # puts "Updating word #{entity.characters}"
+        db_word = Database::WordOrm.first(characters: entity.characters)
         db_word.update(entity.to_attr_hash)
       end
 

@@ -115,10 +115,11 @@ module LyricLab
           end
         end
 
+        # GET /result/{spotify_id}
         routing.on 'result', String do |spotify_id|
           routing.get do
             # Get song from database
-            song = Repository::For.klass(Entity::Song).find_spotify_id(spotify_id)
+            song = Service::LoadSong.new.call(spotify_id)
 
             unless song
               flash[:error] = MESSAGES[:empty_search]
@@ -129,11 +130,8 @@ module LyricLab
             recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.spotify_id)
             Repository::For.entity(recommendation).create(recommendation)
 
-            song.vocabulary.gen_unique_words(song.lyrics.text, GPT_API_KEY) if song.vocabulary.unique_words.empty?
-            LyricLab::Repository::For.entity(song).create(song)
-
-            puts "Vocabulary: #{song.vocabulary.inspect}"
-            viewable_song = Views::Song.new(song)
+            vocabulary_song = Service::LoadVocabulary.new.call(song)
+            viewable_song = Views::Song.new(vocabulary_song)
 
             # Show viewer the song
             view 'song', locals: { song: viewable_song }

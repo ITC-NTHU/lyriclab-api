@@ -38,12 +38,20 @@ module LyricLab
       end
 
       def self.update(entity)
+        # puts "Updating vocabulary #{entity.id}"
         db_vocabulary = Database::VocabularyOrm.first(id: entity.id)
         db_vocabulary.update(entity.to_attr_hash)
+        db_vocabulary_words = Words.rebuild_many(db_vocabulary.unique_words).map(&:characters)
+        # puts "DB VOCABULARY words: #{db_vocabulary_words}"
+        # puts "UPDATE VOCABULARY words: #{entity.unique_words.map(&:characters)}"
+
         entity.unique_words.each do |word|
-          if db_vocabulary.unique_words.include?(word)
+          # puts("DB VOCABULARY includes word: #{db_vocabulary_words.include?(word.characters)}")
+          if db_vocabulary_words.include?(word.characters)
             Words.update(word)
+            # puts "Word #{word} already exists"
           else
+            # puts "add word: #{word.characters}"
             db_vocabulary.add_unique_word(Words.find_or_create(word))
           end
         end

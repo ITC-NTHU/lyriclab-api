@@ -31,13 +31,14 @@ module LyricLab
 
       def self.create(entity)
         raise 'Song already exists' if find(entity)
-          return entity if find(entity)
+        return entity if find(entity)
 
         db_song = PersistSong.new(entity).call
         rebuild_entity(db_song)
       end
-      # TODO write code for when we want to update the song entity
+
       def self.update(entity)
+        # puts "Updating song #{entity.id}"
         db_song = Database::SongOrm.first(id: entity.id)
         db_song.update(entity.to_attr_hash)
         Vocabularies.update(entity.vocabulary)
