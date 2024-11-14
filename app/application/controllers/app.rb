@@ -8,7 +8,7 @@ require 'slim/include'
 module LyricLab
   # Web App
   class App < Roda
-    # plugin :sessions, secret: config.SESSION_SECRET
+    plugin :sessions, secret: config.SESSION_SECRET
     plugin :flash
     plugin :all_verbs # allows HTTP verbs beyond GET/POST (e.g., DELETE)
     plugin :render, engine: 'slim', views: 'app/presentation/views_html'
@@ -22,15 +22,13 @@ module LyricLab
     plugin :halt
 
     # Constants
-    SPOTIFY_CLIENT_ID = LyricLab::App.config.SPOTIFY_CLIENT_ID
-    SPOTIFY_CLIENT_SECRET = LyricLab::App.config.SPOTIFY_CLIENT_SECRET
-    GOOGLE_CLIENT_KEY = LyricLab::App.config.GOOGLE_CLIENT_KEY
-    GPT_API_KEY = LyricLab::App.config.GPT_API_KEY
+    SPOTIFY_CLIENT_ID = config.SPOTIFY_CLIENT_ID
+    SPOTIFY_CLIENT_SECRET = config.SPOTIFY_CLIENT_SECRET
+    GOOGLE_CLIENT_KEY = config.GOOGLE_CLIENT_KEY
 
     MESSAGES = {
       empty_search: 'Empty search query',
       songs_not_found: 'Please search for another song',
-      # songs_exist : 'Songs already exist',
       not_mandarin_songs: 'Please search for a Mandarin song',
       no_lyrics_found: 'No lyrics found for this song'
     }.freeze
@@ -39,12 +37,19 @@ module LyricLab
       routing.assets # load CSS
       response['Content-Type'] = 'text/html; charset=utf-8'
       routing.public
+      session[:song_history] ||= []
 
       # GET /
       routing.root do
+        viewable_song_history = Service::LoadSongHistory.new.call(session[:song_history])
+        viewable_song_history = if viewable_song_history.failure?
+                                  []
+                                else
+                                  viewable_song_history.value!
+                                end
         recommendations = Repository::For.klass(Entity::Recommendation).top_searched_songs
         viewable_recommendations = Views::SongsList.new(recommendations)
-        view 'home', locals: { recommendations: viewable_recommendations }
+        view 'home', locals: { recommendations: viewable_recommendations, song_history: viewable_song_history }
       end
 
       # GET /search
@@ -59,11 +64,6 @@ module LyricLab
               response.status = 400
               routing.redirect '/'
             end
-
-            # Get song info from APIs
-            # song = Spotify::SongMapper
-            #  .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
-            #  .find(search_string)
 
             search_results = []
             begin
@@ -120,17 +120,27 @@ module LyricLab
           routing.get do
             # Get song from database
             song = Service::LoadSong.new.call(spotify_id)
-
-            unless song
-              flash[:error] = MESSAGES[:empty_search]
+            if song.failure?
+              App.logger.error(song.failure)
+              flash[:error] = MESSAGES[:no_lyrics_found]
               routing.redirect '/'
+            else
+              song = song.value!
             end
+            session[:song_history] += [song.spotify_id]
 
             # create recommendation
             recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.spotify_id)
             Repository::For.entity(recommendation).create(recommendation)
 
             vocabulary_song = Service::LoadVocabulary.new.call(song)
+            if vocabulary_song.failure?
+              App.logger.error(vocabulary_song.failure)
+              flash[:error] = MESSAGES[:no_lyrics_found]
+              routing.redirect '/'
+            else
+              vocabulary_song = vocabulary_song.value!
+            end
             viewable_song = Views::Song.new(vocabulary_song)
 
             # Show viewer the song

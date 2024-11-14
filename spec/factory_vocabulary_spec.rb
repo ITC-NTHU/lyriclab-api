@@ -100,5 +100,19 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       _(rebuilt2.vocabulary.unique_words.length).must_equal(rebuilt.vocabulary.unique_words.length)
       _(rebuilt2.vocabulary.unique_words.first.characters).wont_be_empty
     end
+
+    it 'SAD: should not be able to create a song that already exists' do
+      song = LyricLab::Spotify::SongMapper
+        .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
+        .find(CORRECT_SONG['title'])
+
+      LyricLab::Service::LoadVocabulary.new.call(song).value!
+      rebuilt = LyricLab::Service::LoadSong.new.call(song.spotify_id).value!
+      begin
+        LyricLab::Repository::For.entity(rebuilt).create(rebuilt)
+      rescue RuntimeError => e
+        _(e.to_s).must_match(/Song already exists/)
+      end
+    end
   end
 end

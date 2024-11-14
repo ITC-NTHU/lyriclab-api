@@ -9,23 +9,43 @@ meta charset="UTF-8"
         button#song-search-submit.btn.btn-success type="submit" search
 
     hr 
-
-  - if recommendations.any?
-    .text-center
-      h2.mb-4 style="padding-top: 40px;" Top Songs
-      .table-responsive
-        table class="table table-hover" id="recommendations_table"
-          thead
-            tr
-              th
-              th Title
-              th Artist
-          tbody
-            - recommendations.each do |song|
+  .row
+    - if recommendations.any?
+      .text-center.col-8
+        h2.mb-4 style="padding-top: 40px;" Top Songs
+        .table-responsive
+          table class="table table-hover" id="recommendations_table"
+            thead
               tr
-                td 
-                  a href=song.result_link
-                    button.recommendation-button
-                      i class="fa-regular fa-eye"
-                td.font-weight-bold= song.title
-                td.font-weight-bold= song.artist
+                th
+                th Title
+                th Artist
+            tbody
+              - recommendations.each do |song|
+                tr
+                  td 
+                    a href=song.result_link
+                      button.recommendation-button
+                        i class="fa-regular fa-eye"
+                  td.font-weight-bold= song.title
+                  td.font-weight-bold= song.artist
+
+    - if song_history.any?
+      .text-center.col-4
+        h3.mb-4 style="padding-top: 40px;" You previously looked at these songs
+        .table-responsive
+          table class="table table-hover" id="song_history_table"
+            thead
+              tr
+                th
+                th Title
+                th Artist
+            tbody
+              - song_history.each do |song|
+                tr
+                  td 
+                    a href=song.result_link
+                      button.recommendation-button
+                        i class="fa-regular fa-eye"
+                  td.font-weight-bold= song.title
+                  td.font-weight-bold= song.artist

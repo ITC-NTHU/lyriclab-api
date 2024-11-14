@@ -16,6 +16,7 @@ module LyricLab
         song = Repository::For.klass(Entity::Song).find_spotify_id(input)
         Success(song)
       rescue StandardError => e
+        App.logger.error e.backtrace.join("\n")
         Failure(e.to_s)
       end
     end

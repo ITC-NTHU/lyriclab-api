@@ -15,6 +15,18 @@ module Views
       @song.title
     end
 
+    def result_link
+      "/search/result/#{spotify_id}"
+    end
+
+    def spotify_id
+      @song.spotify_id
+    end
+
+    def artist
+      artist_name_string.split(',').first
+    end
+
     def popularity
       @song.popularity
     end
