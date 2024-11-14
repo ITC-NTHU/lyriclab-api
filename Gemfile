@@ -54,6 +54,7 @@ end
 group :production do
   gem 'pg', '~> 1.2'
 end
+gem 'pg', '~> 1.2'
 
 # Testing
 group :test do
