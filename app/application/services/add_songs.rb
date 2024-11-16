@@ -24,7 +24,7 @@ module LyricLab
           search_string = input[:search_query]
           Success(search_string:)
         else
-          Failure(input.errors.messages.first.to_s)
+          Failure(input.errors.messages.first)
         end
       end
 

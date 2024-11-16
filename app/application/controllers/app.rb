@@ -22,17 +22,17 @@ module LyricLab
 
     MSG_GET_STARTED = 'No recommendations found'
 
-    # Constants
-    GPT_API_KEY = LyricLab::App.config.GPT_API_KEY
-
     route do |routing|
       routing.assets # load CSS
       response['Content-Type'] = 'text/html; charset=utf-8'
       routing.public
       session[:song_history] ||= []
+      #session[:song_history] = [] 
 
       # GET /
       routing.root do
+        session[:search_result_ids] = []
+
         viewable_song_history = Service::LoadSongHistory.new.call(session[:song_history])
         viewable_song_history = if viewable_song_history.failure?
                                   []
@@ -41,12 +41,15 @@ module LyricLab
                                 end
 
         result = Service::ListRecommendations.new.call
-        viewable_recommendations = if result.failure?
-                                     flash[:error] = result.failure
-                                     []
-                                   else
-                                     Views::SongsList.new(result.value!)
-                                   end
+        viewable_recommendations = []
+        if result.failure?
+          flash[:error] = result.failure
+        else
+          recommendations = result.value!
+          flash.now[:notice] = 'No Recommendations' if recommendations.none?
+          viewable_recommendations = Views::SongsList.new(recommendations)
+        end
+
         view 'home', locals: { recommendations: viewable_recommendations, song_history: viewable_song_history }
       end
 
@@ -91,7 +94,8 @@ module LyricLab
             song = Service::LoadSong.new.call(spotify_id)
             if song.failure?
               App.logger.error(song.failure)
-              flash[:error] = MESSAGES[:no_lyrics_found]
+              #flash[:error] = MESSAGES[:no_lyrics_found]
+              flash[:error] = song.failure
               routing.redirect '/'
             end
             song = song.value!
@@ -104,7 +108,8 @@ module LyricLab
             vocabulary_song = Service::LoadVocabulary.new.call(song)
             if vocabulary_song.failure?
               App.logger.error(vocabulary_song.failure)
-              flash[:error] = MESSAGES[:no_lyrics_found]
+              #flash[:error] = MESSAGES[:no_lyrics_found]
+              flash[:error] = vocabulary_song.failure
               routing.redirect '/'
             else
               vocabulary_song = vocabulary_song.value!
