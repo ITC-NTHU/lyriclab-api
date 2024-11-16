@@ -30,6 +30,7 @@ module LyricLab
 
           Response.new(http_response).tap do |response|
             # raise(response.error) unless response.successful?
+            nil unless response.successful?
           end
         end
       end

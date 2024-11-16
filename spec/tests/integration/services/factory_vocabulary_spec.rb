@@ -1,8 +1,8 @@
 # frozen_string_literal: false
 
-require_relative 'helpers/spec_helper'
-require_relative 'helpers/vcr_helper'
-require_relative 'helpers/database_helper'
+require_relative '../../../helpers/spec_helper'
+require_relative '../../../helpers/vcr_helper'
+require_relative '../../../helpers/database_helper'
 
 describe 'Integration test of word processing and GPT to test vocabulary functions' do
   VcrHelper.setup_vcr

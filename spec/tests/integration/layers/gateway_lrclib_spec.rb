@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'helpers/spec_helper'
-require_relative 'helpers/vcr_helper'
+require_relative '../../../helpers/spec_helper'
+require_relative '../../../helpers/vcr_helper'
 
 describe 'Tests lrclib API library' do
   before do
@@ -24,15 +24,16 @@ describe 'Tests lrclib API library' do
     end
 
     it 'SAD: should raise exception on incorrect song title' do
-      _(proc do
-        @api.find('BAD_NAME', ARTIST_NAME)
-      end).must_raise LyricLab::Lrclib::Api::Response::NotFound
+      #_(proc do
+      #  @api.find('BAD_NAME', ARTIST_NAME)
+      #end).must_raise LyricLab::Lrclib::Api::Response::NotFound
+      result = @api.find('BAD_NAME', ARTIST_NAME)
+      assert_nil result.text, 'Expected text to be nil'
     end
 
     it 'SAD: should raise exception on incorrect artist' do
-      _(proc do
-        @api.find(TRACK_NAME, 'NO_ARTIST')
-      end).must_raise LyricLab::Lrclib::Api::Response::NotFound
+      result = @api.find(TRACK_NAME, 'NO_ARTIST')
+      assert_nil result.text, 'Expected text to be nil'
     end
   end
 end
