@@ -46,9 +46,10 @@ module LyricLab
         end
 
         def is_mandarin # rubocop:disable Naming/PredicateName
-          data = @google_translate_api.detect_language(text)
-          return true unless data != 'zh-TW'
-
+          unless @data['plainLyrics'].nil?
+            data = @google_translate_api.detect_language(text)
+            return true unless data != 'zh-TW'
+          end
           false
         end
       end

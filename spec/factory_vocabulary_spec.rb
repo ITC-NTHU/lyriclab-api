@@ -72,7 +72,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       LyricLab::Repository::For.entity(song).create(song)
 
       rebuilt = LyricLab::Service::LoadSong.new.call(song.spotify_id).value!
-      rebuilt2 = LyricLab::Service::LoadVocabulary.new.call(rebuilt).value!
+      LyricLab::Service::LoadVocabulary.new.call(rebuilt).value!
 
       rebuilt2 = LyricLab::Service::LoadSong.new.call(song.spotify_id).value!
 

@@ -10,7 +10,7 @@ module LyricLab
       include Dry.Types
 
       attribute :id, Integer.optional
-      attribute :text, Strict::String
+      attribute :text, Strict::String.optional
       attribute :is_mandarin, Strict::Bool.optional
       attribute :is_instrumental, Strict::Bool.optional
 

@@ -19,19 +19,11 @@ module LyricLab
     plugin :halt
 
     use Rack::MethodOverride # allows HTTP verbs beyond GET/POST (e.g., DELETE)
-    plugin :halt
+
+    MSG_GET_STARTED = 'No recommendations found'
 
     # Constants
-    SPOTIFY_CLIENT_ID = config.SPOTIFY_CLIENT_ID
-    SPOTIFY_CLIENT_SECRET = config.SPOTIFY_CLIENT_SECRET
-    GOOGLE_CLIENT_KEY = config.GOOGLE_CLIENT_KEY
-
-    MESSAGES = {
-      empty_search: 'Empty search query',
-      songs_not_found: 'Please search for another song',
-      not_mandarin_songs: 'Please search for a Mandarin song',
-      no_lyrics_found: 'No lyrics found for this song'
-    }.freeze
+    GPT_API_KEY = LyricLab::App.config.GPT_API_KEY
 
     route do |routing|
       routing.assets # load CSS
@@ -47,8 +39,14 @@ module LyricLab
                                 else
                                   viewable_song_history.value!
                                 end
-        recommendations = Repository::For.klass(Entity::Recommendation).top_searched_songs
-        viewable_recommendations = Views::SongsList.new(recommendations)
+
+        result = Service::ListRecommendations.new.call
+        viewable_recommendations = if result.failure?
+                                     flash[:error] = result.failure
+                                     []
+                                   else
+                                     Views::SongsList.new(result.value!)
+                                   end
         view 'home', locals: { recommendations: viewable_recommendations, song_history: viewable_song_history }
       end
 
@@ -57,60 +55,31 @@ module LyricLab
         routing.is do
           # POST /search/
           routing.post do
-            search_string = routing.params['search_query']
+            search_string = Forms::NewSearch.new.call(routing.params)
+            search_results = Service::AddSongs.new.call(search_string)
 
-            if search_string.empty?
-              flash[:error] = MESSAGES[:empty_search]
-              response.status = 400
+            if search_results.failure?
+              flash[:error] = search_results.failure
               routing.redirect '/'
             end
 
-            search_results = []
-            begin
-              search_results = Spotify::SongMapper
-                .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
-                .find_n(search_string, 2)
-            rescue StandardError
-              flash[:error] = MESSAGES[:songs_not_found]
-              routing.redirect '/'
-            end
-
-            session[:search_result_ids] = search_results.map(&:spotify_id)
-            # puts search_results.map(&:spotify_id).join
-
-            # Add song to database if it doesn't already exist
-            search_results.map { |song| Repository::For.entity(song).create(song) }
-
-            # unless song
-            #  flash[:error] = MESSAGES[:songs_not_found]
-            #  routing.redirect '/'
-            # end
-
-            # unless search_results.map { |song| song.lyrics.is_mandarin }
-            #  flash[:error] = MESSAGES[:not_mandarin_songs]
-            #  routing.redirect '/'
-            # end
-
-            search_results.each do |song|
-              unless song.lyrics.is_mandarin
-                flash[:error] = MESSAGES[:not_mandarin_songs]
-                routing.redirect '/'
-              end
-            end
-
-            # Redirect viewer to search results page
-            routing.redirect "search/search_results/#{search_results.map(&:spotify_id).join}" if search_string
+            songs = search_results.value!
+            session[:search_result_ids] = songs.map(&:spotify_id)
+            routing.redirect "search/search_results/#{songs.map(&:spotify_id).join}"
           end
         end
 
         routing.on 'search_results', String do |_search_ids|
           routing.get do
-            search_results = session[:search_result_ids].map do |id|
-              song = Repository::For.klass(Entity::Song).find_spotify_id(id)
-              LyricLab::Repository::For.entity(song).create(song)
-              song
+            result = Service::LoadSearchResults.new.call(session[:search_result_ids])
+            if result.failure?
+              flash[:error] = result.failure
+              viewable_search_results = []
+            else
+              search_results = result.value!
+              viewable_search_results = Views::SongsList.new(search_results)
             end
-            viewable_search_results = Views::SongsList.new(search_results)
+
             view 'suggestion', locals: { suggestions: viewable_search_results }
           end
         end
@@ -124,14 +93,13 @@ module LyricLab
               App.logger.error(song.failure)
               flash[:error] = MESSAGES[:no_lyrics_found]
               routing.redirect '/'
-            else
-              song = song.value!
             end
+            song = song.value!
             session[:song_history] += [song.spotify_id]
 
-            # create recommendation
-            recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.spotify_id)
-            Repository::For.entity(recommendation).create(recommendation)
+            record_result = Service::Record.new.call(song)
+
+            flash[:error] = record_result.failure if record_result.failure?
 
             vocabulary_song = Service::LoadVocabulary.new.call(song)
             if vocabulary_song.failure?
