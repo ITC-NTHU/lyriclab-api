@@ -8,9 +8,11 @@ gem 'figaro', '~> 1.2'
 gem 'ostruct'
 gem 'pry'
 gem 'rake'
+gem 'rack-test'
 
 # PRESENTATION LAYER
-gem 'slim', '~> 5.0'
+gem 'multi_json'
+gem 'roar'
 
 # gpt language
 gem 'rest-client', '~> 2.1'
@@ -66,12 +68,6 @@ group :test do
   gem 'simplecov', '~> 0'
   gem 'vcr', '~> 6'
   gem 'webmock', '~> 3'
-
-  # Acceptance Tests
-  gem 'headless', '~> 2.3'
-  gem 'page-object', '~> 2.0'
-  gem 'selenium-webdriver', '~> 4.11'
-  gem 'watir', '~> 7.0'
 end
 
 # Development
@@ -85,3 +81,5 @@ group :development do
   gem 'rubocop-sequel'
   gem 'ruby-lsp'
 end
+
+
