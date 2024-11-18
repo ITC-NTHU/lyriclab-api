@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/irina/soa/week5/spotify-api-script/require_app.rb": {
+      "/home/tristan/soa/project/spotify-api/require_app.rb": {
         "lines": [
           null,
           null,
@@ -21,7 +21,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/config/environment.rb": {
+      "/home/tristan/soa/project/spotify-api/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -37,7 +37,6 @@
           1,
           1,
           null,
-          1,
           null,
           1,
           null,
@@ -84,11 +83,10 @@
           1,
           1,
           null,
-          null,
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/domain/aggregates/recommendations/recommendation.rb": {
+      "/home/tristan/soa/project/spotify-api/app/domain/aggregates/recommendations/recommendation.rb": {
         "lines": [
           null,
           null,
@@ -126,7 +124,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/domain/aggregates/song/entities/lyrics.rb": {
+      "/home/tristan/soa/project/spotify-api/app/domain/aggregates/song/entities/lyrics.rb": {
         "lines": [
           null,
           null,
@@ -152,7 +150,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/domain/aggregates/song/entities/song.rb": {
+      "/home/tristan/soa/project/spotify-api/app/domain/aggregates/song/entities/song.rb": {
         "lines": [
           null,
           null,
@@ -202,7 +200,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/domain/aggregates/song/entities/vocabulary.rb": {
+      "/home/tristan/soa/project/spotify-api/app/domain/aggregates/song/entities/vocabulary.rb": {
         "lines": [
           null,
           null,
@@ -240,7 +238,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/domain/aggregates/song/values/word.rb": {
+      "/home/tristan/soa/project/spotify-api/app/domain/aggregates/song/values/word.rb": {
         "lines": [
           null,
           null,
@@ -270,7 +268,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/domain/aggregates/song/lib/word_processor.rb": {
+      "/home/tristan/soa/project/spotify-api/app/domain/aggregates/song/lib/word_processor.rb": {
         "lines": [
           null,
           null,
@@ -299,7 +297,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/chatgpt/gateway/chatgpt_api.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/chatgpt/gateway/chatgpt_api.rb": {
         "lines": [
           null,
           null,
@@ -440,7 +438,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/chatgpt/gpt_word_processor.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/chatgpt/gpt_word_processor.rb": {
         "lines": [
           null,
           null,
@@ -494,6 +492,71 @@
           null,
           null,
           1,
+          null,
+          9,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          9,
+          9,
+          9,
+          null,
+          9,
+          575,
+          575,
+          null,
+          73,
+          73,
+          null,
+          73,
+          73,
+          null,
+          73,
+          null,
+          3,
+          null,
+          73,
+          null,
+          null,
+          3,
+          null,
+          73,
+          null,
+          null,
+          null,
+          null,
+          9,
+          null,
+          null,
+          9,
+          73,
+          73,
+          73,
+          73,
+          73,
+          73,
+          73,
+          null,
+          null,
+          9,
+          null,
+          null,
+          1,
           2,
           null,
           null,
@@ -506,71 +569,18 @@
           null,
           null,
           null,
-          1,
-          null,
-          9,
           null,
           null,
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          9,
-          9,
-          9,
-          null,
-          9,
-          575,
-          575,
-          null,
-          73,
-          73,
-          null,
-          73,
-          null,
-          73,
-          null,
-          3,
-          null,
-          73,
-          73,
-          null,
-          3,
-          null,
-          73,
-          null,
-          null,
-          null,
-          null,
-          9,
-          null,
-          9,
-          null,
-          null,
-          1,
-          73,
-          73,
-          73,
-          73,
           null,
           null,
           null,
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/database/orm/lyrics_orm.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/database/orm/lyrics_orm.rb": {
         "lines": [
           null,
           null,
@@ -601,7 +611,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/database/orm/recommendation_orm.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/database/orm/recommendation_orm.rb": {
         "lines": [
           null,
           null,
@@ -622,7 +632,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/database/orm/song_orm.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/database/orm/song_orm.rb": {
         "lines": [
           null,
           null,
@@ -647,7 +657,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/database/orm/vocabulary_orm.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/database/orm/vocabulary_orm.rb": {
         "lines": [
           null,
           null,
@@ -681,7 +691,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/database/orm/word_orm.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/database/orm/word_orm.rb": {
         "lines": [
           null,
           null,
@@ -706,7 +716,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/database/repositories/for.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/database/repositories/for.rb": {
         "lines": [
           null,
           null,
@@ -740,7 +750,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/database/repositories/songs.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/database/repositories/songs.rb": {
         "lines": [
           null,
           null,
@@ -828,7 +838,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/database/repositories/lyrics.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/database/repositories/lyrics.rb": {
         "lines": [
           null,
           null,
@@ -875,7 +885,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/database/repositories/vocabularies.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/database/repositories/vocabularies.rb": {
         "lines": [
           null,
           null,
@@ -968,7 +978,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/database/repositories/words.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/database/repositories/words.rb": {
         "lines": [
           null,
           null,
@@ -1040,7 +1050,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/database/repositories/recommendations.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/database/repositories/recommendations.rb": {
         "lines": [
           null,
           null,
@@ -1103,7 +1113,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/google/gateway/google_api.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/google/gateway/google_api.rb": {
         "lines": [
           null,
           null,
@@ -1151,7 +1161,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/lrclib/gateway/lrclib_api.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/lrclib/gateway/lrclib_api.rb": {
         "lines": [
           null,
           null,
@@ -1211,7 +1221,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/lrclib/mappers/lyrics_mapper.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/lrclib/mappers/lyrics_mapper.rb": {
         "lines": [
           null,
           null,
@@ -1273,7 +1283,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/spotify/gateway/spotify_api.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/spotify/gateway/spotify_api.rb": {
         "lines": [
           null,
           null,
@@ -1376,7 +1386,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/spotify/mappers/song_mapper.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/spotify/mappers/song_mapper.rb": {
         "lines": [
           null,
           null,
@@ -1491,7 +1501,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/infrastructure/vocabulary/vocabulary_factory.rb": {
+      "/home/tristan/soa/project/spotify-api/app/infrastructure/vocabulary/vocabulary_factory.rb": {
         "lines": [
           null,
           null,
@@ -1545,7 +1555,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/presentation/view_objects/lyrics.rb": {
+      "/home/tristan/soa/project/spotify-api/app/presentation/view_objects/lyrics.rb": {
         "lines": [
           null,
           null,
@@ -1571,41 +1581,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/presentation/view_objects/record.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/irina/soa/week5/spotify-api-script/app/presentation/view_objects/song.rb": {
+      "/home/tristan/soa/project/spotify-api/app/presentation/view_objects/record.rb": {
         "lines": [
           null,
           null,
@@ -1636,6 +1612,40 @@
           0,
           null,
           null,
+          null
+        ]
+      },
+      "/home/tristan/soa/project/spotify-api/app/presentation/view_objects/song.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
           1,
           0,
           null,
@@ -1679,7 +1689,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/presentation/view_objects/songs_list.rb": {
+      "/home/tristan/soa/project/spotify-api/app/presentation/view_objects/songs_list.rb": {
         "lines": [
           null,
           null,
@@ -1707,7 +1717,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/presentation/view_objects/vocabulary.rb": {
+      "/home/tristan/soa/project/spotify-api/app/presentation/view_objects/vocabulary.rb": {
         "lines": [
           null,
           null,
@@ -1733,10 +1743,11 @@
           0,
           null,
           null,
+          null,
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/presentation/view_objects/word.rb": {
+      "/home/tristan/soa/project/spotify-api/app/presentation/view_objects/word.rb": {
         "lines": [
           null,
           null,
@@ -1759,10 +1770,22 @@
           0,
           null,
           null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/application/controllers/app.rb": {
+      "/home/tristan/soa/project/spotify-api/app/application/controllers/app.rb": {
         "lines": [
           null,
           null,
@@ -1892,7 +1915,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/application/forms/new_search.rb": {
+      "/home/tristan/soa/project/spotify-api/app/application/forms/new_search.rb": {
         "lines": [
           null,
           null,
@@ -1918,7 +1941,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/application/services/add_songs.rb": {
+      "/home/tristan/soa/project/spotify-api/app/application/services/add_songs.rb": {
         "lines": [
           null,
           null,
@@ -1987,7 +2010,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/application/services/list_recommendations.rb": {
+      "/home/tristan/soa/project/spotify-api/app/application/services/list_recommendations.rb": {
         "lines": [
           null,
           null,
@@ -2010,7 +2033,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/application/services/load_search_results.rb": {
+      "/home/tristan/soa/project/spotify-api/app/application/services/load_search_results.rb": {
         "lines": [
           null,
           null,
@@ -2035,7 +2058,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/application/services/load_song.rb": {
+      "/home/tristan/soa/project/spotify-api/app/application/services/load_song.rb": {
         "lines": [
           null,
           null,
@@ -2063,7 +2086,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/application/services/load_song_history.rb": {
+      "/home/tristan/soa/project/spotify-api/app/application/services/load_song_history.rb": {
         "lines": [
           null,
           null,
@@ -2118,7 +2141,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/application/services/load_vocabulary.rb": {
+      "/home/tristan/soa/project/spotify-api/app/application/services/load_vocabulary.rb": {
         "lines": [
           null,
           null,
@@ -2163,7 +2186,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/app/application/services/record.rb": {
+      "/home/tristan/soa/project/spotify-api/app/application/services/record.rb": {
         "lines": [
           null,
           null,
@@ -2187,7 +2210,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/spec/helpers/vcr_helper.rb": {
+      "/home/tristan/soa/project/spotify-api/spec/helpers/vcr_helper.rb": {
         "lines": [
           null,
           null,
@@ -2216,29 +2239,29 @@
           7,
           null,
           7,
-          609,
-          609,
+          371,
+          371,
           null,
-          609,
-          609,
+          371,
+          371,
           null,
-          609,
-          null,
-          null,
-          1092,
-          1092,
-          1092,
-          1092,
-          1092,
-          1092,
-          null,
-          7,
-          1085,
-          1085,
+          371,
           null,
           null,
+          637,
+          637,
+          637,
+          637,
+          637,
+          637,
           null,
           7,
+          630,
+          630,
+          null,
+          null,
+          null,
+          7,
           null,
           null,
           null,
@@ -2251,31 +2274,31 @@
           2,
           null,
           2,
-          71,
-          71,
+          197,
+          197,
           null,
-          71,
-          71,
+          197,
+          197,
           null,
-          71,
+          197,
           null,
-          71,
-          null,
-          null,
-          121,
-          121,
-          121,
-          121,
-          121,
-          121,
-          null,
-          2,
-          119,
-          119,
+          197,
           null,
           null,
+          349,
+          349,
+          349,
+          349,
+          349,
+          349,
           null,
           2,
+          347,
+          347,
+          null,
+          null,
+          null,
+          2,
           null,
           null,
           null,
@@ -2288,27 +2311,27 @@
           3,
           null,
           3,
-          35,
-          35,
+          80,
+          80,
           null,
-          35,
-          35,
+          80,
+          80,
           null,
-          35,
+          80,
           null,
-          35,
+          80,
           null,
           null,
-          68,
-          68,
-          68,
-          68,
-          68,
-          68,
+          140,
+          140,
+          140,
+          140,
+          140,
+          140,
           null,
           3,
-          65,
-          65,
+          137,
+          137,
           null,
           null,
           null,
@@ -2325,27 +2348,27 @@
           4,
           null,
           4,
-          285,
-          285,
+          142,
+          142,
           null,
-          285,
-          285,
+          142,
+          142,
           null,
-          285,
+          142,
           null,
-          285,
+          142,
           null,
           null,
-          519,
-          519,
-          519,
-          519,
-          519,
-          519,
+          246,
+          246,
+          246,
+          246,
+          246,
+          246,
           null,
           4,
-          515,
-          515,
+          242,
+          242,
           null,
           null,
           null,
@@ -2361,8 +2384,8 @@
           3,
           3,
           null,
-          261,
-          261,
+          402,
+          402,
           null,
           3,
           null,
@@ -2374,10 +2397,10 @@
           null,
           1,
           6,
-          698,
+          246,
           6,
-          692,
-          692,
+          240,
+          240,
           null,
           null,
           null,
@@ -2394,7 +2417,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/spec/tests/integration/gpt/lib_word_processor_spec.rb": {
+      "/home/tristan/soa/project/spotify-api/spec/tests/integration/gpt/lib_word_processor_spec.rb": {
         "lines": [
           null,
           null,
@@ -2445,7 +2468,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/spec/tests/integration/layers/gateway_database_spec.rb": {
+      "/home/tristan/soa/project/spotify-api/spec/tests/integration/layers/gateway_database_spec.rb": {
         "lines": [
           null,
           null,
@@ -2492,7 +2515,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/spec/helpers/database_helper.rb": {
+      "/home/tristan/soa/project/spotify-api/spec/helpers/database_helper.rb": {
         "lines": [
           null,
           null,
@@ -2512,7 +2535,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/spec/tests/integration/layers/gateway_lrclib_spec.rb": {
+      "/home/tristan/soa/project/spotify-api/spec/tests/integration/layers/gateway_lrclib_spec.rb": {
         "lines": [
           null,
           null,
@@ -2555,7 +2578,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/spec/tests/integration/layers/gateway_spotify_spec.rb": {
+      "/home/tristan/soa/project/spotify-api/spec/tests/integration/layers/gateway_spotify_spec.rb": {
         "lines": [
           null,
           null,
@@ -2606,7 +2629,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/spec/tests/integration/services/add_songs_spec.rb": {
+      "/home/tristan/soa/project/spotify-api/spec/tests/integration/services/add_songs_spec.rb": {
         "lines": [
           null,
           null,
@@ -2668,7 +2691,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/spec/tests/integration/services/factory_vocabulary_spec.rb": {
+      "/home/tristan/soa/project/spotify-api/spec/tests/integration/services/factory_vocabulary_spec.rb": {
         "lines": [
           null,
           null,
@@ -2761,6 +2784,7 @@
           null,
           1,
           1,
+          null,
           1,
           1,
           1,
@@ -2790,7 +2814,7 @@
           null
         ]
       },
-      "/home/irina/soa/week5/spotify-api-script/spec/tests/integration/services/list_and_record_spec.rb": {
+      "/home/tristan/soa/project/spotify-api/spec/tests/integration/services/list_and_record_spec.rb": {
         "lines": [
           null,
           null,
@@ -2863,6 +2887,6 @@
         ]
       }
     },
-    "timestamp": 1731766919
+    "timestamp": 1731897203
   }
 }

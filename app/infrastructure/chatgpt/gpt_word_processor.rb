@@ -86,7 +86,7 @@ module LyricLab
             when /^Pinyin:\s*(.+)/
               current_word[:pinyin] = ::Regexp.last_match(1) || 'unknown'
             when /^Difficulty:\s*(.+)/
-              current_word[:language_level] = ::Regexp.last_match(1) || 'unknown'
+              current_word[:language_level] = ::Regexp.last_match(1) || nil
             when /^Definition:\s*(.+)/
               current_word[:definition] = ::Regexp.last_match(1) || 'unknown'
               # current_word[:translation] = combine_definitions(current_word[:english], ::Regexp.last_match(1))
@@ -99,12 +99,12 @@ module LyricLab
 
           # Add the last word
           words << current_word if current_word[:characters]
-          
+
           # check every word has all the required fields for default
           words.map do |word|
             word[:translation] ||= 'unknown'
             word[:pinyin] ||= 'unknown'
-            word[:language_level] ||= 'unknown'
+            word[:language_level] ||= nil
             word[:definition] ||= 'unknown'
             word[:word_type] ||= 'unknown'
             word[:example_sentence] ||= 'No example provided'
@@ -121,7 +121,7 @@ module LyricLab
           pinyin: word_data[:pinyin] || 'unknown',
           translation: word_data[:translation] || 'unknown',
           example_sentence: word_data[:example_sentence] || 'No example provided',
-          language_level: word_data[:language_level] || 'unknown',
+          language_level: word_data[:language_level] || nil,
           definition: word_data[:definition] || 'No definition provided',
           word_type: word_data[:word_type] || 'unknown'
         )

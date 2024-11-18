@@ -90,7 +90,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       _(word.pinyin).must_equal 'unknown'
       _(word.translation).must_equal 'unknown'
       _(word.example_sentence).must_equal 'No example provided'
-      _(word.language_level).must_equal 'unknown'
+      _(word.language_level).must_be_nil
       _(word.definition).must_equal 'No definition provided'
       _(word.word_type).must_equal 'unknown'
     end

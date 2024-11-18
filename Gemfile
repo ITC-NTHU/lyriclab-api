@@ -12,6 +12,10 @@ gem 'rake'
 # PRESENTATION LAYER
 gem 'slim', '~> 5.0'
 
+# gpt language
+gem 'rest-client', '~> 2.1'
+gem 'ruby-openai', '~> 6.3'
+
 # APPLICATION LAYER
 # Web application related
 gem 'logger', '~> 1.6'
@@ -53,7 +57,7 @@ end
 
 group :production do
   gem 'pg', '~> 1.2'
-endls
+end
 
 # Testing
 group :test do
@@ -81,7 +85,3 @@ group :development do
   gem 'rubocop-sequel'
   gem 'ruby-lsp'
 end
-
-# gpt language
-gem 'rest-client', '~> 2.1'
-gem 'ruby-openai', '~> 6.3'

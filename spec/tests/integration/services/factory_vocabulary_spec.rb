@@ -89,6 +89,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
 
       rebuilt = LyricLab::Service::LoadSong.new.call(song.spotify_id).value!
       rebuilt.vocabulary.gen_unique_words(rebuilt.lyrics.text, GPT_API_KEY) if rebuilt.vocabulary.unique_words.empty?
+      # puts rebuilt.vocabulary.unique_words.map(&:language_level)
       LyricLab::Repository::For.entity(rebuilt).update(rebuilt)
       LyricLab::Repository::For.entity(rebuilt).update(rebuilt)
       LyricLab::Repository::For.entity(rebuilt).update(rebuilt)
