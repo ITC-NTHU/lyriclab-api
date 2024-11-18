@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-require_relative 'helpers/spec_helper'
-TEST_DATA = YAML.safe_load_file(File.join(File.dirname(__FILE__), 'fixtures', 'word_processor.yml'))
+require_relative '../../../helpers/spec_helper'
+#TEST_DATA = YAML.safe_load_file(File.join(File.dirname(__FILE__), 'fixtures', 'word_processor.yml'))
+TEST_DATA = YAML.safe_load_file('spec/fixtures/word_processor.yml')
 TEST_DATA['language_levels'].map!(&:to_sym)
 
 WordProcessor = LyricLab::Mixins::WordProcessor

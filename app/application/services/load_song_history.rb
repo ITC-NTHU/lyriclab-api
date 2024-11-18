@@ -14,10 +14,20 @@ module LyricLab
       private
 
       def load_songs_from_database(input)
-        songs = input.map! do |spotify_id|
-          load_song_from_database(spotify_id)
+        puts input.length
+        if input.empty?
+          Failure('no sessions')
+        else
+          songs = input.map! do |spotify_id|
+              load_song_from_database(spotify_id)
+          end
+          Success(songs)
         end
-        Success(songs)
+
+        #songs = input.map! do |spotify_id|
+        #  load_song_from_database(spotify_id)
+        #end
+        #Success(songs)
       rescue StandardError => e
         App.logger.error e.backtrace.join("\n")
         Failure(e.to_s)

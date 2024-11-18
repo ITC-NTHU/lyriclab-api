@@ -39,7 +39,7 @@ module LyricLab
       end
 
       def relevant?
-        !@is_instrumental and @lyrics.is_mandarin
+        !is_instrumental && lyrics.is_mandarin
       end
     end
   end
