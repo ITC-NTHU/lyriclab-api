@@ -3,28 +3,35 @@
 require 'rake/testtask'
 require_relative 'require_app'
 
-CODE = 'app/'
-
 task :default do
   puts `rake -T`
 end
 
-desc 'Run web app'
-task :run do
-  sh 'bundle exec puma'
+desc 'Run unit and integration tests'
+Rake::TestTask.new(:spec) do |t|
+  t.pattern = 'spec/tests/**/*_spec.rb'
+  t.warning = false
 end
 
-desc 'Keep rerunnin web app upoon changes'
+desc 'Keep rerunning unit/integration tests upon changes'
+task :respec do
+  sh "rerun -c 'rake spec' --ignore 'coverage/*' --ignore 'repostore/*'"
+end
+
+desc 'Run the webserver and application and restart if code changes'
 task :rerun do
   sh "rerun -c --ignore 'coverage/*' --ignore 'repostore/*' -- bundle exec puma"
 end
 
-desc 'Generates a 64 by secret for Rack::Session'
-task :new_session_secret do
-  require 'base64'
-  require 'securerandom'
-  secret = SecureRandom.random_bytes(64).then { Base64.urlsafe_encode64(_1) }
-  puts "SESSION_SECRET: #{secret}"
+namespace :run do
+  desc 'Run API in dev mode'
+  task :default do
+    sh 'rerun -c "bundle exec puma -p 9090"'
+  end
+  desc 'Run API in test mode'
+  task :test do
+    sh 'RACK_ENV=test bundle exec puma -p 9090'
+  end
 end
 
 namespace :db do
@@ -72,17 +79,6 @@ task :console do
   sh 'pry -r ./load_all'
 end
 
-desc 'Run tests once'
-Rake::TestTask.new(:spec) do |t|
-  t.pattern = 'spec/tests/{integration,unit}/**/*_spec.rb'
-  t.warning = false
-end
-
-desc 'Keep rerunning tests upon changes'
-task :respec do
-  sh "rerun -c 'rake spec' --ignore 'coverage/*' --ignore 'repostore/*'"
-end
-
 namespace :vcr do
   desc 'delete cassette fixtures'
   task :wipe do
@@ -93,6 +89,8 @@ namespace :vcr do
 end
 
 namespace :quality do
+  only_app = 'config/ app/'
+
   desc 'run all static-analysis quality checks'
   task all: %i[rubocop reek flog]
 
@@ -103,11 +101,11 @@ namespace :quality do
 
   desc 'code smell detector'
   task :reek do
-    sh 'reek'
+    sh "reek #{only_app}"
   end
 
   desc 'complexity analysis'
   task :flog do
-    sh "flog #{CODE}"
+    sh "flog -m#{only_app}"
   end
 end

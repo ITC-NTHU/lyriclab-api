@@ -2,122 +2,129 @@
 
 require 'rack' # for Rack::MethodOverride
 require 'roda'
-require 'slim'
-require 'slim/include'
 
 module LyricLab
   # Web App
   class App < Roda
-    plugin :sessions, secret: config.SESSION_SECRET
+    # plugin :sessions, secret: config.SESSION_SECRET
+    plugin :halt
     plugin :flash
     plugin :all_verbs # allows HTTP verbs beyond GET/POST (e.g., DELETE)
-    plugin :render, engine: 'slim', views: 'app/presentation/views_html'
-    plugin :public, root: 'app/presentation/public'
-    plugin :assets, path: 'app/presentation/assets',
-                    css: 'style.css', js: 'table_row.js'
-    plugin :common_logger, $stderr
-    plugin :halt
 
-    use Rack::MethodOverride # allows HTTP verbs beyond GET/POST (e.g., DELETE)
-
-    MSG_GET_STARTED = 'No recommendations found'
-
+    # rubocop:disable Metrics/BlockLength
     route do |routing|
-      routing.assets # load CSS
-      response['Content-Type'] = 'text/html; charset=utf-8'
-      routing.public
-      session[:song_history] ||= []
-      #session[:song_history] = [] 
+      response['Content-Type'] = 'application/json'
 
       # GET /
       routing.root do
-        session[:search_result_ids] = []
+        message = "LyricLab API v1 at /api/v1/ in #{App.environment} mode"
 
-        viewable_song_history = Service::LoadSongHistory.new.call(session[:song_history])
-        viewable_song_history = if viewable_song_history.failure?
-                                  []
-                                else
-                                  viewable_song_history.value!
-                                end
+        result_response = Representer::HttpResponse.new(
+          Response::ApiResult.new(status: :ok, message:)
+        )
 
-        result = Service::ListRecommendations.new.call
-        viewable_recommendations = []
-        if result.failure?
-          flash[:error] = result.failure
-        else
-          recommendations = result.value!
-          flash.now[:notice] = 'No Recommendations' if recommendations.none?
-          viewable_recommendations = Views::SongsList.new(recommendations)
-        end
-
-        view 'home', locals: { recommendations: viewable_recommendations, song_history: viewable_song_history }
+        response.status = result_response.http_status_code
+        result_response.to_json
       end
 
-      # GET /search
-      routing.on 'search' do
-        routing.is do
-          # POST /search/
-          routing.post do
-            search_string = Forms::NewSearch.new.call(routing.params)
-            search_results = Service::AddSongs.new.call(search_string)
-
-            if search_results.failure?
-              flash[:error] = search_results.failure
-              routing.redirect '/'
-            end
-
-            songs = search_results.value!
-            session[:search_result_ids] = songs.map(&:spotify_id)
-            routing.redirect "search/search_results/#{songs.map(&:spotify_id).join}"
-          end
-        end
-
-        routing.on 'search_results', String do |_search_ids|
+      routing.on 'api/v1' do
+        routing.on 'recommendations' do
+          # return recommendations as array of objects
+          # GET /api/v1/recommendations
           routing.get do
-            result = Service::LoadSearchResults.new.call(session[:search_result_ids])
+            result = Service::ListRecommendations.new.call
+
             if result.failure?
-              flash[:error] = result.failure
-              viewable_search_results = []
-            else
-              search_results = result.value!
-              viewable_search_results = Views::SongsList.new(search_results)
+              failed = Representer::HttpResponse.new(result.failure)
+              routing.halt failed.http_status_code, failed.to_json
             end
 
-            view 'suggestion', locals: { suggestions: viewable_search_results }
+            http_response = Representer::HttpResponse.new(result.value!)
+            response.status = http_response.http_status_code
+            Representer::RecommendationsList.new(result.value!.message).to_json
           end
         end
 
-        # GET /result/{spotify_id}
-        routing.on 'result', String do |spotify_id|
-          routing.get do
-            # Get song from database
-            song = Service::LoadSong.new.call(spotify_id)
-            if song.failure?
-              App.logger.error(song.failure)
-              #flash[:error] = MESSAGES[:no_lyrics_found]
-              flash[:error] = song.failure
-              routing.redirect '/'
+        routing.on 'search_results' do
+          routing.is do
+            # return search results in form of song objects
+            # POST /api/v1/search_results?search_query={search_query}
+            routing.post do
+              # TODO: check nonempty
+              search_query = Request::EncodedSearchQuery.new(routing.params)
+              result = Service::LoadSearchResults.new.call(search_query)
+
+              if result.failure?
+                failed = Representer::HttpResponse.new(result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(result.value!)
+              response.status = http_response.http_status_code
+
+              Representer::SearchResults.new(
+                result.value!.message
+              ).to_json
             end
-            song = song.value!
-            session[:song_history] += [song.spotify_id]
+          end
+        end
 
-            record_result = Service::Record.new.call(song)
+        routing.on 'songs' do
+          routing.on String do |spotify_id|
+            # update recommendations
+            # PUT /api/v1/songs/{spotify_id}
+            routing.put do
+              result = Service::Record.new.call(spotify_id)
 
-            flash[:error] = record_result.failure if record_result.failure?
+              if result.failure?
+                failed = Representer::HttpResponse.new(result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
 
-            vocabulary_song = Service::LoadVocabulary.new.call(song)
-            if vocabulary_song.failure?
-              App.logger.error(vocabulary_song.failure)
-              #flash[:error] = MESSAGES[:no_lyrics_found]
-              flash[:error] = vocabulary_song.failure
-              routing.redirect '/'
-            else
-              vocabulary_song = vocabulary_song.value!
+              http_response = Representer::HttpResponse.new(result.value!)
+              response.status = http_response.http_status_code
+              Representer::Recommendation.new(result.value!.message).to_json
             end
-            viewable_song = Views::Song.new(vocabulary_song)
 
-            # Show viewer the song
-            view 'song', locals: { song: viewable_song }
+            # return metadata for single song object
+            # GET /api/v1/songs/{spotify_id}
+            routing.get do
+              result = Service::LoadSong.new.call(spotify_id)
+
+              if result.failure?
+                failed = Representer::HttpResponse.new(result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(result.value!)
+              response.status = http_response.http_status_code
+
+              Representer::Song.new(
+                result.value!.message
+              ).to_json
+            end
+          end
+        end
+
+        routing.on 'vocabularies' do
+          routing.on String do |spotify_id|
+            # return vocabularies
+            # GET /api/v1/vocabularies/{spotify_id}
+            routing.post do
+              result = Service::LoadVocabulary.new.call(spotify_id)
+
+              if result.failure?
+                failed = Representer::HttpResponse.new(result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(result.value!)
+              response.status = http_response.http_status_code
+
+              Representer::Song.new(
+                result.value!.message
+              ).to_json
+            end
           end
         end
       end

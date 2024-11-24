@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.spotify.com/v1/search?limit=2&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
+    uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=%E5%B1%B1%E6%B5%B7&type=track
     body:
       encoding: ASCII-8BIT
       string: ''
@@ -21,7 +21,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
-      - public, max-age=7200
+      - public, max-age=0
+      Etag:
+      - '"MC-IjRjNjg4YTQ1ZWU4YTY4MWIzZTkxZGFmZDA1ZGRkMGJlIg=="'
       X-Robots-Tag:
       - noindex, nofollow
       Access-Control-Allow-Origin:
@@ -36,7 +38,7 @@ http_interactions:
       Access-Control-Max-Age:
       - '604800'
       Content-Length:
-      - '5443'
+      - '2101'
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -44,7 +46,7 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Date:
-      - Mon, 04 Nov 2024 16:11:27 GMT
+      - Sun, 24 Nov 2024 07:55:07 GMT
       Server:
       - envoy
       Via:
@@ -55,155 +57,10 @@ http_interactions:
       - close
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "tracks" : {
-            "href" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=0&limit=2",
-            "items" : [ {
-              "album" : {
-                "album_type" : "album",
-                "artists" : [ {
-                  "external_urls" : {
-                    "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
-                  },
-                  "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
-                  "id" : "3HXSUfI76zVZk71UMAeVfp",
-                  "name" : "No Party For Cao Dong",
-                  "type" : "artist",
-                  "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
-                } ],
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"
-                },
-                "href" : "https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh",
-                "id" : "2Qfn3LNC6qhxgpyPjBQFJh",
-                "images" : [ {
-                  "height" : 640,
-                  "url" : "https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348",
-                  "width" : 640
-                }, {
-                  "height" : 300,
-                  "url" : "https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348",
-                  "width" : 300
-                }, {
-                  "height" : 64,
-                  "url" : "https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348",
-                  "width" : 64
-                } ],
-                "is_playable" : true,
-                "name" : "醜奴兒",
-                "release_date" : "2016-02-19",
-                "release_date_precision" : "day",
-                "total_tracks" : 12,
-                "type" : "album",
-                "uri" : "spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"
-              },
-              "artists" : [ {
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"
-                },
-                "href" : "https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp",
-                "id" : "3HXSUfI76zVZk71UMAeVfp",
-                "name" : "No Party For Cao Dong",
-                "type" : "artist",
-                "uri" : "spotify:artist:3HXSUfI76zVZk71UMAeVfp"
-              } ],
-              "disc_number" : 1,
-              "duration_ms" : 251053,
-              "explicit" : false,
-              "external_ids" : {
-                "isrc" : "TWBN31600010"
-              },
-              "external_urls" : {
-                "spotify" : "https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"
-              },
-              "href" : "https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB",
-              "id" : "0VUORVhLmsxKTSwg4P9CrB",
-              "is_local" : false,
-              "is_playable" : true,
-              "name" : "山海",
-              "popularity" : 53,
-              "preview_url" : "https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>",
-              "track_number" : 10,
-              "type" : "track",
-              "uri" : "spotify:track:0VUORVhLmsxKTSwg4P9CrB"
-            }, {
-              "album" : {
-                "album_type" : "compilation",
-                "artists" : [ {
-                  "external_urls" : {
-                    "spotify" : "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of"
-                  },
-                  "href" : "https://api.spotify.com/v1/artists/0LyfQWJT6nXafLPZqxe9Of",
-                  "id" : "0LyfQWJT6nXafLPZqxe9Of",
-                  "name" : "Various Artists",
-                  "type" : "artist",
-                  "uri" : "spotify:artist:0LyfQWJT6nXafLPZqxe9Of"
-                } ],
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/album/18pZZsD18yOnN4lzSEXGLU"
-                },
-                "href" : "https://api.spotify.com/v1/albums/18pZZsD18yOnN4lzSEXGLU",
-                "id" : "18pZZsD18yOnN4lzSEXGLU",
-                "images" : [ {
-                  "height" : 640,
-                  "url" : "https://i.scdn.co/image/ab67616d0000b273e09d00145e887370586bc97a",
-                  "width" : 640
-                }, {
-                  "height" : 300,
-                  "url" : "https://i.scdn.co/image/ab67616d00001e02e09d00145e887370586bc97a",
-                  "width" : 300
-                }, {
-                  "height" : 64,
-                  "url" : "https://i.scdn.co/image/ab67616d00004851e09d00145e887370586bc97a",
-                  "width" : 64
-                } ],
-                "is_playable" : true,
-                "name" : "歌手2018 (第九期 Live)",
-                "release_date" : "2018-03-16",
-                "release_date_precision" : "day",
-                "total_tracks" : 8,
-                "type" : "album",
-                "uri" : "spotify:album:18pZZsD18yOnN4lzSEXGLU"
-              },
-              "artists" : [ {
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/artist/1yAu2FQ7vCnzxZgaVnr3w6"
-                },
-                "href" : "https://api.spotify.com/v1/artists/1yAu2FQ7vCnzxZgaVnr3w6",
-                "id" : "1yAu2FQ7vCnzxZgaVnr3w6",
-                "name" : "华晨宇",
-                "type" : "artist",
-                "uri" : "spotify:artist:1yAu2FQ7vCnzxZgaVnr3w6"
-              } ],
-              "disc_number" : 1,
-              "duration_ms" : 309162,
-              "explicit" : false,
-              "external_ids" : {
-                "isrc" : "DGA0H2336646"
-              },
-              "external_urls" : {
-                "spotify" : "https://open.spotify.com/track/5ZyNe74eXYnMCZoHWuZ973"
-              },
-              "href" : "https://api.spotify.com/v1/tracks/5ZyNe74eXYnMCZoHWuZ973",
-              "id" : "5ZyNe74eXYnMCZoHWuZ973",
-              "is_local" : false,
-              "is_playable" : true,
-              "name" : "山海 - Live",
-              "popularity" : 28,
-              "preview_url" : "https://p.scdn.co/mp3-preview/b1b18205e6d2d5df460c53cbe7327e4ae76d70c5?cid=<REDACTED>",
-              "track_number" : 5,
-              "type" : "track",
-              "uri" : "spotify:track:5ZyNe74eXYnMCZoHWuZ973"
-            } ],
-            "limit" : 2,
-            "next" : "https://api.spotify.com/v1/search?query=%E5%B1%B1%E6%B5%B7&type=track&market=TW&offset=2&limit=2",
-            "offset" : 0,
-            "previous" : null,
-            "total" : 101
-          }
-        }
-  recorded_at: Mon, 04 Nov 2024 16:11:27 GMT
+      string: '{"tracks":{"href":"https://api.spotify.com/v1/search?offset=0&limit=1&query=%E5%B1%B1%E6%B5%B7&type=track&market=TW","limit":1,"next":"https://api.spotify.com/v1/search?offset=1&limit=1&query=%E5%B1%B1%E6%B5%B7&type=track&market=TW","offset":0,"previous":null,"total":100,"items":[{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"},"href":"https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp","id":"3HXSUfI76zVZk71UMAeVfp","name":"No
+        Party For Cao Dong","type":"artist","uri":"spotify:artist:3HXSUfI76zVZk71UMAeVfp"}],"external_urls":{"spotify":"https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"},"href":"https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh","id":"2Qfn3LNC6qhxgpyPjBQFJh","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348"}],"is_playable":true,"name":"醜奴兒","release_date":"2016-02-19","release_date_precision":"day","total_tracks":12,"type":"album","uri":"spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"},"href":"https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp","id":"3HXSUfI76zVZk71UMAeVfp","name":"No
+        Party For Cao Dong","type":"artist","uri":"spotify:artist:3HXSUfI76zVZk71UMAeVfp"}],"disc_number":1,"duration_ms":251053,"explicit":false,"external_ids":{"isrc":"TWBN31600010"},"external_urls":{"spotify":"https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"},"href":"https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB","id":"0VUORVhLmsxKTSwg4P9CrB","is_local":false,"is_playable":true,"name":"山海","popularity":53,"preview_url":"https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>","track_number":10,"type":"track","uri":"spotify:track:0VUORVhLmsxKTSwg4P9CrB"}]}}'
+  recorded_at: Sun, 24 Nov 2024 07:55:07 GMT
 - request:
     method: get
     uri: https://lrclib.net/api/get?artist_name=No%20Party%20For%20Cao%20Dong&track_name=%E5%B1%B1%E6%B5%B7
@@ -225,7 +82,7 @@ http_interactions:
       Server:
       - nginx/1.22.1
       Date:
-      - Mon, 04 Nov 2024 16:11:28 GMT
+      - Sun, 24 Nov 2024 07:55:09 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -248,42 +105,5 @@ http_interactions:
         \n[02:37.19] 我聽著那少年的聲音\n[02:44.78] 在還有未來的過去\n[02:49.30] 渴望著美好結局\n[02:56.73]
         卻沒能成為自己\n[03:00.97] 他明白 他明白 我給不起\n[03:08.56] 於是轉身向山裡走去\n[03:12.96] 他明白 他明白
         我給不起\n[03:20.61] 於是轉身向大海走去\n[03:25.05] "}'
-  recorded_at: Mon, 04 Nov 2024 16:11:28 GMT
-- request:
-    method: get
-    uri: https://lrclib.net/api/get?artist_name=%E5%8D%8E%E6%99%A8%E5%AE%87&track_name=%E5%B1%B1%E6%B5%B7%20-%20Live
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - lrclib.net
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx/1.22.1
-      Date:
-      - Mon, 04 Nov 2024 16:11:31 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '1479'
-      Connection:
-      - close
-      Vary:
-      - origin, access-control-request-method, access-control-request-headers
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"id":9915013,"name":"山海 - Live","trackName":"山海 - Live","artistName":"华晨宇","albumName":"歌手2018
-        (第九期 Live)","duration":309.0,"instrumental":false,"plainLyrics":"我看著天真的我自己\n出現在沒有我的故事裡\n等待著我的回應\n一個為何至此的原因\n他明白\n他明白\n我給不起\n於是轉身向山里走去\n他明白\n他明白\n我給不起\n於是轉身向大海走去\n我聽著那少年的聲音\n在還有未來的過去\n渴望著美好結局\n卻沒能成為自己\n卻沒能成為自己\n他明白\n他明白\n我給不起\n於是轉身向山里走去\n他明白\n他明白\n我給不起\n於是轉身向大海走去\n頭頂強烈的太陽\n是獎賞還是耳光\n毀於大火的心臟\n從灰燼拔節茁壯\n鋪滿油垢的海洋\n打撈起尊嚴一兩\n殆盡溫度的高崗\n對試探回以凝望\n誤會天真的假想\n在永夜編織方向\n當黑暗掀翻燭光\n你是藏還是不藏\n長風破浪雲飛揚\n敵不過魂歸故鄉\n所愛隔山海茫茫\n為只為一聲迴響\n自己和鏡中對抗\n贏不回詩和遠方\n任世故欲蓋彌彰\n他奮力撕掉偽裝\n轉身間對視過往\n道一句怪人生無常\n他明白\n他明白\n我給不起\n於是轉身向山里走去\n他明白\n他明白\n我給不起\n於是轉身向大海走去\n他明白\n他明白\n他明白\n他明白\n他明白\n他明白\n我給不起\n於是轉身向大海走去\n於是轉身向大海走去","syncedLyrics":null}'
-  recorded_at: Mon, 04 Nov 2024 16:11:31 GMT
+  recorded_at: Sun, 24 Nov 2024 07:55:09 GMT
 recorded_with: VCR 6.3.1

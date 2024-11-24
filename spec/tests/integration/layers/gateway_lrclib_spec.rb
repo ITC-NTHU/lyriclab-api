@@ -24,9 +24,9 @@ describe 'Tests lrclib API library' do
     end
 
     it 'SAD: should raise exception on incorrect song title' do
-      #_(proc do
+      # _(proc do
       #  @api.find('BAD_NAME', ARTIST_NAME)
-      #end).must_raise LyricLab::Lrclib::Api::Response::NotFound
+      # end).must_raise LyricLab::Lrclib::Api::Response::NotFound
       result = @api.find('BAD_NAME', ARTIST_NAME)
       assert_nil result.text, 'Expected text to be nil'
     end
