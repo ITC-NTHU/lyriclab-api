@@ -17,6 +17,7 @@ module LyricLab
         end
       end
 
+      # TODO: no need to convert to traditional since we receive taiwanese songs
       def self.convert_to_traditional(text)
         Tradsim.to_trad(text)
       end

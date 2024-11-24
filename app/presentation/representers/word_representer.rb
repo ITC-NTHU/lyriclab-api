@@ -16,7 +16,6 @@ module LyricLab
       property :definition
       property :word_type
       property :example_sentence
-
     end
   end
 end

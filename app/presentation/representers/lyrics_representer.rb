@@ -11,26 +11,11 @@ module LyricLab
     #   Representer::Lyrics.new(lyrics).to_json
     class Lyrics < Roar::Decorator
       include Roar::JSON
-      include Roar::Hypermedia
-      
+
       property :id
       property :text
       property :is_mandarin
       property :is_instrumental
-
-      link :self do
-        "api/v1/lyrics/#{id}"
-      end
-
-      link :recommendations do
-        "api/v1/lyrics/#{id}/recommendations"
-      end
-
-      link :translations do
-        "api/v1/lyrics/#{id}/translations" if is_mandarin
-      end
-
-      collection :represented, extend: Representer::Lyrics, class: OpenStruct if respond_to?(:represented)
     end
   end
 end

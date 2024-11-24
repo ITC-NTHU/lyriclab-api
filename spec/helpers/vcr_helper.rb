@@ -11,6 +11,7 @@ module VcrHelper
   GPT_CASSETTE = 'gpt_api'
   SERVICES_CASSETTE = 'services'
   SERVICES_CASSETTE_2 = 'services2'
+  API_CASSETTE = 'api'
 
   def self.setup_vcr
     VCR.configure do |config|
@@ -91,7 +92,7 @@ module VcrHelper
     )
   end
 
-  def self.configure_vcr_for_services_add(recording: :new_episodes) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
+  def self.configure_vcr_for_api(recording: :new_episodes) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
     VCR.configure do |config|
       config.cassette_library_dir = CASSETTES_FOLDER
       config.hook_into :webmock
@@ -122,9 +123,9 @@ module VcrHelper
     end
 
     VCR.insert_cassette(
-      SERVICES_CASSETTE_2,
+      API_CASSETTE,
       record: recording,
-      match_requests_on: %i[method body]
+      match_requests_on: %i[uri method body]
     )
   end
 

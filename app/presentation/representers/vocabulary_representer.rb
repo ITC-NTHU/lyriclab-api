@@ -3,6 +3,8 @@
 require 'roar/decorator'
 require 'roar/json'
 
+require_relative 'word_representer'
+
 module LyricLab
   module Representer
     # Represents essential Vocabulary information for API output
@@ -12,17 +14,12 @@ module LyricLab
     class Vocabulary < Roar::Decorator
       include Roar::JSON
       include Roar::Hypermedia
+      include Roar::Decorator::HypermediaConsumer
 
       property :unique_words
       property :sep_text
-
-      link :self do
-        "/api/v1/vocabularies/#{options[:spotify_id]}" 
-      end
-
-      link :related_songs do
-        "/api/v1/vocabularies/#{options[:spotify_id]}"
-      end
+      # collection :unique_words, extend: Representer::Word, class: OpenStruct
+      # property :unique_words, extend: Representer::Word, class: OpenStruct
     end
   end
 end
