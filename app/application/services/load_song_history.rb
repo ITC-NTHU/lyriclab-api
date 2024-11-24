@@ -19,15 +19,15 @@ module LyricLab
           Failure('no sessions')
         else
           songs = input.map! do |spotify_id|
-              load_song_from_database(spotify_id)
+            load_song_from_database(spotify_id)
           end
           Success(songs)
         end
 
-        #songs = input.map! do |spotify_id|
+        # songs = input.map! do |spotify_id|
         #  load_song_from_database(spotify_id)
-        #end
-        #Success(songs)
+        # end
+        # Success(songs)
       rescue StandardError => e
         App.logger.error e.backtrace.join("\n")
         Failure(e.to_s)

@@ -11,29 +11,13 @@ module LyricLab
     #   Representer::Recommendation.new(recommendation).to_json
     class Recommendation < Roar::Decorator
       include Roar::JSON
+      # include Roar::Hypermedia
+      # include Roar::Decorator::HypermediaConsumer
 
       property :title
       property :artist_name_string
       property :search_cnt
       property :spotify_id
-
-      link :self do
-        "api/v1/recommendations/#{spotify_id}"
-      end
-
-      link :lyrics do
-        "api/v1/recommendations/#{spotify_id}/lyrics"
-      end
-
-      link :related do
-        "api/v1/recommendations/#{spotify_id}/related"
-      end
-
-      link :spotify do
-        "https://open.spotify.com/track/#{spotify_id}"
-      end
-
-      collection :represented, extend: Representer::Recommendation, class: OpenStruct if respond_to?(:represented)
     end
   end
 end

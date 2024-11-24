@@ -7,8 +7,8 @@ ruby File.read('.ruby-version').strip
 gem 'figaro', '~> 1.2'
 gem 'ostruct'
 gem 'pry'
-gem 'rake'
 gem 'rack-test'
+gem 'rake'
 
 # PRESENTATION LAYER
 gem 'multi_json'
@@ -81,5 +81,3 @@ group :development do
   gem 'rubocop-sequel'
   gem 'ruby-lsp'
 end
-
-
