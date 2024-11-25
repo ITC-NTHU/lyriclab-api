@@ -2,42 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://lrclib.net/api/get?artist_name=%E5%91%8A%E4%BA%94%E4%BA%BA&track_name=BAD_NAME
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - lrclib.net
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - nginx/1.22.1
-      Date:
-      - Thu, 07 Nov 2024 04:01:21 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '84'
-      Connection:
-      - close
-      Vary:
-      - origin, access-control-request-method, access-control-request-headers
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
-  recorded_at: Thu, 07 Nov 2024 04:01:22 GMT
-- request:
-    method: get
     uri: https://lrclib.net/api/get?artist_name=%E5%91%8A%E4%BA%94%E4%BA%BA&track_name=%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93
     body:
       encoding: ASCII-8BIT
@@ -57,7 +21,7 @@ http_interactions:
       Server:
       - nginx/1.22.1
       Date:
-      - Thu, 07 Nov 2024 04:01:22 GMT
+      - Sun, 24 Nov 2024 07:55:11 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -90,43 +54,7 @@ http_interactions:
         Woo woo woo woo woo woo\n[04:01.70] \n[04:23.50] 我的心 你放在哪裡\n[04:28.23] 或許我
         也不再沈迷\n[04:33.61] 結束不安的遊戲\n[04:39.41] 認輸就可以 自由自在的掏心\n[04:45.29] 終於開口\n[04:49.30]
         說聲好不容易\n[04:53.81] "}'
-  recorded_at: Mon, 04 Nov 2024 13:51:30 GMT
-- request:
-    method: get
-    uri: https://lrclib.net/api/get?artist_name=%E5%91%8A%E4%BA%94%E4%BA%BA&track_name=BAD_NAME
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - lrclib.net
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - nginx/1.22.1
-      Date:
-      - Mon, 04 Nov 2024 13:51:31 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '84'
-      Connection:
-      - close
-      Vary:
-      - origin, access-control-request-method, access-control-request-headers
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
-  recorded_at: Mon, 04 Nov 2024 13:51:31 GMT
+  recorded_at: Sun, 24 Nov 2024 07:55:11 GMT
 - request:
     method: get
     uri: https://lrclib.net/api/get?artist_name=NO_ARTIST&track_name=%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93
@@ -148,7 +76,7 @@ http_interactions:
       Server:
       - nginx/1.22.1
       Date:
-      - Sat, 09 Nov 2024 16:01:14 GMT
+      - Sun, 24 Nov 2024 07:55:12 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -162,5 +90,41 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
-  recorded_at: Sat, 09 Nov 2024 16:01:13 GMT
+  recorded_at: Sun, 24 Nov 2024 07:55:12 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=%E5%91%8A%E4%BA%94%E4%BA%BA&track_name=BAD_NAME
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Sun, 24 Nov 2024 07:55:14 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '84'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
+  recorded_at: Sun, 24 Nov 2024 07:55:14 GMT
 recorded_with: VCR 6.3.1
