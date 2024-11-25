@@ -8,8 +8,7 @@ module LyricLab
   class App < Roda
     # plugin :sessions, secret: config.SESSION_SECRET
     plugin :halt
-    plugin :flash
-    plugin :all_verbs # allows HTTP verbs beyond GET/POST (e.g., DELETE)
+    plugin :caching
 
     # rubocop:disable Metrics/BlockLength
     route do |routing|
