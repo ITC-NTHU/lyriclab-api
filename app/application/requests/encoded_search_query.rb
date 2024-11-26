@@ -16,9 +16,11 @@ module LyricLab
 
       # Use in API to parse incoming search query request
       def call
-        Success(
-          JSON.parse(decode(@params['search_query']))
-        )
+        if JSON.parse(decode(@params['search_query'])).empty?
+          Failure(Response::ApiResult.new(status: :cannot_process, message: 'Empty search query'))
+        else
+          Success(JSON.parse(decode(@params['search_query'])))
+        end
       rescue StandardError
         Failure(
           Response::ApiResult.new(

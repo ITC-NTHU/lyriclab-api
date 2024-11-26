@@ -46,7 +46,7 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Date:
-      - Sun, 24 Nov 2024 07:59:29 GMT
+      - Tue, 26 Nov 2024 06:54:29 GMT
       Server:
       - envoy
       Via:
@@ -59,7 +59,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"tracks":{"href":"https://api.spotify.com/v1/search?offset=0&limit=1&query=%E5%91%8A%E4%BA%94%E4%BA%BA%20%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93&type=track&market=TW","limit":1,"next":"https://api.spotify.com/v1/search?offset=1&limit=1&query=%E5%91%8A%E4%BA%94%E4%BA%BA%20%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93&type=track&market=TW","offset":0,"previous":null,"total":801,"items":[{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/5mahTh3xdvMSH7N01fAEFg"},"href":"https://api.spotify.com/v1/albums/5mahTh3xdvMSH7N01fAEFg","id":"5mahTh3xdvMSH7N01fAEFg","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b273b031ee53413ef37f35096a14"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e02b031ee53413ef37f35096a14"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d00004851b031ee53413ef37f35096a14"}],"is_playable":true,"name":"好不容易","release_date":"2021-12-13","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:5mahTh3xdvMSH7N01fAEFg"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":295466,"explicit":false,"external_ids":{"isrc":"TWK232183010"},"external_urls":{"spotify":"https://open.spotify.com/track/6jNy9WM3zyvG9E5bdVALl8"},"href":"https://api.spotify.com/v1/tracks/6jNy9WM3zyvG9E5bdVALl8","id":"6jNy9WM3zyvG9E5bdVALl8","is_local":false,"is_playable":true,"name":"好不容易
         (《華燈初上》片尾曲)","popularity":58,"preview_url":"https://p.scdn.co/mp3-preview/3aec55db85030e7684ad8914e4cc705da1e6bc59?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:6jNy9WM3zyvG9E5bdVALl8"}]}}'
-  recorded_at: Sun, 24 Nov 2024 07:59:29 GMT
+  recorded_at: Tue, 26 Nov 2024 06:54:30 GMT
 - request:
     method: get
     uri: https://lrclib.net/api/get?artist_name=%E5%91%8A%E4%BA%94%E4%BA%BA&track_name=%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93%20(%E3%80%8A%E8%8F%AF%E7%87%88%E5%88%9D%E4%B8%8A%E3%80%8B%E7%89%87%E5%B0%BE%E6%9B%B2)
@@ -81,7 +81,7 @@ http_interactions:
       Server:
       - nginx/1.22.1
       Date:
-      - Sun, 24 Nov 2024 07:59:30 GMT
+      - Tue, 26 Nov 2024 06:54:30 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -115,7 +115,7 @@ http_interactions:
         Woo woo woo woo woo woo\n[04:01.69] \n[04:23.53] 我的心 你放在哪裡\n[04:28.24] 或許我
         也不再沈迷\n[04:33.65] 結束不安的遊戲\n[04:39.42] 認輸就可以 自由自在的掏心\n[04:45.27] 終於開口\n[04:49.38]
         說聲好不容易\n[04:53.89] "}'
-  recorded_at: Sun, 24 Nov 2024 07:59:30 GMT
+  recorded_at: Tue, 26 Nov 2024 06:54:31 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -149,7 +149,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 24 Nov 2024 07:59:35 GMT
+      - Tue, 26 Nov 2024 06:54:37 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -161,7 +161,7 @@ http_interactions:
       Openai-Organization:
       - itc-sizmvs
       Openai-Processing-Ms:
-      - '4165'
+      - '5609'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -177,7 +177,7 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 116ms
       X-Request-Id:
-      - req_b0d7939605d8a00531fe11a7df89cc76
+      - req_0ec45c5498a53ac5fc6579c4a443b44e
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
@@ -187,14 +187,14 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e77dc2a6fc34a18-TPE
+      - 8e87f7b3fe3d4a40-TPE
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        ewogICJpZCI6ICJjaGF0Y21wbC1BWDFvaEx6MjFTbXY0Mm9HVHRETmM5dVZWQXp3cCIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczMjQzNTE3MSwKICAibW9kZWwiOiAiZ3B0LTMuNS10dXJiby0wMTI1IiwKICAiY2hvaWNlcyI6IFsKICAgIHsKICAgICAgImluZGV4IjogMCwKICAgICAgIm1lc3NhZ2UiOiB7CiAgICAgICAgInJvbGUiOiAiYXNzaXN0YW50IiwKICAgICAgICAiY29udGVudCI6ICLln47luIIg5ru0562UIOWwj+W3tyDmu7TnrZQg5rKI6buYIOa7tOetlFxu5L2g55qE5omLIOaFoiDnhrHnmoQg6auU5rqrXG7mlrnlkJEg6Yyv5LqCIOWkqeawoyDpoJDloLEg5LiNIOa6liDpm6jlgpgg5b+Y5LqGIOaLv1xu5oiR55qE5omLIOeEoeiZlSDlronmlL5cbuWMheaLrCDmiJHnmoTlv4Mg5YOPIOaXi+i9iSDmnKjppqxcblxu5oiW6KixIOmAmeWwseaYryDoqLvlrppcbuiou+WumiDlpLHmlZfnmoQg57WQ5bGAXG7miJDnhp8g5bi25L6G55qEIOWtpOWvglxu5aaCIOa7vuawtCDlnKjlv4PkuK0g5ru/5rqiXG5cbuaIkeeahOW/gyDkvaAg5pS+IOWcqCDlk6roo6FcbuaIluiosSDkvaAg5qC55pysIOWwsSDkuI0g5Zyo5oSPXG7pjK8g5oqKIOaJv+irviDnlbYg5pyJ6LajXG7mgI7purwg5bCNIOW+l+i1tyDkvaAg5oiRIOeCmeeGseeahCDnl5Xot6Fcblxu5L2g55qE5b+DIOS9oCDmlL4g5ZyoIOWTquijoVxu5YaNIOi/veeptiDkuZ8g5q+r54ShIOaEj+e+qVxu5o6l5Y+XIOaFjOS6gueahCDmgJ3nt5Jcbue4vSDmr5TliLDpoK3kvoYg6Z2i5bCNIOeEoeiBsueahCDlpLHljrtcbueEoeazlSDplovlj6Mg6Kqq6IGyIOWlvSDkuI3lrrnmmJNcblxu5Z+O5biCIOa7tOetlCDlsI/lt7cg5ru0562UIOayiOm7mCDmu7TnrZRcbuS9oOeahOaJiyDmhaIg54ax55qEIOmrlOa6q1xu5pa55ZCRIOmMr+S6giDlpKnmsKMg6aCQ5aCxIOS4jSDmupYg6Zuo5YKYIOW/mOS6hiDmi79cbuaIkeeahOaJiyDnhKHomZUg5a6J5pS+XG7ljIXmi6wg5oiR55qE5b+DIOWDjyDml4vovYkg5pyo6aasXG5cbuaIluiosSDpgJnlsLHmmK8g6Ki75a6aXG7oqLvlrpog5aSx5pWX55qEIOe1kOWxgFxu5oiQ54afIOW4tuS+hueahCDlraTlr4JcbuWmgiDmu77msLQg5Zyo5b+D5LitIOa7v+a6olxuXG7miJHnmoTlv4Mg5L2gIOaUviDlnKgg5ZOq6KOhXG7miJboqLEg5L2gIOagueacrCDlsLEg5LiNIOWcqOaEj1xu6YyvIOaKiiDmib/oq74g55W2IOaciei2o1xu5oCO6bq8IOWwjSDlvpfotbcg5L2gIOaIkSDngpnnhrHnmoQg55eV6LehXG5cbuS9oOeahOW/gyDkvaAg5pS+IOWcqCDlk6roo6FcbuWGjSDov73nqbYg5LmfIOavq+eEoSDmhI/nvqlcbuaOpeWPlyDmhYzkuoLnmoQg5oCd57eSXG7nuL0g5q+U5Yiw6aCt5L6GIOmdouWwjSDnhKHogbLnmoQg5aSx5Y67XG7nhKHms5Ug6ZaL5Y+jIOiqquiBsiDlpb0g5LiN5a655piTXG5Xb28gd29vIHdvbyB3b28gd29vIHdvb1xuXG7miJHnmoTlv4Mg5L2gIOaUviDlnKgg5ZOq6KOhXG7miJboqLEg5oiRIOS5nyDkuI3lho0g5rKI6L+3XG7ntZDmnZ8g5LiN5a6J55qEIOmBiuaIslxu6KqN6Ly4IOWwsSDlj6/ku6Ug6Ieq55Sx6Ieq5Zyo55qEIOaOj+W/g1xu57WC5pa8IOmWi+WPo1xu6Kqq6IGyIOWlvSDkuI3lrrnmmJMiLAogICAgICAgICJyZWZ1c2FsIjogbnVsbAogICAgICB9LAogICAgICAibG9ncHJvYnMiOiBudWxsLAogICAgICAiZmluaXNoX3JlYXNvbiI6ICJzdG9wIgogICAgfQogIF0sCiAgInVzYWdlIjogewogICAgInByb21wdF90b2tlbnMiOiA3MzQsCiAgICAiY29tcGxldGlvbl90b2tlbnMiOiA3MjYsCiAgICAidG90YWxfdG9rZW5zIjogMTQ2MCwKICAgICJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOiB7CiAgICAgICJjYWNoZWRfdG9rZW5zIjogMCwKICAgICAgImF1ZGlvX3Rva2VucyI6IDAKICAgIH0sCiAgICAiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6IHsKICAgICAgInJlYXNvbmluZ190b2tlbnMiOiAwLAogICAgICAiYXVkaW9fdG9rZW5zIjogMCwKICAgICAgImFjY2VwdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMCwKICAgICAgInJlamVjdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMAogICAgfQogIH0sCiAgInN5c3RlbV9maW5nZXJwcmludCI6IG51bGwKfQo=
-  recorded_at: Sun, 24 Nov 2024 07:59:35 GMT
+        ewogICJpZCI6ICJjaGF0Y21wbC1BWGprdFZBdmtCeENLY1RWczd6VmFkdlprTThGaCIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczMjYwNDA3MSwKICAibW9kZWwiOiAiZ3B0LTMuNS10dXJiby0wMTI1IiwKICAiY2hvaWNlcyI6IFsKICAgIHsKICAgICAgImluZGV4IjogMCwKICAgICAgIm1lc3NhZ2UiOiB7CiAgICAgICAgInJvbGUiOiAiYXNzaXN0YW50IiwKICAgICAgICAiY29udGVudCI6ICLln47luIIg5ru0562UIOWwj+W3tyDmu7TnrZQg5rKI6buYIOa7tOetlFxu5L2g55qEIOaJiyDmhaIg54ax55qEIOmrlOa6q1xu5pa55ZCRIOmMr+S6giDlpKnmsKMg6aCQ5aCxIOS4jSDmupYg6Zuo5YKYIOW/mOS6hiDmi79cbuaIkeeahOaJiyDnhKHomZUg5a6J5pS+XG7ljIXmi6wg5oiR55qE5b+DIOWDjyDml4vovYkg5pyo6aasXG5cbuaIluiosSDpgJnlsLHmmK8g6Ki75a6aXG7oqLvlrpog5aSx5pWX55qEIOe1kOWxgFxu5oiQ54afIOW4tuS+hueahCDlraTlr4JcbuWmgiDmu77msLQg5ZyoIOW/g+S4rSDmu7/muqJcblxu5oiR55qE5b+DIOS9oCDmlL7lnKgg5ZOq6KOhXG7miJboqLEg5L2gIOagueacrCDlsLEg5LiNIOWcqOaEj1xu6YyvIOaKiiDmib/oq74g55W2IOaciei2o1xu5oCO6bq8IOWwjeW+l+i1tyDkvaAg5oiRIOeCmeeGseeahCDnl5Xot6Fcblxu5L2g55qE5b+DIOS9oCDmlL7lnKgg5ZOq6KOhXG7lho0g6L+956m2IOS5nyDmr6vnhKEg5oSP576pXG7mjqXlj5cg5oWM5LqC55qEIOaAnee3klxu57i95q+UIOWIsOmgreS+hiDpnaLlsI0g54Sh6IGy55qEIOWkseWOu1xu54Sh5rOVIOmWi+WPoyDoqqrogbIg5aW9IOS4jeWuueaYk1xuXG7ln47luIIg5ru0562UIOWwj+W3tyDmu7TnrZQg5rKI6buYIOa7tOetlFxu5L2g55qEIOaJiyDmhaIg54ax55qEIOmrlOa6q1xu5pa55ZCRIOmMr+S6giDlpKnmsKMg6aCQ5aCxIOS4jSDmupYg6Zuo5YKYIOW/mOS6hiDmi79cbuaIkeeahOaJiyDnhKHomZUg5a6J5pS+XG7ljIXmi6wg5oiR55qE5b+DIOWDjyDml4vovYkg5pyo6aasXG5cbuaIluiosSDpgJnlsLHmmK8g6Ki75a6aXG7oqLvlrpog5aSx5pWX55qEIOe1kOWxgFxu5oiQ54afIOW4tuS+hueahCDlraTlr4JcbuWmgiDmu77msLQg5ZyoIOW/g+S4rSDmu7/muqJcblxu5oiR55qE5b+DIOS9oCDmlL7lnKgg5ZOq6KOhXG7miJboqLEg5L2gIOagueacrCDlsLEg5LiNIOWcqOaEj1xu6YyvIOaKiiDmib/oq74g55W2IOaciei2o1xu5oCO6bq8IOWwjeW+l+i1tyDkvaAg5oiRIOeCmeeGseeahCDnl5Xot6Fcblxu5L2g55qE5b+DIOS9oCDmlL7lnKgg5ZOq6KOhXG7lho0g6L+956m2IOS5nyDmr6vnhKEg5oSP576pXG7mjqXlj5cg5oWM5LqC55qEIOaAnee3klxu57i95q+UIOWIsOmgreS+hiDpnaLlsI0g54Sh6IGy55qEIOWkseWOu1xu54Sh5rOVIOmWi+WPoyDoqqrogbIg5aW9IOS4jeWuueaYk1xuV29vIHdvbyB3b28gd29vIHdvbyB3b29cblxu5oiR55qE5b+DIOS9oCDmlL7lnKgg5ZOq6KOhXG7miJboqLEg5oiRIOS5nyDkuI3lho0g5rKI6L+3XG7ntZDmnZ8g5LiN5a6J55qEIOmBiuaIslxu6KqN6Ly4IOWwsSDlj6/ku6Ug6Ieq55Sx6Ieq5Zyo55qEIOaOj+W/g1xu57WC5pa8IOmWi+WPo1xu6Kqq6IGyIOWlvSDkuI3lrrnmmJMiLAogICAgICAgICJyZWZ1c2FsIjogbnVsbAogICAgICB9LAogICAgICAibG9ncHJvYnMiOiBudWxsLAogICAgICAiZmluaXNoX3JlYXNvbiI6ICJzdG9wIgogICAgfQogIF0sCiAgInVzYWdlIjogewogICAgInByb21wdF90b2tlbnMiOiA3MzQsCiAgICAiY29tcGxldGlvbl90b2tlbnMiOiA3MjYsCiAgICAidG90YWxfdG9rZW5zIjogMTQ2MCwKICAgICJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOiB7CiAgICAgICJjYWNoZWRfdG9rZW5zIjogMCwKICAgICAgImF1ZGlvX3Rva2VucyI6IDAKICAgIH0sCiAgICAiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6IHsKICAgICAgInJlYXNvbmluZ190b2tlbnMiOiAwLAogICAgICAiYXVkaW9fdG9rZW5zIjogMCwKICAgICAgImFjY2VwdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMCwKICAgICAgInJlamVjdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMAogICAgfQogIH0sCiAgInN5c3RlbV9maW5nZXJwcmludCI6IG51bGwKfQo=
+  recorded_at: Tue, 26 Nov 2024 06:54:37 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -207,13 +207,13 @@ http_interactions:
         detailed translation ONLY]\n            Word type:[選擇詞性：N,V,Adj,Adv,Pron,Prep,Conj,Num,Int,Classifier,Idiom,Other]\n            Example:[實用的20字內繁體中文例句]\n\n            Focus
         on words that would be valuable for language learners. Keep example sentences
         natural and practical.\n\n            Words: [\"城市\", \"滴答\", \"小巷\", \"沈默\",
-        \"你的手\", \"慢\", \"熱的\", \"體溫\", \"方向\", \"錯亂\", \"天氣\", \"預報\", \"不\", \"準\",
-        \"雨傘\", \"忘了\", \"拿\", \"我的手\", \"無處\", \"安放\", \"包括\", \"我的心\", \"像\", \"旋轉\",
-        \"木馬\", \"或許\", \"這就是\", \"註定\", \"失敗的\", \"結局\", \"成熟\", \"帶來的\", \"孤寂\",
-        \"如\", \"滾水\", \"在心中\", \"滿溢\", \"你\", \"放\", \"在\", \"哪裡\", \"根本\", \"就\",
-        \"在意\", \"錯\", \"把\", \"承諾\", \"當\", \"有趣\", \"怎麼\", \"對\", \"得起\", \"我\",
+        \"你的\", \"手\", \"慢\", \"熱的\", \"體溫\", \"方向\", \"錯亂\", \"天氣\", \"預報\", \"不\",
+        \"準\", \"雨傘\", \"忘了\", \"拿\", \"我的手\", \"無處\", \"安放\", \"包括\", \"我的心\", \"像\",
+        \"旋轉\", \"木馬\", \"或許\", \"這就是\", \"註定\", \"失敗的\", \"結局\", \"成熟\", \"帶來的\",
+        \"孤寂\", \"如\", \"滾水\", \"在\", \"心中\", \"滿溢\", \"你\", \"放在\", \"哪裡\", \"根本\",
+        \"就\", \"在意\", \"錯\", \"把\", \"承諾\", \"當\", \"有趣\", \"怎麼\", \"對得起\", \"我\",
         \"炙熱的\", \"痕跡\", \"你的心\", \"再\", \"追究\", \"也\", \"毫無\", \"意義\", \"接受\", \"慌亂的\",
-        \"思緒\", \"總\", \"比到頭來\", \"面對\", \"無聲的\", \"失去\", \"無法\", \"開口\", \"說聲\",
+        \"思緒\", \"總比\", \"到頭來\", \"面對\", \"無聲的\", \"失去\", \"無法\", \"開口\", \"說聲\",
         \"好\", \"不容易\", \"Woo\", \"woo\", \"不再\", \"沈迷\", \"結束\", \"不安的\", \"遊戲\",
         \"認輸\", \"可以\", \"自由自在的\", \"掏心\", \"終於\"]"}]}'
     headers:
@@ -235,7 +235,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 24 Nov 2024 07:59:38 GMT
+      - Tue, 26 Nov 2024 06:54:42 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -247,7 +247,7 @@ http_interactions:
       Openai-Organization:
       - itc-sizmvs
       Openai-Processing-Ms:
-      - '2646'
+      - '5475'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -257,13 +257,13 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '9998'
       X-Ratelimit-Remaining-Tokens:
-      - '199515'
+      - '199581'
       X-Ratelimit-Reset-Requests:
-      - 12.802s
+      - 11.223s
       X-Ratelimit-Reset-Tokens:
-      - 145ms
+      - 125ms
       X-Request-Id:
-      - req_1e091310cc3dbe25e306ace958376a48
+      - req_7c2a9b3ea1d3073fcffc100daef6a9b3
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
@@ -273,17 +273,17 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e77dc466c33a3a5-TPE
+      - 8e87f7db59a3a9b0-TPE
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        ewogICJpZCI6ICJjaGF0Y21wbC1BWDFvbFB6cWdwTFNEaWFZWkgxWUxpTGNXTXBleCIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczMjQzNTE3NSwKICAibW9kZWwiOiAiZ3B0LTMuNS10dXJiby0wMTI1IiwKICAiY2hvaWNlcyI6IFsKICAgIHsKICAgICAgImluZGV4IjogMCwKICAgICAgIm1lc3NhZ2UiOiB7CiAgICAgICAgInJvbGUiOiAiYXNzaXN0YW50IiwKICAgICAgICAiY29udGVudCI6ICJXb3JkOiDln47luIJcblRyYW5zbGF0ZTogY2l0eVxuUGlueWluOiBjaMOpbmdzaMOsXG5EaWZmaWN1bHR5OiBiZWdpbm5lclxuRGVmaW5pdGlvbjogQSBsYXJnZSwgZGVuc2VseSBwb3B1bGF0ZWQgdXJiYW4gYXJlYTsgYSBjaXR5LlxuV29yZCB0eXBlOiBOXG5FeGFtcGxlOiDpgJnlgIvln47luILpnZ7luLjnhrHprKfjgIIgKFRoaXMgY2l0eSBpcyB2ZXJ5IGxpdmVseS4pXG5cbldvcmQ6IOWwj+W3t1xuVHJhbnNsYXRlOiBhbGxleVxuUGlueWluOiB4aceObyB4acOgbmdcbkRpZmZpY3VsdHk6IG5vdmljZTFcbkRlZmluaXRpb246IEEgbmFycm93IHN0cmVldCBvciBwYXNzYWdlIGJldHdlZW4gYnVpbGRpbmdzOyBhbiBhbGxleS5cbldvcmQgdHlwZTogTlxuRXhhbXBsZTog5oiR5Zac5q2h5Zyo5bCP5be36KOh5pWj5q2l44CCIChJIGxpa2UgdG8gdGFrZSBhIHdhbGsgaW4gdGhlIGFsbGV5LilcblxuV29yZDog5rKI6buYXG5UcmFuc2xhdGU6IHNpbGVuY2VcblBpbnlpbjogY2jDqW5tw7JcbkRpZmZpY3VsdHk6IG5vdmljZTFcbkRlZmluaXRpb246IENvbXBsZXRlIGFic2VuY2Ugb2Ygc291bmQ7IHF1aWV0bmVzcy5cbldvcmQgdHlwZTogTlxuRXhhbXBsZTog5Zyo5rKI6buY5Lit77yM5oiR5YCR5LqS55u45Yed6KaW6JGX5bCN5pa544CCIChJbiBzaWxlbmNlLCB3ZSBnYXplIGF0IGVhY2ggb3RoZXIuKVxuXG5Xb3JkOiDpoJDloLFcblRyYW5zbGF0ZTogZm9yZWNhc3RcblBpbnlpbjogecO5YsOgb1xuRGlmZmljdWx0eTogbGV2ZWwxXG5EZWZpbml0aW9uOiBBIHN0YXRlbWVudCBvZiB3aGF0IGlzIGp1ZGdlZCBsaWtlbHkgdG8gaGFwcGVuIGluIHRoZSBmdXR1cmUsIGJhc2VkIG9uIHdlYXRoZXIgY29uZGl0aW9ucy5cbldvcmQgdHlwZTogTlxuRXhhbXBsZTog5piO5aSp55qE5aSp5rCj6aCQ5aCx6Kqq5pyD5LiL6Zuo44CCIChUb21vcnJvdydzIHdlYXRoZXIgZm9yZWNhc3Qgc2F5cyBpdCB3aWxsIHJhaW4uKVxuXG5Xb3JkOiDml4vovYlcblRyYW5zbGF0ZTogcm90YXRlXG5QaW55aW46IHh1w6Fuemh1x45uXG5EaWZmaWN1bHR5OiBsZXZlbDJcbkRlZmluaXRpb246IFRvIHR1cm4gb3IgY2F1c2UgdG8gdHVybiBhcm91bmQgYW4gYXhpcyBvciBhIGNlbnRlcjsgcm90YXRlLlxuV29yZCB0eXBlOiBWXG5FeGFtcGxlOiDlnLDnkIPnuZ7okZflpKrpmb3ml4vovYnjgIIgKFRoZSBFYXJ0aCByb3RhdGVzIGFyb3VuZCB0aGUgc3VuLikiLAogICAgICAgICJyZWZ1c2FsIjogbnVsbAogICAgICB9LAogICAgICAibG9ncHJvYnMiOiBudWxsLAogICAgICAiZmluaXNoX3JlYXNvbiI6ICJzdG9wIgogICAgfQogIF0sCiAgInVzYWdlIjogewogICAgInByb21wdF90b2tlbnMiOiA2NTIsCiAgICAiY29tcGxldGlvbl90b2tlbnMiOiAzNzQsCiAgICAidG90YWxfdG9rZW5zIjogMTAyNiwKICAgICJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOiB7CiAgICAgICJjYWNoZWRfdG9rZW5zIjogMCwKICAgICAgImF1ZGlvX3Rva2VucyI6IDAKICAgIH0sCiAgICAiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6IHsKICAgICAgInJlYXNvbmluZ190b2tlbnMiOiAwLAogICAgICAiYXVkaW9fdG9rZW5zIjogMCwKICAgICAgImFjY2VwdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMCwKICAgICAgInJlamVjdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMAogICAgfQogIH0sCiAgInN5c3RlbV9maW5nZXJwcmludCI6IG51bGwKfQo=
-  recorded_at: Sun, 24 Nov 2024 07:59:38 GMT
+        ewogICJpZCI6ICJjaGF0Y21wbC1BWGprejQ5aHlUSHRHbllFYjA5dmVaRk5HTzRSMCIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczMjYwNDA3NywKICAibW9kZWwiOiAiZ3B0LTMuNS10dXJiby0wMTI1IiwKICAiY2hvaWNlcyI6IFsKICAgIHsKICAgICAgImluZGV4IjogMCwKICAgICAgIm1lc3NhZ2UiOiB7CiAgICAgICAgInJvbGUiOiAiYXNzaXN0YW50IiwKICAgICAgICAiY29udGVudCI6ICJXb3JkOiBb5Z+O5biCXVxuVHJhbnNsYXRlOiBDaXR5XG5QaW55aW46IGNow6luZyBzaMOsXG5EaWZmaWN1bHR5OiBsZXZlbDFcbkRlZmluaXRpb246IEFuIHVyYmFuIGFyZWEgY2hhcmFjdGVyaXplZCBieSBhIGxhcmdlIHBvcHVsYXRpb24sIGluZnJhc3RydWN0dXJlLCBhbmQgdmFyaW91cyBmYWNpbGl0aWVzLlxuV29yZCB0eXBlOiBOb3VuXG5FeGFtcGxlOiDln47luILoo6HnmoTou4rmsLTppqzpvo3orpPmiJHmhJ/liLDlo5PlipvlvojlpKfjgIJcbihGZWVsIHZlcnkgc3RyZXNzZWQgaW4gdGhlIGh1c3RsZSBhbmQgYnVzdGxlIG9mIHRoZSBjaXR5LilcblxuV29yZDogW+a7tOetlF1cblRyYW5zbGF0ZTogVGljay10b2NrXG5QaW55aW46IGTEqyBkxIFcbkRpZmZpY3VsdHk6IGJlZ2lubmVyXG5EZWZpbml0aW9uOiBUaGUgc291bmQgb2YgYSBjbG9jayB0aWNraW5nLlxuV29yZCB0eXBlOiBPbm9tYXRvcG9laWFcbkV4YW1wbGU6IOa7tOetlOa7tOetlO+8jOaZgumWk+S4gOWIhuS4gOenkumBjuWOu+S6huOAglxuKFRpY2stdG9jaywgdGltZSBmbGllcyBzZWNvbmQgYnkgc2Vjb25kLilcblxuV29yZDogW+Wwj+W3t11cblRyYW5zbGF0ZTogQWxsZXlcblBpbnlpbjogeGnHjm8geGnDoG5nXG5EaWZmaWN1bHR5OiBub3ZpY2UxXG5EZWZpbml0aW9uOiBBIG5hcnJvdyBzdHJlZXQgb3IgcGFzc2FnZSBiZXR3ZWVuIG9yIGJlaGluZCBidWlsZGluZ3MuXG5Xb3JkIHR5cGU6IE5vdW5cbkV4YW1wbGU6IOiAgeihl+Wwj+W3t+ijoeWFhea7v+S6hueNqOeJueeahOaWh+WMluawo+aBr+OAglxuKFRoZSBvbGQgc3RyZWV0cyBhbmQgYWxsZXlzIGFyZSBmaWxsZWQgd2l0aCB1bmlxdWUgY3VsdHVyYWwgYXRtb3NwaGVyZS4pXG5cbldvcmQ6IFvmsojpu5hdXG5UcmFuc2xhdGU6IFNpbGVuY2VcblBpbnlpbjogY2jDqW4gbcOyXG5EaWZmaWN1bHR5OiBsZXZlbDJcbkRlZmluaXRpb246IEFic2VuY2Ugb2Ygc291bmQgb3Igbm9pc2U7IHF1aWV0bmVzcy5cbldvcmQgdHlwZTogTm91blxuRXhhbXBsZTog5Zyo5rKI6buY5Lit77yM5oiR5YCR5pu06IO96IG96KaL5YWn5b+D55qE6IGy6Z+z44CCXG4oSW4gc2lsZW5jZSwgd2UgY2FuIGhlYXIgdGhlIHZvaWNlIG9mIG91ciBoZWFydCBtb3JlIGNsZWFybHkuKVxuXG5Xb3JkOiBb5L2g55qEXVxuVHJhbnNsYXRlOiBZb3VyXG5QaW55aW46IG7HkCBkZVxuRGlmZmljdWx0eTogYmVnaW5uZXJcbkRlZmluaXRpb246IEluZGljYXRlcyBwb3NzZXNzaW9uIG9yIHJlbGF0aW9uc2hpcC5cbldvcmQgdHlwZTogUHJvbm91biAoUG9zc2Vzc2l2ZSlcbkV4YW1wbGU6IOS9oOeahOW+rueskeaYr+aIkeacgOWkp+eahOm8k+WLteOAglxuKFlvdXIgc21pbGUgaXMgbXkgYmlnZ2VzdCBlbmNvdXJhZ2VtZW50LilcblxuV29yZDogW+aJi11cblRyYW5zbGF0ZTogSGFuZFxuUGlueWluOiBzaMeSdVxuRGlmZmljdWx0eTogYmVnaW5uZXJcbkRlZmluaXRpb246IFRoZSB0ZXJtaW5hbCBwYXJ0IG9mIHRoZSBodW1hbiBhcm0gbG9jYXRlZCBiZWxvdyB0aGUgZm9yZWFybS5cbldvcmQgdHlwZTogTm91blxuRXhhbXBsZTog5LuW5rqr5pqW55qE5omL6K6T5oiR5oSf5Yiw5a6J5b+D44CCXG4oSGlzIHdhcm0gaGFuZCBtYWtlcyBtZSBmZWVsIGF0IGVhc2UuKVxuXG5Xb3JkOiBb5oWiXVxuVHJhbnNsYXRlOiBTbG93XG5QaW55aW46IG3DoG5cbkRpZmZpY3VsdHk6IGJlZ2lubmVyXG5EZWZpbml0aW9uOiBNb3Zpbmcgb3IgYWN0aW5nIHdpdGggbGl0dGxlIHNwZWVkLlxuV29yZCB0eXBlOiBBZGpcbkV4YW1wbGU6IOiuk+aIkeWAkeaFouaFouS+hu+8jOS4jeeUqOiRl+aApeOAglxuKExldCdzIHRha2UgaXQgc2xvdywgbm8gbmVlZCB0byBydXNoLilcblxuV29yZDogW+eGseeahF1cblRyYW5zbGF0ZTogSG90XG5QaW55aW46IHLDqCBkZVxuRGlmZmljdWx0eTogYmVnaW5uZXJcbkRlZmluaXRpb246IEhhdmluZyBhIGhpZ2ggZGVncmVlIG9mIGhlYXQgb3IgYSBoaWdoIHRlbXBlcmF0dXJlLlxuV29yZCB0eXBlOiBBZGpcbkV4YW1wbGU6IOmAmeeGseeahOWkqeawo+iuk+aIkeS4jeaDs+WHuumWgOOAglxuKFRoaXMgaG90IHdlYXRoZXIgbWFrZXMgbWUgbm90IHdhbnQgdG8gZ28gb3V0LikiLAogICAgICAgICJyZWZ1c2FsIjogbnVsbAogICAgICB9LAogICAgICAibG9ncHJvYnMiOiBudWxsLAogICAgICAiZmluaXNoX3JlYXNvbiI6ICJzdG9wIgogICAgfQogIF0sCiAgInVzYWdlIjogewogICAgInByb21wdF90b2tlbnMiOiA2NTIsCiAgICAiY29tcGxldGlvbl90b2tlbnMiOiA2MTIsCiAgICAidG90YWxfdG9rZW5zIjogMTI2NCwKICAgICJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOiB7CiAgICAgICJjYWNoZWRfdG9rZW5zIjogMCwKICAgICAgImF1ZGlvX3Rva2VucyI6IDAKICAgIH0sCiAgICAiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6IHsKICAgICAgInJlYXNvbmluZ190b2tlbnMiOiAwLAogICAgICAiYXVkaW9fdG9rZW5zIjogMCwKICAgICAgImFjY2VwdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMCwKICAgICAgInJlamVjdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMAogICAgfQogIH0sCiAgInN5c3RlbV9maW5nZXJwcmludCI6IG51bGwKfQo=
+  recorded_at: Tue, 26 Nov 2024 06:54:43 GMT
 - request:
     method: get
-    uri: https://api.spotify.com/v1/search?limit=6&market=TW&q=%E5%91%8A%E4%BA%94%E4%BA%BA&type=track
+    uri: https://api.spotify.com/v1/search?limit=5&market=TW&q=%E5%91%8A%E4%BA%94%E4%BA%BA&type=track
     body:
       encoding: ASCII-8BIT
       string: ''
@@ -304,7 +304,7 @@ http_interactions:
       Cache-Control:
       - public, max-age=0
       Etag:
-      - '"MC-IjRkOGZjNmMyNzRlMzQ3ZTg0OTU4NjllMDQzYTA1ZmM2Ig=="'
+      - '"MC-Ijc3NGM4NTFlZDg4YzJiY2Q5ZGEwNWZjZDYyMGU5N2JlIg=="'
       X-Robots-Tag:
       - noindex, nofollow
       Access-Control-Allow-Origin:
@@ -319,7 +319,7 @@ http_interactions:
       Access-Control-Max-Age:
       - '604800'
       Content-Length:
-      - '11337'
+      - '9469'
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -327,7 +327,7 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Date:
-      - Sun, 24 Nov 2024 07:59:40 GMT
+      - Tue, 26 Nov 2024 06:54:44 GMT
       Server:
       - envoy
       Via:
@@ -338,11 +338,10 @@ http_interactions:
       - close
     body:
       encoding: UTF-8
-      string: '{"tracks":{"href":"https://api.spotify.com/v1/search?offset=0&limit=6&query=%E5%91%8A%E4%BA%94%E4%BA%BA&type=track&market=TW","limit":6,"next":"https://api.spotify.com/v1/search?offset=6&limit=6&query=%E5%91%8A%E4%BA%94%E4%BA%BA&type=track&market=TW","offset":0,"previous":null,"total":95,"items":[{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/5e28mgD5TjknzurCXeQU7X"},"href":"https://api.spotify.com/v1/albums/5e28mgD5TjknzurCXeQU7X","id":"5e28mgD5TjknzurCXeQU7X","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2734d4400be089c0f21eb4d9335"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e024d4400be089c0f21eb4d9335"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048514d4400be089c0f21eb4d9335"}],"is_playable":true,"name":"從未見過的海","release_date":"2024-11-08","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:5e28mgD5TjknzurCXeQU7X"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":301826,"explicit":false,"external_ids":{"isrc":"TWK232483680"},"external_urls":{"spotify":"https://open.spotify.com/track/3agPPRZPNOhbCwm2026EN6"},"href":"https://api.spotify.com/v1/tracks/3agPPRZPNOhbCwm2026EN6","id":"3agPPRZPNOhbCwm2026EN6","is_local":false,"is_playable":true,"name":"從未見過的海
-        (Netflix 影集《影后》序曲)","popularity":54,"preview_url":"https://p.scdn.co/mp3-preview/8f11505b39b6fd42251911e506408f1b2bcfed1a?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:3agPPRZPNOhbCwm2026EN6"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/7yvCk24AtE9k0vLcolSs2i"},"href":"https://api.spotify.com/v1/albums/7yvCk24AtE9k0vLcolSs2i","id":"7yvCk24AtE9k0vLcolSs2i","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2737a2aff746e4093fecd950130"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e027a2aff746e4093fecd950130"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048517a2aff746e4093fecd950130"}],"is_playable":true,"name":"我肯定在幾百年前就說過愛你","release_date":"2019-06-14","release_date_precision":"day","total_tracks":11,"type":"album","uri":"spotify:album:7yvCk24AtE9k0vLcolSs2i"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":349773,"explicit":false,"external_ids":{"isrc":"TWDK11800002"},"external_urls":{"spotify":"https://open.spotify.com/track/7tgzj2IqzSgUpxUhjmcF5m"},"href":"https://api.spotify.com/v1/tracks/7tgzj2IqzSgUpxUhjmcF5m","id":"7tgzj2IqzSgUpxUhjmcF5m","is_local":false,"is_playable":true,"name":"披星戴月的想你","popularity":58,"preview_url":"https://p.scdn.co/mp3-preview/67a5c02ec0eb4fdba82b992c75254521974c156f?cid=<REDACTED>","track_number":11,"type":"track","uri":"spotify:track:7tgzj2IqzSgUpxUhjmcF5m"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/7yvCk24AtE9k0vLcolSs2i"},"href":"https://api.spotify.com/v1/albums/7yvCk24AtE9k0vLcolSs2i","id":"7yvCk24AtE9k0vLcolSs2i","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2737a2aff746e4093fecd950130"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e027a2aff746e4093fecd950130"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048517a2aff746e4093fecd950130"}],"is_playable":true,"name":"我肯定在幾百年前就說過愛你","release_date":"2019-06-14","release_date_precision":"day","total_tracks":11,"type":"album","uri":"spotify:album:7yvCk24AtE9k0vLcolSs2i"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":292074,"explicit":false,"external_ids":{"isrc":"TWFF51900001"},"external_urls":{"spotify":"https://open.spotify.com/track/27FOde2nUw0pFuj7hlPbaS"},"href":"https://api.spotify.com/v1/tracks/27FOde2nUw0pFuj7hlPbaS","id":"27FOde2nUw0pFuj7hlPbaS","is_local":false,"is_playable":true,"name":"愛人錯過","popularity":60,"preview_url":"https://p.scdn.co/mp3-preview/c9db87ce67859e3c0589259a23ce221efd5581eb?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:27FOde2nUw0pFuj7hlPbaS"},{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/3xk8Iced6AQm2zMZcfHmrZ"},"href":"https://api.spotify.com/v1/albums/3xk8Iced6AQm2zMZcfHmrZ","id":"3xk8Iced6AQm2zMZcfHmrZ","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b27301ac233a16db3c598b5946ed"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e0201ac233a16db3c598b5946ed"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d0000485101ac233a16db3c598b5946ed"}],"is_playable":true,"name":"帶我去找夜生活","release_date":"2019-12-25","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:3xk8Iced6AQm2zMZcfHmrZ"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":299704,"explicit":false,"external_ids":{"isrc":"TWFF51900013"},"external_urls":{"spotify":"https://open.spotify.com/track/4KjPt8HrShkDOASRyMkTJ4"},"href":"https://api.spotify.com/v1/tracks/4KjPt8HrShkDOASRyMkTJ4","id":"4KjPt8HrShkDOASRyMkTJ4","is_local":false,"is_playable":true,"name":"帶我去找夜生活","popularity":55,"preview_url":"https://p.scdn.co/mp3-preview/a66dbbb3ef27363d831b2b3459b30a4ca2f05400?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:4KjPt8HrShkDOASRyMkTJ4"},{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/0FqW8002vT95qoJRrxqBWT"},"href":"https://api.spotify.com/v1/albums/0FqW8002vT95qoJRrxqBWT","id":"0FqW8002vT95qoJRrxqBWT","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2738a8552c345b5fcc86a585fd8"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e028a8552c345b5fcc86a585fd8"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048518a8552c345b5fcc86a585fd8"}],"is_playable":true,"name":"就說你想說的","release_date":"2024-10-14","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:0FqW8002vT95qoJRrxqBWT"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":350509,"explicit":false,"external_ids":{"isrc":"TWK232483750"},"external_urls":{"spotify":"https://open.spotify.com/track/1b5dVCDgYYrf61U1Ff0tmC"},"href":"https://api.spotify.com/v1/tracks/1b5dVCDgYYrf61U1Ff0tmC","id":"1b5dVCDgYYrf61U1Ff0tmC","is_local":false,"is_playable":true,"name":"就說你想說的
-        (電影《為我辦一場西式的喪禮》主題曲)","popularity":56,"preview_url":"https://p.scdn.co/mp3-preview/b4fc96998a4325e4630840fb9fb92b7b377b05ee?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:1b5dVCDgYYrf61U1Ff0tmC"},{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/5mahTh3xdvMSH7N01fAEFg"},"href":"https://api.spotify.com/v1/albums/5mahTh3xdvMSH7N01fAEFg","id":"5mahTh3xdvMSH7N01fAEFg","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b273b031ee53413ef37f35096a14"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e02b031ee53413ef37f35096a14"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d00004851b031ee53413ef37f35096a14"}],"is_playable":true,"name":"好不容易","release_date":"2021-12-13","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:5mahTh3xdvMSH7N01fAEFg"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":295466,"explicit":false,"external_ids":{"isrc":"TWK232183010"},"external_urls":{"spotify":"https://open.spotify.com/track/6jNy9WM3zyvG9E5bdVALl8"},"href":"https://api.spotify.com/v1/tracks/6jNy9WM3zyvG9E5bdVALl8","id":"6jNy9WM3zyvG9E5bdVALl8","is_local":false,"is_playable":true,"name":"好不容易
+      string: '{"tracks":{"href":"https://api.spotify.com/v1/search?offset=0&limit=5&query=%E5%91%8A%E4%BA%94%E4%BA%BA&type=track&market=TW","limit":5,"next":"https://api.spotify.com/v1/search?offset=5&limit=5&query=%E5%91%8A%E4%BA%94%E4%BA%BA&type=track&market=TW","offset":0,"previous":null,"total":94,"items":[{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/5e28mgD5TjknzurCXeQU7X"},"href":"https://api.spotify.com/v1/albums/5e28mgD5TjknzurCXeQU7X","id":"5e28mgD5TjknzurCXeQU7X","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2734d4400be089c0f21eb4d9335"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e024d4400be089c0f21eb4d9335"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048514d4400be089c0f21eb4d9335"}],"is_playable":true,"name":"從未見過的海","release_date":"2024-11-08","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:5e28mgD5TjknzurCXeQU7X"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":301826,"explicit":false,"external_ids":{"isrc":"TWK232483680"},"external_urls":{"spotify":"https://open.spotify.com/track/3agPPRZPNOhbCwm2026EN6"},"href":"https://api.spotify.com/v1/tracks/3agPPRZPNOhbCwm2026EN6","id":"3agPPRZPNOhbCwm2026EN6","is_local":false,"is_playable":true,"name":"從未見過的海
+        (Netflix 影集《影后》序曲)","popularity":55,"preview_url":"https://p.scdn.co/mp3-preview/8f11505b39b6fd42251911e506408f1b2bcfed1a?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:3agPPRZPNOhbCwm2026EN6"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/7yvCk24AtE9k0vLcolSs2i"},"href":"https://api.spotify.com/v1/albums/7yvCk24AtE9k0vLcolSs2i","id":"7yvCk24AtE9k0vLcolSs2i","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2737a2aff746e4093fecd950130"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e027a2aff746e4093fecd950130"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048517a2aff746e4093fecd950130"}],"is_playable":true,"name":"我肯定在幾百年前就說過愛你","release_date":"2019-06-14","release_date_precision":"day","total_tracks":11,"type":"album","uri":"spotify:album:7yvCk24AtE9k0vLcolSs2i"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":349773,"explicit":false,"external_ids":{"isrc":"TWDK11800002"},"external_urls":{"spotify":"https://open.spotify.com/track/7tgzj2IqzSgUpxUhjmcF5m"},"href":"https://api.spotify.com/v1/tracks/7tgzj2IqzSgUpxUhjmcF5m","id":"7tgzj2IqzSgUpxUhjmcF5m","is_local":false,"is_playable":true,"name":"披星戴月的想你","popularity":58,"preview_url":"https://p.scdn.co/mp3-preview/67a5c02ec0eb4fdba82b992c75254521974c156f?cid=<REDACTED>","track_number":11,"type":"track","uri":"spotify:track:7tgzj2IqzSgUpxUhjmcF5m"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/7yvCk24AtE9k0vLcolSs2i"},"href":"https://api.spotify.com/v1/albums/7yvCk24AtE9k0vLcolSs2i","id":"7yvCk24AtE9k0vLcolSs2i","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2737a2aff746e4093fecd950130"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e027a2aff746e4093fecd950130"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048517a2aff746e4093fecd950130"}],"is_playable":true,"name":"我肯定在幾百年前就說過愛你","release_date":"2019-06-14","release_date_precision":"day","total_tracks":11,"type":"album","uri":"spotify:album:7yvCk24AtE9k0vLcolSs2i"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":292074,"explicit":false,"external_ids":{"isrc":"TWFF51900001"},"external_urls":{"spotify":"https://open.spotify.com/track/27FOde2nUw0pFuj7hlPbaS"},"href":"https://api.spotify.com/v1/tracks/27FOde2nUw0pFuj7hlPbaS","id":"27FOde2nUw0pFuj7hlPbaS","is_local":false,"is_playable":true,"name":"愛人錯過","popularity":60,"preview_url":"https://p.scdn.co/mp3-preview/c9db87ce67859e3c0589259a23ce221efd5581eb?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:27FOde2nUw0pFuj7hlPbaS"},{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/3xk8Iced6AQm2zMZcfHmrZ"},"href":"https://api.spotify.com/v1/albums/3xk8Iced6AQm2zMZcfHmrZ","id":"3xk8Iced6AQm2zMZcfHmrZ","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b27301ac233a16db3c598b5946ed"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e0201ac233a16db3c598b5946ed"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d0000485101ac233a16db3c598b5946ed"}],"is_playable":true,"name":"帶我去找夜生活","release_date":"2019-12-25","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:3xk8Iced6AQm2zMZcfHmrZ"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":299704,"explicit":false,"external_ids":{"isrc":"TWFF51900013"},"external_urls":{"spotify":"https://open.spotify.com/track/4KjPt8HrShkDOASRyMkTJ4"},"href":"https://api.spotify.com/v1/tracks/4KjPt8HrShkDOASRyMkTJ4","id":"4KjPt8HrShkDOASRyMkTJ4","is_local":false,"is_playable":true,"name":"帶我去找夜生活","popularity":55,"preview_url":"https://p.scdn.co/mp3-preview/a66dbbb3ef27363d831b2b3459b30a4ca2f05400?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:4KjPt8HrShkDOASRyMkTJ4"},{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/5mahTh3xdvMSH7N01fAEFg"},"href":"https://api.spotify.com/v1/albums/5mahTh3xdvMSH7N01fAEFg","id":"5mahTh3xdvMSH7N01fAEFg","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b273b031ee53413ef37f35096a14"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e02b031ee53413ef37f35096a14"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d00004851b031ee53413ef37f35096a14"}],"is_playable":true,"name":"好不容易","release_date":"2021-12-13","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:5mahTh3xdvMSH7N01fAEFg"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":295466,"explicit":false,"external_ids":{"isrc":"TWK232183010"},"external_urls":{"spotify":"https://open.spotify.com/track/6jNy9WM3zyvG9E5bdVALl8"},"href":"https://api.spotify.com/v1/tracks/6jNy9WM3zyvG9E5bdVALl8","id":"6jNy9WM3zyvG9E5bdVALl8","is_local":false,"is_playable":true,"name":"好不容易
         (《華燈初上》片尾曲)","popularity":58,"preview_url":"https://p.scdn.co/mp3-preview/3aec55db85030e7684ad8914e4cc705da1e6bc59?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:6jNy9WM3zyvG9E5bdVALl8"}]}}'
-  recorded_at: Sun, 24 Nov 2024 07:59:40 GMT
+  recorded_at: Tue, 26 Nov 2024 06:54:44 GMT
 - request:
     method: get
     uri: https://lrclib.net/api/get?artist_name=%E5%91%8A%E4%BA%94%E4%BA%BA&track_name=%E5%BE%9E%E6%9C%AA%E8%A6%8B%E9%81%8E%E7%9A%84%E6%B5%B7%20(Netflix%20%E5%BD%B1%E9%9B%86%E3%80%8A%E5%BD%B1%E5%90%8E%E3%80%8B%E5%BA%8F%E6%9B%B2)
@@ -364,7 +363,7 @@ http_interactions:
       Server:
       - nginx/1.22.1
       Date:
-      - Sun, 24 Nov 2024 07:59:41 GMT
+      - Tue, 26 Nov 2024 06:54:45 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -378,7 +377,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
-  recorded_at: Sun, 24 Nov 2024 07:59:41 GMT
+  recorded_at: Tue, 26 Nov 2024 06:54:46 GMT
 - request:
     method: get
     uri: https://lrclib.net/api/get?artist_name=%E5%91%8A%E4%BA%94%E4%BA%BA&track_name=%E6%8A%AB%E6%98%9F%E6%88%B4%E6%9C%88%E7%9A%84%E6%83%B3%E4%BD%A0
@@ -400,7 +399,7 @@ http_interactions:
       Server:
       - nginx/1.22.1
       Date:
-      - Sun, 24 Nov 2024 07:59:42 GMT
+      - Tue, 26 Nov 2024 06:54:47 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -427,7 +426,7 @@ http_interactions:
         凝視前方身後的距離\n[03:52.19] \n[04:48.26] 我會披星戴月的想你\n[04:52.98] 我會奮不顧身的前進\n[04:58.07]
         遠方煙火越來越唏噓\n[05:02.56] 凝視前方身後的距離\n[05:07.27] 我會披星戴月的想你\n[05:12.06] 我會奮不顧身的前進\n[05:16.82]
         遠方煙火越來越唏噓\n[05:21.61] 凝視前方身後的距離\n[05:26.75] "}'
-  recorded_at: Sun, 24 Nov 2024 07:59:43 GMT
+  recorded_at: Tue, 26 Nov 2024 06:54:47 GMT
 - request:
     method: get
     uri: https://lrclib.net/api/get?artist_name=%E5%91%8A%E4%BA%94%E4%BA%BA&track_name=%E6%84%9B%E4%BA%BA%E9%8C%AF%E9%81%8E
@@ -449,7 +448,7 @@ http_interactions:
       Server:
       - nginx/1.22.1
       Date:
-      - Sun, 24 Nov 2024 07:59:44 GMT
+      - Tue, 26 Nov 2024 06:54:48 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -483,7 +482,7 @@ http_interactions:
         本來今天好好的\n[04:08.55] 愛人就錯過 愛人就錯過\n[04:12.24] 走過 路過 沒遇過\n[04:15.81] 回頭 轉頭 還是錯\n[04:19.26]
         你我不曾感受過\n[04:22.01] 相撞在街口 相撞在街口\n[04:25.98] 你媽沒有告訴你 (告訴你)\n[04:29.37] 撞到人要說對不起
         (對不起)\n[04:32.88] 本來今天好好的\n[04:35.94] 愛人就錯過 愛人就錯過\n[04:37.84] "}'
-  recorded_at: Sun, 24 Nov 2024 07:59:44 GMT
+  recorded_at: Tue, 26 Nov 2024 06:54:49 GMT
 - request:
     method: get
     uri: https://lrclib.net/api/get?artist_name=%E5%91%8A%E4%BA%94%E4%BA%BA&track_name=%E5%B8%B6%E6%88%91%E5%8E%BB%E6%89%BE%E5%A4%9C%E7%94%9F%E6%B4%BB
@@ -505,7 +504,7 @@ http_interactions:
       Server:
       - nginx/1.22.1
       Date:
-      - Sun, 24 Nov 2024 07:59:45 GMT
+      - Tue, 26 Nov 2024 06:54:50 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -531,7 +530,350 @@ http_interactions:
         記住激情的滋味\n[03:34.43] 記住流淚的畫面\n[03:38.27] 如果清醒是種罪\n[03:42.06] 就拿偏執的一切\n[03:44.35]
         放棄無聊的稱謂\n[03:46.33] 如果你真是一切\n[03:49.55] 如同我真是絕對\n[03:53.24] 如果夜留下曖昧\n[03:57.30]
         讓你我不再掛念\n[03:59.36] 最後成全每個誰\n[04:02.02] "}'
-  recorded_at: Sun, 24 Nov 2024 07:59:45 GMT
+  recorded_at: Tue, 26 Nov 2024 06:54:51 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=5&market=TW&q=valentin%20strykalo&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=0
+      Etag:
+      - '"MC-IjBkNjY0NWMxMzQ0NmU3NGNhNjlhMWJjNjM2MmNkNjI3Ig=="'
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '9523'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 26 Nov 2024 06:54:51 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"tracks":{"href":"https://api.spotify.com/v1/search?offset=0&limit=5&query=valentin%20strykalo&type=track&market=TW","limit":5,"next":"https://api.spotify.com/v1/search?offset=5&limit=5&query=valentin%20strykalo&type=track&market=TW","offset":0,"previous":null,"total":840,"items":[{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
+        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"external_urls":{"spotify":"https://open.spotify.com/album/20YkqA8ivmBOheN4QGjp1V"},"href":"https://api.spotify.com/v1/albums/20YkqA8ivmBOheN4QGjp1V","id":"20YkqA8ivmBOheN4QGjp1V","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b273c57d665b700dc1d788b1c00d"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e02c57d665b700dc1d788b1c00d"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d00004851c57d665b700dc1d788b1c00d"}],"is_playable":true,"name":"Развлечение","release_date":"2016-10-13","release_date_precision":"day","total_tracks":8,"type":"album","uri":"spotify:album:20YkqA8ivmBOheN4QGjp1V"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
+        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"disc_number":1,"duration_ms":424380,"explicit":false,"external_ids":{"isrc":"ushm81647761"},"external_urls":{"spotify":"https://open.spotify.com/track/5JbxiG90IN2anqHToMdlGT"},"href":"https://api.spotify.com/v1/tracks/5JbxiG90IN2anqHToMdlGT","id":"5JbxiG90IN2anqHToMdlGT","is_local":false,"is_playable":true,"name":"Бесполезно","popularity":53,"preview_url":"https://p.scdn.co/mp3-preview/3747cdbe5f0f518ccbae50700df9ec753e14fb4f?cid=<REDACTED>","track_number":7,"type":"track","uri":"spotify:track:5JbxiG90IN2anqHToMdlGT"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/0gOrXuu1vCBXe3pwTyb5Ca"},"href":"https://api.spotify.com/v1/artists/0gOrXuu1vCBXe3pwTyb5Ca","id":"0gOrXuu1vCBXe3pwTyb5Ca","name":"Valentina
+        Lisitsa","type":"artist","uri":"spotify:artist:0gOrXuu1vCBXe3pwTyb5Ca"}],"external_urls":{"spotify":"https://open.spotify.com/album/47UHGOGmGyHRTiilpNSrjy"},"href":"https://api.spotify.com/v1/albums/47UHGOGmGyHRTiilpNSrjy","id":"47UHGOGmGyHRTiilpNSrjy","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2733509fdd2dadc9953fbd4c77b"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e023509fdd2dadc9953fbd4c77b"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048513509fdd2dadc9953fbd4c77b"}],"is_playable":true,"name":"Frédéric
+        Chopin 24 Etudes","release_date":"2020-03-01","release_date_precision":"day","total_tracks":24,"type":"album","uri":"spotify:album:47UHGOGmGyHRTiilpNSrjy"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/0gOrXuu1vCBXe3pwTyb5Ca"},"href":"https://api.spotify.com/v1/artists/0gOrXuu1vCBXe3pwTyb5Ca","id":"0gOrXuu1vCBXe3pwTyb5Ca","name":"Valentina
+        Lisitsa","type":"artist","uri":"spotify:artist:0gOrXuu1vCBXe3pwTyb5Ca"}],"disc_number":1,"duration_ms":62066,"explicit":false,"external_ids":{"isrc":"GBSMU7415094"},"external_urls":{"spotify":"https://open.spotify.com/track/19KPtbtYqdnIFCCuS0Xwv2"},"href":"https://api.spotify.com/v1/tracks/19KPtbtYqdnIFCCuS0Xwv2","id":"19KPtbtYqdnIFCCuS0Xwv2","is_local":false,"is_playable":true,"name":"Etude
+        Op. 25 no. 9 in G Flat Major","popularity":44,"preview_url":"https://p.scdn.co/mp3-preview/27dbc6652bd4b1245ef6fd6fc39efeee314059d6?cid=<REDACTED>","track_number":21,"type":"track","uri":"spotify:track:19KPtbtYqdnIFCCuS0Xwv2"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
+        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"external_urls":{"spotify":"https://open.spotify.com/album/6MtWkVH4nIqwo5fiM4J6xF"},"href":"https://api.spotify.com/v1/albums/6MtWkVH4nIqwo5fiM4J6xF","id":"6MtWkVH4nIqwo5fiM4J6xF","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2738f8c4983a31d266041369b41"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e028f8c4983a31d266041369b41"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048518f8c4983a31d266041369b41"}],"is_playable":true,"name":"Смирись
+        и расслабься","release_date":"2012-02-24","release_date_precision":"day","total_tracks":17,"type":"album","uri":"spotify:album:6MtWkVH4nIqwo5fiM4J6xF"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
+        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"disc_number":1,"duration_ms":208133,"explicit":false,"external_ids":{"isrc":"ushm91619245"},"external_urls":{"spotify":"https://open.spotify.com/track/7zoMMlOFm4udEKsei6c34D"},"href":"https://api.spotify.com/v1/tracks/7zoMMlOFm4udEKsei6c34D","id":"7zoMMlOFm4udEKsei6c34D","is_local":false,"is_playable":true,"name":"Наше
+        лето","popularity":53,"preview_url":"https://p.scdn.co/mp3-preview/bce0e80830d0efd26ac17214df9efc7414c2b388?cid=<REDACTED>","track_number":10,"type":"track","uri":"spotify:track:7zoMMlOFm4udEKsei6c34D"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/0gOrXuu1vCBXe3pwTyb5Ca"},"href":"https://api.spotify.com/v1/artists/0gOrXuu1vCBXe3pwTyb5Ca","id":"0gOrXuu1vCBXe3pwTyb5Ca","name":"Valentina
+        Lisitsa","type":"artist","uri":"spotify:artist:0gOrXuu1vCBXe3pwTyb5Ca"}],"external_urls":{"spotify":"https://open.spotify.com/album/47UHGOGmGyHRTiilpNSrjy"},"href":"https://api.spotify.com/v1/albums/47UHGOGmGyHRTiilpNSrjy","id":"47UHGOGmGyHRTiilpNSrjy","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2733509fdd2dadc9953fbd4c77b"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e023509fdd2dadc9953fbd4c77b"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048513509fdd2dadc9953fbd4c77b"}],"is_playable":true,"name":"Frédéric
+        Chopin 24 Etudes","release_date":"2020-03-01","release_date_precision":"day","total_tracks":24,"type":"album","uri":"spotify:album:47UHGOGmGyHRTiilpNSrjy"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/0gOrXuu1vCBXe3pwTyb5Ca"},"href":"https://api.spotify.com/v1/artists/0gOrXuu1vCBXe3pwTyb5Ca","id":"0gOrXuu1vCBXe3pwTyb5Ca","name":"Valentina
+        Lisitsa","type":"artist","uri":"spotify:artist:0gOrXuu1vCBXe3pwTyb5Ca"}],"disc_number":1,"duration_ms":111080,"explicit":false,"external_ids":{"isrc":"GBSMU7415049"},"external_urls":{"spotify":"https://open.spotify.com/track/3bOa4BTKzsZM0TzEpk1ytV"},"href":"https://api.spotify.com/v1/tracks/3bOa4BTKzsZM0TzEpk1ytV","id":"3bOa4BTKzsZM0TzEpk1ytV","is_local":false,"is_playable":true,"name":"Etude
+        Op. 10 no. 4 in c sharp minor","popularity":38,"preview_url":"https://p.scdn.co/mp3-preview/e4358a24487fe018c176e18eba5e80d604be44e7?cid=<REDACTED>","track_number":4,"type":"track","uri":"spotify:track:3bOa4BTKzsZM0TzEpk1ytV"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
+        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"external_urls":{"spotify":"https://open.spotify.com/album/6MtWkVH4nIqwo5fiM4J6xF"},"href":"https://api.spotify.com/v1/albums/6MtWkVH4nIqwo5fiM4J6xF","id":"6MtWkVH4nIqwo5fiM4J6xF","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2738f8c4983a31d266041369b41"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e028f8c4983a31d266041369b41"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048518f8c4983a31d266041369b41"}],"is_playable":true,"name":"Смирись
+        и расслабься","release_date":"2012-02-24","release_date_precision":"day","total_tracks":17,"type":"album","uri":"spotify:album:6MtWkVH4nIqwo5fiM4J6xF"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
+        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"disc_number":1,"duration_ms":181720,"explicit":false,"external_ids":{"isrc":"ushm91619242"},"external_urls":{"spotify":"https://open.spotify.com/track/1cM6fsR7qJbls7CkU2Hway"},"href":"https://api.spotify.com/v1/tracks/1cM6fsR7qJbls7CkU2Hway","id":"1cM6fsR7qJbls7CkU2Hway","is_local":false,"is_playable":true,"name":"Кайен","popularity":56,"preview_url":"https://p.scdn.co/mp3-preview/e0aa245d7f3dcfcbd13200aa0601bf958309258e?cid=<REDACTED>","track_number":7,"type":"track","uri":"spotify:track:1cM6fsR7qJbls7CkU2Hway"}]}}'
+  recorded_at: Tue, 26 Nov 2024 06:54:52 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=Valentin%20Strykalo&track_name=%D0%91%D0%B5%D1%81%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%BE
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Tue, 26 Nov 2024 06:54:52 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '84'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
+  recorded_at: Tue, 26 Nov 2024 06:54:53 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=Valentina%20Lisitsa&track_name=Etude%20Op.%2025%20no.%209%20in%20G%20Flat%20Major
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Tue, 26 Nov 2024 06:54:54 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '84'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
+  recorded_at: Tue, 26 Nov 2024 06:54:55 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=Valentin%20Strykalo&track_name=%D0%9D%D0%B0%D1%88%D0%B5%20%D0%BB%D0%B5%D1%82%D0%BE
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Tue, 26 Nov 2024 06:54:55 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3159'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"id":9333202,"name":"Наше лето","trackName":"Наше лето","artistName":"Valentin
+        Strykalo","albumName":"Смирись и расслабься","duration":208.133,"instrumental":false,"plainLyrics":"Тихо
+        лужи покрывает лёд\nПомнишь мы с тобою\nЦеловались ночи напролёт\nПод шум
+        прибоя\n\nЭто лето не вернуть уже\nЯ знаю\nНо когда печаль в моей душе\nЯ
+        вспоминаю\n\nЯхта, парус, в этом мире только мы одни\nЯлта, август, и мы с
+        тобою влюблены\nЯхта, парус, в этом мире только мы одни\nЯлта, август, и мы
+        с тобою влюблены\n\nНо расстаться нам с тобой пришлось\nКончилась путёвка\nИ
+        вагон плацкартный меня нёс\nВ Новую Каховку\n\nНе забуду ночи при луне\nИ
+        твою улыбку\nТы открытку подарила мне\nА на той открытке\n\nЯхта, парус, в
+        этом мире только мы одни\nЯлта, август, и мы с тобою влюблены\nЯхта, парус,
+        в этом мире только мы одни\nЯлта, август, и мы с тобою влюблены\n\nЯхта, парус,
+        в этом мире только мы одни\nЯлта, август, и мы с тобою влюблены","syncedLyrics":"[00:16.39]
+        Тихо лужи покрывает лёд\n[00:20.84] Помнишь мы с тобою\n[00:24.12] Целовались
+        ночи напролёт\n[00:28.63] Под шум прибоя\n[00:32.28] Это лето не вернуть уже\n[00:37.08]
+        Я знаю\n[00:40.24] Но когда печаль в моей душе\n[00:44.56] Я вспоминаю\n[00:48.95]
+        Яхта, парус, в этом мире только мы одни\n[00:56.44] Ялта, август, и мы с тобою
+        влюблены\n[01:04.80] Яхта, парус, в этом мире только мы одни\n[01:12.86] Ялта,
+        август, и мы с тобою влюблены\n[01:21.68] \n[01:28.01] Но расстаться нам с
+        тобой пришлось\n[01:32.78] Кончилась путёвка\n[01:36.33] И вагон плацкартный
+        меня нёс\n[01:40.98] В Новую Каховку\n[01:44.11] Не забуду ночи при луне\n[01:48.75]
+        И твою улыбку\n[01:52.32] Ты открытку подарила мне\n[01:56.92] А на той открытке\n[02:00.66]
+        Яхта, парус, в этом мире только мы одни\n[02:08.37] Ялта, август, и мы с тобою
+        влюблены\n[02:16.66] Яхта, парус, в этом мире только мы одни\n[02:24.51] Ялта,
+        август, и мы с тобою влюблены\n[02:33.48] \n[03:04.37] Яхта, парус, в этом
+        мире только мы одни\n[03:12.72] Ялта, август, и мы с тобою влюблены\n[03:20.45]
+        "}'
+  recorded_at: Tue, 26 Nov 2024 06:54:56 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=Valentina%20Lisitsa&track_name=Etude%20Op.%2010%20no.%204%20in%20c%20sharp%20minor
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Tue, 26 Nov 2024 06:54:57 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '84'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
+  recorded_at: Tue, 26 Nov 2024 06:54:57 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=Valentin%20Strykalo&track_name=%D0%9A%D0%B0%D0%B9%D0%B5%D0%BD
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Tue, 26 Nov 2024 06:54:58 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '84'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
+  recorded_at: Tue, 26 Nov 2024 06:54:59 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=6&market=TW&q=%E5%91%8A%E4%BA%94%E4%BA%BA&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=0
+      Etag:
+      - '"MC-ImI0YzVmNGI5YzAxMzI2OTdjOWM5NTU2YTdkYjI5OTJmIg=="'
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '11337'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 26 Nov 2024 06:54:59 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"tracks":{"href":"https://api.spotify.com/v1/search?offset=0&limit=6&query=%E5%91%8A%E4%BA%94%E4%BA%BA&type=track&market=TW","limit":6,"next":"https://api.spotify.com/v1/search?offset=6&limit=6&query=%E5%91%8A%E4%BA%94%E4%BA%BA&type=track&market=TW","offset":0,"previous":null,"total":94,"items":[{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/5e28mgD5TjknzurCXeQU7X"},"href":"https://api.spotify.com/v1/albums/5e28mgD5TjknzurCXeQU7X","id":"5e28mgD5TjknzurCXeQU7X","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2734d4400be089c0f21eb4d9335"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e024d4400be089c0f21eb4d9335"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048514d4400be089c0f21eb4d9335"}],"is_playable":true,"name":"從未見過的海","release_date":"2024-11-08","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:5e28mgD5TjknzurCXeQU7X"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":301826,"explicit":false,"external_ids":{"isrc":"TWK232483680"},"external_urls":{"spotify":"https://open.spotify.com/track/3agPPRZPNOhbCwm2026EN6"},"href":"https://api.spotify.com/v1/tracks/3agPPRZPNOhbCwm2026EN6","id":"3agPPRZPNOhbCwm2026EN6","is_local":false,"is_playable":true,"name":"從未見過的海
+        (Netflix 影集《影后》序曲)","popularity":55,"preview_url":"https://p.scdn.co/mp3-preview/8f11505b39b6fd42251911e506408f1b2bcfed1a?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:3agPPRZPNOhbCwm2026EN6"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/7yvCk24AtE9k0vLcolSs2i"},"href":"https://api.spotify.com/v1/albums/7yvCk24AtE9k0vLcolSs2i","id":"7yvCk24AtE9k0vLcolSs2i","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2737a2aff746e4093fecd950130"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e027a2aff746e4093fecd950130"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048517a2aff746e4093fecd950130"}],"is_playable":true,"name":"我肯定在幾百年前就說過愛你","release_date":"2019-06-14","release_date_precision":"day","total_tracks":11,"type":"album","uri":"spotify:album:7yvCk24AtE9k0vLcolSs2i"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":349773,"explicit":false,"external_ids":{"isrc":"TWDK11800002"},"external_urls":{"spotify":"https://open.spotify.com/track/7tgzj2IqzSgUpxUhjmcF5m"},"href":"https://api.spotify.com/v1/tracks/7tgzj2IqzSgUpxUhjmcF5m","id":"7tgzj2IqzSgUpxUhjmcF5m","is_local":false,"is_playable":true,"name":"披星戴月的想你","popularity":58,"preview_url":"https://p.scdn.co/mp3-preview/67a5c02ec0eb4fdba82b992c75254521974c156f?cid=<REDACTED>","track_number":11,"type":"track","uri":"spotify:track:7tgzj2IqzSgUpxUhjmcF5m"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/7yvCk24AtE9k0vLcolSs2i"},"href":"https://api.spotify.com/v1/albums/7yvCk24AtE9k0vLcolSs2i","id":"7yvCk24AtE9k0vLcolSs2i","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2737a2aff746e4093fecd950130"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e027a2aff746e4093fecd950130"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048517a2aff746e4093fecd950130"}],"is_playable":true,"name":"我肯定在幾百年前就說過愛你","release_date":"2019-06-14","release_date_precision":"day","total_tracks":11,"type":"album","uri":"spotify:album:7yvCk24AtE9k0vLcolSs2i"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":292074,"explicit":false,"external_ids":{"isrc":"TWFF51900001"},"external_urls":{"spotify":"https://open.spotify.com/track/27FOde2nUw0pFuj7hlPbaS"},"href":"https://api.spotify.com/v1/tracks/27FOde2nUw0pFuj7hlPbaS","id":"27FOde2nUw0pFuj7hlPbaS","is_local":false,"is_playable":true,"name":"愛人錯過","popularity":60,"preview_url":"https://p.scdn.co/mp3-preview/c9db87ce67859e3c0589259a23ce221efd5581eb?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:27FOde2nUw0pFuj7hlPbaS"},{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/3xk8Iced6AQm2zMZcfHmrZ"},"href":"https://api.spotify.com/v1/albums/3xk8Iced6AQm2zMZcfHmrZ","id":"3xk8Iced6AQm2zMZcfHmrZ","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b27301ac233a16db3c598b5946ed"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e0201ac233a16db3c598b5946ed"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d0000485101ac233a16db3c598b5946ed"}],"is_playable":true,"name":"帶我去找夜生活","release_date":"2019-12-25","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:3xk8Iced6AQm2zMZcfHmrZ"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":299704,"explicit":false,"external_ids":{"isrc":"TWFF51900013"},"external_urls":{"spotify":"https://open.spotify.com/track/4KjPt8HrShkDOASRyMkTJ4"},"href":"https://api.spotify.com/v1/tracks/4KjPt8HrShkDOASRyMkTJ4","id":"4KjPt8HrShkDOASRyMkTJ4","is_local":false,"is_playable":true,"name":"帶我去找夜生活","popularity":55,"preview_url":"https://p.scdn.co/mp3-preview/a66dbbb3ef27363d831b2b3459b30a4ca2f05400?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:4KjPt8HrShkDOASRyMkTJ4"},{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/5mahTh3xdvMSH7N01fAEFg"},"href":"https://api.spotify.com/v1/albums/5mahTh3xdvMSH7N01fAEFg","id":"5mahTh3xdvMSH7N01fAEFg","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b273b031ee53413ef37f35096a14"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e02b031ee53413ef37f35096a14"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d00004851b031ee53413ef37f35096a14"}],"is_playable":true,"name":"好不容易","release_date":"2021-12-13","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:5mahTh3xdvMSH7N01fAEFg"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":295466,"explicit":false,"external_ids":{"isrc":"TWK232183010"},"external_urls":{"spotify":"https://open.spotify.com/track/6jNy9WM3zyvG9E5bdVALl8"},"href":"https://api.spotify.com/v1/tracks/6jNy9WM3zyvG9E5bdVALl8","id":"6jNy9WM3zyvG9E5bdVALl8","is_local":false,"is_playable":true,"name":"好不容易
+        (《華燈初上》片尾曲)","popularity":58,"preview_url":"https://p.scdn.co/mp3-preview/3aec55db85030e7684ad8914e4cc705da1e6bc59?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:6jNy9WM3zyvG9E5bdVALl8"},{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/0FqW8002vT95qoJRrxqBWT"},"href":"https://api.spotify.com/v1/albums/0FqW8002vT95qoJRrxqBWT","id":"0FqW8002vT95qoJRrxqBWT","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2738a8552c345b5fcc86a585fd8"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e028a8552c345b5fcc86a585fd8"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048518a8552c345b5fcc86a585fd8"}],"is_playable":true,"name":"就說你想說的","release_date":"2024-10-14","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:0FqW8002vT95qoJRrxqBWT"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":350509,"explicit":false,"external_ids":{"isrc":"TWK232483750"},"external_urls":{"spotify":"https://open.spotify.com/track/1b5dVCDgYYrf61U1Ff0tmC"},"href":"https://api.spotify.com/v1/tracks/1b5dVCDgYYrf61U1Ff0tmC","id":"1b5dVCDgYYrf61U1Ff0tmC","is_local":false,"is_playable":true,"name":"就說你想說的
+        (電影《為我辦一場西式的喪禮》主題曲)","popularity":56,"preview_url":"https://p.scdn.co/mp3-preview/b4fc96998a4325e4630840fb9fb92b7b377b05ee?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:1b5dVCDgYYrf61U1Ff0tmC"}]}}'
+  recorded_at: Tue, 26 Nov 2024 06:55:00 GMT
 - request:
     method: get
     uri: https://lrclib.net/api/get?artist_name=%E5%91%8A%E4%BA%94%E4%BA%BA&track_name=%E5%B0%B1%E8%AA%AA%E4%BD%A0%E6%83%B3%E8%AA%AA%E7%9A%84%20(%E9%9B%BB%E5%BD%B1%E3%80%8A%E7%82%BA%E6%88%91%E8%BE%A6%E4%B8%80%E5%A0%B4%E8%A5%BF%E5%BC%8F%E7%9A%84%E5%96%AA%E7%A6%AE%E3%80%8B%E4%B8%BB%E9%A1%8C%E6%9B%B2)
@@ -553,7 +895,7 @@ http_interactions:
       Server:
       - nginx/1.22.1
       Date:
-      - Sun, 24 Nov 2024 07:59:47 GMT
+      - Tue, 26 Nov 2024 06:55:01 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -587,7 +929,7 @@ http_interactions:
         就說你想說的 (就說你想說的)\n[04:44.68] 就愛你想愛的 (就愛你想愛的)\n[04:50.56] 就認你心底的 (就認你心底的)\n[04:56.42]
         就說你想說的 (就說你想說的)\n[05:02.43] 就愛你想愛的 (就說你想說的)\n[05:06.28] 就愛你想愛的\n[05:08.60]
         就認你心底的 (就說你想說的)\n[05:15.10] "}'
-  recorded_at: Sun, 24 Nov 2024 07:59:47 GMT
+  recorded_at: Tue, 26 Nov 2024 06:55:02 GMT
 - request:
     method: get
     uri: https://api.spotify.com/v1/search?limit=1&market=TW&q=No%20Party%20For%20Cao%20Dong%20%E5%B1%B1%E6%B5%B7&type=track
@@ -634,7 +976,7 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Date:
-      - Sun, 24 Nov 2024 07:59:48 GMT
+      - Tue, 26 Nov 2024 06:55:02 GMT
       Server:
       - envoy
       Via:
@@ -648,7 +990,7 @@ http_interactions:
       string: '{"tracks":{"href":"https://api.spotify.com/v1/search?offset=0&limit=1&query=No%20Party%20For%20Cao%20Dong%20%E5%B1%B1%E6%B5%B7&type=track&market=TW","limit":1,"next":"https://api.spotify.com/v1/search?offset=1&limit=1&query=No%20Party%20For%20Cao%20Dong%20%E5%B1%B1%E6%B5%B7&type=track&market=TW","offset":0,"previous":null,"total":800,"items":[{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"},"href":"https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp","id":"3HXSUfI76zVZk71UMAeVfp","name":"No
         Party For Cao Dong","type":"artist","uri":"spotify:artist:3HXSUfI76zVZk71UMAeVfp"}],"external_urls":{"spotify":"https://open.spotify.com/album/2Qfn3LNC6qhxgpyPjBQFJh"},"href":"https://api.spotify.com/v1/albums/2Qfn3LNC6qhxgpyPjBQFJh","id":"2Qfn3LNC6qhxgpyPjBQFJh","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2736bd87ad997c2b9e44f947348"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e026bd87ad997c2b9e44f947348"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048516bd87ad997c2b9e44f947348"}],"is_playable":true,"name":"醜奴兒","release_date":"2016-02-19","release_date_precision":"day","total_tracks":12,"type":"album","uri":"spotify:album:2Qfn3LNC6qhxgpyPjBQFJh"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/3HXSUfI76zVZk71UMAeVfp"},"href":"https://api.spotify.com/v1/artists/3HXSUfI76zVZk71UMAeVfp","id":"3HXSUfI76zVZk71UMAeVfp","name":"No
         Party For Cao Dong","type":"artist","uri":"spotify:artist:3HXSUfI76zVZk71UMAeVfp"}],"disc_number":1,"duration_ms":251053,"explicit":false,"external_ids":{"isrc":"TWBN31600010"},"external_urls":{"spotify":"https://open.spotify.com/track/0VUORVhLmsxKTSwg4P9CrB"},"href":"https://api.spotify.com/v1/tracks/0VUORVhLmsxKTSwg4P9CrB","id":"0VUORVhLmsxKTSwg4P9CrB","is_local":false,"is_playable":true,"name":"山海","popularity":53,"preview_url":"https://p.scdn.co/mp3-preview/40d17f6882a01ffe6ba7b8c47045680fd7d7aaa5?cid=<REDACTED>","track_number":10,"type":"track","uri":"spotify:track:0VUORVhLmsxKTSwg4P9CrB"}]}}'
-  recorded_at: Sun, 24 Nov 2024 07:59:48 GMT
+  recorded_at: Tue, 26 Nov 2024 06:55:03 GMT
 - request:
     method: get
     uri: https://lrclib.net/api/get?artist_name=No%20Party%20For%20Cao%20Dong&track_name=%E5%B1%B1%E6%B5%B7
@@ -670,7 +1012,7 @@ http_interactions:
       Server:
       - nginx/1.22.1
       Date:
-      - Sun, 24 Nov 2024 07:59:49 GMT
+      - Tue, 26 Nov 2024 06:55:04 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -693,347 +1035,5 @@ http_interactions:
         \n[02:37.19] 我聽著那少年的聲音\n[02:44.78] 在還有未來的過去\n[02:49.30] 渴望著美好結局\n[02:56.73]
         卻沒能成為自己\n[03:00.97] 他明白 他明白 我給不起\n[03:08.56] 於是轉身向山裡走去\n[03:12.96] 他明白 他明白
         我給不起\n[03:20.61] 於是轉身向大海走去\n[03:25.05] "}'
-  recorded_at: Sun, 24 Nov 2024 07:59:49 GMT
-- request:
-    method: get
-    uri: https://api.spotify.com/v1/search?limit=5&market=TW&q=%E5%91%8A%E4%BA%94%E4%BA%BA&type=track
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - api.spotify.com
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Cache-Control:
-      - public, max-age=0
-      Etag:
-      - '"MC-ImYyMjczOGFhZGZhYTYwNmUyYTQzZmQ4NDM3MzVmNDQ1Ig=="'
-      X-Robots-Tag:
-      - noindex, nofollow
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Headers:
-      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
-        X-Cloud-Trace-Context, client-token, content-access-token
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS, PUT, DELETE, PATCH
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Max-Age:
-      - '604800'
-      Content-Length:
-      - '9505'
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Date:
-      - Sun, 24 Nov 2024 07:59:50 GMT
-      Server:
-      - envoy
-      Via:
-      - HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"tracks":{"href":"https://api.spotify.com/v1/search?offset=0&limit=5&query=%E5%91%8A%E4%BA%94%E4%BA%BA&type=track&market=TW","limit":5,"next":"https://api.spotify.com/v1/search?offset=5&limit=5&query=%E5%91%8A%E4%BA%94%E4%BA%BA&type=track&market=TW","offset":0,"previous":null,"total":94,"items":[{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/5e28mgD5TjknzurCXeQU7X"},"href":"https://api.spotify.com/v1/albums/5e28mgD5TjknzurCXeQU7X","id":"5e28mgD5TjknzurCXeQU7X","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2734d4400be089c0f21eb4d9335"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e024d4400be089c0f21eb4d9335"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048514d4400be089c0f21eb4d9335"}],"is_playable":true,"name":"從未見過的海","release_date":"2024-11-08","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:5e28mgD5TjknzurCXeQU7X"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":301826,"explicit":false,"external_ids":{"isrc":"TWK232483680"},"external_urls":{"spotify":"https://open.spotify.com/track/3agPPRZPNOhbCwm2026EN6"},"href":"https://api.spotify.com/v1/tracks/3agPPRZPNOhbCwm2026EN6","id":"3agPPRZPNOhbCwm2026EN6","is_local":false,"is_playable":true,"name":"從未見過的海
-        (Netflix 影集《影后》序曲)","popularity":54,"preview_url":"https://p.scdn.co/mp3-preview/8f11505b39b6fd42251911e506408f1b2bcfed1a?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:3agPPRZPNOhbCwm2026EN6"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/7yvCk24AtE9k0vLcolSs2i"},"href":"https://api.spotify.com/v1/albums/7yvCk24AtE9k0vLcolSs2i","id":"7yvCk24AtE9k0vLcolSs2i","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2737a2aff746e4093fecd950130"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e027a2aff746e4093fecd950130"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048517a2aff746e4093fecd950130"}],"is_playable":true,"name":"我肯定在幾百年前就說過愛你","release_date":"2019-06-14","release_date_precision":"day","total_tracks":11,"type":"album","uri":"spotify:album:7yvCk24AtE9k0vLcolSs2i"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":349773,"explicit":false,"external_ids":{"isrc":"TWDK11800002"},"external_urls":{"spotify":"https://open.spotify.com/track/7tgzj2IqzSgUpxUhjmcF5m"},"href":"https://api.spotify.com/v1/tracks/7tgzj2IqzSgUpxUhjmcF5m","id":"7tgzj2IqzSgUpxUhjmcF5m","is_local":false,"is_playable":true,"name":"披星戴月的想你","popularity":58,"preview_url":"https://p.scdn.co/mp3-preview/67a5c02ec0eb4fdba82b992c75254521974c156f?cid=<REDACTED>","track_number":11,"type":"track","uri":"spotify:track:7tgzj2IqzSgUpxUhjmcF5m"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/7yvCk24AtE9k0vLcolSs2i"},"href":"https://api.spotify.com/v1/albums/7yvCk24AtE9k0vLcolSs2i","id":"7yvCk24AtE9k0vLcolSs2i","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2737a2aff746e4093fecd950130"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e027a2aff746e4093fecd950130"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048517a2aff746e4093fecd950130"}],"is_playable":true,"name":"我肯定在幾百年前就說過愛你","release_date":"2019-06-14","release_date_precision":"day","total_tracks":11,"type":"album","uri":"spotify:album:7yvCk24AtE9k0vLcolSs2i"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":292074,"explicit":false,"external_ids":{"isrc":"TWFF51900001"},"external_urls":{"spotify":"https://open.spotify.com/track/27FOde2nUw0pFuj7hlPbaS"},"href":"https://api.spotify.com/v1/tracks/27FOde2nUw0pFuj7hlPbaS","id":"27FOde2nUw0pFuj7hlPbaS","is_local":false,"is_playable":true,"name":"愛人錯過","popularity":60,"preview_url":"https://p.scdn.co/mp3-preview/c9db87ce67859e3c0589259a23ce221efd5581eb?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:27FOde2nUw0pFuj7hlPbaS"},{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/3xk8Iced6AQm2zMZcfHmrZ"},"href":"https://api.spotify.com/v1/albums/3xk8Iced6AQm2zMZcfHmrZ","id":"3xk8Iced6AQm2zMZcfHmrZ","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b27301ac233a16db3c598b5946ed"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e0201ac233a16db3c598b5946ed"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d0000485101ac233a16db3c598b5946ed"}],"is_playable":true,"name":"帶我去找夜生活","release_date":"2019-12-25","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:3xk8Iced6AQm2zMZcfHmrZ"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":299704,"explicit":false,"external_ids":{"isrc":"TWFF51900013"},"external_urls":{"spotify":"https://open.spotify.com/track/4KjPt8HrShkDOASRyMkTJ4"},"href":"https://api.spotify.com/v1/tracks/4KjPt8HrShkDOASRyMkTJ4","id":"4KjPt8HrShkDOASRyMkTJ4","is_local":false,"is_playable":true,"name":"帶我去找夜生活","popularity":55,"preview_url":"https://p.scdn.co/mp3-preview/a66dbbb3ef27363d831b2b3459b30a4ca2f05400?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:4KjPt8HrShkDOASRyMkTJ4"},{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/0FqW8002vT95qoJRrxqBWT"},"href":"https://api.spotify.com/v1/albums/0FqW8002vT95qoJRrxqBWT","id":"0FqW8002vT95qoJRrxqBWT","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2738a8552c345b5fcc86a585fd8"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e028a8552c345b5fcc86a585fd8"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048518a8552c345b5fcc86a585fd8"}],"is_playable":true,"name":"就說你想說的","release_date":"2024-10-14","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:0FqW8002vT95qoJRrxqBWT"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":350509,"explicit":false,"external_ids":{"isrc":"TWK232483750"},"external_urls":{"spotify":"https://open.spotify.com/track/1b5dVCDgYYrf61U1Ff0tmC"},"href":"https://api.spotify.com/v1/tracks/1b5dVCDgYYrf61U1Ff0tmC","id":"1b5dVCDgYYrf61U1Ff0tmC","is_local":false,"is_playable":true,"name":"就說你想說的
-        (電影《為我辦一場西式的喪禮》主題曲)","popularity":56,"preview_url":"https://p.scdn.co/mp3-preview/b4fc96998a4325e4630840fb9fb92b7b377b05ee?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:1b5dVCDgYYrf61U1Ff0tmC"}]}}'
-  recorded_at: Sun, 24 Nov 2024 07:59:51 GMT
-- request:
-    method: get
-    uri: https://api.spotify.com/v1/search?limit=5&market=TW&q=valentin%20strykalo&type=track
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - api.spotify.com
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Cache-Control:
-      - public, max-age=0
-      Etag:
-      - '"MC-IjM2NTZlOTRhNzg1NTk5MmIyMzZhMDU2ZDMwNTJkNjFkIg=="'
-      X-Robots-Tag:
-      - noindex, nofollow
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Headers:
-      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
-        X-Cloud-Trace-Context, client-token, content-access-token
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS, PUT, DELETE, PATCH
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Max-Age:
-      - '604800'
-      Content-Length:
-      - '9523'
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Date:
-      - Sun, 24 Nov 2024 07:59:52 GMT
-      Server:
-      - envoy
-      Via:
-      - HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"tracks":{"href":"https://api.spotify.com/v1/search?offset=0&limit=5&query=valentin%20strykalo&type=track&market=TW","limit":5,"next":"https://api.spotify.com/v1/search?offset=5&limit=5&query=valentin%20strykalo&type=track&market=TW","offset":0,"previous":null,"total":840,"items":[{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
-        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"external_urls":{"spotify":"https://open.spotify.com/album/20YkqA8ivmBOheN4QGjp1V"},"href":"https://api.spotify.com/v1/albums/20YkqA8ivmBOheN4QGjp1V","id":"20YkqA8ivmBOheN4QGjp1V","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b273c57d665b700dc1d788b1c00d"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e02c57d665b700dc1d788b1c00d"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d00004851c57d665b700dc1d788b1c00d"}],"is_playable":true,"name":"Развлечение","release_date":"2016-10-13","release_date_precision":"day","total_tracks":8,"type":"album","uri":"spotify:album:20YkqA8ivmBOheN4QGjp1V"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
-        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"disc_number":1,"duration_ms":424380,"explicit":false,"external_ids":{"isrc":"ushm81647761"},"external_urls":{"spotify":"https://open.spotify.com/track/5JbxiG90IN2anqHToMdlGT"},"href":"https://api.spotify.com/v1/tracks/5JbxiG90IN2anqHToMdlGT","id":"5JbxiG90IN2anqHToMdlGT","is_local":false,"is_playable":true,"name":"Бесполезно","popularity":53,"preview_url":"https://p.scdn.co/mp3-preview/3747cdbe5f0f518ccbae50700df9ec753e14fb4f?cid=<REDACTED>","track_number":7,"type":"track","uri":"spotify:track:5JbxiG90IN2anqHToMdlGT"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/0gOrXuu1vCBXe3pwTyb5Ca"},"href":"https://api.spotify.com/v1/artists/0gOrXuu1vCBXe3pwTyb5Ca","id":"0gOrXuu1vCBXe3pwTyb5Ca","name":"Valentina
-        Lisitsa","type":"artist","uri":"spotify:artist:0gOrXuu1vCBXe3pwTyb5Ca"}],"external_urls":{"spotify":"https://open.spotify.com/album/47UHGOGmGyHRTiilpNSrjy"},"href":"https://api.spotify.com/v1/albums/47UHGOGmGyHRTiilpNSrjy","id":"47UHGOGmGyHRTiilpNSrjy","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2733509fdd2dadc9953fbd4c77b"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e023509fdd2dadc9953fbd4c77b"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048513509fdd2dadc9953fbd4c77b"}],"is_playable":true,"name":"Frédéric
-        Chopin 24 Etudes","release_date":"2020-03-01","release_date_precision":"day","total_tracks":24,"type":"album","uri":"spotify:album:47UHGOGmGyHRTiilpNSrjy"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/0gOrXuu1vCBXe3pwTyb5Ca"},"href":"https://api.spotify.com/v1/artists/0gOrXuu1vCBXe3pwTyb5Ca","id":"0gOrXuu1vCBXe3pwTyb5Ca","name":"Valentina
-        Lisitsa","type":"artist","uri":"spotify:artist:0gOrXuu1vCBXe3pwTyb5Ca"}],"disc_number":1,"duration_ms":62066,"explicit":false,"external_ids":{"isrc":"GBSMU7415094"},"external_urls":{"spotify":"https://open.spotify.com/track/19KPtbtYqdnIFCCuS0Xwv2"},"href":"https://api.spotify.com/v1/tracks/19KPtbtYqdnIFCCuS0Xwv2","id":"19KPtbtYqdnIFCCuS0Xwv2","is_local":false,"is_playable":true,"name":"Etude
-        Op. 25 no. 9 in G Flat Major","popularity":44,"preview_url":"https://p.scdn.co/mp3-preview/27dbc6652bd4b1245ef6fd6fc39efeee314059d6?cid=<REDACTED>","track_number":21,"type":"track","uri":"spotify:track:19KPtbtYqdnIFCCuS0Xwv2"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
-        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"external_urls":{"spotify":"https://open.spotify.com/album/6MtWkVH4nIqwo5fiM4J6xF"},"href":"https://api.spotify.com/v1/albums/6MtWkVH4nIqwo5fiM4J6xF","id":"6MtWkVH4nIqwo5fiM4J6xF","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2738f8c4983a31d266041369b41"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e028f8c4983a31d266041369b41"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048518f8c4983a31d266041369b41"}],"is_playable":true,"name":"Смирись
-        и расслабься","release_date":"2012-02-24","release_date_precision":"day","total_tracks":17,"type":"album","uri":"spotify:album:6MtWkVH4nIqwo5fiM4J6xF"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
-        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"disc_number":1,"duration_ms":181720,"explicit":false,"external_ids":{"isrc":"ushm91619242"},"external_urls":{"spotify":"https://open.spotify.com/track/1cM6fsR7qJbls7CkU2Hway"},"href":"https://api.spotify.com/v1/tracks/1cM6fsR7qJbls7CkU2Hway","id":"1cM6fsR7qJbls7CkU2Hway","is_local":false,"is_playable":true,"name":"Кайен","popularity":56,"preview_url":"https://p.scdn.co/mp3-preview/e0aa245d7f3dcfcbd13200aa0601bf958309258e?cid=<REDACTED>","track_number":7,"type":"track","uri":"spotify:track:1cM6fsR7qJbls7CkU2Hway"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/0gOrXuu1vCBXe3pwTyb5Ca"},"href":"https://api.spotify.com/v1/artists/0gOrXuu1vCBXe3pwTyb5Ca","id":"0gOrXuu1vCBXe3pwTyb5Ca","name":"Valentina
-        Lisitsa","type":"artist","uri":"spotify:artist:0gOrXuu1vCBXe3pwTyb5Ca"}],"external_urls":{"spotify":"https://open.spotify.com/album/47UHGOGmGyHRTiilpNSrjy"},"href":"https://api.spotify.com/v1/albums/47UHGOGmGyHRTiilpNSrjy","id":"47UHGOGmGyHRTiilpNSrjy","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2733509fdd2dadc9953fbd4c77b"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e023509fdd2dadc9953fbd4c77b"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048513509fdd2dadc9953fbd4c77b"}],"is_playable":true,"name":"Frédéric
-        Chopin 24 Etudes","release_date":"2020-03-01","release_date_precision":"day","total_tracks":24,"type":"album","uri":"spotify:album:47UHGOGmGyHRTiilpNSrjy"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/0gOrXuu1vCBXe3pwTyb5Ca"},"href":"https://api.spotify.com/v1/artists/0gOrXuu1vCBXe3pwTyb5Ca","id":"0gOrXuu1vCBXe3pwTyb5Ca","name":"Valentina
-        Lisitsa","type":"artist","uri":"spotify:artist:0gOrXuu1vCBXe3pwTyb5Ca"}],"disc_number":1,"duration_ms":111080,"explicit":false,"external_ids":{"isrc":"GBSMU7415049"},"external_urls":{"spotify":"https://open.spotify.com/track/3bOa4BTKzsZM0TzEpk1ytV"},"href":"https://api.spotify.com/v1/tracks/3bOa4BTKzsZM0TzEpk1ytV","id":"3bOa4BTKzsZM0TzEpk1ytV","is_local":false,"is_playable":true,"name":"Etude
-        Op. 10 no. 4 in c sharp minor","popularity":38,"preview_url":"https://p.scdn.co/mp3-preview/e4358a24487fe018c176e18eba5e80d604be44e7?cid=<REDACTED>","track_number":4,"type":"track","uri":"spotify:track:3bOa4BTKzsZM0TzEpk1ytV"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
-        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"external_urls":{"spotify":"https://open.spotify.com/album/6MtWkVH4nIqwo5fiM4J6xF"},"href":"https://api.spotify.com/v1/albums/6MtWkVH4nIqwo5fiM4J6xF","id":"6MtWkVH4nIqwo5fiM4J6xF","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2738f8c4983a31d266041369b41"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e028f8c4983a31d266041369b41"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048518f8c4983a31d266041369b41"}],"is_playable":true,"name":"Смирись
-        и расслабься","release_date":"2012-02-24","release_date_precision":"day","total_tracks":17,"type":"album","uri":"spotify:album:6MtWkVH4nIqwo5fiM4J6xF"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
-        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"disc_number":1,"duration_ms":208133,"explicit":false,"external_ids":{"isrc":"ushm91619245"},"external_urls":{"spotify":"https://open.spotify.com/track/7zoMMlOFm4udEKsei6c34D"},"href":"https://api.spotify.com/v1/tracks/7zoMMlOFm4udEKsei6c34D","id":"7zoMMlOFm4udEKsei6c34D","is_local":false,"is_playable":true,"name":"Наше
-        лето","popularity":53,"preview_url":"https://p.scdn.co/mp3-preview/bce0e80830d0efd26ac17214df9efc7414c2b388?cid=<REDACTED>","track_number":10,"type":"track","uri":"spotify:track:7zoMMlOFm4udEKsei6c34D"}]}}'
-  recorded_at: Sun, 24 Nov 2024 07:59:52 GMT
-- request:
-    method: get
-    uri: https://lrclib.net/api/get?artist_name=Valentin%20Strykalo&track_name=%D0%91%D0%B5%D1%81%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%BE
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - lrclib.net
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - nginx/1.22.1
-      Date:
-      - Sun, 24 Nov 2024 07:59:53 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '84'
-      Connection:
-      - close
-      Vary:
-      - origin, access-control-request-method, access-control-request-headers
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
-  recorded_at: Sun, 24 Nov 2024 07:59:53 GMT
-- request:
-    method: get
-    uri: https://lrclib.net/api/get?artist_name=Valentina%20Lisitsa&track_name=Etude%20Op.%2025%20no.%209%20in%20G%20Flat%20Major
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - lrclib.net
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - nginx/1.22.1
-      Date:
-      - Sun, 24 Nov 2024 07:59:55 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '84'
-      Connection:
-      - close
-      Vary:
-      - origin, access-control-request-method, access-control-request-headers
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
-  recorded_at: Sun, 24 Nov 2024 07:59:55 GMT
-- request:
-    method: get
-    uri: https://lrclib.net/api/get?artist_name=Valentin%20Strykalo&track_name=%D0%9A%D0%B0%D0%B9%D0%B5%D0%BD
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - lrclib.net
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - nginx/1.22.1
-      Date:
-      - Sun, 24 Nov 2024 07:59:56 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '84'
-      Connection:
-      - close
-      Vary:
-      - origin, access-control-request-method, access-control-request-headers
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
-  recorded_at: Sun, 24 Nov 2024 07:59:56 GMT
-- request:
-    method: get
-    uri: https://lrclib.net/api/get?artist_name=Valentina%20Lisitsa&track_name=Etude%20Op.%2010%20no.%204%20in%20c%20sharp%20minor
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - lrclib.net
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - nginx/1.22.1
-      Date:
-      - Sun, 24 Nov 2024 07:59:57 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '84'
-      Connection:
-      - close
-      Vary:
-      - origin, access-control-request-method, access-control-request-headers
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
-  recorded_at: Sun, 24 Nov 2024 07:59:58 GMT
-- request:
-    method: get
-    uri: https://lrclib.net/api/get?artist_name=Valentin%20Strykalo&track_name=%D0%9D%D0%B0%D1%88%D0%B5%20%D0%BB%D0%B5%D1%82%D0%BE
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - lrclib.net
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx/1.22.1
-      Date:
-      - Sun, 24 Nov 2024 07:59:59 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '3159'
-      Connection:
-      - close
-      Vary:
-      - origin, access-control-request-method, access-control-request-headers
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"id":9333202,"name":"Наше лето","trackName":"Наше лето","artistName":"Valentin
-        Strykalo","albumName":"Смирись и расслабься","duration":208.133,"instrumental":false,"plainLyrics":"Тихо
-        лужи покрывает лёд\nПомнишь мы с тобою\nЦеловались ночи напролёт\nПод шум
-        прибоя\n\nЭто лето не вернуть уже\nЯ знаю\nНо когда печаль в моей душе\nЯ
-        вспоминаю\n\nЯхта, парус, в этом мире только мы одни\nЯлта, август, и мы с
-        тобою влюблены\nЯхта, парус, в этом мире только мы одни\nЯлта, август, и мы
-        с тобою влюблены\n\nНо расстаться нам с тобой пришлось\nКончилась путёвка\nИ
-        вагон плацкартный меня нёс\nВ Новую Каховку\n\nНе забуду ночи при луне\nИ
-        твою улыбку\nТы открытку подарила мне\nА на той открытке\n\nЯхта, парус, в
-        этом мире только мы одни\nЯлта, август, и мы с тобою влюблены\nЯхта, парус,
-        в этом мире только мы одни\nЯлта, август, и мы с тобою влюблены\n\nЯхта, парус,
-        в этом мире только мы одни\nЯлта, август, и мы с тобою влюблены","syncedLyrics":"[00:16.39]
-        Тихо лужи покрывает лёд\n[00:20.84] Помнишь мы с тобою\n[00:24.12] Целовались
-        ночи напролёт\n[00:28.63] Под шум прибоя\n[00:32.28] Это лето не вернуть уже\n[00:37.08]
-        Я знаю\n[00:40.24] Но когда печаль в моей душе\n[00:44.56] Я вспоминаю\n[00:48.95]
-        Яхта, парус, в этом мире только мы одни\n[00:56.44] Ялта, август, и мы с тобою
-        влюблены\n[01:04.80] Яхта, парус, в этом мире только мы одни\n[01:12.86] Ялта,
-        август, и мы с тобою влюблены\n[01:21.68] \n[01:28.01] Но расстаться нам с
-        тобой пришлось\n[01:32.78] Кончилась путёвка\n[01:36.33] И вагон плацкартный
-        меня нёс\n[01:40.98] В Новую Каховку\n[01:44.11] Не забуду ночи при луне\n[01:48.75]
-        И твою улыбку\n[01:52.32] Ты открытку подарила мне\n[01:56.92] А на той открытке\n[02:00.66]
-        Яхта, парус, в этом мире только мы одни\n[02:08.37] Ялта, август, и мы с тобою
-        влюблены\n[02:16.66] Яхта, парус, в этом мире только мы одни\n[02:24.51] Ялта,
-        август, и мы с тобою влюблены\n[02:33.48] \n[03:04.37] Яхта, парус, в этом
-        мире только мы одни\n[03:12.72] Ялта, август, и мы с тобою влюблены\n[03:20.45]
-        "}'
-  recorded_at: Sun, 24 Nov 2024 07:59:59 GMT
+  recorded_at: Tue, 26 Nov 2024 06:55:05 GMT
 recorded_with: VCR 6.3.1
