@@ -26,7 +26,8 @@ module LyricLab
 
       def populate_vocabulary(input_song)
         if input_song.vocabulary.unique_words.empty?
-          input_song.vocabulary.gen_unique_words(input_song.lyrics.text, GPT_API_KEY)
+          unique_words, sep_text = OpenAI::VocabularyFactory.new(GPT_API_KEY).create_unique_words_from_text(input_song.lyrics.text)
+          input_song.vocabulary.populate_vocabulary(unique_words, sep_text)
         end
         Success(input_song)
       rescue StandardError => e
