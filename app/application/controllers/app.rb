@@ -107,7 +107,7 @@ module LyricLab
           routing.on String do |origin_id|
             # return vocabularies
             # GET /api/v1/vocabularies/{origin_id}
-            routing.post do
+            routing.get do
               result = Service::LoadVocabulary.new.call(origin_id)
 
               if result.failure?

@@ -23,12 +23,14 @@ module LyricLab
         # filtered_words = Mixins::WordProcessor.filter_relevant_words(words, language_level.to_sym)
 
         # check which words we already have in the database
+        puts "unique_words: #{unique_words}"
         database_word_objects, gpt_words = separate_existing_and_new_words(unique_words)
-
+        puts "database_word_objects: #{database_word_objects}, gpt_words: #{gpt_words}"
         gpt_word_data = @gpt.get_words_metadata(gpt_words)
+        puts "gpt_word_data: #{gpt_word_data}"
         # gpt_word_data should be a list of hashes that contains all the desired attributes of words
         gpt_word_objects = Repository::Words.rebuild_many_from_hash(gpt_word_data)
-
+        puts "gpt_word_objects: #{gpt_word_objects.inspect}"
         [database_word_objects.concat(gpt_word_objects), sep_text]
       end
 
