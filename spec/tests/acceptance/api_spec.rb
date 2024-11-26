@@ -70,8 +70,18 @@ describe 'Test API routes' do
       encoded_query = LyricLab::Request::EncodedSearchQuery.to_encoded('valentin strykalo')
 
       get "/api/v1/search_results?search_query=#{encoded_query}"
+      get "/api/v1/search_results?search_query=#{encoded_query}"
 
       _(last_response.status).must_equal 404
+      _(JSON.parse(last_response.body)['message']).must_include 'not'
+    end
+
+    it 'should report error for empty search query' do
+      encoded_query = LyricLab::Request::EncodedSearchQuery.to_encoded('')
+      get "/api/v1/search_results?search_query=#{encoded_query}"
+
+      _(last_response.status).must_equal 422
+      _(JSON.parse(last_response.body)['message']).must_include 'Empty'
       _(JSON.parse(last_response.body)['message']).must_include 'not'
     end
 
@@ -125,6 +135,7 @@ describe 'Test API routes' do
 
       LyricLab::Repository::For.klass(LyricLab::Entity::Song).create(song)
 
+      get "/api/v1/vocabularies/#{song.origin_id}"
       get "/api/v1/vocabularies/#{song.origin_id}"
 
       _(last_response.status).must_equal 200
