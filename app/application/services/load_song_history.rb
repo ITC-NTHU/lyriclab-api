@@ -4,7 +4,7 @@ require 'dry/transaction'
 
 module LyricLab
   module Service
-    # Transaction to store project from Github API to database
+    # Load a list of songs from the database
     class LoadSongHistory
       include Dry::Transaction
 
@@ -13,19 +13,19 @@ module LyricLab
 
       private
 
-      def load_songs_from_database(input)
+      def load_songs_from_database(input) # rubocop:disable Metrics/MethodLength
         puts input.length
         if input.empty?
           Failure('no sessions')
         else
-          songs = input.map! do |spotify_id|
-            load_song_from_database(spotify_id)
+          songs = input.map! do |origin_id|
+            load_song_from_database(origin_id)
           end
           Success(songs)
         end
 
-        # songs = input.map! do |spotify_id|
-        #  load_song_from_database(spotify_id)
+        # songs = input.map! do |origin_id|
+        #  load_song_from_database(origin_id)
         # end
         # Success(songs)
       rescue StandardError => e
@@ -43,8 +43,8 @@ module LyricLab
         Failure(e.to_s)
       end
 
-      def load_song_from_database(spotify_id)
-        Repository::For.klass(Entity::Song).find_spotify_id(spotify_id)
+      def load_song_from_database(origin_id)
+        Repository::For.klass(Entity::Song).find_origin_id(origin_id)
       end
     end
   end
