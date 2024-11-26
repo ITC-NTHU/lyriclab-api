@@ -38,22 +38,21 @@ module LyricLab
 
         # rubocop:disable Metrics/MethodLength
         def build_entity
-          lyrics = lyrics()
+          lyrics, is_instrumental = @lyrics_mapper.find(title, artist_name_string, is_explicit)
           LyricLab::Entity::Song.new(
             id: nil,
             title:,
             vocabulary:,
             artist_name_string:,
-            lyrics:,
-            spotify_id:,
+            lyrics: lyrics,
+            origin_id:,
             popularity:,
             preview_url:,
             album_name:,
             cover_image_url_big:,
             cover_image_url_medium:,
             cover_image_url_small:,
-            is_instrumental: lyrics.is_instrumental,
-            explicit:
+            is_instrumental: is_instrumental
           )
         end
         # rubocop:enable Metrics/MethodLength
@@ -62,7 +61,7 @@ module LyricLab
           @data['name']
         end
 
-        def spotify_id
+        def origin_id
           @data['id']
         end
 
@@ -94,15 +93,11 @@ module LyricLab
           @data['album']['images'][2]['url']
         end
 
-        def lyrics
-          @lyrics_mapper.find(title, artist_name_string)
-        end
-
         def vocabulary
           LyricLab::Entity::Vocabulary.new(id: nil, unique_words: [], sep_text: '')
         end
 
-        def explicit
+        def is_explicit # rubocop:disable Naming/PredicateName
           @data['explicit']
         end
       end

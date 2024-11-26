@@ -70,11 +70,11 @@ module LyricLab
         end
 
         routing.on 'songs' do
-          routing.on String do |spotify_id|
+          routing.on String do |origin_id|
             # update recommendations
-            # PUT /api/v1/songs/{spotify_id}
+            # PUT /api/v1/songs/{origin_id}
             routing.put do
-              result = Service::Record.new.call(spotify_id)
+              result = Service::Record.new.call(origin_id)
 
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
@@ -87,9 +87,9 @@ module LyricLab
             end
 
             # return metadata for single song object
-            # GET /api/v1/songs/{spotify_id}
+            # GET /api/v1/songs/{origin_id}
             routing.get do
-              result = Service::LoadSong.new.call(spotify_id)
+              result = Service::LoadSong.new.call(origin_id)
 
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
@@ -107,11 +107,11 @@ module LyricLab
         end
 
         routing.on 'vocabularies' do
-          routing.on String do |spotify_id|
+          routing.on String do |origin_id|
             # return vocabularies
-            # GET /api/v1/vocabularies/{spotify_id}
+            # GET /api/v1/vocabularies/{origin_id}
             routing.post do
-              result = Service::LoadVocabulary.new.call(spotify_id)
+              result = Service::LoadVocabulary.new.call(origin_id)
 
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)

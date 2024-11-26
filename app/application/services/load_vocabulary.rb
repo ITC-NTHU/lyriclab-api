@@ -4,7 +4,7 @@ require 'dry/transaction'
 
 module LyricLab
   module Service
-    # Transaction to store project from Github API to database
+    # Load vocabulary from db or ChatGPT API
     class LoadVocabulary
       include Dry::Transaction
 
@@ -17,9 +17,10 @@ module LyricLab
       private
 
       def find_song_db(input_id)
-        song = Repository::For.klass(Entity::Song).find_spotify_id(input_id)
+        song = Repository::For.klass(Entity::Song).find_origin_id(input_id)
         Success(song)
-      rescue StandardError
+      rescue StandardError => e
+        App.logger.error e.backtrace.join("\n")
         Failure(Response::ApiResult.new(status: :internal_error, message: 'cannot access db'))
       end
 

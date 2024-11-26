@@ -29,7 +29,7 @@ The primary domain entities for this project are:
 - **lyrics_id** (Foreign Key): References `id` in the `lyrics` table.
 - **vocabulary_id** (Foreign Key): References `id` in the `vocabularies` table.
 - **title**: Title of the song (required).
-- **spotify_id**: Unique Spotify identifier (required).
+- **origin_id**: Unique Spotify identifier (required).
 - **popularity**: Popularity score (required).
 - **album_name**: Album name (required).
 - **artist_name_string**: Name of the artist(s) (required).
@@ -56,7 +56,7 @@ The primary domain entities for this project are:
 - **title**: Title of the recommendation (required).
 - **artist_name_string**: Name of the artist(s) (required).
 - **search_cnt**: Number of times searched (required).
-- **spotify_id**: Unique Spotify identifier (required).
+- **origin_id**: Unique Spotify identifier (required).
 - **created_at**, **updated_at**: Timestamps.
 
 ### Attributes of the `vocabularies_filtered_words` Join Table:
@@ -73,7 +73,7 @@ Below is a conceptual representation of the database structure:
 | id          |------>| lyrics_id     |<----| id            |
 | text        |       | vocabulary_id |     |               |
 | is_mandarin |       | title         |+--->| language_level|
-| is_instr.   |       | spotify_id    ||    | created_at    |
+| is_instr.   |       | origin_id    ||    | created_at    |
 | created_at  |       | ...           ||    | updated_at    |
 | updated_at  |       +---------------+|    +---------------+
 +-------------+                        |             ^
@@ -97,7 +97,7 @@ Below is a conceptual representation of the database structure:
 | title              |
 | artist_name_string |
 | search_cnt         |
-| spotify_id         |
+| origin_id         |
 | created_at         |
 | updated_at         |
 +--------------------+

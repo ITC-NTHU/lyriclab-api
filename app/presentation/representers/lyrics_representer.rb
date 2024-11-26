@@ -15,7 +15,7 @@ module LyricLab
       property :id
       property :text
       property :is_mandarin
-      property :is_instrumental
+      property :is_explicit
     end
   end
 end

@@ -4,7 +4,7 @@ require 'dry/transaction'
 
 module LyricLab
   module Service
-    # Transaction to store project from Github API to database
+    # Load search results from Spotify API
     class LoadSearchResults
       include Dry::Transaction
 
