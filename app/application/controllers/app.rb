@@ -48,9 +48,8 @@ module LyricLab
         routing.on 'search_results' do
           routing.is do
             # return search results in form of song objects
-            # POST /api/v1/search_results?search_query={search_query}
-            routing.post do
-              # TODO: check nonempty
+            # GET /api/v1/search_results?search_query={search_query}
+            routing.get do
               search_query = Request::EncodedSearchQuery.new(routing.params)
               result = Service::LoadSearchResults.new.call(search_query)
 
@@ -110,7 +109,7 @@ module LyricLab
           routing.on String do |spotify_id|
             # return vocabularies
             # GET /api/v1/vocabularies/{spotify_id}
-            routing.post do
+            routing.get do
               result = Service::LoadVocabulary.new.call(spotify_id)
 
               if result.failure?

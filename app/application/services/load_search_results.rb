@@ -13,11 +13,11 @@ module LyricLab
       step :check_relevancy
       step :store_song
 
-      private
-
       SPOTIFY_CLIENT_ID = LyricLab::App.config.SPOTIFY_CLIENT_ID
       SPOTIFY_CLIENT_SECRET = LyricLab::App.config.SPOTIFY_CLIENT_SECRET
       GOOGLE_CLIENT_KEY = LyricLab::App.config.GOOGLE_CLIENT_KEY
+
+      private
 
       def validate_search_query(input)
         query = input.call

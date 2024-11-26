@@ -58,7 +58,7 @@ describe 'Test API routes' do
     it 'should be able to search based on search query' do
       encoded_query = LyricLab::Request::EncodedSearchQuery.to_encoded(ARTIST_NAME)
 
-      post "/api/v1/search_results?search_query=#{encoded_query}"
+      get "/api/v1/search_results?search_query=#{encoded_query}"
       _(last_response.status).must_equal 201
 
       songs = JSON.parse(last_response.body)
@@ -69,12 +69,18 @@ describe 'Test API routes' do
     it 'should report error for invalid search query' do
       encoded_query = LyricLab::Request::EncodedSearchQuery.to_encoded('valentin strykalo')
 
-      post "/api/v1/search_results?search_query=#{encoded_query}"
+      get "/api/v1/search_results?search_query=#{encoded_query}"
 
       _(last_response.status).must_equal 404
+      _(JSON.parse(last_response.body)['message']).must_include 'not'
+    end
 
-      response = JSON.parse(last_response.body)
-      _(response['message']).must_include 'not'
+    it 'should report error for empty search query' do
+      encoded_query = LyricLab::Request::EncodedSearchQuery.to_encoded('')
+      get "/api/v1/search_results?search_query=#{encoded_query}"
+
+      _(last_response.status).must_equal 422
+      _(JSON.parse(last_response.body)['message']).must_include 'Empty'
     end
   end
 
@@ -119,7 +125,7 @@ describe 'Test API routes' do
 
       LyricLab::Repository::For.klass(LyricLab::Entity::Song).create(song)
 
-      post "/api/v1/vocabularies/#{song.spotify_id}"
+      get "/api/v1/vocabularies/#{song.spotify_id}"
 
       _(last_response.status).must_equal 200
 
