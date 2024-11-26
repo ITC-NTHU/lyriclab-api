@@ -5,7 +5,7 @@ require 'dry/transaction'
 
 module LyricLab
   module Service
-    # Retrieves array of all listed project entities
+    # Retrieves array of the top recommendations
     class ListRecommendations
       include Dry::Transaction
 
