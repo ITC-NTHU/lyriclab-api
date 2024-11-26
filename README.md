@@ -130,7 +130,7 @@ GET /api/v1/recommendations
 ```
 - Add song into recommendations
 ```
-PUT /api/v1/songs/{spotify_id}
+PUT /api/v1/songs/{origin_id}
 ```
 - Show search results (songs)
 ```
@@ -138,11 +138,11 @@ POST /api/v1/search_results?search_query={search_query}
 ```
 - Display vocabulary for selected song (song object with vocabularies)
 ```
-GET/api/v1/vocabularies/{spotify_id}
+GET/api/v1/vocabularies/{origin_id}
 ```
 - Return song object (basic metadata)
 ```
-GET /api/v1/songs/{spotify_id}
+GET /api/v1/songs/{origin_id}
 ```
 
 ### To test API

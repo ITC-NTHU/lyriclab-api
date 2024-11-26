@@ -24,8 +24,8 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
         .find(CORRECT_SONG['title'])
       LyricLab::Service::SaveSong.new.call(song)
-      vocabulary_song = LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!
-
+      vocabulary_song = LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!.message
+      puts(vocabulary_song.inspect)
       _(vocabulary_song.vocabulary.unique_words).wont_be_empty
     end
 
@@ -34,8 +34,8 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
         .find(CORRECT_SONG['title'])
       LyricLab::Service::SaveSong.new.call(song)
-      LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!
-      rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!
+      LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!.message
+      rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
 
       _(rebuilt.vocabulary.unique_words).wont_be_empty
     end
@@ -45,10 +45,11 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
         .find(CORRECT_SONG['title'])
       LyricLab::Service::SaveSong.new.call(song)
-      LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!
+      LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!.message
 
-      rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!
+      rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
 
+      _(rebuilt.vocabulary.unique_words.length).wont_equal(0)
       _(rebuilt.vocabulary.unique_words.length).must_equal(song.vocabulary.unique_words.length)
       _(rebuilt.vocabulary.unique_words.first.characters).must_equal(song.vocabulary.unique_words.first.characters)
     end
@@ -59,62 +60,62 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         .find(CORRECT_SONG['title'])
       LyricLab::Service::SaveSong.new.call(song)
 
-      rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!
-      vocabulary_rebuilt_song = LyricLab::Service::LoadVocabulary.new.call(rebuilt.origin_id).value!
+      rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
+      vocabulary_rebuilt_song = LyricLab::Service::LoadVocabulary.new.call(rebuilt.origin_id).value!.message
 
       _(vocabulary_rebuilt_song.vocabulary.unique_words.length).wont_equal(0)
       _(vocabulary_rebuilt_song.vocabulary.unique_words.first.characters).wont_be_empty
     end
 
-    # it 'HAPPY: should be able to retrieve empty vocabulary from db populate it and then persist' do
-    #   song = LyricLab::Spotify::SongMapper
-    #     .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
-    #     .find(CORRECT_SONG['title'])
-    #   LyricLab::Repository::For.entity(song).create(song)
+    it 'HAPPY: should be able to retrieve empty vocabulary from db populate it and then persist' do
+      song = LyricLab::Spotify::SongMapper
+        .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
+        .find(CORRECT_SONG['title'])
+      LyricLab::Service::SaveSong.new.call(song)
 
-    #   rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!
-    #   LyricLab::Service::LoadVocabulary.new.call(rebuilt).value!
+      rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
+      LyricLab::Service::LoadVocabulary.new.call(rebuilt.origin_id).value!.message
 
-    #   rebuilt2 = LyricLab::Service::LoadSong.new.call(song.origin_id).value!
+      rebuilt2 = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
 
-    #   _(rebuilt2.vocabulary.unique_words.length).wont_equal(0)
-    #   _(rebuilt2.vocabulary.unique_words.length).must_equal(rebuilt.vocabulary.unique_words.length)
-    #   _(rebuilt2.vocabulary.unique_words.first.characters).wont_be_empty
-    # end
+      _(rebuilt2.vocabulary.unique_words.length).wont_equal(0)
+      _(rebuilt2.vocabulary.unique_words.length).must_equal(rebuilt.vocabulary.unique_words.length)
+      _(rebuilt2.vocabulary.unique_words.first.characters).wont_be_empty
+    end
 
-    # it 'HAPPY: should be able to update vocabulary entity often without problem' do
-    #   song = LyricLab::Spotify::SongMapper
-    #     .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
-    #     .find(CORRECT_SONG['title'])
-    #   LyricLab::Repository::For.entity(song).create(song)
+    it 'HAPPY: should be able to update vocabulary entity often without problem' do
+      song = LyricLab::Spotify::SongMapper
+        .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
+        .find(CORRECT_SONG['title'])
+      LyricLab::Service::SaveSong.new.call(song)
+      rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
+      LyricLab::Service::LoadVocabulary.new.call(rebuilt.origin_id).value!.message
+      # puts rebuilt.vocabulary.unique_words.map(&:language_level)
+      LyricLab::Repository::For.entity(rebuilt).update(rebuilt)
+      LyricLab::Repository::For.entity(rebuilt).update(rebuilt)
+      LyricLab::Repository::For.entity(rebuilt).update(rebuilt)
+      LyricLab::Repository::For.entity(rebuilt).update(rebuilt)
 
-    #   rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!
-    #   rebuilt.vocabulary.gen_unique_words(rebuilt.lyrics.text, GPT_API_KEY) if rebuilt.vocabulary.unique_words.empty?
-    #   # puts rebuilt.vocabulary.unique_words.map(&:language_level)
-    #   LyricLab::Repository::For.entity(rebuilt).update(rebuilt)
-    #   LyricLab::Repository::For.entity(rebuilt).update(rebuilt)
-    #   LyricLab::Repository::For.entity(rebuilt).update(rebuilt)
-    #   LyricLab::Repository::For.entity(rebuilt).update(rebuilt)
+      rebuilt2 = LyricLab::Repository::For.klass(LyricLab::Entity::Song).find_origin_id(song.origin_id)
 
-    #   rebuilt2 = LyricLab::Repository::For.klass(LyricLab::Entity::Song).find_origin_id(song.origin_id)
+      _(rebuilt2.vocabulary.unique_words.length).wont_equal(0)
+      _(rebuilt2.vocabulary.unique_words.length).must_equal(rebuilt.vocabulary.unique_words.length)
+      _(rebuilt2.vocabulary.unique_words.first.characters).wont_be_empty
+    end
 
-    #   _(rebuilt2.vocabulary.unique_words.length).wont_equal(0)
-    #   _(rebuilt2.vocabulary.unique_words.length).must_equal(rebuilt.vocabulary.unique_words.length)
-    #   _(rebuilt2.vocabulary.unique_words.first.characters).wont_be_empty
-    # end
+    it 'SAD: should not be able to create a song that already exists' do
+      song = LyricLab::Spotify::SongMapper
+        .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
+        .find(CORRECT_SONG['title'])
+      LyricLab::Service::SaveSong.new.call(song)
 
-    # it 'SAD: should not be able to create a song that already exists' do
-    #   song = LyricLab::Spotify::SongMapper
-    #     .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
-    #     .find(CORRECT_SONG['title'])
-
-    #   LyricLab::Service::LoadVocabulary.new.call(song).value!
-    #   rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!
-    #   begin
-    #     LyricLab::Repository::For.entity(rebuilt).create(rebuilt)
-    #   rescue RuntimeError => e
-    #     _(e.to_s).must_match(/Song already exists/)
-    #   end
-    # end
+      LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!.message
+      rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
+      begin
+        LyricLab::Repository::For.entity(rebuilt).create(rebuilt)
+      rescue RuntimeError => e
+        _(e.to_s).must_match(/Song already exists/)
+      end
+    end
   end
 end

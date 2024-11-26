@@ -130,7 +130,7 @@ describe 'Test API routes' do
 
       LyricLab::Repository::For.klass(LyricLab::Entity::Song).create(song)
 
-      get "/api/v1/vocabularies/#{song.spotify_id}"
+      get "/api/v1/vocabularies/#{song.origin_id}"
 
       _(last_response.status).must_equal 200
 
