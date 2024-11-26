@@ -10,8 +10,7 @@ module LyricLab
     plugin :halt
     plugin :caching
 
-    # rubocop:disable Metrics/BlockLength
-    route do |routing|
+    route do |routing| # rubocop:disable Metrics/BlockLength
       response['Content-Type'] = 'application/json'
 
       # GET /
@@ -26,7 +25,7 @@ module LyricLab
         result_response.to_json
       end
 
-      routing.on 'api/v1' do
+      routing.on 'api/v1' do # rubocop:disable Metrics/BlockLength
         routing.on 'recommendations' do
           # return recommendations as array of objects
           # GET /api/v1/recommendations
@@ -107,9 +106,9 @@ module LyricLab
         routing.on 'vocabularies' do
           routing.on String do |origin_id|
             # return vocabularies
-            # GET /api/v1/vocabularies/{spotify_id}
-            routing.get do
-              result = Service::LoadVocabulary.new.call(spotify_id)
+            # GET /api/v1/vocabularies/{origin_id}
+            routing.post do
+              result = Service::LoadVocabulary.new.call(origin_id)
 
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
