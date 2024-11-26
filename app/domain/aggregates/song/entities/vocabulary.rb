@@ -24,10 +24,11 @@ module LyricLab
         }
       end
 
-      def gen_unique_words(text, gpt_api_key)
-        openai_api = LyricLab::OpenAI::API.new(gpt_api_key)
-        voc_factory = LyricLab::Vocabulary::VocabularyFactory.new(openai_api)
-        self.unique_words, self.sep_text = voc_factory.create_unique_words_from_text(text)
+      def populate_vocabulary(unique_words, sep_text)
+        raise 'Vocabulary already populated' if !unique_words.empty? && sep_text
+
+        self.unique_words = unique_words
+        self.sep_text = sep_text
       end
     end
   end
