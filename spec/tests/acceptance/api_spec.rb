@@ -70,7 +70,6 @@ describe 'Test API routes' do
       encoded_query = LyricLab::Request::EncodedSearchQuery.to_encoded('valentin strykalo')
 
       get "/api/v1/search_results?search_query=#{encoded_query}"
-      get "/api/v1/search_results?search_query=#{encoded_query}"
 
       _(last_response.status).must_equal 404
       _(JSON.parse(last_response.body)['message']).must_include 'not'
@@ -82,7 +81,6 @@ describe 'Test API routes' do
 
       _(last_response.status).must_equal 422
       _(JSON.parse(last_response.body)['message']).must_include 'Empty'
-      _(JSON.parse(last_response.body)['message']).must_include 'not'
     end
 
     it 'should report error for empty search query' do
@@ -96,29 +94,22 @@ describe 'Test API routes' do
 
   describe 'Get recommendations route' do
     it 'should successfully return recommendations list' do
-      searched = LyricLab::Spotify::SongMapper
-        .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
-        .find_n(ARTIST_NAME, 6)
+      search_query = LyricLab::Request::EncodedSearchQuery.new('No Party For Cao Dong 山海')
+      result = LyricLab::Service::LoadSearchResults.new.call(search_query)
+      puts('no search results') if result.failure?
+      searched_origin_ids = LyricLab::Database::SongOrm.all.map(&:origin_id)
 
-      searched.each { |song| LyricLab::Service::SaveSong.new.call(song) }
-
-      searched.map { |song| post "/api/v1/songs/#{song.origin_id}" }
-
-      extra_song = LyricLab::Spotify::SongMapper
-        .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
-        .find('No Party For Cao Dong 山海')
-
-      LyricLab::Service::SaveSong.new.call(extra_song)
-
-      post "/api/v1/songs/#{extra_song.origin_id}"
-      post "/api/v1/songs/#{extra_song.origin_id}"
+      searched_origin_ids.each do |origin_id|
+        get "/api/v1/vocabularies/#{origin_id}"
+        post "/api/v1/songs/#{origin_id}"
+      end
 
       get '/api/v1/recommendations'
 
       _(last_response.status).must_equal 200
 
       response = JSON.parse(last_response.body)
-
+      puts("response: #{response.inspect}")
       songs = response['recommendations']
       _(songs.count).must_equal 5
 

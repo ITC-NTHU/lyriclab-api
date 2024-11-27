@@ -34,20 +34,24 @@ module LyricLab
         # puts("unique_words: #{@unique_words.inspect}")
         raise 'Vocabulary not populated' if @unique_words.empty?
 
-        diff_sum = @unique_words.map { |word| LANGUAGE_LEVELS.index(word.language_level.to_sym) }.sum
+        diff_sum = @unique_words.map { |word| LANGUAGE_LEVELS.index(word.language_level.strip.to_sym) }.sum
         # puts("diff_sum: #{diff_sum}, length: #{@unique_words.length}")
         @language_difficulty = diff_sum / @unique_words.length
       end
 
       def generate_content
         raise 'Vocabulary already populated' if !@unique_words.empty? && sep_text
-        raise 'No text to generate vocabulary' if @raw_text.empty?
+        raise 'No text to generate vocabulary' if @raw_text.nil?
         raise 'No vocabulary factory' if @vocabulary_factory.nil?
 
         unique_word_strings = separate_words(@raw_text)
 
         database_word_objects, api_words = @vocabulary_factory.separate_existing_and_new_words(unique_word_strings)
         api_word_data = @vocabulary_factory.generate_words_metadata(api_words)
+
+        api_word_data.each do |word_data|
+          word_data[:language_level] = word_data[:language_level].gsub(/[^a-z0-9]/, '')
+        end
         api_word_objects = @vocabulary_factory.build_words_from_hash(api_word_data)
         @unique_words = database_word_objects.concat(api_word_objects)
 

@@ -70,7 +70,7 @@ module LyricLab
         end
 
         def create_vocabulary
-          # puts "create vocabulary: #{@entity.to_attr_hash}"
+          # puts "create vocabulary: raw text is nil? #{@entity.raw_text.nil?}"
           Database::VocabularyOrm.create(@entity.to_attr_hash)
         end
 

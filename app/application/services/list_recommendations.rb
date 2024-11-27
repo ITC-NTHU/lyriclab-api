@@ -21,7 +21,7 @@ module LyricLab
           .then { |list| Response::ApiResult.new(status: :ok, message: list) }
           .then { |result| Success(result) }
       rescue StandardError
-        App.logger.error e.backtrace.join("\n")
+        App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
         Failure(
           Response::ApiResult.new(status: :internal_error, message: DB_ERR)
         )

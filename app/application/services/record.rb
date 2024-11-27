@@ -10,23 +10,21 @@ module LyricLab
       include Dry::Monads::Result::Mixin
 
       def call(origin_id)
-        puts('start recording ..')
         song = Service::LoadSong.new.call(origin_id)
 
         if song.failure?
-          puts 'song loading failed'
-          raise 'song loading failed'
+          return Failure(Response::ApiResult.new(status: :internal_error, message: 'cannot load song from db'))
         end
-        puts("loaded successful: #{song.inspect}")
+
         song = song.value!.message
-        puts("record recommendation: #{song.inspect}")
-        recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, song.origin_id,
+        raise 'invalid song' if song.vocabulary.language_difficulty.nil?
+
+        recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.origin_id,
                                                     song.vocabulary.language_difficulty)
         Repository::For.entity(recommendation).create(recommendation)
         Success(Response::ApiResult.new(status: :ok, message: recommendation))
       rescue StandardError => e
-        App.logger.error e.backtrace.join("\n")
-        puts(e)
+        App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
         Failure(Response::ApiResult.new(status: :internal_error, message: 'having trouble updating recommendations'))
       end
     end

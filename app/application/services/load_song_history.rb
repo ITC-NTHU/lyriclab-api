@@ -29,7 +29,7 @@ module LyricLab
         # end
         # Success(songs)
       rescue StandardError => e
-        App.logger.error e.backtrace.join("\n")
+        App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
         Failure(e.to_s)
       end
 
@@ -39,7 +39,7 @@ module LyricLab
         end
         Success(view_songs)
       rescue StandardError => e
-        App.logger.error e.backtrace.join("\n")
+        App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
         Failure(e.to_s)
       end
 

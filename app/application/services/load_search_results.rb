@@ -27,7 +27,7 @@ module LyricLab
           Failure(query.failure)
         end
       rescue StandardError => e
-        App.logger.error e.backtrace.join("\n")
+        App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
         Failure(Response::ApiResult.new(status: :internal_error, message: 'Validating search query went wrong'))
       end
 
@@ -42,7 +42,7 @@ module LyricLab
           Success(songs_with_lyrics:)
         end
       rescue StandardError => e
-        App.logger.error e.backtrace.join("\n")
+        App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
         Failure(Response::ApiResult.new(status: :internal_error, message: 'Oops something went wrong'))
       end
 
@@ -54,7 +54,7 @@ module LyricLab
           Success(relevant_songs:)
         end
       rescue StandardError => e
-        App.logger.error e.backtrace.join("\n")
+        App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
         Failure(Response::ApiResult.new(status: :internal_error, message: 'Check relevancy went wrong'))
       end
 
@@ -64,7 +64,7 @@ module LyricLab
           .then { |list| Response::ApiResult.new(status: :created, message: list) }
           .then { |result| Success(result) }
       rescue StandardError => e
-        App.logger.error e.backtrace.join("\n")
+        App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
         Failure(Response::ApiResult.new(status: :internal_error, message: 'having trouble accessing the database'))
       end
     end

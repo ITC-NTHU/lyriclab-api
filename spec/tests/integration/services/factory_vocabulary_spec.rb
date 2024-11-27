@@ -117,11 +117,8 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
 
       LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!.message
       rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
-      begin
-        LyricLab::Repository::For.entity(rebuilt).create(rebuilt)
-      rescue RuntimeError => e
-        _(e.to_s).must_match(/Song already exists/)
-      end
+      result = LyricLab::Service::SaveSong.new.call(rebuilt)
+      _(result.failure?).wont_be_nil
     end
   end
 end

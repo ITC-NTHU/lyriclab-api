@@ -8,7 +8,7 @@ Sequel.migration do
       primary_key :id
 
       String :sep_text
-      String :raw_text, null: false
+      String :raw_text
       Numeric :language_diffculty, default: -1
 
       DateTime :created_at
