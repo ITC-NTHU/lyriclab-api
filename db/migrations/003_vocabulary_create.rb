@@ -9,6 +9,7 @@ Sequel.migration do
 
       String :sep_text
       String :raw_text, null: false
+      Numeric :language_diffculty
 
       DateTime :created_at
       DateTime :updated_at

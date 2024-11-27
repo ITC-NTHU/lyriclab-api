@@ -38,6 +38,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
 
       _(rebuilt.vocabulary.unique_words).wont_be_empty
+      _(rebuilt.vocabulary.language_diffculty).wont_be_empty
     end
 
     it 'HAPPY: should be able to retrieve song vocabulary from a song with vocabulary by origin_id' do
@@ -52,6 +53,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       _(rebuilt.vocabulary.unique_words.length).wont_equal(0)
       _(rebuilt.vocabulary.unique_words.length).must_equal(song.vocabulary.unique_words.length)
       _(rebuilt.vocabulary.unique_words.first.characters).must_equal(song.vocabulary.unique_words.first.characters)
+      _(rebuilt.vocabulary.language_diffculty).wont_be_empty
     end
 
     it 'HAPPY: should be able to retrieve song vocabulary from a song WITHOUT vocabulary by origin_id' do
@@ -61,10 +63,14 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       LyricLab::Service::SaveSong.new.call(song)
 
       rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
+      _(rebuilt.vocabulary.raw_text).wont_be_empty
       vocabulary_rebuilt_song = LyricLab::Service::LoadVocabulary.new.call(rebuilt.origin_id).value!.message
 
       _(vocabulary_rebuilt_song.vocabulary.unique_words.length).wont_equal(0)
       _(vocabulary_rebuilt_song.vocabulary.unique_words.first.characters).wont_be_empty
+      _(vocabulary_rebuilt_song.vocabulary.sep_text).wont_be_empty
+      _(vocabulary_rebuilt_song.vocabulary.raw_text).wont_be_empty
+      _(vocabulary_rebuilt_song.vocabulary.language_diffculty).wont_be_empty
     end
 
     it 'HAPPY: should be able to retrieve empty vocabulary from db populate it and then persist' do
