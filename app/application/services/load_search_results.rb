@@ -26,9 +26,12 @@ module LyricLab
         else
           Failure(query.failure)
         end
+      rescue StandardError => e
+        App.logger.error e.backtrace.join("\n")
+        Failure(Response::ApiResult.new(status: :internal_error, message: 'Validating search query went wrong'))
       end
 
-      def create_entity(input)
+      def create_entity(input) # rubocop:disable Metrics/MethodLength
         search_results = Spotify::SongMapper
           .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
           .find_n(input, 5)
@@ -38,6 +41,9 @@ module LyricLab
         else
           Success(songs_with_lyrics:)
         end
+      rescue StandardError => e
+        App.logger.error e.backtrace.join("\n")
+        Failure(Response::ApiResult.new(status: :internal_error, message: 'Oops something went wrong'))
       end
 
       def check_relevancy(input)
@@ -49,7 +55,7 @@ module LyricLab
         end
       rescue StandardError => e
         App.logger.error e.backtrace.join("\n")
-        Failure(Response::ApiResult.new(status: :internal_error, message: 'Oops something went wrong'))
+        Failure(Response::ApiResult.new(status: :internal_error, message: 'Check relevancy went wrong'))
       end
 
       def store_song(input)

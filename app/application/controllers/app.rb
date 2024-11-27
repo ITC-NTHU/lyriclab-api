@@ -36,7 +36,7 @@ module LyricLab
               failed = Representer::HttpResponse.new(result.failure)
               routing.halt failed.http_status_code, failed.to_json
             end
-
+            puts("Recommendations: #{result.value!.message}")
             http_response = Representer::HttpResponse.new(result.value!)
             response.status = http_response.http_status_code
             Representer::RecommendationsList.new(result.value!.message).to_json
@@ -68,11 +68,11 @@ module LyricLab
 
         routing.on 'songs' do
           routing.on String do |origin_id|
-            # update recommendations
-            # PUT /api/v1/songs/{origin_id}
+            # record recommendation update
+            # POST /api/v1/songs/{origin_id}
             routing.post do
               result = Service::RecordRecommendation.new.call(origin_id)
-
+              puts("Update recommendation: #{result.inspect}")
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
                 routing.halt failed.http_status_code, failed.to_json

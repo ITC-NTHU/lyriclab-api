@@ -16,7 +16,7 @@ module LyricLab
         return nil unless db_record
 
         Entity::Recommendation.new(db_record.title, db_record.artist_name_string, db_record.search_cnt,
-                                   db_record.origin_id)
+                                   db_record.origin_id, db_record.language_difficulty)
       end
 
       def self.top_searched_songs

@@ -13,6 +13,7 @@ Sequel.migration do
       Integer    :search_cnt, null: false
       String     :origin_id, null: false
       String     :cover_image_url_small
+      Numeric    :language_diffculty, default: -1
 
       DateTime :created_at
       DateTime :updated_at
