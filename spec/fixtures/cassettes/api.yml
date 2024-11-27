@@ -1096,4 +1096,536 @@ http_interactions:
         (Netflix 影集《影后》序曲)","popularity":56,"preview_url":"https://p.scdn.co/mp3-preview/8f11505b39b6fd42251911e506408f1b2bcfed1a?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:3agPPRZPNOhbCwm2026EN6"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/7yvCk24AtE9k0vLcolSs2i"},"href":"https://api.spotify.com/v1/albums/7yvCk24AtE9k0vLcolSs2i","id":"7yvCk24AtE9k0vLcolSs2i","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2737a2aff746e4093fecd950130"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e027a2aff746e4093fecd950130"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048517a2aff746e4093fecd950130"}],"is_playable":true,"name":"我肯定在幾百年前就說過愛你","release_date":"2019-06-14","release_date_precision":"day","total_tracks":11,"type":"album","uri":"spotify:album:7yvCk24AtE9k0vLcolSs2i"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":349773,"explicit":false,"external_ids":{"isrc":"TWDK11800002"},"external_urls":{"spotify":"https://open.spotify.com/track/7tgzj2IqzSgUpxUhjmcF5m"},"href":"https://api.spotify.com/v1/tracks/7tgzj2IqzSgUpxUhjmcF5m","id":"7tgzj2IqzSgUpxUhjmcF5m","is_local":false,"is_playable":true,"name":"披星戴月的想你","popularity":58,"preview_url":"https://p.scdn.co/mp3-preview/67a5c02ec0eb4fdba82b992c75254521974c156f?cid=<REDACTED>","track_number":11,"type":"track","uri":"spotify:track:7tgzj2IqzSgUpxUhjmcF5m"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/7yvCk24AtE9k0vLcolSs2i"},"href":"https://api.spotify.com/v1/albums/7yvCk24AtE9k0vLcolSs2i","id":"7yvCk24AtE9k0vLcolSs2i","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2737a2aff746e4093fecd950130"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e027a2aff746e4093fecd950130"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048517a2aff746e4093fecd950130"}],"is_playable":true,"name":"我肯定在幾百年前就說過愛你","release_date":"2019-06-14","release_date_precision":"day","total_tracks":11,"type":"album","uri":"spotify:album:7yvCk24AtE9k0vLcolSs2i"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":292074,"explicit":false,"external_ids":{"isrc":"TWFF51900001"},"external_urls":{"spotify":"https://open.spotify.com/track/27FOde2nUw0pFuj7hlPbaS"},"href":"https://api.spotify.com/v1/tracks/27FOde2nUw0pFuj7hlPbaS","id":"27FOde2nUw0pFuj7hlPbaS","is_local":false,"is_playable":true,"name":"愛人錯過","popularity":60,"preview_url":"https://p.scdn.co/mp3-preview/c9db87ce67859e3c0589259a23ce221efd5581eb?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:27FOde2nUw0pFuj7hlPbaS"},{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/3xk8Iced6AQm2zMZcfHmrZ"},"href":"https://api.spotify.com/v1/albums/3xk8Iced6AQm2zMZcfHmrZ","id":"3xk8Iced6AQm2zMZcfHmrZ","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b27301ac233a16db3c598b5946ed"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e0201ac233a16db3c598b5946ed"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d0000485101ac233a16db3c598b5946ed"}],"is_playable":true,"name":"帶我去找夜生活","release_date":"2019-12-25","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:3xk8Iced6AQm2zMZcfHmrZ"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":299704,"explicit":false,"external_ids":{"isrc":"TWFF51900013"},"external_urls":{"spotify":"https://open.spotify.com/track/4KjPt8HrShkDOASRyMkTJ4"},"href":"https://api.spotify.com/v1/tracks/4KjPt8HrShkDOASRyMkTJ4","id":"4KjPt8HrShkDOASRyMkTJ4","is_local":false,"is_playable":true,"name":"帶我去找夜生活","popularity":55,"preview_url":"https://p.scdn.co/mp3-preview/a66dbbb3ef27363d831b2b3459b30a4ca2f05400?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:4KjPt8HrShkDOASRyMkTJ4"},{"album":{"album_type":"single","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"external_urls":{"spotify":"https://open.spotify.com/album/5mahTh3xdvMSH7N01fAEFg"},"href":"https://api.spotify.com/v1/albums/5mahTh3xdvMSH7N01fAEFg","id":"5mahTh3xdvMSH7N01fAEFg","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b273b031ee53413ef37f35096a14"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e02b031ee53413ef37f35096a14"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d00004851b031ee53413ef37f35096a14"}],"is_playable":true,"name":"好不容易","release_date":"2021-12-13","release_date_precision":"day","total_tracks":1,"type":"album","uri":"spotify:album:5mahTh3xdvMSH7N01fAEFg"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6xErgeZYatiaQ36SB5bvi8"},"href":"https://api.spotify.com/v1/artists/6xErgeZYatiaQ36SB5bvi8","id":"6xErgeZYatiaQ36SB5bvi8","name":"告五人","type":"artist","uri":"spotify:artist:6xErgeZYatiaQ36SB5bvi8"}],"disc_number":1,"duration_ms":295466,"explicit":false,"external_ids":{"isrc":"TWK232183010"},"external_urls":{"spotify":"https://open.spotify.com/track/6jNy9WM3zyvG9E5bdVALl8"},"href":"https://api.spotify.com/v1/tracks/6jNy9WM3zyvG9E5bdVALl8","id":"6jNy9WM3zyvG9E5bdVALl8","is_local":false,"is_playable":true,"name":"好不容易
         (《華燈初上》片尾曲)","popularity":58,"preview_url":"https://p.scdn.co/mp3-preview/3aec55db85030e7684ad8914e4cc705da1e6bc59?cid=<REDACTED>","track_number":1,"type":"track","uri":"spotify:track:6jNy9WM3zyvG9E5bdVALl8"}]}}'
   recorded_at: Tue, 26 Nov 2024 12:18:36 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=5&market=TW&q=valentin%20strykalo&type=track
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=0
+      Etag:
+      - '"MC-IjcxYTFhOGE1ODIxZjBiNGY4MGUzMTlhZDdjMDdkOWUyIg=="'
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Length:
+      - '9523'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 27 Nov 2024 06:27:57 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"tracks":{"href":"https://api.spotify.com/v1/search?offset=0&limit=5&query=valentin%20strykalo&type=track&market=TW","limit":5,"next":"https://api.spotify.com/v1/search?offset=5&limit=5&query=valentin%20strykalo&type=track&market=TW","offset":0,"previous":null,"total":840,"items":[{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
+        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"external_urls":{"spotify":"https://open.spotify.com/album/20YkqA8ivmBOheN4QGjp1V"},"href":"https://api.spotify.com/v1/albums/20YkqA8ivmBOheN4QGjp1V","id":"20YkqA8ivmBOheN4QGjp1V","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b273c57d665b700dc1d788b1c00d"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e02c57d665b700dc1d788b1c00d"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d00004851c57d665b700dc1d788b1c00d"}],"is_playable":true,"name":"Развлечение","release_date":"2016-10-13","release_date_precision":"day","total_tracks":8,"type":"album","uri":"spotify:album:20YkqA8ivmBOheN4QGjp1V"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
+        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"disc_number":1,"duration_ms":424380,"explicit":false,"external_ids":{"isrc":"ushm81647761"},"external_urls":{"spotify":"https://open.spotify.com/track/5JbxiG90IN2anqHToMdlGT"},"href":"https://api.spotify.com/v1/tracks/5JbxiG90IN2anqHToMdlGT","id":"5JbxiG90IN2anqHToMdlGT","is_local":false,"is_playable":true,"name":"Бесполезно","popularity":53,"preview_url":"https://p.scdn.co/mp3-preview/3747cdbe5f0f518ccbae50700df9ec753e14fb4f?cid=<REDACTED>","track_number":7,"type":"track","uri":"spotify:track:5JbxiG90IN2anqHToMdlGT"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/0gOrXuu1vCBXe3pwTyb5Ca"},"href":"https://api.spotify.com/v1/artists/0gOrXuu1vCBXe3pwTyb5Ca","id":"0gOrXuu1vCBXe3pwTyb5Ca","name":"Valentina
+        Lisitsa","type":"artist","uri":"spotify:artist:0gOrXuu1vCBXe3pwTyb5Ca"}],"external_urls":{"spotify":"https://open.spotify.com/album/47UHGOGmGyHRTiilpNSrjy"},"href":"https://api.spotify.com/v1/albums/47UHGOGmGyHRTiilpNSrjy","id":"47UHGOGmGyHRTiilpNSrjy","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2733509fdd2dadc9953fbd4c77b"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e023509fdd2dadc9953fbd4c77b"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048513509fdd2dadc9953fbd4c77b"}],"is_playable":true,"name":"Frédéric
+        Chopin 24 Etudes","release_date":"2020-03-01","release_date_precision":"day","total_tracks":24,"type":"album","uri":"spotify:album:47UHGOGmGyHRTiilpNSrjy"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/0gOrXuu1vCBXe3pwTyb5Ca"},"href":"https://api.spotify.com/v1/artists/0gOrXuu1vCBXe3pwTyb5Ca","id":"0gOrXuu1vCBXe3pwTyb5Ca","name":"Valentina
+        Lisitsa","type":"artist","uri":"spotify:artist:0gOrXuu1vCBXe3pwTyb5Ca"}],"disc_number":1,"duration_ms":62066,"explicit":false,"external_ids":{"isrc":"GBSMU7415094"},"external_urls":{"spotify":"https://open.spotify.com/track/19KPtbtYqdnIFCCuS0Xwv2"},"href":"https://api.spotify.com/v1/tracks/19KPtbtYqdnIFCCuS0Xwv2","id":"19KPtbtYqdnIFCCuS0Xwv2","is_local":false,"is_playable":true,"name":"Etude
+        Op. 25 no. 9 in G Flat Major","popularity":45,"preview_url":"https://p.scdn.co/mp3-preview/27dbc6652bd4b1245ef6fd6fc39efeee314059d6?cid=<REDACTED>","track_number":21,"type":"track","uri":"spotify:track:19KPtbtYqdnIFCCuS0Xwv2"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
+        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"external_urls":{"spotify":"https://open.spotify.com/album/6MtWkVH4nIqwo5fiM4J6xF"},"href":"https://api.spotify.com/v1/albums/6MtWkVH4nIqwo5fiM4J6xF","id":"6MtWkVH4nIqwo5fiM4J6xF","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2738f8c4983a31d266041369b41"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e028f8c4983a31d266041369b41"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048518f8c4983a31d266041369b41"}],"is_playable":true,"name":"Смирись
+        и расслабься","release_date":"2012-02-24","release_date_precision":"day","total_tracks":17,"type":"album","uri":"spotify:album:6MtWkVH4nIqwo5fiM4J6xF"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
+        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"disc_number":1,"duration_ms":208133,"explicit":false,"external_ids":{"isrc":"ushm91619245"},"external_urls":{"spotify":"https://open.spotify.com/track/7zoMMlOFm4udEKsei6c34D"},"href":"https://api.spotify.com/v1/tracks/7zoMMlOFm4udEKsei6c34D","id":"7zoMMlOFm4udEKsei6c34D","is_local":false,"is_playable":true,"name":"Наше
+        лето","popularity":53,"preview_url":"https://p.scdn.co/mp3-preview/bce0e80830d0efd26ac17214df9efc7414c2b388?cid=<REDACTED>","track_number":10,"type":"track","uri":"spotify:track:7zoMMlOFm4udEKsei6c34D"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/0gOrXuu1vCBXe3pwTyb5Ca"},"href":"https://api.spotify.com/v1/artists/0gOrXuu1vCBXe3pwTyb5Ca","id":"0gOrXuu1vCBXe3pwTyb5Ca","name":"Valentina
+        Lisitsa","type":"artist","uri":"spotify:artist:0gOrXuu1vCBXe3pwTyb5Ca"}],"external_urls":{"spotify":"https://open.spotify.com/album/47UHGOGmGyHRTiilpNSrjy"},"href":"https://api.spotify.com/v1/albums/47UHGOGmGyHRTiilpNSrjy","id":"47UHGOGmGyHRTiilpNSrjy","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2733509fdd2dadc9953fbd4c77b"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e023509fdd2dadc9953fbd4c77b"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048513509fdd2dadc9953fbd4c77b"}],"is_playable":true,"name":"Frédéric
+        Chopin 24 Etudes","release_date":"2020-03-01","release_date_precision":"day","total_tracks":24,"type":"album","uri":"spotify:album:47UHGOGmGyHRTiilpNSrjy"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/0gOrXuu1vCBXe3pwTyb5Ca"},"href":"https://api.spotify.com/v1/artists/0gOrXuu1vCBXe3pwTyb5Ca","id":"0gOrXuu1vCBXe3pwTyb5Ca","name":"Valentina
+        Lisitsa","type":"artist","uri":"spotify:artist:0gOrXuu1vCBXe3pwTyb5Ca"}],"disc_number":1,"duration_ms":111080,"explicit":false,"external_ids":{"isrc":"GBSMU7415049"},"external_urls":{"spotify":"https://open.spotify.com/track/3bOa4BTKzsZM0TzEpk1ytV"},"href":"https://api.spotify.com/v1/tracks/3bOa4BTKzsZM0TzEpk1ytV","id":"3bOa4BTKzsZM0TzEpk1ytV","is_local":false,"is_playable":true,"name":"Etude
+        Op. 10 no. 4 in c sharp minor","popularity":39,"preview_url":"https://p.scdn.co/mp3-preview/e4358a24487fe018c176e18eba5e80d604be44e7?cid=<REDACTED>","track_number":4,"type":"track","uri":"spotify:track:3bOa4BTKzsZM0TzEpk1ytV"},{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
+        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"external_urls":{"spotify":"https://open.spotify.com/album/6MtWkVH4nIqwo5fiM4J6xF"},"href":"https://api.spotify.com/v1/albums/6MtWkVH4nIqwo5fiM4J6xF","id":"6MtWkVH4nIqwo5fiM4J6xF","images":[{"height":640,"width":640,"url":"https://i.scdn.co/image/ab67616d0000b2738f8c4983a31d266041369b41"},{"height":300,"width":300,"url":"https://i.scdn.co/image/ab67616d00001e028f8c4983a31d266041369b41"},{"height":64,"width":64,"url":"https://i.scdn.co/image/ab67616d000048518f8c4983a31d266041369b41"}],"is_playable":true,"name":"Смирись
+        и расслабься","release_date":"2012-02-24","release_date_precision":"day","total_tracks":17,"type":"album","uri":"spotify:album:6MtWkVH4nIqwo5fiM4J6xF"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/2zYmwYLeJvcr8vRQe5pQRa"},"href":"https://api.spotify.com/v1/artists/2zYmwYLeJvcr8vRQe5pQRa","id":"2zYmwYLeJvcr8vRQe5pQRa","name":"Valentin
+        Strykalo","type":"artist","uri":"spotify:artist:2zYmwYLeJvcr8vRQe5pQRa"}],"disc_number":1,"duration_ms":181720,"explicit":false,"external_ids":{"isrc":"ushm91619242"},"external_urls":{"spotify":"https://open.spotify.com/track/1cM6fsR7qJbls7CkU2Hway"},"href":"https://api.spotify.com/v1/tracks/1cM6fsR7qJbls7CkU2Hway","id":"1cM6fsR7qJbls7CkU2Hway","is_local":false,"is_playable":true,"name":"Кайен","popularity":56,"preview_url":"https://p.scdn.co/mp3-preview/e0aa245d7f3dcfcbd13200aa0601bf958309258e?cid=<REDACTED>","track_number":7,"type":"track","uri":"spotify:track:1cM6fsR7qJbls7CkU2Hway"}]}}'
+  recorded_at: Wed, 27 Nov 2024 06:27:56 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=Valentin%20Strykalo&track_name=%D0%91%D0%B5%D1%81%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%BE
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Wed, 27 Nov 2024 06:27:58 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '84'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
+  recorded_at: Wed, 27 Nov 2024 06:27:57 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=Valentina%20Lisitsa&track_name=Etude%20Op.%2025%20no.%209%20in%20G%20Flat%20Major
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Wed, 27 Nov 2024 06:27:59 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '84'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
+  recorded_at: Wed, 27 Nov 2024 06:27:59 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=Valentin%20Strykalo&track_name=%D0%9D%D0%B0%D1%88%D0%B5%20%D0%BB%D0%B5%D1%82%D0%BE
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Wed, 27 Nov 2024 06:28:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3159'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"id":9333202,"name":"Наше лето","trackName":"Наше лето","artistName":"Valentin
+        Strykalo","albumName":"Смирись и расслабься","duration":208.133,"instrumental":false,"plainLyrics":"Тихо
+        лужи покрывает лёд\nПомнишь мы с тобою\nЦеловались ночи напролёт\nПод шум
+        прибоя\n\nЭто лето не вернуть уже\nЯ знаю\nНо когда печаль в моей душе\nЯ
+        вспоминаю\n\nЯхта, парус, в этом мире только мы одни\nЯлта, август, и мы с
+        тобою влюблены\nЯхта, парус, в этом мире только мы одни\nЯлта, август, и мы
+        с тобою влюблены\n\nНо расстаться нам с тобой пришлось\nКончилась путёвка\nИ
+        вагон плацкартный меня нёс\nВ Новую Каховку\n\nНе забуду ночи при луне\nИ
+        твою улыбку\nТы открытку подарила мне\nА на той открытке\n\nЯхта, парус, в
+        этом мире только мы одни\nЯлта, август, и мы с тобою влюблены\nЯхта, парус,
+        в этом мире только мы одни\nЯлта, август, и мы с тобою влюблены\n\nЯхта, парус,
+        в этом мире только мы одни\nЯлта, август, и мы с тобою влюблены","syncedLyrics":"[00:16.39]
+        Тихо лужи покрывает лёд\n[00:20.84] Помнишь мы с тобою\n[00:24.12] Целовались
+        ночи напролёт\n[00:28.63] Под шум прибоя\n[00:32.28] Это лето не вернуть уже\n[00:37.08]
+        Я знаю\n[00:40.24] Но когда печаль в моей душе\n[00:44.56] Я вспоминаю\n[00:48.95]
+        Яхта, парус, в этом мире только мы одни\n[00:56.44] Ялта, август, и мы с тобою
+        влюблены\n[01:04.80] Яхта, парус, в этом мире только мы одни\n[01:12.86] Ялта,
+        август, и мы с тобою влюблены\n[01:21.68] \n[01:28.01] Но расстаться нам с
+        тобой пришлось\n[01:32.78] Кончилась путёвка\n[01:36.33] И вагон плацкартный
+        меня нёс\n[01:40.98] В Новую Каховку\n[01:44.11] Не забуду ночи при луне\n[01:48.75]
+        И твою улыбку\n[01:52.32] Ты открытку подарила мне\n[01:56.92] А на той открытке\n[02:00.66]
+        Яхта, парус, в этом мире только мы одни\n[02:08.37] Ялта, август, и мы с тобою
+        влюблены\n[02:16.66] Яхта, парус, в этом мире только мы одни\n[02:24.51] Ялта,
+        август, и мы с тобою влюблены\n[02:33.48] \n[03:04.37] Яхта, парус, в этом
+        мире только мы одни\n[03:12.72] Ялта, август, и мы с тобою влюблены\n[03:20.45]
+        "}'
+  recorded_at: Wed, 27 Nov 2024 06:28:00 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=Valentina%20Lisitsa&track_name=Etude%20Op.%2010%20no.%204%20in%20c%20sharp%20minor
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Wed, 27 Nov 2024 06:28:02 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '84'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
+  recorded_at: Wed, 27 Nov 2024 06:28:01 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=Valentin%20Strykalo&track_name=%D0%9A%D0%B0%D0%B9%D0%B5%D0%BD
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Wed, 27 Nov 2024 06:28:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '84'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"message":"Failed to find specified track","name":"TrackNotFound","statusCode":404}'
+  recorded_at: Wed, 27 Nov 2024 06:28:02 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-mini","messages":[{"role":"system","content":"現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字："},{"role":"user","content":"Please
+        identify these words and respond in this format:\n            Word:[繁體中文字]\n            translate:[English
+        translation ONLY]\n            Pinyin:[標註聲調的拼音]\n            Difficulty:[select
+        one of those：beginner、novice1、novice2、level1、level2、level3、level4, level5]\n            Definition:[English
+        detailed translation ONLY]\n            Word type:[選擇詞性：N,V,Adj,Adv,Pron,Prep,Conj,Num,Int,Classifier,Idiom,Other]\n            Example:[實用的20字內繁體中文例句]\n\n            Focus
+        on words that would be valuable for language learners. Keep example sentences
+        natural and practical.\n\n            Words: [\"城市\", \"滴答\", \"小巷\", \"沉默\",
+        \"你的\", \"手\", \"慢熱\", \"的\", \"體溫\", \"方向\", \"錯亂\", \"天氣\", \"預報\", \"不準\",
+        \"雨傘\", \"忘了\", \"拿\", \"我的\", \"無處\", \"安放\", \"包括\", \"心\", \"像\", \"旋轉\",
+        \"木馬\", \"或許\", \"這\", \"就是\", \"註定\", \"失敗\", \"結局\", \"成熟\", \"帶來\", \"孤寂\",
+        \"如\", \"滾水\", \"在\", \"心中\", \"滿溢\", \"你\", \"放\", \"哪裡\", \"根本\", \"就\",
+        \"不在意\", \"錯把\", \"承諾\", \"當\", \"有趣\", \"怎麼\", \"對得起\", \"你我\", \"炙熱\", \"痕跡\",
+        \"再\", \"追究\", \"也\", \"毫無\", \"意義\", \"接受\", \"慌亂\", \"思緒\", \"總比\", \"到頭來\",
+        \"面對\", \"無聲\", \"失去\", \"無法\", \"開口\", \"說聲\", \"好\", \"不容易\", \"Woo\", \"woo\",
+        \"我\", \"不再\", \"沉迷\", \"結束\", \"不安\", \"遊戲\", \"認輸\", \"可以\", \"自由自在\", \"掏心\",
+        \"終於\"]"}]}'
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.3.5p100
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1841'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 27 Nov 2024 06:39:37 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - itc-sizmvs
+      Openai-Processing-Ms:
+      - '13053'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '10000'
+      X-Ratelimit-Limit-Tokens:
+      - '200000'
+      X-Ratelimit-Remaining-Requests:
+      - '9999'
+      X-Ratelimit-Remaining-Tokens:
+      - '199591'
+      X-Ratelimit-Reset-Requests:
+      - 8.64s
+      X-Ratelimit-Reset-Tokens:
+      - 122ms
+      X-Request-Id:
+      - req_6ae9e60c13f30e72bcf426b5e6d0aa93
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e901eefbb696a9e-TPE
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJpZCI6ICJjaGF0Y21wbC1BWTV6b0pvZnNST1RoaDFuSXpkRzlRV2lYWVZoaCIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczMjY4OTU2NCwKICAibW9kZWwiOiAiZ3B0LTRvLW1pbmktMjAyNC0wNy0xOCIsCiAgImNob2ljZXMiOiBbCiAgICB7CiAgICAgICJpbmRleCI6IDAsCiAgICAgICJtZXNzYWdlIjogewogICAgICAgICJyb2xlIjogImFzc2lzdGFudCIsCiAgICAgICAgImNvbnRlbnQiOiAi5Lul5LiL5piv5bCN5omA5o+Q5L6b6Kme5b2Z55qE5YiG5p6Q77yaXG5cbjEuIFdvcmQ6IOWfjuW4giAgXG4gICB0cmFuc2xhdGU6IGNpdHkgIFxuICAgUGlueWluOiBjaMOpbmdzaMOsICBcbiAgIERpZmZpY3VsdHk6IGxldmVsMSAgXG4gICBEZWZpbml0aW9uOiBBIGxhcmdlIGh1bWFuIHNldHRsZW1lbnQgY2hhcmFjdGVyaXplZCBieSBpbmZyYXN0cnVjdHVyZSwgcG9wdWxhdGlvbiBkZW5zaXR5LCBhbmQgZWNvbm9taWMgYWN0aXZpdGllcy4gIFxuICAgV29yZCB0eXBlOiBOICBcbiAgIEV4YW1wbGU6IOaIkeS9j+WcqOS4gOWAi+e5geiPr+eahOWfjuW4guOAglxuXG4yLiBXb3JkOiDmu7TnrZQgIFxuICAgdHJhbnNsYXRlOiB0aWNrLXRvY2sgIFxuICAgUGlueWluOiBkxKsgZMSBICBcbiAgIERpZmZpY3VsdHk6IG5vdmljZTEgIFxuICAgRGVmaW5pdGlvbjogT25vbWF0b3BvZWlhIHJlcHJlc2VudGluZyB0aGUgc291bmQgb2YgYSBjbG9jayB0aWNraW5nLiAgXG4gICBXb3JkIHR5cGU6IE90aGVyICBcbiAgIEV4YW1wbGU6IOaZgumQmOWcqOa7tOetlOS9nOmfv+OAglxuXG4zLiBXb3JkOiDlsI/lt7cgIFxuICAgdHJhbnNsYXRlOiBhbGxleSAgXG4gICBQaW55aW46IHhpx45veGnDoG5nICBcbiAgIERpZmZpY3VsdHk6IGxldmVsMSAgXG4gICBEZWZpbml0aW9uOiBBIG5hcnJvdyBwYXNzYWdld2F5IGJldHdlZW4gYnVpbGRpbmdzLCB0eXBpY2FsbHkgdXNlZCBmb3IgZm9vdCB0cmFmZmljLiAgXG4gICBXb3JkIHR5cGU6IE4gIFxuICAgRXhhbXBsZTog5LuW5YCR5Zyo5bCP5be36KOh5pWj5q2l44CCXG5cbjQuIFdvcmQ6IOayiem7mCAgXG4gICB0cmFuc2xhdGU6IHNpbGVuY2UgIFxuICAgUGlueWluOiBjaMOpbm3DsiAgXG4gICBEaWZmaWN1bHR5OiBsZXZlbDIgIFxuICAgRGVmaW5pdGlvbjogVGhlIGFic2VuY2Ugb2Ygc291bmQgb3Igc3BlZWNoLiAgXG4gICBXb3JkIHR5cGU6IE4gIFxuICAgRXhhbXBsZTog5pyD6K2w5LiK5pyJ5LiA54mH5rKJ6buY44CCXG5cbjUuIFdvcmQ6IOS9oOeahCAgXG4gICB0cmFuc2xhdGU6IHlvdXIgIFxuICAgUGlueWluOiBux5AgZGUgIFxuICAgRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuICAgRGVmaW5pdGlvbjogQSBwb3NzZXNzaXZlIHByb25vdW4gdXNlZCB0byBpbmRpY2F0ZSBiZWxvbmdpbmcgdG8gdGhlIHBlcnNvbiBhZGRyZXNzZWQuICBcbiAgIFdvcmQgdHlwZTogUHJvbiAgXG4gICBFeGFtcGxlOiDpgJnmmK/kvaDnmoTmm7jll47vvJ9cblxuNi4gV29yZDog5omLICBcbiAgIHRyYW5zbGF0ZTogaGFuZCAgXG4gICBQaW55aW46IHNox5J1ICBcbiAgIERpZmZpY3VsdHk6IGJlZ2lubmVyICBcbiAgIERlZmluaXRpb246IFRoZSBib2R5IHBhcnQgYXQgdGhlIGVuZCBvZiB0aGUgYXJtLCB1c2VkIGZvciBncmFzcGluZyBhbmQgaG9sZGluZy4gIFxuICAgV29yZCB0eXBlOiBOICBcbiAgIEV4YW1wbGU6IOWlueeahOaJi+W+iOWGt+OAglxuXG43LiBXb3JkOiDmhaLnhrEgIFxuICAgdHJhbnNsYXRlOiBzbG93IHRvIHdhcm0gdXAgIFxuICAgUGlueWluOiBtw6BucsOoICBcbiAgIERpZmZpY3VsdHk6IGxldmVsMiAgXG4gICBEZWZpbml0aW9uOiBBIHRlcm0gZGVzY3JpYmluZyBzb21lb25lIHdobyB0YWtlcyB0aW1lIHRvIGdldCBjb21mb3J0YWJsZSBvciBlbmdhZ2VkIGluIHNvY2lhbCBzaXR1YXRpb25zLiAgXG4gICBXb3JkIHR5cGU6IEFkaiAgXG4gICBFeGFtcGxlOiDku5bmmK/lgIvmhaLnhrHnmoTkurrjgIJcblxuOC4gV29yZDog55qEICBcbiAgIHRyYW5zbGF0ZTogKHBvc3Nlc3NpdmUgcGFydGljbGUpICBcbiAgIFBpbnlpbjogZGUgIFxuICAgRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuICAgRGVmaW5pdGlvbjogQSBncmFtbWF0aWNhbCBwYXJ0aWNsZSB1c2VkIHRvIGluZGljYXRlIHBvc3Nlc3Npb24gb3IgbW9kaWZpY2F0aW9uLiAgXG4gICBXb3JkIHR5cGU6IE90aGVyICBcbiAgIEV4YW1wbGU6IOmAmeaYr+aIkeeahOWutuOAglxuXG45LiBXb3JkOiDpq5TmuqsgIFxuICAgdHJhbnNsYXRlOiBib2R5IHRlbXBlcmF0dXJlICBcbiAgIFBpbnlpbjogdMeQd8STbiAgXG4gICBEaWZmaWN1bHR5OiBsZXZlbDIgIFxuICAgRGVmaW5pdGlvbjogVGhlIG1lYXN1cmUgb2YgdGhlIGJvZHkncyB0ZW1wZXJhdHVyZSwgaW5kaWNhdGluZyBtZXRhYm9saWMgY29uZGl0aW9ucy4gIFxuICAgV29yZCB0eXBlOiBOICBcbiAgIEV4YW1wbGU6IOS7lueahOmrlOa6q+ato+W4uOOAglxuXG4xMC4gV29yZDog5pa55ZCRICBcbiAgICB0cmFuc2xhdGU6IGRpcmVjdGlvbiAgXG4gICAgUGlueWluOiBmxIFuZ3hpw6BuZyAgXG4gICAgRGlmZmljdWx0eTogbGV2ZWwxICBcbiAgICBEZWZpbml0aW9uOiBBIGNvdXJzZSBhbG9uZyB3aGljaCBzb21lb25lIG9yIHNvbWV0aGluZyBtb3ZlczsgdGhlIHdheSBzb21ldGhpbmcgaXMgcG9pbnRlZC4gIFxuICAgIFdvcmQgdHlwZTogTiAgXG4gICAgRXhhbXBsZTog5L2g55+l6YGT6YCZ5YCL5pa55ZCR5ZeO77yfXG5cbjExLiBXb3JkOiDpjK/kuoIgIFxuICAgIHRyYW5zbGF0ZTogY29uZnVzaW9uICBcbiAgICBQaW55aW46IGN1w7JsdcOgbiAgXG4gICAgRGlmZmljdWx0eTogbGV2ZWwzICBcbiAgICBEZWZpbml0aW9uOiBBIHN0YXRlIG9mIGRpc29yZGVyIG9yIGRpc2FycmF5OyBsYWNrIG9mIG9yZ2FuaXphdGlvbi4gIFxuICAgIFdvcmQgdHlwZTogTiAgXG4gICAgRXhhbXBsZTog5LuW5Zyo6Yyv5LqC5Lit5o6Z5omO44CCXG5cbjEyLiBXb3JkOiDlpKnmsKMgIFxuICAgIHRyYW5zbGF0ZTogd2VhdGhlciAgXG4gICAgUGlueWluOiB0acSBbnHDrCAgXG4gICAgRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuICAgIERlZmluaXRpb246IFRoZSBzdGF0ZSBvZiB0aGUgYXRtb3NwaGVyZSBhdCBhIHBsYWNlIGFuZCB0aW1lIHJlZ2FyZGluZyBoZWF0LCBkcnluZXNzLCBzdW5zaGluZSwgd2luZCwgcmFpbiwgZXRjLiAgXG4gICAgV29yZCB0eXBlOiBOICBcbiAgICBFeGFtcGxlOiDku4rlpKnlpKnmsKPlvojlpb3jgIJcblxuMTMuIFdvcmQ6IOmgkOWgsSAgXG4gICAgdHJhbnNsYXRlOiBmb3JlY2FzdCAgXG4gICAgUGlueWluOiB5w7liw6BvICBcbiAgICBEaWZmaWN1bHR5OiBsZXZlbDIgIFxuICAgIERlZmluaXRpb246IEEgcHJlZGljdGlvbiBvZiB0aGUgZnV0dXJlIHN0YXRlIG9mIHRoZSB3ZWF0aGVyLiAgXG4gICAgV29yZCB0eXBlOiBOICBcbiAgICBFeGFtcGxlOiDmlLbliLDlpKnmsKPpoJDloLHlvozvvIzmiJHluLbkuobpm6jlgpjjgIJcblxuMTQuIFdvcmQ6IOS4jea6liAgXG4gICAgdHJhbnNsYXRlOiBpbmFjY3VyYXRlICBcbiAgICBQaW55aW46IGLDuXpox5RuICBcbiAgICBEaWZmaWN1bHR5OiBsZXZlbDMgIFxuICAgIERlZmluaXRpb246IE5vdCBjb3JyZWN0IG9yIHJlbGlhYmxlOyBub3QgcHJlY2lzZS4gIFxuICAgIFdvcmQgdHlwZTogQWRqICBcbiAgICBFeGFtcGxlOiDpgJnlgIvpoJDloLHkuI3mupbjgIJcblxuMTUuIFdvcmQ6IOmbqOWCmCAgXG4gICAgdHJhbnNsYXRlOiB1bWJyZWxsYSAgXG4gICAgUGlueWluOiB5x5Rzx45uICBcbiAgICBEaWZmaWN1bHR5OiBiZWdpbm5lciAgXG4gICAgRGVmaW5pdGlvbjogQSBkZXZpY2UgdXNlZCBmb3IgcHJvdGVjdGlvbiBhZ2FpbnN0IHJhaW4gb3Igc3VubGlnaHQsIHR5cGljYWxseSBjb25zaXN0aW5nIG9mIGEgY2lyY3VsYXIgY2Fub3B5IG9mIGZhYnJpYyBvbiBhIGZvbGRpbmcgZnJhbWUuICBcbiAgICBXb3JkIHR5cGU6IE4gIFxuICAgIEV4YW1wbGU6IOWklumdouS4i+mbqOS6hu+8jOaIkemcgOimgeaSkOi1t+mbqOWCmOOAglxuXG4xNi4gV29yZDog5b+Y5LqGICBcbiAgICB0cmFuc2xhdGU6IGZvcmdvdCAgXG4gICAgUGlueWluOiB3w6BuZ2xlICBcbiAgICBEaWZmaWN1bHR5OiBub3ZpY2UxICBcbiAgICBEZWZpbml0aW9uOiBUaGUgcGFzdCB0ZW5zZSBvZiBmb3JnZXQ7IHRvIGZhaWwgdG8gcmVtZW1iZXIuICBcbiAgICBXb3JkIHR5cGU6IFYgIFxuICAgIEV4YW1wbGU6IOaIkeW/mOS6huW4tumRsOWMmeOAglxuXG4xNy4gV29yZDog5ou/ICBcbiAgICB0cmFuc2xhdGU6IHRvIHRha2UgIFxuICAgIFBpbnlpbjogbsOhICBcbiAgICBEaWZmaWN1bHR5OiBiZWdpbm5lciAgXG4gICAgRGVmaW5pdGlvbjogVG8gZ3Jhc3AsIGNhcnJ5LCBvciByZW1vdmUgc29tZXRoaW5nIHdpdGggdGhlIGhhbmRzLiAgXG4gICAgV29yZCB0eXBlOiBWICBcbiAgICBFeGFtcGxlOiDoq4vkvaDmi7/pgJnmnKzmm7jntabmiJHjgIJcblxuMTguIFdvcmQ6IOaIkeeahCAgXG4gICAgdHJhbnNsYXRlOiBteSAgXG4gICAgUGlueWluOiB3x5IgZGUgIFxuICAgIERpZmZpY3VsdHk6IGJlZ2lubmVyICBcbiAgICBEZWZpbml0aW9uOiBBIHBvc3Nlc3NpdmUgcHJvbm91biBpbmRpY2F0aW5nIHNvbWV0aGluZyBiZWxvbmdzIHRvIHRoZSBzcGVha2VyLiAgXG4gICAgV29yZCB0eXBlOiBQcm9uICBcbiAgICBFeGFtcGxlOiDpgJnmmK/miJHnmoTmiYvmqZ/jgIJcblxuMTkuIFdvcmQ6IOeEoeiZlSAgXG4gICAgdHJhbnNsYXRlOiBub3doZXJlICBcbiAgICBQaW55aW46IHfDumNow7kgIFxuICAgIERpZmZpY3VsdHk6IGxldmVsMyAgXG4gICAgRGVmaW5pdGlvbjogQW4gYWJzZW5jZSBvZiBwbGFjZTsgbm90IGFueXdoZXJlLiAgXG4gICAgV29yZCB0eXBlOiBBZHYgIFxuICAgIEV4YW1wbGU6IOaIkeimuuW+l+aIkeeEoeiZleWPr+WOu+OAglxuXG4yMC4gV29yZDog5a6J5pS+ICBcbiAgICB0cmFuc2xhdGU6IHRvIHBsYWNlICBcbiAgICBQaW55aW46IMSBbmbDoG5nICBcbiAgICBEaWZmaWN1bHR5OiBsZXZlbDIgIFxuICAgIERlZmluaXRpb246IFRvIHB1dCBvciBhcnJhbmdlIHNvbWV0aGluZyBpbiBhIHNwZWNpZmllZCBsb2NhdGlvbi4gIFxuICAgIFdvcmQgdHlwZTogViAgXG4gICAgRXhhbXBsZTog6KuL5a6J5pS+6YCZ5YCL5paH5Lu25Zyo5qGM5LiK44CCXG5cbuS7peS4iuaYr+mDqOWIhuipnuW9meeahOWIhuaekO+8jOiLpemcgOimgeabtOWkmuipnuW9meeahOWIhuaekO+8jOiri+WRiuefpe+8gSIsCiAgICAgICAgInJlZnVzYWwiOiBudWxsCiAgICAgIH0sCiAgICAgICJsb2dwcm9icyI6IG51bGwsCiAgICAgICJmaW5pc2hfcmVhc29uIjogInN0b3AiCiAgICB9CiAgXSwKICAidXNhZ2UiOiB7CiAgICAicHJvbXB0X3Rva2VucyI6IDUxNCwKICAgICJjb21wbGV0aW9uX3Rva2VucyI6IDEyODQsCiAgICAidG90YWxfdG9rZW5zIjogMTc5OCwKICAgICJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOiB7CiAgICAgICJjYWNoZWRfdG9rZW5zIjogMCwKICAgICAgImF1ZGlvX3Rva2VucyI6IDAKICAgIH0sCiAgICAiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6IHsKICAgICAgInJlYXNvbmluZ190b2tlbnMiOiAwLAogICAgICAiYXVkaW9fdG9rZW5zIjogMCwKICAgICAgImFjY2VwdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMCwKICAgICAgInJlamVjdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMAogICAgfQogIH0sCiAgInN5c3RlbV9maW5nZXJwcmludCI6ICJmcF8wNzA1YmY4N2MwIgp9Cg==
+  recorded_at: Wed, 27 Nov 2024 06:39:37 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-mini","messages":[{"role":"system","content":"你是一個專業的繁體中文老師，可以從文本中提取有意義的繁體中文詞彙單位"},{"role":"user","content":"Separate
+        all the words in the following text from each other and:\n        reply in
+        this format (words separated by spaces):\n        你好 風 雲 天空 I am cool\n\n        城市滴答
+        小巷滴答 沈默滴答\n你的手慢熱的體溫\n方向錯亂 天氣預報 不準 雨傘忘了拿\n我的手無處安放\n包括我的心 像旋轉木馬\n\n或許這就是註定\n註定失敗的結局\n成熟帶來的孤寂\n如滾水在心中滿溢\n\n我的心
+        你放在哪裡\n或許你 根本就不在意\n錯把承諾當有趣\n怎麼對得起 你我炙熱的痕跡\n\n你的心 你放在哪裡\n再追究 也毫無意義\n接受慌亂的思緒\n總比到頭來
+        面對無聲的失去\n無法開口 說聲好不容易\n\n城市滴答 小巷滴答 沈默滴答\n你的手慢熱的體溫\n方向錯亂 天氣預報 不準 雨傘忘了拿\n我的手無處安放\n包括我的心
+        像旋轉木馬\n\n或許這就是註定\n註定失敗的結局\n成熟帶來的孤寂\n如滾水在心中滿溢\n\n我的心 你放在哪裡\n或許你 根本就不在意\n錯把承諾當有趣\n怎麼對得起
+        你我炙熱的痕跡\n\n你的心 你放在哪裡\n再追究 也毫無意義\n接受慌亂的思緒\n總比到頭來 面對無聲的失去\n無法開口 說聲好不容易\nWoo
+        woo woo woo woo woo\n\n我的心 你放在哪裡\n或許我 也不再沈迷\n結束不安的遊戲\n認輸就可以 自由自在的掏心\n終於開口\n說聲好不容易"}]}'
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.3.5p100
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1634'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 27 Nov 2024 06:39:46 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - itc-sizmvs
+      Openai-Processing-Ms:
+      - '8569'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '10000'
+      X-Ratelimit-Limit-Tokens:
+      - '200000'
+      X-Ratelimit-Remaining-Requests:
+      - '9999'
+      X-Ratelimit-Remaining-Tokens:
+      - '199037'
+      X-Ratelimit-Reset-Requests:
+      - 8.64s
+      X-Ratelimit-Reset-Tokens:
+      - 288ms
+      X-Request-Id:
+      - req_072753cf7154a73fe793cfbba57571a5
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e901f4669618422-TPE
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJpZCI6ICJjaGF0Y21wbC1BWTYwMlczOVh4S0xzaGc0ektoWGk3eTIxSjFnbCIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczMjY4OTU3OCwKICAibW9kZWwiOiAiZ3B0LTRvLW1pbmktMjAyNC0wNy0xOCIsCiAgImNob2ljZXMiOiBbCiAgICB7CiAgICAgICJpbmRleCI6IDAsCiAgICAgICJtZXNzYWdlIjogewogICAgICAgICJyb2xlIjogImFzc2lzdGFudCIsCiAgICAgICAgImNvbnRlbnQiOiAi5Z+O5biCIOa7tOetlCDlsI/lt7cg5ru0562UIOayiOm7mCDmu7TnrZQg5L2g55qEIOaJiyDmhaLnhrEg55qEIOmrlOa6qyDmlrnlkJEg6Yyv5LqCIOWkqeawoyDpoJDloLEg5LiN5rqWIOmbqOWCmCDlv5jkuoYg5ou/IOaIkeeahCDmiYsg54Sh6JmVIOWuieaUviDljIXmi6wg5oiR55qEIOW/gyDlg48g5peL6L2JIOacqOmmrCDmiJboqLEg6YCZIOWwseaYryDoqLvlrpog6Ki75a6aIOWkseaVlyDnmoQg57WQ5bGAIOaIkOeGnyDluLbkvoYg55qEIOWtpOWvgiDlpoIg5ru+5rC0IOWcqCDlv4PkuK0g5ru/5rqiIOaIkeeahCDlv4Mg5L2gIOaUvuWcqCDlk6roo6Eg5oiW6KixIOS9oCDmoLnmnKwg5bCxIOS4jeWcqOaEjyDpjK/mioog5om/6Ku+IOeVtiDmnInotqMg5oCO6bq8IOWwjeW+l+i1tyDkvaAg5oiRIOeCmeeGsSDnmoQg55eV6LehIOS9oOeahCDlv4Mg5L2gIOaUvuWcqCDlk6roo6Eg5YaNIOi/veeptiDkuZ8g5q+r54ShIOaEj+e+qSDmjqXlj5cg5oWM5LqCIOeahCDmgJ3nt5Ig57i9IOavlCDliLDpoK3kvoYg6Z2i5bCNIOeEoeiBsiDnmoQg5aSx5Y67IOeEoeazlSDplovlj6Mg6Kqq6IGyIOWlvSDkuI3lrrnmmJMg5Z+O5biCIOa7tOetlCDlsI/lt7cg5ru0562UIOayiOm7mCDmu7TnrZQg5L2g55qEIOaJiyDmhaLnhrEg55qEIOmrlOa6qyDmlrnlkJEg6Yyv5LqCIOWkqeawoyDpoJDloLEg5LiN5rqWIOmbqOWCmCDlv5jkuoYg5ou/IOaIkeeahCDmiYsg54Sh6JmVIOWuieaUviDljIXmi6wg5oiR55qEIOW/gyDlg48g5peL6L2JIOacqOmmrCDmiJboqLEg6YCZIOWwseaYryDoqLvlrpog6Ki75a6aIOWkseaVlyDnmoQg57WQ5bGAIOaIkOeGnyDluLbkvoYg55qEIOWtpOWvgiDlpoIg5ru+5rC0IOWcqCDlv4PkuK0g5ru/5rqiIOaIkeeahCDlv4Mg5L2gIOaUvuWcqCDlk6roo6Eg5oiW6KixIOS9oCDmoLnmnKwg5bCxIOS4jeWcqOaEjyDpjK/mioog5om/6Ku+IOeVtiDmnInotqMg5oCO6bq8IOWwjeW+l+i1tyDkvaAg5oiRIOeCmeeGsSDnmoQg55eV6LehIOS9oOeahCDlv4Mg5L2gIOaUvuWcqCDlk6roo6Eg5YaNIOi/veeptiDkuZ8g5q+r54ShIOaEj+e+qSDmjqXlj5cg5oWM5LqCIOeahCDmgJ3nt5Ig57i9IOavlCDliLDpoK3kvoYg6Z2i5bCNIOeEoeiBsiDnmoQg5aSx5Y67IOeEoeazlSDplovlj6Mg6Kqq6IGyIOWlvSDkuI3lrrnmmJMgV29vIHdvbyB3b28gd29vIHdvbyB3b28g5oiR55qEIOW/gyDkvaAg5pS+5ZyoIOWTquijoSDmiJboqLEg5oiRIOS5nyDkuI3lho0g5rKI6L+3IOe1kOadnyDkuI3lrokg55qEIOmBiuaIsiDoqo3ovLgg5bCxIOWPr+S7pSDoh6rnlLEg6Ieq5ZyoIOeahCDmjo/lv4Mg57WC5pa8IOmWi+WPoyDoqqrogbIg5aW9IOS4jeWuueaYkyIsCiAgICAgICAgInJlZnVzYWwiOiBudWxsCiAgICAgIH0sCiAgICAgICJsb2dwcm9icyI6IG51bGwsCiAgICAgICJmaW5pc2hfcmVhc29uIjogInN0b3AiCiAgICB9CiAgXSwKICAidXNhZ2UiOiB7CiAgICAicHJvbXB0X3Rva2VucyI6IDUxNCwKICAgICJjb21wbGV0aW9uX3Rva2VucyI6IDQ4MSwKICAgICJ0b3RhbF90b2tlbnMiOiA5OTUsCiAgICAicHJvbXB0X3Rva2Vuc19kZXRhaWxzIjogewogICAgICAiY2FjaGVkX3Rva2VucyI6IDAsCiAgICAgICJhdWRpb190b2tlbnMiOiAwCiAgICB9LAogICAgImNvbXBsZXRpb25fdG9rZW5zX2RldGFpbHMiOiB7CiAgICAgICJyZWFzb25pbmdfdG9rZW5zIjogMCwKICAgICAgImF1ZGlvX3Rva2VucyI6IDAsCiAgICAgICJhY2NlcHRlZF9wcmVkaWN0aW9uX3Rva2VucyI6IDAsCiAgICAgICJyZWplY3RlZF9wcmVkaWN0aW9uX3Rva2VucyI6IDAKICAgIH0KICB9LAogICJzeXN0ZW1fZmluZ2VycHJpbnQiOiAiZnBfMDcwNWJmODdjMCIKfQo=
+  recorded_at: Wed, 27 Nov 2024 06:39:46 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-mini","messages":[{"role":"system","content":"現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字："},{"role":"user","content":"Please
+        identify these words and respond in this format:\n            Word:[繁體中文字]\n            translate:[English
+        translation ONLY]\n            Pinyin:[標註聲調的拼音]\n            Difficulty:[select
+        one of those：beginner、novice1、novice2、level1、level2、level3、level4, level5]\n            Definition:[English
+        detailed translation ONLY]\n            Word type:[選擇詞性：N,V,Adj,Adv,Pron,Prep,Conj,Num,Int,Classifier,Idiom,Other]\n            Example:[實用的20字內繁體中文例句]\n\n            Focus
+        on words that would be valuable for language learners. Keep example sentences
+        natural and practical.\n\n            Words: [\"城市\", \"滴答\", \"小巷\", \"沈默\",
+        \"你的\", \"手\", \"慢熱\", \"的\", \"體溫\", \"方向\", \"錯亂\", \"天氣\", \"預報\", \"不準\",
+        \"雨傘\", \"忘了\", \"拿\", \"我的\", \"無處\", \"安放\", \"包括\", \"心\", \"像\", \"旋轉\",
+        \"木馬\", \"或許\", \"這\", \"就是\", \"註定\", \"失敗\", \"結局\", \"成熟\", \"帶來\", \"孤寂\",
+        \"如\", \"滾水\", \"在\", \"心中\", \"滿溢\", \"你\", \"放在\", \"哪裡\", \"根本\", \"就\",
+        \"不在意\", \"錯把\", \"承諾\", \"當\", \"有趣\", \"怎麼\", \"對得起\", \"我\", \"炙熱\", \"痕跡\",
+        \"再\", \"追究\", \"也\", \"毫無\", \"意義\", \"接受\", \"慌亂\", \"思緒\", \"總\", \"比\",
+        \"到頭來\", \"面對\", \"無聲\", \"失去\", \"無法\", \"開口\", \"說聲\", \"好\", \"不容易\", \"Woo\",
+        \"woo\", \"不再\", \"沈迷\", \"結束\", \"不安\", \"遊戲\", \"認輸\", \"可以\", \"自由\", \"自在\",
+        \"掏心\", \"終於\"]"}]}'
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.3.5p100
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1844'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 27 Nov 2024 06:40:32 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - itc-sizmvs
+      Openai-Processing-Ms:
+      - '45213'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '10000'
+      X-Ratelimit-Limit-Tokens:
+      - '200000'
+      X-Ratelimit-Remaining-Requests:
+      - '9999'
+      X-Ratelimit-Remaining-Tokens:
+      - '199590'
+      X-Ratelimit-Reset-Requests:
+      - 8.64s
+      X-Ratelimit-Reset-Tokens:
+      - 123ms
+      X-Request-Id:
+      - req_f77f32f8df411292161b25938999095d
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e901f7dbf764a52-TPE
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJpZCI6ICJjaGF0Y21wbC1BWTYwQjZIUmphWmM3eFhoVGl5TGpJS0ZsWmRpeCIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczMjY4OTU4NywKICAibW9kZWwiOiAiZ3B0LTRvLW1pbmktMjAyNC0wNy0xOCIsCiAgImNob2ljZXMiOiBbCiAgICB7CiAgICAgICJpbmRleCI6IDAsCiAgICAgICJtZXNzYWdlIjogewogICAgICAgICJyb2xlIjogImFzc2lzdGFudCIsCiAgICAgICAgImNvbnRlbnQiOiAiV29yZDog5Z+O5biCICBcbnRyYW5zbGF0ZTogY2l0eSAgXG5QaW55aW46IGNow6luZ3Now6wgIFxuRGlmZmljdWx0eTogbGV2ZWwyICBcbkRlZmluaXRpb246IEEgbGFyZ2UgaHVtYW4gc2V0dGxlbWVudCwgdHlwaWNhbGx5IGNoYXJhY3Rlcml6ZWQgYnkgYSBoaWdoIHBvcHVsYXRpb24gZGVuc2l0eSBhbmQgdmFzdCBodW1hbi1idWlsdCBmZWF0dXJlcy4gIFxuV29yZCB0eXBlOiBOICBcbkV4YW1wbGU6IOmAmeWAi+WfjuW4gueahOWknOaZr+W+iOe+juOAgiAgXG5cbldvcmQ6IOa7tOetlCAgXG50cmFuc2xhdGU6IHRpY2stdG9jayAgXG5QaW55aW46IGTEq2TEgSAgXG5EaWZmaWN1bHR5OiBsZXZlbDEgIFxuRGVmaW5pdGlvbjogQW4gaW1pdGF0aXZlIHNvdW5kIHJlcHJlc2VudGluZyB0aGUgdGlja2luZyBvZiBhIGNsb2NrIG9yIHRoZSBwYXNzaW5nIG9mIHRpbWUuICBcbldvcmQgdHlwZTogT25vbWF0b3BvZWlhICBcbkV4YW1wbGU6IOaZgumQmOeZvOWHuua7tOetlOiBsuOAgiAgXG5cbldvcmQ6IOWwj+W3tyAgXG50cmFuc2xhdGU6IGFsbGV5ICBcblBpbnlpbjogeGnHjm94acOgbmcgIFxuRGlmZmljdWx0eTogbGV2ZWwxICBcbkRlZmluaXRpb246IEEgbmFycm93IHBhc3NhZ2V3YXkgYmV0d2VlbiBidWlsZGluZ3MsIG9mdGVuIGluIHVyYmFuIGFyZWFzLiAgXG5Xb3JkIHR5cGU6IE4gIFxuRXhhbXBsZTog5oiR5Zyo5bCP5be36KOh5pWj5q2l44CCICBcblxuV29yZDog5rKI6buYICBcbnRyYW5zbGF0ZTogc2lsZW5jZSAgXG5QaW55aW46IGNow6lubcOyICBcbkRpZmZpY3VsdHk6IGxldmVsMiAgXG5EZWZpbml0aW9uOiBUaGUgYWJzZW5jZSBvZiBzb3VuZDsgYSBzdGF0ZSBvZiBzdGlsbG5lc3Mgd2l0aG91dCBub2lzZS4gIFxuV29yZCB0eXBlOiBOICBcbkV4YW1wbGU6IOaIv+mWk+ijoeS4gOeJh+ayiOm7mOOAgiAgXG5cbldvcmQ6IOS9oOeahCAgXG50cmFuc2xhdGU6IHlvdXIgIFxuUGlueWluOiBux5AgZGUgIFxuRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuRGVmaW5pdGlvbjogQSBwb3NzZXNzaXZlIGFkamVjdGl2ZSBpbmRpY2F0aW5nIGJlbG9uZ2luZyB0byB0aGUgcGVyc29uIGJlaW5nIGFkZHJlc3NlZC4gIFxuV29yZCB0eXBlOiBQcm9uICBcbkV4YW1wbGU6IOS9oOeahOabuOWcqOahjOWtkOS4iuOAgiAgXG5cbldvcmQ6IOaJiyAgXG50cmFuc2xhdGU6IGhhbmQgIFxuUGlueWluOiBzaMeSdSAgXG5EaWZmaWN1bHR5OiBiZWdpbm5lciAgXG5EZWZpbml0aW9uOiBUaGUgZXh0cmVtaXR5IG9mIHRoZSBhcm0sIHVzZWQgZm9yIGdyYXNwaW5nIGFuZCBob2xkaW5nLiAgXG5Xb3JkIHR5cGU6IE4gIFxuRXhhbXBsZTog5oiR55So5omL5a+r5a2X44CCICBcblxuV29yZDog5oWi54axICBcbnRyYW5zbGF0ZTogc2xvdyB0byB3YXJtIHVwICBcblBpbnlpbjogbcOgbiByw6ggIFxuRGlmZmljdWx0eTogbGV2ZWwyICBcbkRlZmluaXRpb246IERlc2NyaWJpbmcgc29tZW9uZSB3aG8gdGFrZXMgdGltZSB0byBhZGp1c3QgdG8gbmV3IGVudmlyb25tZW50cyBvciBzaXR1YXRpb25zLiAgXG5Xb3JkIHR5cGU6IEFkaiAgXG5FeGFtcGxlOiDku5bmmK/lgIvmhaLnhrHnmoTkurrjgIIgIFxuXG5Xb3JkOiDnmoQgIFxudHJhbnNsYXRlOiAocG9zc2Vzc2l2ZSBwYXJ0aWNsZSkgIFxuUGlueWluOiBkZSAgXG5EaWZmaWN1bHR5OiBiZWdpbm5lciAgXG5EZWZpbml0aW9uOiBBIGdyYW1tYXRpY2FsIHBhcnRpY2xlIHVzZWQgdG8gaW5kaWNhdGUgcG9zc2Vzc2lvbiBvciBtb2RpZmljYXRpb24uICBcbldvcmQgdHlwZTogT3RoZXIgIFxuRXhhbXBsZTog6YCZ5piv5oiR55qE54uX44CCICBcblxuV29yZDog6auU5rqrICBcbnRyYW5zbGF0ZTogYm9keSB0ZW1wZXJhdHVyZSAgXG5QaW55aW46IHTHkHfEk24gIFxuRGlmZmljdWx0eTogbGV2ZWwxICBcbkRlZmluaXRpb246IFRoZSBpbnRlcm5hbCB0ZW1wZXJhdHVyZSBvZiBhIGJvZHksIHR5cGljYWxseSBhcm91bmQgMzfCsEMgaW4gaHVtYW5zLiAgXG5Xb3JkIHR5cGU6IE4gIFxuRXhhbXBsZTog5L2g55qE6auU5rqr5q2j5bi45ZeO77yfICBcblxuV29yZDog5pa55ZCRICBcbnRyYW5zbGF0ZTogZGlyZWN0aW9uICBcblBpbnlpbjogZsSBbmd4acOgbmcgIFxuRGlmZmljdWx0eTogbGV2ZWwxICBcbkRlZmluaXRpb246IEEgY291cnNlIGFsb25nIHdoaWNoIHNvbWVvbmUgb3Igc29tZXRoaW5nIG1vdmVzOyB0aGUgcG9zaXRpb24gb2Ygc29tZXRoaW5nIGluIHJlbGF0aW9uIHRvIGl0cyBzdXJyb3VuZGluZ3MuICBcbldvcmQgdHlwZTogTiAgXG5FeGFtcGxlOiDmiJHmib7kuI3liLDmraPnorrnmoTmlrnlkJHjgIIgIFxuXG5Xb3JkOiDpjK/kuoIgIFxudHJhbnNsYXRlOiBjb25mdXNpb24gIFxuUGlueWluOiBjdcOybHXDoG4gIFxuRGlmZmljdWx0eTogbGV2ZWwzICBcbkRlZmluaXRpb246IEEgc3RhdGUgb2YgZGlzb3JkZXIgb3IgbGFjayBvZiBjbGFyaXR5OyBhIG1lbnRhbCBzdGF0ZSB3aGVuIG9uZSBpcyB1bmFibGUgdG8gdGhpbmsgY2xlYXJseS4gIFxuV29yZCB0eXBlOiBOICBcbkV4YW1wbGU6IOS7luWcqOmAmeeoruaDheazgeS4i+aEn+WIsOmMr+S6guOAgiAgXG5cbldvcmQ6IOWkqeawoyAgXG50cmFuc2xhdGU6IHdlYXRoZXIgIFxuUGlueWluOiB0acSBbnHDrCAgXG5EaWZmaWN1bHR5OiBiZWdpbm5lciAgXG5EZWZpbml0aW9uOiBUaGUgc3RhdGUgb2YgdGhlIGF0bW9zcGhlcmUgYXQgYSBwYXJ0aWN1bGFyIHBsYWNlIGFuZCB0aW1lLCBpbmNsdWRpbmcgdGVtcGVyYXR1cmUsIHByZWNpcGl0YXRpb24sIGFuZCB3aW5kLiAgXG5Xb3JkIHR5cGU6IE4gIFxuRXhhbXBsZTog5LuK5aSp5aSp5rCj5b6I5aW944CCICBcblxuV29yZDog6aCQ5aCxICBcbnRyYW5zbGF0ZTogZm9yZWNhc3QgIFxuUGlueWluOiB5w7liw6BvICBcbkRpZmZpY3VsdHk6IGxldmVsMSAgXG5EZWZpbml0aW9uOiBBIHN0YXRlbWVudCBvZiB3aGF0IGlzIGV4cGVjdGVkIHRvIGhhcHBlbiBpbiB0aGUgZnV0dXJlLCBvZnRlbiByZWxhdGVkIHRvIHdlYXRoZXIgY29uZGl0aW9ucy4gIFxuV29yZCB0eXBlOiBOICBcbkV4YW1wbGU6IOaYjuWkqeeahOWkqeawo+mgkOWgseaYr+aciembqOOAgiAgXG5cbldvcmQ6IOS4jea6liAgXG50cmFuc2xhdGU6IGluYWNjdXJhdGUgIFxuUGlueWluOiBiw7kgemjHlG4gIFxuRGlmZmljdWx0eTogbGV2ZWwyICBcbkRlZmluaXRpb246IE5vdCBwcmVjaXNlIG9yIGNvcnJlY3Q7IGxpa2VseSB0byBsZWFkIHRvIGVycm9yIG9yIG1pc3VuZGVyc3RhbmRpbmcuICBcbldvcmQgdHlwZTogQWRqICBcbkV4YW1wbGU6IOmAmeWAi+mgkOWgseS4jea6luOAgiAgXG5cbldvcmQ6IOmbqOWCmCAgXG50cmFuc2xhdGU6IHVtYnJlbGxhICBcblBpbnlpbjogeceUc8eObiAgXG5EaWZmaWN1bHR5OiBiZWdpbm5lciAgXG5EZWZpbml0aW9uOiBBIGRldmljZSB1c2VkIGZvciBwcm90ZWN0aW9uIGFnYWluc3QgcmFpbiwgdHlwaWNhbGx5IGNvbnNpc3Rpbmcgb2YgYSBjaXJjdWxhciBjYW5vcHkgb2YgZmFicmljIG9uIGEgZm9sZGluZyBmcmFtZS4gIFxuV29yZCB0eXBlOiBOICBcbkV4YW1wbGU6IOaIkeW/mOS6huW4tumbqOWCmOOAgiAgXG5cbldvcmQ6IOW/mOS6hiAgXG50cmFuc2xhdGU6IGZvcmdvdCAgXG5QaW55aW46IHfDoG5nbGUgIFxuRGlmZmljdWx0eTogbGV2ZWwxICBcbkRlZmluaXRpb246IFRvIGZhaWwgdG8gcmVtZW1iZXIgc29tZXRoaW5nOyB0byBub3QgcmVjYWxsLiAgXG5Xb3JkIHR5cGU6IFYgIFxuRXhhbXBsZTog5oiR5b+Y5LqG5LuW55qE5ZCN5a2X44CCICBcblxuV29yZDog5ou/ICBcbnRyYW5zbGF0ZTogdGFrZSAgXG5QaW55aW46IG7DoSAgXG5EaWZmaWN1bHR5OiBiZWdpbm5lciAgXG5EZWZpbml0aW9uOiBUbyBncmFzcCwgZXNwZWNpYWxseSB3aXRoIHRoZSBoYW5kczsgdG8gb2J0YWluIG9yIGdldCBzb21ldGhpbmcuICBcbldvcmQgdHlwZTogViAgXG5FeGFtcGxlOiDoq4vkvaDmiormm7jmi7/ntabmiJHjgIIgIFxuXG5Xb3JkOiDmiJHnmoQgIFxudHJhbnNsYXRlOiBteSAgXG5QaW55aW46IHfHkiBkZSAgXG5EaWZmaWN1bHR5OiBiZWdpbm5lciAgXG5EZWZpbml0aW9uOiBBIHBvc3Nlc3NpdmUgYWRqZWN0aXZlIGluZGljYXRpbmcgdGhhdCBzb21ldGhpbmcgYmVsb25ncyB0byB0aGUgc3BlYWtlci4gIFxuV29yZCB0eXBlOiBQcm9uICBcbkV4YW1wbGU6IOaIkeeahOWutuWcqOmAmeijoeOAgiAgXG5cbldvcmQ6IOeEoeiZlSAgXG50cmFuc2xhdGU6IG5vd2hlcmUgIFxuUGlueWluOiB3w7ogY2jDuSAgXG5EaWZmaWN1bHR5OiBsZXZlbDMgIFxuRGVmaW5pdGlvbjogTm90IGluIGFueSBwbGFjZTsgbGFja2luZyBhIHNwZWNpZmljIG9yIGtub3duIGxvY2F0aW9uLiAgXG5Xb3JkIHR5cGU6IEFkdiAgXG5FeGFtcGxlOiDmiJHmhJ/liLDnhKHomZXlj6/ljrvjgIIgIFxuXG5Xb3JkOiDlronmlL4gIFxudHJhbnNsYXRlOiBwbGFjZSAgXG5QaW55aW46IMSBbmbDoG5nICBcbkRpZmZpY3VsdHk6IGxldmVsMiAgXG5EZWZpbml0aW9uOiBUbyBwdXQgc29tZXRoaW5nIGluIGEgcGFydGljdWxhciBsb2NhdGlvbiBvciBwb3NpdGlvbi4gIFxuV29yZCB0eXBlOiBWICBcbkV4YW1wbGU6IOiri+aKiumAmeWAi+WuieaUvuWcqOmCo+ijoeOAgiAgXG5cbldvcmQ6IOWMheaLrCAgXG50cmFuc2xhdGU6IGluY2x1ZGluZyAgXG5QaW55aW46IGLEgW9rdcOyICBcbkRpZmZpY3VsdHk6IGxldmVsMSAgXG5EZWZpbml0aW9uOiBUbyBjb250YWluIG9yIGNvdmVyIGFzIHBhcnQgb2YgYSB3aG9sZTsgdG8gY29tcHJpc2UuICBcbldvcmQgdHlwZTogViAgXG5FeGFtcGxlOiDpgJnlgIvoqIjnlavljIXmi6zmiYDmnInlrbjnlJ/jgIIgIFxuXG5Xb3JkOiDlv4MgIFxudHJhbnNsYXRlOiBoZWFydCAgXG5QaW55aW46IHjEq24gIFxuRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuRGVmaW5pdGlvbjogVGhlIG9yZ2FuIGluIHRoZSBib2R5IHRoYXQgcHVtcHMgYmxvb2QsIG9yIG9mdGVuIG1ldGFwaG9yaWNhbGx5IHJlZmVycmVkIHRvIGFzIHRoZSBjZW50ZXIgb2YgZW1vdGlvbiBhbmQgZmVlbGluZy4gIFxuV29yZCB0eXBlOiBOICBcbkV4YW1wbGU6IOaIkeW/g+ijoeW+iOmrmOiIiOOAgiAgXG5cbldvcmQ6IOWDjyAgXG50cmFuc2xhdGU6IGxpa2UgIFxuUGlueWluOiB4acOgbmcgIFxuRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuRGVmaW5pdGlvbjogVG8gcmVzZW1ibGUgb3IgYmUgc2ltaWxhciB0byBzb21ldGhpbmcgb3Igc29tZW9uZS4gIFxuV29yZCB0eXBlOiBWICBcbkV4YW1wbGU6IOS7luWDj+S7lueIuOeIuOOAgiAgXG5cbldvcmQ6IOaXi+i9iSAgXG50cmFuc2xhdGU6IHNwaW4gIFxuUGlueWluOiB4dcOhbnpodceObiAgXG5EaWZmaWN1bHR5OiBsZXZlbDIgIFxuRGVmaW5pdGlvbjogVG8gdHVybiBvciByb3RhdGUgYXJvdW5kIGFuIGF4aXMgb3IgY2VudGVyIHBvaW50LiAgXG5Xb3JkIHR5cGU6IFYgIFxuRXhhbXBsZTog55Kw55CD5q2j5Zyo5peL6L2J44CCICBcblxuV29yZDog5pyo6aasICBcbnRyYW5zbGF0ZTogd29vZGVuIGhvcnNlICBcblBpbnlpbjogbcO5bceOICBcbkRpZmZpY3VsdHk6IGxldmVsMyAgXG5EZWZpbml0aW9uOiBBIGhvcnNlIG1hZGUgb2Ygd29vZCwgb2Z0ZW4gdXNlZCBhcyBhIGNoaWxkcmVuJ3MgdG95IG9yIGEgbWV0YXBob3IgZm9yIGRlY2VwdGl2ZSBzdHJhdGVnaWVzLiAgXG5Xb3JkIHR5cGU6IE4gIFxuRXhhbXBsZTog5a2p5a2Q5Zyo546p5pyo6aas44CCICBcblxuV29yZDog5oiW6KixICBcbnRyYW5zbGF0ZTogcGVyaGFwcyAgXG5QaW55aW46IGh1w7J4x5QgIFxuRGlmZmljdWx0eTogbGV2ZWwyICBcbkRlZmluaXRpb246IE1heWJlOyBpbmRpY2F0aW5nIHVuY2VydGFpbnR5IG9yIHBvc3NpYmlsaXR5LiAgXG5Xb3JkIHR5cGU6IEFkdiAgXG5FeGFtcGxlOiDmiJboqLHmiJHlgJHmh4noqbLlho3oqabkuIDmrKHjgIIgIFxuXG5Xb3JkOiDpgJkgIFxudHJhbnNsYXRlOiB0aGlzICBcblBpbnlpbjogemjDqCAgXG5EaWZmaWN1bHR5OiBiZWdpbm5lciAgXG5EZWZpbml0aW9uOiBSZWZlcnJpbmcgdG8gc29tZXRoaW5nIHRoYXQgaXMgY2xvc2UgdG8gdGhlIHNwZWFrZXI7IGluZGljYXRlcyBhIHNwZWNpZmljIG9iamVjdCBvciBpZGVhLiAgXG5Xb3JkIHR5cGU6IFByb24gIFxuRXhhbXBsZTog6YCZ5piv5oiR55qE5pyL5Y+L44CCICBcblxuV29yZDog5bCxICBcbnRyYW5zbGF0ZToganVzdCAgXG5QaW55aW46IGppw7kgIFxuRGlmZmljdWx0eTogbGV2ZWwxICBcbkRlZmluaXRpb246IFVzZWQgdG8gaW5kaWNhdGUgYSBzaXR1YXRpb24gdGhhdCBpcyBleGFjdCBvciBpbW1lZGlhdGUsIG9yIGFzIGEgZmlsbGVyIHdvcmQgaW5kaWNhdGluZyBlbXBoYXNpcy4gIFxuV29yZCB0eXBlOiBBZHYgIFxuRXhhbXBsZTog5oiR5bCx5L2P5Zyo6YCZ6KOh44CCICBcblxuV29yZDog6Ki75a6aICBcbnRyYW5zbGF0ZTogZGVzdGluZWQgIFxuUGlueWluOiB6aMO5ZMOsbmcgIFxuRGlmZmljdWx0eTogbGV2ZWwzICBcbkRlZmluaXRpb246IFRvIGRldGVybWluZSBvciBwcmVkZXN0aW5lIGEgY2VydGFpbiBvdXRjb21lOyB0byBiZSBib3VuZCB0byBoYXBwZW4uICBcbldvcmQgdHlwZTogViAgXG5FeGFtcGxlOiDmiJHlgJHnmoTnm7jpgYfmmK/oqLvlrprnmoTjgIIgIFxuXG5Xb3JkOiDlpLHmlZcgIFxudHJhbnNsYXRlOiBmYWlsdXJlICBcblBpbnlpbjogc2jEq2LDoGkgIFxuRGlmZmljdWx0eTogbGV2ZWwyICBcbkRlZmluaXRpb246IFRoZSBsYWNrIG9mIHN1Y2Nlc3M7IHRoZSBzdGF0ZSBvZiBub3QgYWNoaWV2aW5nIGEgZGVzaXJlZCBnb2FsLiAgXG5Xb3JkIHR5cGU6IE4gIFxuRXhhbXBsZTog6YCZ5qyh5q+U6LO95oiR5aSx5pWX5LqG44CCICBcblxuV29yZDog57WQ5bGAICBcbnRyYW5zbGF0ZTogZW5kaW5nICBcblBpbnlpbjogamnDqWrDuiAgXG5EaWZmaWN1bHR5OiBsZXZlbDMgIFxuRGVmaW5pdGlvbjogVGhlIGZpbmFsIHBhcnQgb3IgY29uY2x1c2lvbiBvZiBhIHN0b3J5IG9yIGV2ZW50LiAgXG5Xb3JkIHR5cGU6IE4gIFxuRXhhbXBsZTog6YCZ6YOo6Zu75b2x55qE57WQ5bGA5Luk5Lq65oSf5Yiw5oSP5aSW44CCICBcblxuV29yZDog5oiQ54afICBcbnRyYW5zbGF0ZTogbWF0dXJlICBcblBpbnlpbjogY2jDqW5nc2jDuiAgXG5EaWZmaWN1bHR5OiBsZXZlbDIgIFxuRGVmaW5pdGlvbjogVGhlIHN0YXRlIG9mIGJlaW5nIGZ1bGx5IGRldmVsb3BlZCBvciBncm93bjsgdG8gYmUgZnVsbHkgY29tcGV0ZW50IG9yIGFkZXB0LiAgXG5Xb3JkIHR5cGU6IEFkaiAgXG5FeGFtcGxlOiDku5blt7LntpPlvojmiJDnhp/kuobjgIIgIFxuXG5Xb3JkOiDluLbkvoYgIFxudHJhbnNsYXRlOiBicmluZyAgXG5QaW55aW46IGTDoGlsw6FpICBcbkRpZmZpY3VsdHk6IGxldmVsMSAgXG5EZWZpbml0aW9uOiBUbyBicmluZyBzb21ldGhpbmcgYWxvbmcgb3IgdG8gY2F1c2UgaXQgdG8gY29tZSB3aXRoLiAgXG5Xb3JkIHR5cGU6IFYgIFxuRXhhbXBsZTog6KuL5L2g5bi25L6G5L2g55qE5pu444CCICBcblxuV29yZDog5a2k5a+CICBcbnRyYW5zbGF0ZTogc29saXR1ZGUgIFxuUGlueWluOiBnxatqw6wgIFxuRGlmZmljdWx0eTogbGV2ZWwzICBcbkRlZmluaXRpb246IEEgc3RhdGUgb2YgYmVpbmcgYWxvbmU7IGxvbmVsaW5lc3Mgb3IgaXNvbGF0aW9uLiAgXG5Xb3JkIHR5cGU6IE4gIFxuRXhhbXBsZTog5Zyo5a2k5a+C5Lit5oCd6ICD44CCICBcblxuV29yZDog5aaCICBcbnRyYW5zbGF0ZTogbGlrZSAgXG5QaW55aW46IHLDuiAgXG5EaWZmaWN1bHR5OiBsZXZlbDMgIFxuRGVmaW5pdGlvbjogU2ltaWxhciB0bzsgYXMgaWY7IHVzZWQgZm9yIGNvbXBhcmlzb24uICBcbldvcmQgdHlwZTogUHJlcCAgXG5FeGFtcGxlOiDlpbnnmoTlv4Pmg4XlpoLmmKXlpKnoiKzmuqvmmpbjgIIgIFxuXG5Xb3JkOiDmu77msLQgIFxudHJhbnNsYXRlOiBib2lsaW5nIHdhdGVyICBcblBpbnlpbjogZ8eUbiBzaHXHkCAgXG5EaWZmaWN1bHR5OiBsZXZlbDIgIFxuRGVmaW5pdGlvbjogV2F0ZXIgdGhhdCBoYXMgcmVhY2hlZCBpdHMgYm9pbGluZyBwb2ludDsgY29tbW9ubHkgdXNlZCBpbiBjb29raW5nLiAgXG5Xb3JkIHR5cGU6IE4gIFxuRXhhbXBsZTog5oiR6ZyA6KaB5LiA5Lqb5ru+5rC05L6G5rOh6Iy244CCICBcblxuV29yZDog5ZyoICBcbnRyYW5zbGF0ZTogaW4vYXQgIFxuUGlueWluOiB6w6BpICBcbkRpZmZpY3VsdHk6IGJlZ2lubmVyICBcbkRlZmluaXRpb246IEEgcHJlcG9zaXRpb24gaW5kaWNhdGluZyBhIGxvY2F0aW9uIG9yIHN0YXRlIG9mIGJlaW5nLiAgXG5Xb3JkIHR5cGU6IFByZXAgIFxuRXhhbXBsZTog5oiR5Zyo5a626KOh5a2457+S44CCICBcblxuV29yZDog5b+D5LitICBcbnRyYW5zbGF0ZTogaW4gaGVhcnQgIFxuUGlueWluOiB4xKtuIHpoxY1uZyAgXG5EaWZmaWN1bHR5OiBsZXZlbDMgIFxuRGVmaW5pdGlvbjogQSBtZXRhcGhvcmljYWwgcGhyYXNlIHJlZmVycmluZyB0byBvbmXigJlzIGlubmVyIGZlZWxpbmdzIG9yIGVtb3Rpb25zLiAgXG5Xb3JkIHR5cGU6IE4gIFxuRXhhbXBsZTog5aW55b+D5Lit5YWF5ru/5oSf5r+A44CCICBcblxuV29yZDog5ru/5rqiICBcbnRyYW5zbGF0ZTogb3ZlcmZsb3cgIFxuUGlueWluOiBtx45uIHnDrCAgXG5EaWZmaWN1bHR5OiBsZXZlbDMgIFxuRGVmaW5pdGlvbjogVG8gYmUgc28gZnVsbCB0aGF0IGl0IHNwaWxscyBvdmVyOyB0byBleGNlZWQgbm9ybWFsIGNhcGFjaXR5LiAgXG5Xb3JkIHR5cGU6IFYgIFxuRXhhbXBsZTog5LuW5b+D5Lit55qE5oOF5oSf5bey57aT5ru/5rqi44CCICBcblxuV29yZDog5L2gICBcbnRyYW5zbGF0ZTogeW91ICBcblBpbnlpbjogbseQICBcbkRpZmZpY3VsdHk6IGJlZ2lubmVyICBcbkRlZmluaXRpb246IEEgcHJvbm91biB1c2VkIHRvIHJlZmVyIHRvIHRoZSBwZXJzb24gYmVpbmcgYWRkcmVzc2VkLiAgXG5Xb3JkIHR5cGU6IFByb24gIFxuRXhhbXBsZTog5L2g5LuK5aSp6YGO5b6X5oCO6bq85qij77yfICBcblxuV29yZDog5pS+5ZyoICBcbnRyYW5zbGF0ZTogcHV0ICBcblBpbnlpbjogZsOgbmcgesOgaSAgXG5EaWZmaWN1bHR5OiBsZXZlbDEgIFxuRGVmaW5pdGlvbjogVG8gcGxhY2Ugc29tZXRoaW5nIGRvd24gb3IgdG8gbG9jYXRlIGl0IGluIGEgc3BlY2lmaWMgYXJlYS4gIFxuV29yZCB0eXBlOiBWICBcbkV4YW1wbGU6IOaKiuabuOaUvuWcqOmCo+ijoeOAgiAgXG5cbldvcmQ6IOWTquijoSAgXG50cmFuc2xhdGU6IHdoZXJlICBcblBpbnlpbjogbseObMeQICBcbkRpZmZpY3VsdHk6IGJlZ2lubmVyICBcbkRlZmluaXRpb246IEEgcXVlc3Rpb24gd29yZCB1c2VkIHRvIGlucXVpcmUgYWJvdXQgYSBsb2NhdGlvbi4gIFxuV29yZCB0eXBlOiBQcm9uICBcbkV4YW1wbGU6IOS9oOaYr+WTquijoeS6uu+8nyAgXG5cbldvcmQ6IOagueacrCAgXG50cmFuc2xhdGU6IGF0IGFsbCAgXG5QaW55aW46IGfEk25ixJtuICBcbkRpZmZpY3VsdHk6IGxldmVsMiAgXG5EZWZpbml0aW9uOiBBIHBocmFzZSB1c2VkIHRvIGVtcGhhc2l6ZSB0aGUgbmVnYXRpb24gb2YgYSBzdGF0ZW1lbnQ7IGFic29sdXRlbHksIGZ1bmRhbWVudGFsbHkuICBcbldvcmQgdHlwZTogQWR2ICBcbkV4YW1wbGU6IOaIkeagueacrOS4jeaHguOAgiAgXG5cbldvcmQ6IOWwsSAgXG50cmFuc2xhdGU6IGp1c3QgIFxuUGlueWluOiBqacO5ICBcbkRpZmZpY3VsdHk6IGJlZ2lubmVyICBcbkRlZmluaXRpb246IEluZGljYXRlcyBleGFjdG5lc3Mgb3IgaW1tZWRpYXRlIHJlZmVyZW5jZSB0byBzb21ldGhpbmcsIG9mdGVuIHVzZWQgZm9yIGVtcGhhc2lzLiAgXG5Xb3JkIHR5cGU6IEFkdiAgXG5FeGFtcGxlOiDku5blsLHnq5nlnKjpgqPoo6HjgIIgIFxuXG5Xb3JkOiDkuI3lnKjmhI8gIFxudHJhbnNsYXRlOiBub3QgY2FyZSAgXG5QaW55aW46IGLDuSB6w6BpIHnDrCAgXG5EaWZmaWN1bHR5OiBsZXZlbDMgIFxuRGVmaW5pdGlvbjogVG8gbm90IGJlIGJvdGhlcmVkIGJ5IHNvbWV0aGluZzsgdG8gbm90IG1pbmQgb3IgYmUgY29uY2VybmVkLiAgXG5Xb3JkIHR5cGU6IFYgIFxuRXhhbXBsZTog5oiR5bCN6YCZ5Lu25LqL5LiN5Zyo5oSP44CCICBcblxuV29yZDog6Yyv5oqKICBcbnRyYW5zbGF0ZTogbWlzdGFrZW5seSB0cmVhdCBhcyAgXG5QaW55aW46IGN1w7IgYseOICBcbkRpZmZpY3VsdHk6IGxldmVsMyAgXG5EZWZpbml0aW9uOiBUbyBpbmNvcnJlY3RseSByZWdhcmQgb3IgdHJlYXQgc29tZW9uZSBvciBzb21ldGhpbmcgaW4gYSB3YXkgdGhhdCBpcyBub3QgYWNjdXJhdGUuICBcbldvcmQgdHlwZTogViAgXG5FeGFtcGxlOiDku5bpjK/miorlloTmhI/nlbbkvZzmmK/mg6HmhI/jgIIgIFxuXG5Xb3JkOiDmib/oq74gIFxudHJhbnNsYXRlOiBwcm9taXNlICBcblBpbnlpbjogY2jDqW5nbnXDsiAgXG5EaWZmaWN1bHR5OiBsZXZlbDIgIFxuRGVmaW5pdGlvbjogQSBkZWNsYXJhdGlvbiBvciBhc3N1cmFuY2UgdGhhdCBvbmUgd2lsbCBkbyBzb21ldGhpbmcgb3IgdGhhdCBhIHBhcnRpY3VsYXIgdGhpbmcgd2lsbCBoYXBwZW4uICBcbldvcmQgdHlwZTogTiAgXG5FeGFtcGxlOiDmiJHlgJHnmoTmib/oq77kuI3og73noLTlo57jgIIgIFxuXG5Xb3JkOiDnlbYgIFxudHJhbnNsYXRlOiByZWdhcmQgYXMgIFxuUGlueWluOiBkxIFuZyAgXG5EaWZmaWN1bHR5OiBsZXZlbDEgIFxuRGVmaW5pdGlvbjogVG8gY29uc2lkZXIgb3IgdHJlYXQgc29tZW9uZSBvciBzb21ldGhpbmcgaW4gYSBzcGVjaWZpYyB3YXkuICBcbldvcmQgdHlwZTogViAgXG5FeGFtcGxlOiDmiJHmiorku5bnlbbmnIvlj4vjgIIgIFxuXG5Xb3JkOiDmnInotqMgIFxudHJhbnNsYXRlOiBpbnRlcmVzdGluZyAgXG5QaW55aW46IHnHknVxw7kgIFxuRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuRGVmaW5pdGlvbjogQXR0cmFjdGluZyBhdHRlbnRpb24gb3IgY3VyaW9zaXR5OyBjYXBhYmxlIG9mIGFyb3VzaW5nIGludGVyZXN0LiAgXG5Xb3JkIHR5cGU6IEFkaiAgXG5FeGFtcGxlOiDpgJnmnKzmm7jlvojlpb3njqnvvIzlvojmnInotqPjgIIgIFxuXG5Xb3JkOiDmgI7purwgIFxudHJhbnNsYXRlOiBob3cgIFxuUGlueWluOiB6xJtubWUgIFxuRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuRGVmaW5pdGlvbjogQSBxdWVzdGlvbiB3b3JkIHVzZWQgdG8gaW5xdWlyZSBhYm91dCB0aGUgbWFubmVyIG9yIHdheSBzb21ldGhpbmcgaXMgZG9uZS4gIFxuV29yZCB0eXBlOiBQcm9uICBcbkV4YW1wbGU6IOS9oOaAjum6vOS+hueahO+8nyAgXG5cbldvcmQ6IOWwjeW+l+i1tyAgXG50cmFuc2xhdGU6IGxpdmUgdXAgdG8gIFxuUGlueWluOiBkdcOsIGRlIHHHkCAgXG5EaWZmaWN1bHR5OiBsZXZlbDMgIFxuRGVmaW5pdGlvbjogVG8gbWVldCB0aGUgZXhwZWN0YXRpb25zIHNldCBieSBvbmVzZWxmIG9yIG90aGVyczsgdG8gaGF2ZSB0aGUgbW9yYWwgaW50ZWdyaXR5IHRvIGp1c3RpZnkgb25lJ3MgYWN0aW9ucy4gIFxuV29yZCB0eXBlOiBWICBcbkV4YW1wbGU6IOaIkeW/hemgiOWwjeW+l+i1t+iHquW3seeahOaJv+irvuOAgiAgXG5cbldvcmQ6IOaIkSAgXG50cmFuc2xhdGU6IEkgIFxuUGlueWluOiB3x5IgIFxuRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuRGVmaW5pdGlvbjogQSBwcm9ub3VuIHVzZWQgYnkgYSBzcGVha2VyIHRvIHJlZmVyIHRvIHRoZW1zZWx2ZXMuICBcbldvcmQgdHlwZTogUHJvbiAgXG5FeGFtcGxlOiDmiJHllpzmraHlkIPmsLTmnpzjgIIgIFxuXG5Xb3JkOiDngpnnhrEgIFxudHJhbnNsYXRlOiBzY29yY2hpbmcgIFxuUGlueWluOiB6aMOscsOoICBcbkRpZmZpY3VsdHk6IGxldmVsMyAgXG5EZWZpbml0aW9uOiBFeHRyZW1lbHkgaG90OyBvZnRlbiB1c2VkIHRvIGRlc2NyaWJlIGhpZ2ggdGVtcGVyYXR1cmVzIHRoYXQgYXJlIHVuY29tZm9ydGFibGUuICBcbldvcmQgdHlwZTogQWRqICBcbkV4YW1wbGU6IOS7iuWkqeeahOWkqeawo+mdnuW4uOeCmeeGseOAgiAgXG5cbldvcmQ6IOeXlei3oSAgXG50cmFuc2xhdGU6IHRyYWNlICBcblBpbnlpbjogaMOpbmrEqyAgXG5EaWZmaWN1bHR5OiBsZXZlbDMgIFxuRGVmaW5pdGlvbjogQSBtYXJrIG9yIHNpZ24gbGVmdCBiZWhpbmQ7IGV2aWRlbmNlIG9yIHJlbW5hbnRzIG9mIHNvbWV0aGluZyBvbmNlIGV4aXN0ZWQuICBcbldvcmQgdHlwZTogTiAgXG5FeGFtcGxlOiDlnLDkuIrmspLmnInku7vkvZXnl5Xot6HjgIIgIFxuXG5Xb3JkOiDlho0gIFxudHJhbnNsYXRlOiBhZ2FpbiAgXG5QaW55aW46IHrDoGkgIFxuRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuRGVmaW5pdGlvbjogVG8gaW5kaWNhdGUgcmVwZXRpdGlvbiBvciByZXR1cm4gdG8gYSBwcmV2aW91cyBzdGF0ZS4gIFxuV29yZCB0eXBlOiBBZHYgIFxuRXhhbXBsZTog5oiR5YaN5Lmf5LiN5oOz5o+Q6LW36YCZ5YCL5LqG44CCICBcblxuV29yZDog6L+956m2ICBcbnRyYW5zbGF0ZTogaW52ZXN0aWdhdGUgIFxuUGlueWluOiB6aHXEq2ppxasgIFxuRGlmZmljdWx0eTogbGV2ZWwzICBcbkRlZmluaXRpb246IFRvIGlucXVpcmUgaW50byBvciBsb29rIGludG8gYSBtYXR0ZXIsIG9mdGVuIHNlZWtpbmcgYWNjb3VudGFiaWxpdHkgb3IgY2xhcml0eS4gIFxuV29yZCB0eXBlOiBWICBcbkV4YW1wbGU6IOaIkeWAkemcgOimgei/veeptuatpOS6i+eahOecn+ebuOOAgiAgXG5cbldvcmQ6IOS5nyAgXG50cmFuc2xhdGU6IGFsc28gIFxuUGlueWluOiB5xJsgIFxuRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuRGVmaW5pdGlvbjogVXNlZCB0byBpbmRpY2F0ZSBhZ3JlZW1lbnQgb3IgYWRkaXRpb24gaW4gYSBzdGF0ZW1lbnQuICBcbldvcmQgdHlwZTogQ29uaiAgXG5FeGFtcGxlOiDmiJHkuZ/llpzmraHpgJnpg6jpm7vlvbHjgIIgIFxuXG5Xb3JkOiDmr6vnhKEgIFxudHJhbnNsYXRlOiB3aXRob3V0ICBcblBpbnlpbjogaMOhbyB3w7ogIFxuRGlmZmljdWx0eTogbGV2ZWwyICBcbkRlZmluaXRpb246IENvbXBsZXRlbHkgbGFja2luZyBvciB3aXRob3V0IHNvbWV0aGluZzsgbm90IGhhdmluZyBhdCBhbGwuICBcbldvcmQgdHlwZTogQWRqICBcbkV4YW1wbGU6IOS7luWwjeatpOavq+eEoeiIiOi2o+OAgiAgXG5cbldvcmQ6IOaEj+e+qSAgXG50cmFuc2xhdGU6IG1lYW5pbmcgIFxuUGlueWluOiB5w6x5w6wgIFxuRGlmZmljdWx0eTogbGV2ZWwyICBcbkRlZmluaXRpb246IFRoZSBzaWduaWZpY2FuY2Ugb3IgdmFsdWUgb2Ygc29tZXRoaW5nOyB0aGUgdW5kZXJzdGFuZGluZyB0aGF0IGlzIGRlcml2ZWQgZnJvbSBpdC4gIFxuV29yZCB0eXBlOiBOICBcbkV4YW1wbGU6IOmAmeWPpeipseaciea3seWIu+eahOaEj+e+qeOAgiAgXG5cbldvcmQ6IOaOpeWPlyAgXG50cmFuc2xhdGU6IGFjY2VwdCAgXG5QaW55aW46IGppxJNzaMOydSAgXG5EaWZmaWN1bHR5OiBsZXZlbDEgIFxuRGVmaW5pdGlvbjogVG8gcmVjZWl2ZSBzb21ldGhpbmcgd2lsbGluZ2x5OyB0byBhZ3JlZSB0byB0YWtlIG9yIHN1Ym1pdCB0by4gIFxuV29yZCB0eXBlOiBWICBcbkV4YW1wbGU6IOaIkeWAkeaHieipsuaOpeWPl+ePvuWvpuOAgiAgXG5cbldvcmQ6IOaFjOS6giAgXG50cmFuc2xhdGU6IHBhbmljICBcblBpbnlpbjogaHXEgW5nbHXDoG4gIFxuRGlmZmljdWx0eTogbGV2ZWwzICBcbkRlZmluaXRpb246IEEgc3VkZGVuIGZlZWxpbmcgb2YgZmVhciBvciBhbnhpZXR5IHRoYXQgY2F1c2VzIG9uZSB0byBsb3NlIGNvbnRyb2wgb3IgYWN0IGlycmF0aW9uYWxseS4gIFxuV29yZCB0eXBlOiBOICBcbkV4YW1wbGU6IOWcqOa3t+S6guS4re+8jOWlueaEn+WIsOaFjOS6guOAgiAgXG5cbldvcmQ6IOaAnee3kiAgXG50cmFuc2xhdGU6IHRob3VnaHRzICBcblBpbnlpbjogc8SreMO5ICBcbkRpZmZpY3VsdHk6IGxldmVsMyAgXG5EZWZpbml0aW9uOiBUaGUgcHJvY2VzcyBvZiB0aGlua2luZywgZXNwZWNpYWxseSBpbiB0ZXJtcyBvZiBhIHNldCBvZiBpZGVhcyBvciByZWZsZWN0aW9ucy4gIFxuV29yZCB0eXBlOiBOICBcbkV4YW1wbGU6IOaIkeeahOaAnee3kuW+iOa3t+S6guOAgiAgXG5cbldvcmQ6IOe4vSAgXG50cmFuc2xhdGU6IGFsd2F5cyAgXG5QaW55aW46IHrHkm5nICBcbkRpZmZpY3VsdHk6IGxldmVsMiAgXG5EZWZpbml0aW9uOiBBbGwgdGhlIHRpbWU7IHdpdGhvdXQgZXhjZXB0aW9uOyBvbiBhbGwgb2NjYXNpb25zLiAgXG5Xb3JkIHR5cGU6IEFkdiAgXG5FeGFtcGxlOiDku5bnuL3mmK/mupbmmYLliLDpgZTjgIIgIFxuXG5Xb3JkOiDmr5QgIFxudHJhbnNsYXRlOiBjb21wYXJlICBcblBpbnlpbjogYseQICBcbkRpZmZpY3VsdHk6IGJlZ2lubmVyICBcbkRlZmluaXRpb246IFVzZWQgdG8gaW5kaWNhdGUgY29tcGFyaXNvbiBiZXR3ZWVuIHR3byBvciBtb3JlIHRoaW5ncy4gIFxuV29yZCB0eXBlOiBWICBcbkV4YW1wbGU6IOmAmeWAi+avlOmCo+WAi+abtOWlveOAgiAgXG5cbldvcmQ6IOWIsOmgreS+hiAgXG50cmFuc2xhdGU6IGluIHRoZSBlbmQgIFxuUGlueWluOiBkw6BvIHTDs3UgbMOhaSAgXG5EaWZmaWN1bHR5OiBsZXZlbDMgIFxuRGVmaW5pdGlvbjogVWx0aW1hdGVseTsgYWZ0ZXIgZXZlcnl0aGluZyBoYXMgYmVlbiBzYWlkIGFuZCBkb25lOyB1c2VkIHRvIHJlZmVyIHRvIHRoZSBmaW5hbCBvdXRjb21lLiAgXG5Xb3JkIHR5cGU6IEFkdiAgXG5FeGFtcGxlOiDliLDpoK3kvobvvIzmiJHlgJHpgoTmmK/lm57liLDkuobljp/pu57jgIIgIFxuXG5Xb3JkOiDpnaLlsI0gIFxudHJhbnNsYXRlOiBmYWNlICBcblBpbnlpbjogbWnDoG4gZHXDrCAgXG5EaWZmaWN1bHR5OiBsZXZlbDIgIFxuRGVmaW5pdGlvbjogVG8gY29uZnJvbnQgb3IgZGVhbCB3aXRoIHNvbWV0aGluZywgb2Z0ZW4gYSBjaGFsbGVuZ2Ugb3Igc2l0dWF0aW9uLiAgXG5Xb3JkIHR5cGU6IFYgIFxuRXhhbXBsZTog5oiR5YCR6ZyA6KaB6Z2i5bCN54++5a+m44CCICBcblxuV29yZDog54Sh6IGyICBcbnRyYW5zbGF0ZTogc2lsZW50ICBcblBpbnlpbjogd8O6IHNoxJNuZyAgXG5EaWZmaWN1bHR5OiBsZXZlbDMgIFxuRGVmaW5pdGlvbjogTGFja2luZyBzb3VuZDsgcXVpZXQ7IGRldm9pZCBvZiBub2lzZSBvciBzcGVlY2guICBcbldvcmQgdHlwZTogQWRqICBcbkV4YW1wbGU6IOaZmuS4iuihl+mBk+S4iueEoeiBsueEoeaBr+OAgiAgXG5cbldvcmQ6IOWkseWOuyAgXG50cmFuc2xhdGU6IGxvc2UgIFxuUGlueWluOiBzaMSrccO5ICBcbkRpZmZpY3VsdHk6IGxldmVsMSAgXG5EZWZpbml0aW9uOiBUbyBiZSBkZXByaXZlZCBvZiBvciBmYWlsIHRvIGtlZXAgc29tZXRoaW5nOyB0byBubyBsb25nZXIgaGF2ZS4gIFxuV29yZCB0eXBlOiBWICBcbkV4YW1wbGU6IOaIkeWkseWOu+S6huaIkeeahOaJi+apn+OAgiAgXG5cbldvcmQ6IOeEoeazlSAgXG50cmFuc2xhdGU6IHVuYWJsZSAgXG5QaW55aW46IHfDumbHjiAgXG5EaWZmaWN1bHR5OiBsZXZlbDIgIFxuRGVmaW5pdGlvbjogTm90IGFibGUgdG8gZG8gc29tZXRoaW5nOyBsYWNraW5nIHRoZSBhYmlsaXR5IG9yIG1lYW5zLiAgXG5Xb3JkIHR5cGU6IEFkaiAgXG5FeGFtcGxlOiDmiJHnhKHms5XluavliqnkvaDjgIIgIFxuXG5Xb3JkOiDplovlj6MgIFxudHJhbnNsYXRlOiBvcGVuIG1vdXRoICBcblBpbnlpbjoga8SBaWvHknUgIFxuRGlmZmljdWx0eTogbGV2ZWwzICBcbkRlZmluaXRpb246IFRvIHNwZWFrOyB0byBzdGFydCB0byBzYXkgc29tZXRoaW5nLiAgXG5Xb3JkIHR5cGU6IFYgIFxuRXhhbXBsZTog5oiR6ZaL5Y+j5oOz6Kqq5Y275Y+I5q2i5L2P5LqG44CCICBcblxuV29yZDog6Kqq6IGyICBcbnRyYW5zbGF0ZTogc2F5IGEgd29yZCAgXG5QaW55aW46IHNodcWNIHNoxJNuZyAgXG5EaWZmaWN1bHR5OiBsZXZlbDIgIFxuRGVmaW5pdGlvbjogQW4gZXhwcmVzc2lvbiBpbXBseWluZyB0byBjb21tdW5pY2F0ZSBvciBleHByZXNzIHZlcmJhbGx5LiAgXG5Xb3JkIHR5cGU6IFYgIFxuRXhhbXBsZTog5LuW5rKS5pyJ5ZCR5oiR6Kqq6IGy5YaN6KaL44CCICBcblxuV29yZDog5aW9ICBcbnRyYW5zbGF0ZTogZ29vZCAgXG5QaW55aW46IGjHjm8gIFxuRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuRGVmaW5pdGlvbjogT2YgaGlnaCBxdWFsaXR5OyBzYXRpc2ZhY3Rvcnk7IHBsZWFzaW5nLiAgXG5Xb3JkIHR5cGU6IEFkaiAgXG5FeGFtcGxlOiDpgJnpgZPoj5zlvojlpb3lkIPjgIIgIFxuXG5Xb3JkOiDkuI3lrrnmmJMgIFxudHJhbnNsYXRlOiBub3QgZWFzeSAgXG5QaW55aW46IGLDuSByw7NuZ3nDrCAgXG5EaWZmaWN1bHR5OiBsZXZlbDIgIFxuRGVmaW5pdGlvbjogRGVzY3JpYmluZyBhIHNpdHVhdGlvbiB0aGF0IHBvc2VzIGRpZmZpY3VsdHkgb3IgY2hhbGxlbmdlczsgdG91Z2guICBcbldvcmQgdHlwZTogQWRqICBcbkV4YW1wbGU6IOmAmeWAi+WVj+mhjOS4jeWuueaYk+ino+axuuOAgiAgXG5cbldvcmQ6IFdvbyAgXG50cmFuc2xhdGU6IFdvbyAgXG5QaW55aW46IHfFqyAgXG5EaWZmaWN1bHR5OiBsZXZlbDUgIFxuRGVmaW5pdGlvbjogQSBzb3VuZCBvciBleHByZXNzaW9uIG9mIGVuY291cmFnZW1lbnQ7IGFuIG9ub21hdG9wb2VpYyBleHByZXNzaW9uLiAgXG5Xb3JkIHR5cGU6IE9ub21hdG9wb2VpYSAgXG5FeGFtcGxlOiDku5blnKjooajmvJTmmYLluLjluLjlgZrlpb3mupblgpnkuKbnmbzlh7rjgIx3b2/jgI3nmoTogbLpn7/jgIIgIFxuXG5Xb3JkOiB3b28gIFxudHJhbnNsYXRlOiB3b28gIFxuUGlueWluOiB3xasgIFxuRGlmZmljdWx0eTogbGV2ZWw1ICBcbkRlZmluaXRpb246IEEgc291bmQgb3IgZXhwcmVzc2lvbiBvZiBlbmNvdXJhZ2VtZW50OyBhbiBvbm9tYXRvcG9laWMgZXhwcmVzc2lvbi4gIFxuV29yZCB0eXBlOiBPbm9tYXRvcG9laWEgIFxuRXhhbXBsZTog5Zyo5rS+5bCN5LiK77yM5aSn5a625LiN5pmC55m85Ye644CMd29v44CN55qE6IGy6Z+z5L6G5q2h5ZG844CCICBcblxuV29yZDog5LiN5YaNICBcbnRyYW5zbGF0ZTogbm8gbG9uZ2VyICBcblBpbnlpbjogYsO5IHrDoGkgIFxuRGlmZmljdWx0eTogbGV2ZWwyICBcbkRlZmluaXRpb246IEluZGljYXRpbmcgdGhhdCBzb21ldGhpbmcgaGFzIGNlYXNlZCBvciBpcyBubyBsb25nZXIgb2NjdXJyaW5nLiAgXG5Xb3JkIHR5cGU6IEFkdiAgXG5FeGFtcGxlOiDmiJHnmoTmiYvmqZ/kuI3lho3lt6XkvZzkuobjgIIgIFxuXG5Xb3JkOiDmsojov7cgIFxudHJhbnNsYXRlOiBpbmR1bGdlICBcblBpbnlpbjogY2jDqW5tw60gIFxuRGlmZmljdWx0eTogbGV2ZWwzICBcbkRlZmluaXRpb246IFRvIGJlIGV4Y2Vzc2l2ZWx5IGludm9sdmVkIGluIG9yIGFic29yYmVkIGJ5IHNvbWV0aGluZywgb2Z0ZW4gdG8gdGhlIGRldHJpbWVudCBvZiBvdGhlciByZXNwb25zaWJpbGl0aWVzLiAgXG5Xb3JkIHR5cGU6IFYgIFxuRXhhbXBsZTog5LuW5rKI6L+35pa86YCZ6YOo6Zu75b2x44CCICBcblxuV29yZDog57WQ5p2fICBcbnRyYW5zbGF0ZTogZW5kICBcblBpbnlpbjogamnDqXNow7kgIFxuRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuRGVmaW5pdGlvbjogVG8gYnJpbmcgdG8gYSBjb25jbHVzaW9uOyB0byBmaW5pc2guICBcbldvcmQgdHlwZTogViAgXG5FeGFtcGxlOiDpgJnloLTmr5Tos73ljbPlsIfntZDmnZ/jgIIgIFxuXG5Xb3JkOiDkuI3lrokgIFxudHJhbnNsYXRlOiB1bmVhc3kgIFxuUGlueWluOiBiw7knxIFuICBcbkRpZmZpY3VsdHk6IGxldmVsMiAgXG5EZWZpbml0aW9uOiBBIHN0YXRlIG9mIGRpc2NvbWZvcnQgb3IgYW54aWV0eTsgZmVlbGluZyB0cm91YmxlZC4gIFxuV29yZCB0eXBlOiBBZGogIFxuRXhhbXBsZTog55W25LuW5LiN5Zyo5pmC77yM5oiR5oSf5Yiw5LiN5a6J44CCICBcblxuV29yZDog6YGK5oiyICBcbnRyYW5zbGF0ZTogZ2FtZSAgXG5QaW55aW46IHnDs3V4w6wgIFxuRGlmZmljdWx0eTogYmVnaW5uZXIgIFxuRGVmaW5pdGlvbjogQW4gYWN0aXZpdHkgaW52b2x2aW5nIHN0cnVjdHVyZWQgcGxheSwgb2Z0ZW4gZm9yIGVudGVydGFpbm1lbnQgb3IgY29tcGV0aXRpb24uICBcbldvcmQgdHlwZTogTiAgXG5FeGFtcGxlOiDpgJnlgIvpgYrmiLLlvojlpb3njqnjgIIgIFxuXG5Xb3JkOiDoqo3ovLggIFxudHJhbnNsYXRlOiBhZG1pdCBkZWZlYXQgIFxuUGlueWluOiByw6huIHNoxasgIFxuRGlmZmljdWx0eTogbGV2ZWwzICBcbkRlZmluaXRpb246IFRvIGFjY2VwdCB0aGF0IG9uZSBoYXMgbG9zdCBvciB0aGF0IG9uZSBjYW5ub3Qgd2luOyB0byBhY2tub3dsZWRnZSBmYWlsdXJlLiAgXG5Xb3JkIHR5cGU6IFYgIFxuRXhhbXBsZTog5oiR6YCZ5qyh5q+U6LO95LiN5b6X5LiN6KqN6Ly444CCICBcblxuV29yZDog5Y+v5LulICBcbnRyYW5zbGF0ZTogY2FuICBcblBpbnlpbjoga8SbeceQICBcbkRpZmZpY3VsdHk6IGJlZ2lubmVyICBcbkRlZmluaXRpb246IFVzZWQgdG8gZXhwcmVzcyBwZXJtaXNzaW9uIG9yIGFiaWxpdHk7IHNvbWV0aGluZyB0aGF0IGlzIGFsbG93ZWQgb3IgcG9zc2libGUuICBcbldvcmQgdHlwZTogViAgXG5FeGFtcGxlOiDkvaDlj6/ku6XkvobmiJHlrrbnjqnjgIIgIFxuXG5Xb3JkOiDoh6rnlLEgIFxudHJhbnNsYXRlOiBmcmVlZG9tICBcblBpbnlpbjogesOsecOzdSAgXG5EaWZmaWN1bHR5OiBsZXZlbDEgIFxuRGVmaW5pdGlvbjogVGhlIHN0YXRlIG9mIGJlaW5nIGZyZWU7IHRoZSBwb3dlciBvciByaWdodCB0byBhY3QsIHNwZWFrLCBvciB0aGluayBhcyBvbmUgd2FudHMuICBcbldvcmQgdHlwZTogTiAgXG5FeGFtcGxlOiDoh6rnlLHmmK/pnZ7luLjph43opoHnmoTjgIIgIFxuXG5Xb3JkOiDoh6rlnKggIFxudHJhbnNsYXRlOiBjb21mb3J0YWJsZSAgXG5QaW55aW46IHrDrHrDoGkgIFxuRGlmZmljdWx0eTogbGV2ZWwyICBcbkRlZmluaXRpb246IEluIGEgc3RhdGUgb2YgY29tZm9ydDsgZnJlZSBmcm9tIHdvcnJ5IG9yIGFueGlldHkuICBcbldvcmQgdHlwZTogQWRqICBcbkV4YW1wbGU6IOWcqOWutuijoe+8jOaIkeaEn+WIsOW+iOiHquWcqOOAgiAgXG5cbldvcmQ6IOaOj+W/gyAgXG50cmFuc2xhdGU6IGhlYXJ0IHRvIGhlYXJ0ICBcblBpbnlpbjogdMSBb3jEq24gIFxuRGlmZmljdWx0eTogbGV2ZWwzICBcbkRlZmluaXRpb246IFRvIHNoYXJlIG9yIGV4cHJlc3Mgb25lJ3MgaW5uZXJtb3N0IHRob3VnaHRzIGFuZCBmZWVsaW5ncyBvcGVubHkuICBcbldvcmQgdHlwZTogViAgXG5FeGFtcGxlOiDmiJHlgJHpgLLooYzkuobkuIDmrKHmjo/lv4PnmoToq4foqbHjgIIgIFxuXG5Xb3JkOiDntYLmlrwgIFxudHJhbnNsYXRlOiBmaW5hbGx5ICBcblBpbnlpbjogemjFjW5necO6ICBcbkRpZmZpY3VsdHk6IGJlZ2lubmVyICBcbkRlZmluaXRpb246IEFmdGVyIGEgbG9uZyB0aW1lOyBhdCBsYXN0OyBpbmRpY2F0aW5nIHRoYXQgc29tZXRoaW5nIGhhcyBoYXBwZW5lZCBhZnRlciBhIGRlbGF5IG9yIHdhaXQuICBcbldvcmQgdHlwZTogQWR2ICBcbkV4YW1wbGU6IOaIkee1guaWvOWujOaIkOS6huaIkeeahOS9nOalreOAgiAgIiwKICAgICAgICAicmVmdXNhbCI6IG51bGwKICAgICAgfSwKICAgICAgImxvZ3Byb2JzIjogbnVsbCwKICAgICAgImZpbmlzaF9yZWFzb24iOiAic3RvcCIKICAgIH0KICBdLAogICJ1c2FnZSI6IHsKICAgICJwcm9tcHRfdG9rZW5zIjogNTE1LAogICAgImNvbXBsZXRpb25fdG9rZW5zIjogNDg2MSwKICAgICJ0b3RhbF90b2tlbnMiOiA1Mzc2LAogICAgInByb21wdF90b2tlbnNfZGV0YWlscyI6IHsKICAgICAgImNhY2hlZF90b2tlbnMiOiAwLAogICAgICAiYXVkaW9fdG9rZW5zIjogMAogICAgfSwKICAgICJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjogewogICAgICAicmVhc29uaW5nX3Rva2VucyI6IDAsCiAgICAgICJhdWRpb190b2tlbnMiOiAwLAogICAgICAiYWNjZXB0ZWRfcHJlZGljdGlvbl90b2tlbnMiOiAwLAogICAgICAicmVqZWN0ZWRfcHJlZGljdGlvbl90b2tlbnMiOiAwCiAgICB9CiAgfSwKICAic3lzdGVtX2ZpbmdlcnByaW50IjogImZwXzA3MDViZjg3YzAiCn0K
+  recorded_at: Wed, 27 Nov 2024 06:40:31 GMT
 recorded_with: VCR 6.3.1

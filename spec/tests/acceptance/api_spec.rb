@@ -40,7 +40,7 @@ describe 'Test API routes' do
         .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
         .find("#{ARTIST_NAME} #{TRACK_NAME}")
 
-      LyricLab::Repository::For.klass(LyricLab::Entity::Song).create(song)
+      LyricLab::Service::SaveSong.new.call(song)
 
       get "/api/v1/songs/#{song.origin_id}"
 
@@ -100,18 +100,18 @@ describe 'Test API routes' do
         .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
         .find_n(ARTIST_NAME, 6)
 
-      searched.each { |song| LyricLab::Repository::For.klass(LyricLab::Entity::Song).create(song) }
+      searched.each { |song| LyricLab::Service::SaveSong.new.call(song) }
 
-      searched.map { |song| put "/api/v1/songs/#{song.origin_id}" }
+      searched.map { |song| post "/api/v1/songs/#{song.origin_id}" }
 
       extra_song = LyricLab::Spotify::SongMapper
         .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
         .find('No Party For Cao Dong 山海')
 
-      LyricLab::Repository::For.klass(LyricLab::Entity::Song).create(extra_song)
+      LyricLab::Service::SaveSong.new.call(extra_song)
 
-      put "/api/v1/songs/#{extra_song.origin_id}"
-      put "/api/v1/songs/#{extra_song.origin_id}"
+      post "/api/v1/songs/#{extra_song.origin_id}"
+      post "/api/v1/songs/#{extra_song.origin_id}"
 
       get '/api/v1/recommendations'
 
@@ -133,9 +133,10 @@ describe 'Test API routes' do
         .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
         .find("#{ARTIST_NAME} #{TRACK_NAME}")
 
-      LyricLab::Repository::For.klass(LyricLab::Entity::Song).create(song)
+      LyricLab::Service::SaveSong.new.call(song)
 
       get "/api/v1/vocabularies/#{song.origin_id}"
+      # exit(1)
       get "/api/v1/vocabularies/#{song.origin_id}"
 
       _(last_response.status).must_equal 200

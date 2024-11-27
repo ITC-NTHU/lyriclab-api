@@ -70,8 +70,8 @@ module LyricLab
           routing.on String do |origin_id|
             # update recommendations
             # PUT /api/v1/songs/{origin_id}
-            routing.put do
-              result = Service::Record.new.call(origin_id)
+            routing.post do
+              result = Service::RecordRecommendation.new.call(origin_id)
 
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
@@ -109,7 +109,7 @@ module LyricLab
             # GET /api/v1/vocabularies/{origin_id}
             routing.get do
               result = Service::LoadVocabulary.new.call(origin_id)
-
+              # puts "Result: #{result.inspect}"
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
                 routing.halt failed.http_status_code, failed.to_json

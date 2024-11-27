@@ -5,7 +5,8 @@ require 'dry/monads'
 module LyricLab
   module Service
     # Updates the recommendation record in the db
-    class Record
+    class RecordRecommendation
+      # TODO: @Irina make this a proper dry-transaction file (see other services), is the class name correct?
       include Dry::Monads::Result::Mixin
 
       def call(origin_id)

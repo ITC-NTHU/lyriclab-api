@@ -3,17 +3,34 @@
 require 'json'
 module LyricLab
   module OpenAI
+    GPT_API_KEY = LyricLab::App.config.GPT_API_KEY
     # Data Factory: Vocabulary from lyrics text
     class VocabularyFactory
       include Mixins::WordProcessor
-      def initialize(gpt_api_key, gateway_class = OpenAI::API)
-        openai_api = gateway_class.new(gpt_api_key)
+      def initialize(gateway_class = OpenAI::API)
+        openai_api = gateway_class.new(GPT_API_KEY)
         @gpt = OpenAI::GptWordProcessor.new(openai_api)
       end
 
       def create_unique_words_from_text(text)
         text = Mixins::WordProcessor.convert_to_traditional(text)
         extract_words_from_text(text)
+      end
+
+      def convert_to_traditional(text)
+        Mixins::WordProcessor.convert_to_traditional(text)
+      end
+
+      def extract_separated_text(text)
+        @gpt.extract_separated_text(text)
+      end
+
+      def generate_words_metadata(words)
+        @gpt.get_words_metadata(words)
+      end
+
+      def build_words_from_hash(word_data)
+        Repository::Words.rebuild_many_from_hash(word_data)
       end
 
       def extract_words_from_text(text)

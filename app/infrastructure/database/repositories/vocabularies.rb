@@ -17,7 +17,9 @@ module LyricLab
         Entity::Vocabulary.new(
           id: db_record.id,
           unique_words:,
-          sep_text: db_record.sep_text
+          sep_text: db_record.sep_text,
+          raw_text: db_record.raw_text,
+          vocabulary_factory: OpenAI::VocabularyFactory.new
         )
       end
 
@@ -50,7 +52,7 @@ module LyricLab
           if db_vocabulary_words.include?(word.characters)
             Words.update(word)
             # puts "Word #{word} already exists"
-          else
+          elsif !db_vocabulary.unique_words.map(&:characters).include?(word.characters)
             # puts "add word: #{word.characters}"
             db_vocabulary.add_unique_word(Words.find_or_create(word))
           end

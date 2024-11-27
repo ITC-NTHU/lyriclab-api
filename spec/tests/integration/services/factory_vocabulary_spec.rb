@@ -25,7 +25,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         .find(CORRECT_SONG['title'])
       LyricLab::Service::SaveSong.new.call(song)
       vocabulary_song = LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!.message
-      puts(vocabulary_song.inspect)
+      # puts(vocabulary_song.inspect)
       _(vocabulary_song.vocabulary.unique_words).wont_be_empty
     end
 
