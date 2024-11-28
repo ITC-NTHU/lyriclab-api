@@ -4,7 +4,7 @@ require 'vcr'
 require 'webmock'
 
 # Setting up VCR
-module VcrHelper
+module VcrHelper # rubocop:disable Metrics/ModuleLength
   CASSETTES_FOLDER = 'spec/fixtures/cassettes'
   LRCLIB_CASSETTE = 'lrclib_api'
   SPOTIFY_CASSETTE = 'spotify_api'

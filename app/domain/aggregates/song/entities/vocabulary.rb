@@ -22,8 +22,6 @@ module LyricLab
       option :language_difficulty, proc(&:to_f), optional: true
       # language_difficulty 0: beginner -> 7: level5
 
-      attr_accessor :unique_words, :sep_text
-
       def to_attr_hash
         {
           sep_text:, raw_text:, language_difficulty:

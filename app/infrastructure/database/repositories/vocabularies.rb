@@ -40,7 +40,7 @@ module LyricLab
         # old: Database::VocabularyOrm.find_or_create(entity.to_attr_hash)
       end
 
-      def self.update(entity)
+      def self.update(entity) # rubocop:disable Metrics/AbcSize
         # puts "Updating vocabulary #{entity.id}"
         db_vocabulary = Database::VocabularyOrm.first(id: entity.id)
         db_vocabulary.update(entity.to_attr_hash)

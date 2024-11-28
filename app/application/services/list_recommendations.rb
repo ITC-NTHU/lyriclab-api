@@ -15,7 +15,7 @@ module LyricLab
 
       DB_ERR = 'could not access database'
 
-      def extract_recommendations
+      def extract_recommendations # rubocop:disable Metrics/AbcSize
         Repository::For.klass(Entity::Recommendation).top_searched_songs
           .then { |recommendations| Response::RecommendationsList.new(recommendations) }
           .then { |list| Response::ApiResult.new(status: :ok, message: list) }

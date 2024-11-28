@@ -15,7 +15,7 @@ module LyricLab
       end
 
       # Use in API to parse incoming search query request
-      def call
+      def call # rubocop:disable Metrics/MethodLength
         if JSON.parse(decode(@params['search_query'])).empty?
           Failure(Response::ApiResult.new(status: :cannot_process, message: 'Empty search query'))
         else

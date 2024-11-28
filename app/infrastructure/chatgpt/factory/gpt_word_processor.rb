@@ -49,7 +49,7 @@ module LyricLab
         @openai.chat_response(extract_message)
       end
 
-      def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength
+      def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
         message = [
           { role: 'system', content: '現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字：' },
           { role: 'user', content: "Please identify these words and respond in this format:

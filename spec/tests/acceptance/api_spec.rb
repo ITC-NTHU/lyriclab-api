@@ -96,7 +96,7 @@ describe 'Test API routes' do
     it 'should successfully return recommendations list' do
       search_query = LyricLab::Request::EncodedSearchQuery.to_request('No Party For Cao Dong 山海')
       # puts("search_query: #{search_query.inspect}")
-      result = LyricLab::Service::LoadSearchResults.new.call(search_query)
+      LyricLab::Service::LoadSearchResults.new.call(search_query)
       # puts("no search results#{result.inspect}") if result.failure?
       searched_origin_ids = LyricLab::Database::SongOrm.all.map(&:origin_id)
       # puts "searched_origin_ids: #{searched_origin_ids.inspect}"
@@ -142,7 +142,7 @@ describe 'Test API routes' do
       _(result['title']).must_equal song.title
       _(result['origin_id']).must_equal song.origin_id
 
-      link = LyricLab::Representer::Song.new(
+      LyricLab::Representer::Song.new(
         LyricLab::Representer::OpenStructWithLinks.new
       ).from_json last_response.body
       # _(link.links['get_vocabulary'].href).must_include 'http' TODO: @Irina

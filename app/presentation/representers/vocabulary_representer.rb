@@ -18,7 +18,7 @@ module LyricLab
 
       property :sep_text
       property :language_difficulty
-      collection :unique_words, extend: Representer::Word, class: OpenStruct
+      collection :unique_words, extend: Representer::Word, class: OpenStruct # rubocop:disable Style/OpenStructUse
     end
   end
 end

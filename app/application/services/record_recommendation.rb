@@ -9,7 +9,7 @@ module LyricLab
       include Dry::Transaction
       # TODO: @Irina make this a proper dry-transaction file (see other services)
 
-      def call(origin_id)
+      def call(origin_id) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
         song = Service::LoadSong.new.call(origin_id)
 
         if song.failure?

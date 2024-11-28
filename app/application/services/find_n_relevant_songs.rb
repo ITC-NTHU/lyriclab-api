@@ -25,8 +25,7 @@ module LyricLab
         songs = LyricLab::Spotify::SongMapper.new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
           .find_n(artist_name, number_of_songs)
         if songs.nil?
-          return Failure(Response::ApiResult.new(status: :internal_error,
-                                                 message: 'cannot find song on spotify'))
+          return Failure(Response::ApiResult.new(status: :internal_error, message: 'cannot find song on spotify'))
         end
 
         Success(songs)

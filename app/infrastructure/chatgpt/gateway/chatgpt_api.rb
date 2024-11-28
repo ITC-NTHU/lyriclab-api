@@ -35,7 +35,7 @@ module LyricLab
           post(API_URL, { model: 'gpt-4o-mini', messages: })
         end
 
-        def post(url, payload) # rubocop:disable Metrics/MethodLength
+        def post(url, payload) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
           headers = {
             'Authorization' => "Bearer #{@api_key}",
             'Content-Type'  => 'application/json',

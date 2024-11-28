@@ -31,7 +31,7 @@ module LyricLab
         Failure(Response::ApiResult.new(status: :internal_error, message: 'Validating search query went wrong'))
       end
 
-      def create_entity(input) # rubocop:disable Metrics/MethodLength
+      def create_entity(input) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
         search_results = Spotify::SongMapper
           .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
           .find_n(input, 5)
@@ -60,7 +60,7 @@ module LyricLab
         Failure(Response::ApiResult.new(status: :internal_error, message: 'Check relevancy went wrong'))
       end
 
-      def store_song(input)
+      def store_song(input) # rubocop:disable Metrics/AbcSize
         input[:relevant_songs].each { |song| Repository::For.entity(song).create(song) }
           .then { |songs| Response::SongsList.new(songs) }
           .then { |list| Response::ApiResult.new(status: :created, message: list) }
