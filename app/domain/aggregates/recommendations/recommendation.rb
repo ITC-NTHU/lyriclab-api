@@ -28,10 +28,10 @@ module LyricLab
         }
       end
 
-      def increment_search_counter
-        # TODO: @Irina professor said we can not use our infrastructure from the domain entities directly :O
-        Repository::Recommendations.new.increment_cnt(@origin_id)
-      end
+      # def increment_search_counter
+      #   #  professor said we can not use our infrastructure from the domain entities directly :O
+      #   Repository::Recommendations.new.increment_cnt(@origin_id)
+      # end
     end
   end
 end

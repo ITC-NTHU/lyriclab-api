@@ -158,7 +158,7 @@ curl localhost:9090
 curl -X GET -d search_query='IuWRiuS6lOS6uiI=' http://localhost:9090/api/v1/search_results
 
 # update recommendations db
-curl localhost:9090/api/v1/songs/27FOde2nUw0pFuj7hlPbaS -X PUT
+curl localhost:9090/api/v1/songs/27FOde2nUw0pFuj7hlPbaS -X POST
 
 # get song basic metadata
 curl localhost:9090/api/v1/songs/27FOde2nUw0pFuj7hlPbaS -X GET

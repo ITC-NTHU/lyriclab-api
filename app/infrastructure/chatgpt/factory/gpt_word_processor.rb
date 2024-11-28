@@ -54,7 +54,7 @@ module LyricLab
           { role: 'system', content: '現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字：' },
           { role: 'user', content: "Please identify these words and respond in this format:
             Word:[繁體中文字]
-            translate:[English translation ONLY]
+            Translate:[English translation ONLY]
             Pinyin:[標註聲調的拼音]
             Difficulty:[select one of those：beginner、novice1、novice2、level1、level2、level3、level4, level5]
             Definition:[English detailed translation ONLY]
@@ -71,6 +71,7 @@ module LyricLab
           # puts "Raw response from ChatGPT:"
           # puts response
           response = @openai.chat_response(message)
+          # puts "Raw response from ChatGPT:#{response}"
           words = []
           current_word = {}
 
@@ -81,7 +82,7 @@ module LyricLab
               words << current_word if current_word[:characters]
               current_word = { characters: ::Regexp.last_match(1) }
             when /^Translate:\s*(.+)/
-              current_word[:english] = ::Regexp.last_match(1)
+              # current_word[:english] = ::Regexp.last_match(1)
               current_word[:translation] = ::Regexp.last_match(1) || 'unknown'
             when /^Pinyin:\s*(.+)/
               current_word[:pinyin] = ::Regexp.last_match(1) || 'unknown'

@@ -14,7 +14,7 @@ module LyricLab
 
       def load_song_from_database(input)
         song = Repository::For.klass(Entity::Song).find_origin_id(input)
-        # puts("load song: #{song.inspect}")
+        # puts("load song: #{song.vocabulary.inspect}")
         if song.nil?
           return Failure(Response::ApiResult.new(status: :internal_error,
                                                  message: 'cannot find song in db'))

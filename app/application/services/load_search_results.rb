@@ -47,7 +47,9 @@ module LyricLab
       end
 
       def check_relevancy(input)
+        # puts "check relevancy input: #{input.length}"
         relevant_songs = input[:songs_with_lyrics].select(&:relevant?)
+        # puts "actual relevant songs: #{relevant_songs}"
         if relevant_songs.empty?
           Failure(Response::ApiResult.new(status: :not_found, message: 'songs are not mandarin or have no lyrics'))
         else

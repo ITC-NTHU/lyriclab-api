@@ -34,11 +34,16 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
         .find(CORRECT_SONG['title'])
       LyricLab::Service::SaveSong.new.call(song)
-      LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!.message
+      voc_song = LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!.message
+      _(voc_song.vocabulary.language_difficulty).wont_be_nil
+      _(voc_song.vocabulary.language_difficulty.to_i).wont_equal(-1)
+      # puts "DB vocabulary: #{LyricLab::Database::VocabularyOrm.first.language_difficulty}"
       rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
-
+      # puts "rebuilt.vocabulary.unique_words: #{rebuilt.vocabulary.unique_words.first.inspect}"
+      # puts "rebuilt.vocabulary.language_difficulty: #{rebuilt.vocabulary.language_difficulty}"
       _(rebuilt.vocabulary.unique_words).wont_be_empty
-      _(rebuilt.vocabulary.language_diffculty).wont_be_empty
+      _(rebuilt.vocabulary.language_difficulty).wont_be_nil
+      _(rebuilt.vocabulary.language_difficulty.to_i).wont_equal(-1)
     end
 
     it 'HAPPY: should be able to retrieve song vocabulary from a song with vocabulary by origin_id' do
@@ -46,14 +51,15 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
         .find(CORRECT_SONG['title'])
       LyricLab::Service::SaveSong.new.call(song)
-      LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!.message
+      song = LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!.message
 
       rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
 
       _(rebuilt.vocabulary.unique_words.length).wont_equal(0)
       _(rebuilt.vocabulary.unique_words.length).must_equal(song.vocabulary.unique_words.length)
       _(rebuilt.vocabulary.unique_words.first.characters).must_equal(song.vocabulary.unique_words.first.characters)
-      _(rebuilt.vocabulary.language_diffculty).wont_be_empty
+      _(rebuilt.vocabulary.language_difficulty).wont_be_nil
+      _(rebuilt.vocabulary.language_difficulty.to_i).wont_equal(-1)
     end
 
     it 'HAPPY: should be able to retrieve song vocabulary from a song WITHOUT vocabulary by origin_id' do
@@ -70,7 +76,8 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       _(vocabulary_rebuilt_song.vocabulary.unique_words.first.characters).wont_be_empty
       _(vocabulary_rebuilt_song.vocabulary.sep_text).wont_be_empty
       _(vocabulary_rebuilt_song.vocabulary.raw_text).wont_be_empty
-      _(vocabulary_rebuilt_song.vocabulary.language_diffculty).wont_be_empty
+      _(vocabulary_rebuilt_song.vocabulary.language_difficulty).wont_be_nil
+      _(vocabulary_rebuilt_song.vocabulary.language_difficulty.to_i).wont_equal(-1)
     end
 
     it 'HAPPY: should be able to retrieve empty vocabulary from db populate it and then persist' do
@@ -80,13 +87,15 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       LyricLab::Service::SaveSong.new.call(song)
 
       rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
-      LyricLab::Service::LoadVocabulary.new.call(rebuilt.origin_id).value!.message
 
+      rebuilt = LyricLab::Service::LoadVocabulary.new.call(rebuilt.origin_id).value!.message
       rebuilt2 = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
 
       _(rebuilt2.vocabulary.unique_words.length).wont_equal(0)
       _(rebuilt2.vocabulary.unique_words.length).must_equal(rebuilt.vocabulary.unique_words.length)
       _(rebuilt2.vocabulary.unique_words.first.characters).wont_be_empty
+      _(rebuilt2.vocabulary.language_difficulty.to_i).wont_equal(-1)
+      _(rebuilt2.vocabulary.language_difficulty).wont_be_nil
     end
 
     it 'HAPPY: should be able to update vocabulary entity often without problem' do
@@ -95,7 +104,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         .find(CORRECT_SONG['title'])
       LyricLab::Service::SaveSong.new.call(song)
       rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
-      LyricLab::Service::LoadVocabulary.new.call(rebuilt.origin_id).value!.message
+      rebuilt = LyricLab::Service::LoadVocabulary.new.call(rebuilt.origin_id).value!.message
       # puts rebuilt.vocabulary.unique_words.map(&:language_level)
       LyricLab::Repository::For.entity(rebuilt).update(rebuilt)
       LyricLab::Repository::For.entity(rebuilt).update(rebuilt)
@@ -107,6 +116,8 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       _(rebuilt2.vocabulary.unique_words.length).wont_equal(0)
       _(rebuilt2.vocabulary.unique_words.length).must_equal(rebuilt.vocabulary.unique_words.length)
       _(rebuilt2.vocabulary.unique_words.first.characters).wont_be_empty
+      _(rebuilt2.vocabulary.language_difficulty.to_i).wont_equal(-1)
+      _(rebuilt2.vocabulary.language_difficulty).wont_be_nil
     end
 
     it 'SAD: should not be able to create a song that already exists' do

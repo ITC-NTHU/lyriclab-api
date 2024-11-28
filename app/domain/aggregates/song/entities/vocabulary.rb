@@ -26,7 +26,7 @@ module LyricLab
 
       def to_attr_hash
         {
-          sep_text:, raw_text:
+          sep_text:, raw_text:, language_difficulty:
         }
       end
 
@@ -34,26 +34,34 @@ module LyricLab
         # puts("unique_words: #{@unique_words.inspect}")
         raise 'Vocabulary not populated' if @unique_words.empty?
 
+        # puts "unique words language levels: #{@unique_words.map { |word| word.language_level.strip.to_sym }}"
         diff_sum = @unique_words.map { |word| LANGUAGE_LEVELS.index(word.language_level.strip.to_sym) }.sum
+        # puts "diff_sum: #{diff_sum}, length: #{@unique_words.length}"
         # puts("diff_sum: #{diff_sum}, length: #{@unique_words.length}")
-        @language_difficulty = diff_sum / @unique_words.length
+        @language_difficulty = diff_sum.to_f / @unique_words.length
+        # puts "language_difficulty: #{@language_difficulty}"
       end
 
       def generate_content
+        # puts 'Generating vocabulary content'
         raise 'Vocabulary already populated' if !@unique_words.empty? && sep_text
         raise 'No text to generate vocabulary' if @raw_text.nil?
         raise 'No vocabulary factory' if @vocabulary_factory.nil?
 
         unique_word_strings = separate_words(@raw_text)
-
+        # puts "@raw_text: #{!@raw_text.empty?}"
+        # puts "unique_word_strings: #{unique_word_strings}"
         database_word_objects, api_words = @vocabulary_factory.separate_existing_and_new_words(unique_word_strings)
+        # puts "database_word_objects: #{database_word_objects.first.inspect}"
+        # puts "api_words: #{api_words.first.inspect}"
         api_word_data = @vocabulary_factory.generate_words_metadata(api_words)
-
+        # puts "api_word_data: #{api_word_data.first.inspect}"
         api_word_data.each do |word_data|
           word_data[:language_level] = word_data[:language_level].gsub(/[^a-z0-9]/, '')
         end
         api_word_objects = @vocabulary_factory.build_words_from_hash(api_word_data)
         @unique_words = database_word_objects.concat(api_word_objects)
+        # puts "unique_words: #{@unique_words.first.inspect}"
 
         calculate_language_difficulty_from_words unless @unique_words.empty?
       end

@@ -68,7 +68,7 @@ module LyricLab
 
         routing.on 'songs' do
           routing.on String do |origin_id|
-            # record recommendation update TODO: why is it called songs?
+            # record recommendation update
             # POST /api/v1/songs/{origin_id}
             routing.post do
               result = Service::RecordRecommendation.new.call(origin_id)
