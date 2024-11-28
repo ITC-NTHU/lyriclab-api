@@ -6,6 +6,7 @@ module LyricLab
   module Service
     # Updates the recommendation record in the db
     class RecordRecommendation
+      include Dry::Transaction
       # TODO: @Irina make this a proper dry-transaction file (see other services)
 
       def call(origin_id)
