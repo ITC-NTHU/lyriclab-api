@@ -38,10 +38,12 @@ module LyricLab
       def extract_separated_text(text)
         # should return a list of unique words extracted by ChatGPT
         extract_message = [
-          { role: 'system', content: '你是一個專業的繁體中文老師，可以從文本中提取有意義的繁體中文詞彙單位' },
+          { role: 'system', content: '你是一個專業的繁體中文老師，確保將文本中的每一個字都分開成有意義的詞彙' },
           { role: 'user', content: "Separate all the words in the following text from each other and:
-        reply in this format (words separated by spaces):
-        你好 風 雲 天空 I am cool
+            reply in this format (words separated by spaces and should keep original new line format):
+            城市 滴答 小巷 滴答 沉默 滴答
+            你 的 手 慢熱的 體溫
+            方向 錯亂 天氣預報 不準
 
         #{text}" }
         ]
@@ -53,13 +55,13 @@ module LyricLab
         message = [
           { role: 'system', content: '現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字：' },
           { role: 'user', content: "Please identify these words and respond in this format:
-            Word:[繁體中文字]
-            translate:[English translation ONLY]
-            Pinyin:[標註聲調的拼音]
-            Difficulty:[select one of those：beginner、novice1、novice2、level1、level2、level3、level4, level5]
-            Definition:[English detailed translation ONLY]
-            Word type:[選擇詞性：N,V,Adj,Adv,Pron,Prep,Conj,Num,Int,Classifier,Idiom,Other]
-            Example:[實用的20字內繁體中文例句]
+            Word:繁體中文字
+            translate:English translation ONLY
+            Pinyin:標註聲調的拼音
+            Difficulty:select one of those：beginner、novice1、novice2、level1、level2、level3、level4, level5
+            Definition:English detailed translation ONLY
+            Word type:選擇詞性：N,V,Adj,Adv,Pron,Prep,Conj,Num,Int,Classifier,Idiom,Other
+            Example:實用的20字內繁體中文例句
 
             Focus on words that would be valuable for language learners. Keep example sentences natural and practical.
 
@@ -81,7 +83,7 @@ module LyricLab
               words << current_word if current_word[:characters]
               current_word = { characters: ::Regexp.last_match(1) }
             when /^Translate:\s*(.+)/
-              current_word[:english] = ::Regexp.last_match(1)
+              # current_word[:english] = ::Regexp.last_match(1)
               current_word[:translation] = ::Regexp.last_match(1) || 'unknown'
             when /^Pinyin:\s*(.+)/
               current_word[:pinyin] = ::Regexp.last_match(1) || 'unknown'
@@ -126,13 +128,6 @@ module LyricLab
           word_type: word_data[:word_type] || 'unknown'
         )
       end
-
-      # def combine_definitions(english, chinese)
-      #   parts = []
-      #   parts << english if english
-      #   parts << chinese if chinese
-      #   parts.join(' | ')
-      # end
     end
   end
 end
