@@ -5,33 +5,19 @@ require 'dry-struct'
 
 module LyricLab
   module Entity
-    # Domain Entity for Songs
-    class Recommendation
-      attr_accessor :origin_id, :search_cnt, :artist_name_string, :title
+    # Domain Entity for Recommendations
+    class Recommendation < Dry::Struct
+      include Dry.Types
 
-      # TODO: @Irina maybe make the attributes read only? (code smell) use attr_reader
-      def initialize(title, artist_name_string, search_cnt, origin_id, language_difficulty)
-        @title = title
-        @artist_name_string = artist_name_string
-        @search_cnt = search_cnt
-        @origin_id = origin_id
-        @language_difficulty = language_difficulty
-      end
+      attribute :title, Strict::String
+      attribute :artist_name_string, Strict::String
+      attribute :search_cnt, Strict::Integer
+      attribute :origin_id, Strict::String
+      attribute :language_difficulty, Nominal::Decimal
 
       def to_attr_hash
-        {
-          title: @title,
-          artist_name_string: @artist_name_string,
-          search_cnt: @search_cnt,
-          origin_id: @origin_id,
-          language_difficulty: @language_difficulty
-        }
+        to_hash
       end
-
-      # def increment_search_counter
-      #   #  professor said we can not use our infrastructure from the domain entities directly :O
-      #   Repository::Recommendations.new.increment_cnt(@origin_id)
-      # end
     end
   end
 end

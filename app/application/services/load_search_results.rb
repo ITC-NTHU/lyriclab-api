@@ -31,7 +31,7 @@ module LyricLab
         Failure(Response::ApiResult.new(status: :internal_error, message: 'Validating search query went wrong'))
       end
 
-      def create_entity(input) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
+      def create_entity(input) # rubocop:disable Metrics/MethodLength
         search_results = Spotify::SongMapper
           .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
           .find_n(input, 5)
@@ -41,32 +41,30 @@ module LyricLab
         else
           Success(songs_with_lyrics:)
         end
-      rescue StandardError => e
-        App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
+      rescue StandardError
+        # App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
         Failure(Response::ApiResult.new(status: :internal_error, message: 'Oops something went wrong'))
       end
 
       def check_relevancy(input)
-        # puts "check relevancy input: #{input.length}"
         relevant_songs = input[:songs_with_lyrics].select(&:relevant?)
-        # puts "actual relevant songs: #{relevant_songs}"
         if relevant_songs.empty?
           Failure(Response::ApiResult.new(status: :not_found, message: 'songs are not mandarin or have no lyrics'))
         else
           Success(relevant_songs:)
         end
-      rescue StandardError => e
-        App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
+      rescue StandardError
+        # App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
         Failure(Response::ApiResult.new(status: :internal_error, message: 'Check relevancy went wrong'))
       end
 
-      def store_song(input) # rubocop:disable Metrics/AbcSize
+      def store_song(input)
         input[:relevant_songs].each { |song| Repository::For.entity(song).create(song) }
           .then { |songs| Response::SongsList.new(songs) }
           .then { |list| Response::ApiResult.new(status: :created, message: list) }
           .then { |result| Success(result) }
-      rescue StandardError => e
-        App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
+      rescue StandardError
+        # App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
         Failure(Response::ApiResult.new(status: :internal_error, message: 'having trouble accessing the database'))
       end
     end

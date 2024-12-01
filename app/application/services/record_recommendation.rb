@@ -1,27 +1,35 @@
 # frozen_string_literal: true
 
-require 'dry/monads'
+require 'dry/transaction'
 
 module LyricLab
   module Service
     # Updates the recommendation record in the db
     class RecordRecommendation
       include Dry::Transaction
-      # TODO: @Irina make this a proper dry-transaction file (see other services)
 
-      def call(origin_id) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
+      step :load_song_from_db
+      step :save_recommendation_to_db
+
+      private
+
+      def load_song_from_db(origin_id)
         song = Service::LoadSong.new.call(origin_id)
-
-        if song.failure?
-          return Failure(Response::ApiResult.new(status: :internal_error, message: 'cannot load song from db'))
+        if song.success?
+          Success(song.value!.message)
+        else
+          Failure(Response::ApiResult.new(status: :internal_error, message: 'cannot load song from db'))
         end
+      end
 
-        song = song.value!.message
-        raise 'song has no language_difficulty' if song.vocabulary.language_difficulty.nil?
-
-        recommendation = Entity::Recommendation.new(song.title, song.artist_name_string, 1, song.origin_id,
-                                                    song.vocabulary.language_difficulty)
-        Repository::For.entity(recommendation).create(recommendation) # this is incrementing the search counter
+      def save_recommendation_to_db(song)
+        record = {
+          title: song.title, artist_name_string: song.artist_name_string,
+          search_cnt: 1, origin_id: song.origin_id,
+          language_difficulty: song.vocabulary.language_difficulty
+        }
+        recommendation = Entity::Recommendation.new(record)
+        Repository::For.entity(recommendation).create(recommendation)
         Success(Response::ApiResult.new(status: :ok, message: recommendation))
       rescue StandardError => e
         if e.message == 'song has no language_difficulty'
@@ -32,21 +40,5 @@ module LyricLab
         Failure(Response::ApiResult.new(status: :internal_error, message: 'having trouble updating recommendations'))
       end
     end
-
-    # class RecordRecommendation # start converting code to transaction script
-    #   include Dry::Transaction
-
-    #   step :load_song_from_db
-    #   step :load_recommendation_from_db
-    #   step :save_recommendation_to_db
-
-    #   def load_song_from_db(origin_id)
-    #     song = Service::LoadSong(origin_id)
-
-    #     if (song.failure?)
-    #       raise "Problem Loading the Song"
-    #     end
-    #   end
-    # end
   end
 end

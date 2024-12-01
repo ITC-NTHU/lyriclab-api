@@ -15,8 +15,13 @@ module LyricLab
       def self.rebuild_entity(db_record)
         return nil unless db_record
 
-        Entity::Recommendation.new(db_record.title, db_record.artist_name_string, db_record.search_cnt,
-                                   db_record.origin_id, db_record.language_difficulty)
+        record = {
+          title: db_record.title, artist_name_string: db_record.artist_name_string,
+          search_cnt: db_record.search_cnt, origin_id: db_record.origin_id,
+          language_difficulty: db_record.language_difficulty
+        }
+
+        Entity::Recommendation.new(record)
       end
 
       def self.top_searched_songs
