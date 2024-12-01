@@ -5,14 +5,9 @@ ruby File.read('.ruby-version').strip
 
 # Configuration and Utilities
 gem 'figaro', '~> 1.2'
-gem 'ostruct'
 gem 'pry'
 gem 'rack-test'
 gem 'rake'
-
-# PRESENTATION LAYER
-gem 'multi_json'
-gem 'roar'
 
 # gpt language
 gem 'rest-client', '~> 2.1'
@@ -24,6 +19,9 @@ gem 'logger', '~> 1.6'
 gem 'puma', '~> 6.0'
 gem 'rack-session', '~> 0.3'
 gem 'roda', '~> 3.0'
+gem 'roar', '~> 1.0'
+gem 'multi_json', '~> 1.15'
+gem 'ostruct', '~> 0.0'
 
 # Controllers and services
 gem 'dry-monads', '~> 1.4'

@@ -371,8 +371,8 @@ DEPENDENCIES
   logger (~> 1.6)
   minitest (~> 5.20)
   minitest-rg (~> 5.2)
-  multi_json
-  ostruct
+  multi_json (~> 1.15)
+  ostruct (~> 0.0)
   pg (~> 1.2)
   pry
   puma (~> 6.0)
@@ -386,7 +386,7 @@ DEPENDENCIES
   rerun
   rest-client (~> 2.1)
   rexml (>= 3.3.9)
-  roar
+  roar (~> 1.0)
   roda (~> 3.0)
   roo
   rubocop
