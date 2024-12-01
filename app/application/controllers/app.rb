@@ -44,6 +44,26 @@ module LyricLab
         end
 
         routing.on 'search_results' do
+
+          routing.on String do |ids|
+            routing.get do
+              ids = ids.split('-')
+              result = Service::LoadSongs.new.call(ids)
+
+              if result.failure?
+                failed = Representer::HttpResponse.new(result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(result.value!)
+              response.status = http_response.http_status_code
+
+              Representer::SearchResults.new(
+                result.value!.message
+              ).to_json
+            end
+          end
+
           routing.is do
             # return search results in form of song objects
             # GET /api/v1/search_results?search_query={search_query}
