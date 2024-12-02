@@ -16,6 +16,7 @@ module LyricLab
       def load_song_from_db(origin_id)
         song = Service::LoadSong.new.call(origin_id)
         if song.success?
+
           Success(song.value!.message)
         else
           Failure(Response::ApiResult.new(status: :internal_error, message: 'cannot load song from db'))
@@ -23,6 +24,8 @@ module LyricLab
       end
 
       def save_recommendation_to_db(song)
+        raise 'song has no language_difficulty' if song.vocabulary.language_difficulty.nil?
+
         record = {
           title: song.title, artist_name_string: song.artist_name_string,
           search_cnt: 1, origin_id: song.origin_id,
