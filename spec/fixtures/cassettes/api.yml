@@ -1338,4 +1338,267 @@ http_interactions:
       string: !binary |-
         ewogICJpZCI6ICJjaGF0Y21wbC1BWkpaaFY4RmxXWW1sekpmMnN3Q2d6ZDhYU0NOdSIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczMjk4MDA4OSwKICAibW9kZWwiOiAiZ3B0LTRvLW1pbmktMjAyNC0wNy0xOCIsCiAgImNob2ljZXMiOiBbCiAgICB7CiAgICAgICJpbmRleCI6IDAsCiAgICAgICJtZXNzYWdlIjogewogICAgICAgICJyb2xlIjogImFzc2lzdGFudCIsCiAgICAgICAgImNvbnRlbnQiOiAi56m66ZaTIOaYryDkuIDmoLwg5Y2KIOiqsCDkuZ8g5Ye6IOS4jSDljrsg5bm+IOWvuCDkuZ8g5LiNIOa7v+aEjyDmgJ3mg7Mg5pivIOW+queSsCDmuqvpo70g5oCdIOa3q+aFviDnnJ/nkIYg5bCx5pivIOaykiDnnJ/nkIYg5ZyoIOaIkOS6uiDkuYvliY0g55yfIOaDsyDlhYgg5oiQ54K6IOiHquW3sSDlnKgg5LiW55WMIOavgOa7hSDkuYvliY0g55yfIOaDsyDlhYgg5q+A5ruFIOiHquW3sSDmiJEg5ZCRIOaIkSDnnIvpvYog5pa85pivIOS4gOebtCDlvoAg5LiL5Y67IOaykiDkurog5ZyoIOeciyDkvaAg6JCs54mpIOeahiDmnIkg6Z2IIOmauyDmmK8g5oiRIOWkqiDnqbog6JmbIOWcqCDmiJDkurog5LmL5YmNIOecnyDmg7Mg5YWIIOaIkOeCuiDoh6rlt7Eg5ZyoIOS4lueVjCDmr4Dmu4Ug5LmL5YmNIOecnyDmg7Mg5YWIIOavgOa7hSDoh6rlt7Eg55yf55CGIOWwseaYryDmspIg55yf55CGIOmCoyDoqrAg5oOzIOiBvSDpgqMg6KqwIOaDsyDogb0iLAogICAgICAgICJyZWZ1c2FsIjogbnVsbAogICAgICB9LAogICAgICAibG9ncHJvYnMiOiBudWxsLAogICAgICAiZmluaXNoX3JlYXNvbiI6ICJzdG9wIgogICAgfQogIF0sCiAgInVzYWdlIjogewogICAgInByb21wdF90b2tlbnMiOiAyMjAsCiAgICAiY29tcGxldGlvbl90b2tlbnMiOiAxNzAsCiAgICAidG90YWxfdG9rZW5zIjogMzkwLAogICAgInByb21wdF90b2tlbnNfZGV0YWlscyI6IHsKICAgICAgImNhY2hlZF90b2tlbnMiOiAwLAogICAgICAiYXVkaW9fdG9rZW5zIjogMAogICAgfSwKICAgICJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjogewogICAgICAicmVhc29uaW5nX3Rva2VucyI6IDAsCiAgICAgICJhdWRpb190b2tlbnMiOiAwLAogICAgICAiYWNjZXB0ZWRfcHJlZGljdGlvbl90b2tlbnMiOiAwLAogICAgICAicmVqZWN0ZWRfcHJlZGljdGlvbl90b2tlbnMiOiAwCiAgICB9CiAgfSwKICAic3lzdGVtX2ZpbmdlcnByaW50IjogImZwXzA3MDViZjg3YzAiCn0K
   recorded_at: Sat, 30 Nov 2024 15:21:34 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 02 Dec 2024 10:02:09 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 25f6e3a4-a131-426b-85cd-7ed7324541aa
+      Sp-Trace-Id:
+      - 51934b4b1025bb62
+      X-Envoy-Upstream-Service-Time:
+      - '13'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Mon, 02 Dec 2024 10:02:09 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 02 Dec 2024 10:02:10 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 3988c740-d56e-4cf4-8853-6d476d69ae29
+      Sp-Trace-Id:
+      - 5d5d57eccd60e823
+      X-Envoy-Upstream-Service-Time:
+      - '6'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Mon, 02 Dec 2024 10:02:10 GMT
+- request:
+    method: get
+    uri: https://lrclib.net/api/get?artist_name=Valentin%20Strykalo&track_name=%D0%97%D0%BD%D0%B0%D0%B5%D1%88%D1%8C,%20%D0%A2%D0%B0%D0%BD%D1%8F
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - lrclib.net
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.22.1
+      Date:
+      - Mon, 02 Dec 2024 10:02:12 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3384'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"id":10363205,"name":"Знаешь, Таня","trackName":"Знаешь, Таня","artistName":"Valentin
+        Strykalo","albumName":"Часть чего-то большего","duration":274.0,"instrumental":false,"plainLyrics":"Если
+        Таня думает, что я по ней грущу — она права\nЕсли Таня думает, что я всё упущу
+        — она права\nГде же взять мне смелость, чтоб, чтоб сказать ей пару слов?\n\nЗнаешь,
+        Таня, не передать словами то, как я люблю тебя\nМежду нами такая пропасть,
+        Таня, но я так люблю тебя\n\nНе сплю я, потому что мне никак не удаётся не
+        грустить\nЯ ночью мну подушку, а Таню мнёт другой какой-то тип\nТаня, Таня,
+        объясни: как набраться смелости?\n\nЗнаешь, Таня, не передать словами то,
+        как я люблю тебя (у-у!)\nМежду нами такая пропасть, Таня, но я так люблю тебя\nЯ
+        так люблю тебя\n\nДве семёрки, 90, 100\nТвой мобильный — он такой простой\nПросто
+        звоню и дышу, но я когда-то скажу\nГлавные эти слова\n\nЗнаешь, Таня, не передать
+        словами то, как я люблю тебя (у-у!)\nМежду нами такая пропасть, Таня, но я
+        так люблю тебя\nЯ так люблю тебя","syncedLyrics":"[00:18.76] Если Таня думает,
+        что я по ней грущу — она права\n[00:28.93] \n[00:32.28] Если Таня думает,
+        что я всё упущу — она права\n[00:47.34] Где же взять мне смелость, чтоб, чтоб
+        сказать ей пару слов?\n[00:58.08] Знаешь, Таня, не передать словами то, как
+        я люблю тебя\n[01:13.15] \n[01:17.03] Между нами такая пропасть, Таня, но
+        я так люблю тебя\n[01:31.55] \n[01:47.65] Не сплю я, потому что мне никак
+        не удаётся не грустить\n[01:59.32] \n[02:01.66] Я ночью мну подушку, а Таню
+        мнёт другой какой-то тип\n[02:13.73] \n[02:16.81] Таня, Таня, объясни: как
+        набраться смелости?\n[02:27.95] Знаешь, Таня, не передать словами то, как
+        я люблю тебя (у-у!)\n[02:43.75] \n[02:46.45] Между нами такая пропасть, Таня,
+        но я так люблю тебя\n[02:59.23] Я так люблю тебя\n[03:07.88] Две семёрки,
+        90, 100\n[03:13.77] \n[03:17.34] Твой мобильный — он такой простой\n[03:26.59]
+        Просто звоню и дышу, но я когда-то скажу\n[03:36.82] Главные эти слова\n[03:45.34]
+        Знаешь, Таня, не передать словами то, как я люблю тебя (у-у!)\n[04:04.28]
+        Между нами такая пропасть, Таня, но я так люблю тебя\n[04:17.25] Я так люблю
+        тебя\n[04:19.43] "}'
+  recorded_at: Mon, 02 Dec 2024 10:02:11 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 02 Dec 2024 10:02:13 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 577137bc-7868-4b7b-b719-d50a7348f5dc
+      Sp-Trace-Id:
+      - 6bb05c7fe15e236e
+      X-Envoy-Upstream-Service-Time:
+      - '30'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Mon, 02 Dec 2024 10:02:12 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 02 Dec 2024 10:02:13 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - c51c2e92-f365-4b4d-a24a-fe885a9126bc
+      Sp-Trace-Id:
+      - aa190f6097dc980e
+      X-Envoy-Upstream-Service-Time:
+      - '9'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Mon, 02 Dec 2024 10:02:13 GMT
 recorded_with: VCR 6.3.1
