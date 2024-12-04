@@ -14,9 +14,10 @@ module LyricLab
       attribute :search_cnt, Strict::Integer
       attribute :origin_id, Strict::String
       attribute :language_difficulty, Nominal::Decimal
+      attribute :cover_image_url_small, Strict::String
 
       def to_attr_hash
-        to_hash
+        to_hash.except(:id)
       end
     end
   end

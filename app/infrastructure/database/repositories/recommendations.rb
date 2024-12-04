@@ -16,9 +16,12 @@ module LyricLab
         return nil unless db_record
 
         record = {
-          title: db_record.title, artist_name_string: db_record.artist_name_string,
-          search_cnt: db_record.search_cnt, origin_id: db_record.origin_id,
-          language_difficulty: db_record.language_difficulty
+          title: db_record.title,
+          artist_name_string: db_record.artist_name_string,
+          search_cnt: db_record.search_cnt,
+          origin_id: db_record.origin_id,
+          language_difficulty: db_record.language_difficulty,
+          cover_image_url_small: db_record.cover_image_url_small
         }
 
         Entity::Recommendation.new(record)

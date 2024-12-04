@@ -23,13 +23,16 @@ module LyricLab
         end
       end
 
-      def save_recommendation_to_db(song)
+      def save_recommendation_to_db(song) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
         raise 'song has no language_difficulty' if song.vocabulary.language_difficulty.nil?
 
         record = {
-          title: song.title, artist_name_string: song.artist_name_string,
-          search_cnt: 1, origin_id: song.origin_id,
-          language_difficulty: song.vocabulary.language_difficulty
+          title: song.title,
+          artist_name_string: song.artist_name_string,
+          search_cnt: 1,
+          origin_id: song.origin_id,
+          language_difficulty: song.vocabulary.language_difficulty,
+          cover_image_url_small: song.cover_image_url_small
         }
         recommendation = Entity::Recommendation.new(record)
         Repository::For.entity(recommendation).create(recommendation)
