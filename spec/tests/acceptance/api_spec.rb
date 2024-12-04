@@ -85,6 +85,35 @@ describe 'Test API routes' do
     end
   end
 
+  describe 'Get targeted recommendations route' do
+    before do
+      search_strings = ['No Party for Cao Dong']
+      # , 'Wo bu shi', 'ni hao', 'anquan', 'bangzhu wo']
+      search_strings.each do |search_string|
+        search_query = LyricLab::Request::EncodedSearchQuery.to_request(search_string)
+        LyricLab::Service::LoadSearchResults.new.call(search_query)
+        searched_origin_ids = LyricLab::Database::SongOrm.all.map(&:origin_id)
+        searched_origin_ids.each do |origin_id|
+          get "/api/v1/vocabularies/#{origin_id}"
+          post "/api/v1/songs/#{origin_id}"
+        end
+      end
+    end
+    it 'should successfully return a recommendations list targeted for a language_difficulty' do
+      language_difficulties = %w[1 2 3 4 5 6 7]
+
+      recommendations_list = []
+
+      language_difficulties.each do |language_difficulty|
+        get "/api/v1/recommendations/targeted/?language_difficulty=#{language_difficulty}"
+
+        _(last_response.status).must_equal 200
+        # TODO: check if the correct songs have been returned
+        recommendations_list << JSON.parse(last_response.body)['recommendations']
+      end
+    end
+  end
+
   describe 'Get recommendations route' do
     it 'should successfully return recommendations list' do
       search_query = LyricLab::Request::EncodedSearchQuery.to_request('No Party For Cao Dong 山海')

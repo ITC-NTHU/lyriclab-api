@@ -27,19 +27,40 @@ module LyricLab
 
       routing.on 'api/v1' do # rubocop:disable Metrics/BlockLength
         routing.on 'recommendations' do
-          # return recommendations as array of objects
-          # GET /api/v1/recommendations
-          routing.get do
-            result = Service::ListRecommendations.new.call
+          routing.on 'targeted' do
+            routing.get do
+              # request_body = routing.body.read
+              # json_data = JSON.parse(request_body)
+              language_difficulty = routing.params['language_difficulty']
+              # TODO: write a requests service thingy to verifiy the language_difficulty used
+              recommendations = Service::ListTargetedRecommendations.new.call(language_difficulty)
 
-            if result.failure?
-              failed = Representer::HttpResponse.new(result.failure)
-              routing.halt failed.http_status_code, failed.to_json
+              if recommendations.failure?
+                failed = Representer::HttpResponse.new(recommendations.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(recommendations.value!)
+              response.status = http_response.http_status_code
+              Representer::RecommendationsList.new(recommendations.value!.message).to_json
             end
-            # puts("Recommendations: #{result.value!.message}")
-            http_response = Representer::HttpResponse.new(result.value!)
-            response.status = http_response.http_status_code
-            Representer::RecommendationsList.new(result.value!.message).to_json
+          end
+
+          routing.is do
+            # return recommendations as array of objects
+            # GET /api/v1/recommendations
+            routing.get do
+              result = Service::ListRecommendations.new.call
+
+              if result.failure?
+                failed = Representer::HttpResponse.new(result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+              # puts("Recommendations: #{result.value!.message}")
+              http_response = Representer::HttpResponse.new(result.value!)
+              response.status = http_response.http_status_code
+              Representer::RecommendationsList.new(result.value!.message).to_json
+            end
           end
         end
 

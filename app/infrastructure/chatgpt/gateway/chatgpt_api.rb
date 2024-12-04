@@ -68,9 +68,9 @@ module LyricLab
           error_message = begin
             error_body['error']['message']
           rescue StandardError
-            'Unknown error'
+            App.logger.error('ChatGPT API: Unkown Error')
           end
-          App.logger.error("API Error: #{error_message}")
+          App.logger.error("ChatGPT API Error: #{error_message}")
         end
       end
 
