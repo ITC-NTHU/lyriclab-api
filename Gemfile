@@ -50,6 +50,10 @@ gem 'hirb'
 # gem 'hirb-unicode' # incompatible with new rubocop
 gem 'sequel', '~> 5.0'
 
+# Asynchronous processing
+gem 'aws-sdk-sqs'
+gem 'shoryuken'
+
 # Word Processing
 gem 'csv'
 gem 'rexml', '>= 3.3.9'

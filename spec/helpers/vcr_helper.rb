@@ -4,7 +4,7 @@ require 'vcr'
 require 'webmock'
 
 # Setting up VCR
-module VcrHelper
+module VcrHelper # rubocop:disable Metrics/ModuleLength
   CASSETTES_FOLDER = 'spec/fixtures/cassettes'
   LRCLIB_CASSETTE = 'lrclib_api'
   SPOTIFY_CASSETTE = 'spotify_api'
@@ -14,13 +14,16 @@ module VcrHelper
   API_CASSETTE = 'api'
 
   def self.setup_vcr
-    VCR.configure do |config|
-      config.cassette_library_dir = CASSETTES_FOLDER
-      config.hook_into :webmock
+    VCR.configure do |vcr_config|
+      vcr_config.cassette_library_dir = CASSETTES_FOLDER
+      vcr_config.hook_into :webmock
+      vcr_config.ignore_hosts 'sqs.us-east-1.amazonaws.com'
+      vcr_config.ignore_hosts 'sqs.ap-northeast-1.amazonaws.com'
+      vcr_config.ignore_localhost = true # for acceptance tests
     end
   end
 
-  def self.configure
+  def self.configure # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
     VCR.configure do |config|
       config.cassette_library_dir = CASSETTES_FOLDER
       config.hook_into :webmock

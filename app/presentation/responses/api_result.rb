@@ -3,7 +3,7 @@
 module LyricLab
   module Response
     SUCCESS = Set.new(
-      %i[ok created processing no_content]
+      %i[ok created processing]
     ).freeze
 
     FAILURE = Set.new(

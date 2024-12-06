@@ -27,6 +27,7 @@ module LyricLab
 
       routing.on 'api/v1' do # rubocop:disable Metrics/BlockLength
         routing.on 'recommendations' do
+          # GET /api/v1/recommendations/targeted?language_difficulty={language_difficulty}
           routing.on 'targeted' do
             routing.get do
               # request_body = routing.body.read
@@ -149,6 +150,10 @@ module LyricLab
             # return vocabularies
             # GET /api/v1/vocabularies/{origin_id}
             routing.get do
+              App.configure :production do
+                response.cache_control public: true, max_age: 300
+              end
+
               result = Service::LoadVocabulary.new.call(origin_id)
               # puts "Result: #{result.inspect}"
               if result.failure?
