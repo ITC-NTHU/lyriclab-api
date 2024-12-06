@@ -153,13 +153,21 @@ module LyricLab
               App.configure :production do
                 response.cache_control public: true, max_age: 300
               end
-
-              result = Service::LoadVocabulary.new.call(origin_id)
+              puts 'Vocabularies route'
+              result = Service::GenVocabulary.new.call(origin_id)
               # puts "Result: #{result.inspect}"
+              puts 'Vocabulary is generating...'
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
                 routing.halt failed.http_status_code, failed.to_json
               end
+
+              # result = Service::LoadVocabulary.new.call(origin_id)
+              # puts 'Vocabulary was trying to load'
+              # if result.failure?
+              #   failed = Representer::HttpResponse.new(result.failure)
+              #   routing.halt failed.http_status_code, failed.to_json
+              # end
 
               http_response = Representer::HttpResponse.new(result.value!)
               response.status = http_response.http_status_code
@@ -167,6 +175,8 @@ module LyricLab
               Representer::Song.new(
                 result.value!.message
               ).to_json
+            rescue StandardError => e
+              App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
             end
           end
         end

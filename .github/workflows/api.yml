@@ -52,7 +52,7 @@
             WORD_LIST_FILENAME: ${{ secrets.WORD_LIST_FILENAME }}
             DB_FILENAME: ${{ secrets.DB_FILENAME }}
             API_HOST: ${{ secrets.API_HOST }}
-            CLONE_QUEUE_URL: ${{ secrets.CLONE_QUEUE_URL }}
+            VOCABULARY_QUEUE_URL: ${{ secrets.VOCABULARY_QUEUE_URL }}
             AWS_REGION: ${{ secrets.AWS_REGION }}
             AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
             AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

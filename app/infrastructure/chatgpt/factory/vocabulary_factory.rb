@@ -8,6 +8,7 @@ module LyricLab
     class VocabularyFactory
       include Mixins::WordProcessor
       def initialize(gateway_class = OpenAI::API)
+        # puts "GPT_API_KEY: #{GPT_API_KEY}"
         openai_api = gateway_class.new(GPT_API_KEY)
         @gpt = OpenAI::GptWordProcessor.new(openai_api)
       end

@@ -16,6 +16,7 @@ module LyricLab
       include Roar::Hypermedia
       include Roar::Decorator::HypermediaConsumer
 
+      property :id
       property :sep_text
       property :raw_text
       property :language_difficulty

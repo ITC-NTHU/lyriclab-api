@@ -28,6 +28,10 @@ module LyricLab
         }
       end
 
+      def empty?
+        @unique_words.empty? || @sep_text.empty? || language_difficulty.nil?
+      end
+
       def calculate_language_difficulty_from_words
         # puts("unique_words: #{@unique_words.inspect}")
         raise 'Vocabulary not populated' if @unique_words.empty?

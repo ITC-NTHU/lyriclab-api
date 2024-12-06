@@ -11,6 +11,7 @@ module LyricLab
       def self.rebuild_entity(db_record)
         return nil unless db_record
 
+        # puts("REBUILD LYRICS #{db_record}")
         Entity::Lyrics.new(
           id: db_record.id,
           text: db_record.text,

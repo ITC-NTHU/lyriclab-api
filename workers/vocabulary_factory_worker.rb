@@ -23,16 +23,21 @@ class VocabularyFactoryWorker
   )
 
   include Shoryuken::Worker
-  shoryuken_options queue: config.CLONE_QUEUE_URL, auto_delete: true
+  shoryuken_options queue: config.VOCABULARY_QUEUE_URL, auto_delete: true
 
   def perform(_sqs_msg, request)
     # this probably doesn't work like this
     request_data = JSON.parse(request)
-    data_struct = OpenStruct.new(request_data)
+    raise 'Vocabulary already exists' unless request_data['vocabulary']['unique_words'].empty?
+
+    data_struct = OpenStruct.new(request_data['vocabulary'])
     vocabulary = LyricLab::Repository::Vocabularies.rebuild_entity(data_struct)
     vocabulary.generate_content
+    puts "Vocabulary generated: #{vocabulary.inspect}"
+    LyricLab::Repository::Vocabularies.update(vocabulary)
   rescue StandardError => e
-    App.logger.error "Error: #{e}"
-    App.logger.error e.backtrace.join("\n")
+    puts "Error: #{e}"
+    puts e.backtrace[0...5].join("\n")
+    puts "Input Data was #{data_struct}"
   end
 end

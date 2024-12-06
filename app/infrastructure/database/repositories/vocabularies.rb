@@ -11,9 +11,14 @@ module LyricLab
       def self.rebuild_entity(db_record) # rubocop:disable Metrics/MethodLength
         return nil unless db_record
 
-        unique_words = db_record.unique_words.map do |word|
-          Words.rebuild_entity(word)
-        end
+        unique_words = if db_record.unique_words.nil?
+                         []
+                       else
+                         db_record.unique_words.map do |word|
+                           Words.rebuild_entity(word)
+                         end
+                       end
+        # puts "raw_text: #{db_record.raw_text}"
         Entity::Vocabulary.new(
           id: db_record.id,
           unique_words:,
