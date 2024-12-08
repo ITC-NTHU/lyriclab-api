@@ -65,7 +65,7 @@ module LyricLab
           end
         end
 
-        routing.on 'search_results' do
+        routing.on 'search_results' do # rubocop:disable Metrics/BlockLength
           routing.on String do |ids|
             routing.get do
               ids = ids.split('-')
@@ -90,9 +90,9 @@ module LyricLab
             # GET /api/v1/search_results?search_query={search_query}
             routing.get do
               search_query = Request::EncodedSearchQuery.new(routing.params)
-              puts "Search Query: #{search_query.inspect}"
+              # puts "Search Query: #{search_query.inspect}"
               result = Service::LoadSearchResults.new.call(search_query)
-              puts "Result: #{result.inspect}"
+              # puts "Result: #{result.inspect}"
 
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
@@ -153,10 +153,9 @@ module LyricLab
               App.configure :production do
                 response.cache_control public: true, max_age: 300
               end
-              puts 'Vocabularies route'
               result = Service::GenVocabulary.new.call(origin_id)
               # puts "Result: #{result.inspect}"
-              puts 'Vocabulary is generating...'
+              # puts 'Vocabulary is generating...'
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
                 routing.halt failed.http_status_code, failed.to_json

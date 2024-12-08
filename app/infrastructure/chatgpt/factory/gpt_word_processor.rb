@@ -68,10 +68,9 @@ module LyricLab
 
         begin
           # response = @openai.chat_response(message)
-          # puts "Raw response from ChatGPT:"
-          # puts response
+
           response = @openai.chat_response(message)
-          puts "Raw response from ChatGPT:#{response}"
+          # puts "Raw response from ChatGPT:#{response}"
           words = []
           current_word = {}
 

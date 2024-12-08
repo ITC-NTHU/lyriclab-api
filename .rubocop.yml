@@ -9,7 +9,6 @@ AllCops:
     - '**/*.rb'
   Exclude:
     - '_snippets/**/*'  # Demo files for instruction
-    - 'repostore/**/*'  # CodePraise cloned code repos
 
 require:
   - rubocop-minitest

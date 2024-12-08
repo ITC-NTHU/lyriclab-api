@@ -2,6 +2,7 @@
 
 require_relative '../../../helpers/spec_helper'
 require_relative '../../../helpers/vcr_helper'
+require_relative '../../../helpers/simple_cov_helper'
 
 describe 'Test Spotify API library' do
   before do

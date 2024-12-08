@@ -15,7 +15,7 @@ module LyricLab
       def find_song_db(input_id)
         song = Repository::For.klass(Entity::Song).find_origin_id(input_id)
         Failure(Response::ApiResult.new(status: :not_found, message: 'vocabulary not found')) if song.vocabulary.empty?
-        Success(song)
+        Success(Response::ApiResult.new(status: :ok, message: song))
       rescue StandardError => e
         App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
         Failure(Response::ApiResult.new(status: :internal_error, message: 'cannot access db'))

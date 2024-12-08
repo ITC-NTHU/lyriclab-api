@@ -19,9 +19,9 @@ module LyricLab
       PROCESSING_MSG = 'vocabulary generation in progress'
 
       def find_song_details(input_id)
-        puts 'try to find song in db'
+        # puts 'try to find song in db'
         song = Repository::For.klass(Entity::Song).find_origin_id(input_id)
-        puts "found song: #{song.title}"
+        # puts "found song: #{song.title}"
         Success(song)
       rescue StandardError => e
         App.logger.error("#{e.message}\n#{e.backtrace&.join("\n")}")
@@ -40,7 +40,7 @@ module LyricLab
                                                  message: input_song))
         end
 
-        puts "add song to queue URL: #{App.config.VOCABULARY_QUEUE_URL} Config: #{App.config}"
+        # puts "add song to queue URL: #{App.config.VOCABULARY_QUEUE_URL} Config: #{App.config}"
         Messaging::Queue
           .new(App.config.VOCABULARY_QUEUE_URL, App.config)
           .send(Representer::Song.new(input_song).to_json)

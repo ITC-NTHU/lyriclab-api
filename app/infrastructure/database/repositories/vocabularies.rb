@@ -48,6 +48,8 @@ module LyricLab
       def self.update(entity) # rubocop:disable Metrics/AbcSize
         # puts "Updating vocabulary #{entity.id}"
         db_vocabulary = Database::VocabularyOrm.first(id: entity.id)
+        raise "Vocabulary with id #{entity.id} not found" if db_vocabulary.nil?
+
         db_vocabulary.update(entity.to_attr_hash)
         # puts "update difficulty: #{entity.to_attr_hash}"
         # puts "DB VOCABULARY: #{db_vocabulary.language_difficulty}"
@@ -65,6 +67,9 @@ module LyricLab
             db_vocabulary.add_unique_word(Words.find_or_create(word))
           end
         end
+      rescue StandardError => e
+        App.logger.error(e.message.to_s)
+        nil
       end
 
       def self.find_or_create_song_id(song_id, entity)

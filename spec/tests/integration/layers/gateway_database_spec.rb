@@ -3,6 +3,7 @@
 require_relative '../../../helpers/spec_helper'
 require_relative '../../../helpers/vcr_helper'
 require_relative '../../../helpers/database_helper'
+require_relative '../../../helpers/simple_cov_helper'
 
 describe 'Integration Tests of Spotify API and Database' do
   VcrHelper.setup_vcr

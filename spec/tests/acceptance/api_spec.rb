@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative '../../helpers/simple_cov_helper'
 require_relative '../../helpers/spec_helper'
 require_relative '../../helpers/vcr_helper'
 require_relative '../../helpers/database_helper'
@@ -120,7 +121,19 @@ describe 'Test API routes' do
       LyricLab::Service::LoadSearchResults.new.call(search_query)
       searched_origin_ids = LyricLab::Database::SongOrm.all.map(&:origin_id)
       searched_origin_ids.each do |origin_id|
+        get "/api/v1/songs/#{origin_id}"
+        2.times do
+          sleep(1)
+          print '_'
+        end
         get "/api/v1/vocabularies/#{origin_id}"
+        _(last_response.status).must_equal 202
+        3.times do
+          sleep(1)
+          print('_')
+        end
+        get "/api/v1/vocabularies/#{origin_id}"
+        _(last_response.status).must_equal 201
         post "/api/v1/songs/#{origin_id}"
       end
 
@@ -146,9 +159,14 @@ describe 'Test API routes' do
       LyricLab::Service::SaveSong.new.call(song)
 
       get "/api/v1/vocabularies/#{song.origin_id}"
+      _(last_response.status).must_equal 202
+      3.times do
+        sleep(1)
+        print('_')
+      end
       get "/api/v1/vocabularies/#{song.origin_id}"
 
-      _(last_response.status).must_equal 200
+      _(last_response.status).must_equal 201
 
       result = JSON.parse last_response.body
 
