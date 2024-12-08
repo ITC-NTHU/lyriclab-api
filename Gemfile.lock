@@ -391,7 +391,7 @@ DEPENDENCIES
   minitest-rg (~> 5.2)
   multi_json (~> 1.15)
   ostruct (~> 0.0)
-  pg (~> 1.2)
+  pg
   pry
   puma (~> 6.0)
   rack-cache (~> 1.13)
