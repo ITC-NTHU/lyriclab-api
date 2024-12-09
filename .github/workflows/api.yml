@@ -47,15 +47,14 @@
           env: # define secrets in Github project -> settings -> secrets
             SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
             SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
-            GOOGLE_CLIENT_KEY: ${{ secrets.GOOGLE_CLIENT_KEY }}
-            GPT_API_KEY: ${{ secrets.GPT_API_KEY }}
-            WORD_LIST_FILENAME: ${{ secrets.WORD_LIST_FILENAME }}
             DB_FILENAME: ${{ secrets.DB_FILENAME }}
-            VOCABULARY_QUEUE_URL: ${{ secrets.VOCABULARY_QUEUE_URL }}
-            AWS_REGION: ${{ secrets.AWS_REGION }}
+            GPT_API_KEY: ${{ secrets.GPT_API_KEY }}
+            GOOGLE_CLIENT_KEY: ${{ secrets.GOOGLE_CLIENT_KEY }}
             AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
             AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            AWS_REGION: ${{ secrets.AWS_REGION }}
             VOCABULARY_QUEUE: ${{ secrets.VOCABULARY_QUEUE }}
+            VOCABULARY_QUEUE_URL: ${{ secrets.VOCABULARY_QUEUE_URL }}
           run: |
             rake worker:run:test &
             bundle exec rake spec
