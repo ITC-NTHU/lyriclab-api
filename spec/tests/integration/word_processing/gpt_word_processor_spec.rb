@@ -16,41 +16,41 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
   end
 
   describe 'Extract words' do
-    it 'HAPPY: should extract unique words from Mountain Sea lyrics' do
-      # Simulate GPT response
-      mock_openai = Object.new
-      def mock_openai.chat_response(_messages)
-        "為何\n轉身\n山裡\n大海\n過去\n美好\n結局\n少年\n聲音\n渴望\n未來"
-      end
+    # it 'HAPPY: should extract unique words from Mountain Sea lyrics' do
+    #   # Simulate GPT response
+    #   mock_openai = Object.new
+    #   def mock_openai.chat_response(_messages)
+    #     "為何\n轉身\n山裡\n大海\n過去\n美好\n結局\n少年\n聲音\n渴望\n未來"
+    #   end
 
-      processor = LyricLab::OpenAI::GptWordProcessor.new(mock_openai)
+    #   processor = LyricLab::OpenAI::GptWordProcessor.new(mock_openai)
 
-      # extract unique words from 山海
-      text = '為何 轉身 山裡 大海 過去 美好 結局 少年 聲音 渴望 未來'
-      result = processor.extract_words(text)
+    #   # extract unique words from 山海
+    #   text = '為何 轉身 山裡 大海 過去 美好 結局 少年 聲音 渴望 未來'
+    #   result = processor.extract_words(text) TODO: @Carrie use the new method here
 
-      _(result).must_be_kind_of Array
-      _(result).wont_be_empty
-      _(result).must_include '山裡'
-      _(result).must_include '大海'
-      _(result).must_include '為何'
-      _(result).must_include '結局'
-      _(result).must_include '少年'
-      _(result).must_include '未來'
-    end
+    #   _(result).must_be_kind_of Array
+    #   _(result).wont_be_empty
+    #   _(result).must_include '山裡'
+    #   _(result).must_include '大海'
+    #   _(result).must_include '為何'
+    #   _(result).must_include '結局'
+    #   _(result).must_include '少年'
+    #   _(result).must_include '未來'
+    # end
 
-    it 'HAPPY: should handle empty text' do
-      mock_openai = Object.new
-      def mock_openai.chat_response(_messages)
-        ''
-      end
+    # it 'HAPPY: should handle empty text' do
+    #   mock_openai = Object.new
+    #   def mock_openai.chat_response(_messages)
+    #     ''
+    #   end
 
-      processor = LyricLab::OpenAI::GptWordProcessor.new(mock_openai)
-      result = processor.extract_words('')
+    #   processor = LyricLab::OpenAI::GptWordProcessor.new(mock_openai)
+    #   result = processor.extract_words('') @ Carrie: use the new method here
 
-      _(result).must_be_kind_of Array
-      _(result).must_be_empty
-    end
+    #   _(result).must_be_kind_of Array
+    #   _(result).must_be_empty
+    # end
   end
 
   describe 'Create word entity' do

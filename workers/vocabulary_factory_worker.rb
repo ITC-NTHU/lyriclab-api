@@ -34,6 +34,7 @@ class VocabularyFactoryWorker
 
   def perform(_sqs_msg, request) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
     before
+
     request_data = JSON.parse(request)
     data_struct = OpenStruct.new(request_data['vocabulary'])
     puts "Request data for: #{request_data['title']}"
@@ -44,6 +45,7 @@ class VocabularyFactoryWorker
     vocabulary.generate_content
     after
     puts 'Vocabulary generated'
+    puts "Vocabulary: #{vocabulary.inspect}"
     LyricLab::Repository::Vocabularies.update(vocabulary)
   rescue StandardError => e
     after

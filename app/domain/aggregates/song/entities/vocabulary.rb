@@ -58,12 +58,15 @@ module LyricLab
         # puts "api_words: #{api_words.first.inspect}"
         api_word_data = @vocabulary_factory.generate_words_metadata(api_words)
         # puts "api_word_data: #{api_word_data.first.inspect}"
+        # puts "api_word_data length: #{api_word_data.length}"
         api_word_data.each do |word_data|
           word_data[:language_level] = word_data[:language_level].gsub(/[^a-z0-9]/, '')
         end
         api_word_objects = @vocabulary_factory.build_words_from_hash(api_word_data)
+
         @unique_words = database_word_objects.concat(api_word_objects)
         # puts "unique_words: #{@unique_words.first.inspect}"
+        # puts "unique_words length: #{@unique_words.length}"
 
         calculate_language_difficulty_from_words unless @unique_words.empty?
       end

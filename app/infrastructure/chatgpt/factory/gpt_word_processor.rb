@@ -9,31 +9,31 @@ module LyricLab
         @openai = openai
       end
 
-      def extract_words(text) # rubocop:disable Metrics/MethodLength
-        # should return a list of unique words extracted by ChatGPT
-        extract_message = [
-          { role: 'system', content: '你是一個專業的繁體中文老師，可以從文本中提取有意義的繁體中文詞彙單位' },
-          { role: 'user', content: "Extract every single unique traditional chinese word from the following text:
-        reply in this format (one word per line):
-        你好
-        風
-        雲
-        天空
+      # def extract_words(text) # rubocop:disable Metrics/MethodLength
+      #   # should return a list of unique words extracted by ChatGPT
+      #   extract_message = [
+      #     { role: 'system', content: '你是一個專業的繁體中文老師，可以從文本中提取有意義的繁體中文詞彙單位' },
+      #     { role: 'user', content: "Extract every single unique traditional chinese word from the following text:
+      #   reply in this format (one word per line):
+      #   你好
+      #   風
+      #   雲
+      #   天空
 
-        #{text}" }
-        ]
+      #   #{text}" }
+      #   ]
 
-        response = @openai.chat_response(extract_message)
-        response.split("\n")
+      #   response = @openai.chat_response(extract_message)
+      #   response.split("\n")
 
-        response.split("\n")
-          .map(&:strip)
-          .reject(&:empty?)
-          .uniq
+      #   response.split("\n")
+      #     .map(&:strip)
+      #     .reject(&:empty?)
+      #     .uniq
 
-        # puts "Extracted words:"
-        # puts words
-      end
+      #   # puts "Extracted words:"
+      #   # puts words
+      # end
 
       def extract_separated_text(text)
         # should return a list of unique words extracted by ChatGPT
@@ -67,7 +67,6 @@ module LyricLab
         ]
 
         begin
-          # response = @openai.chat_response(message)
 
           response = @openai.chat_response(message)
           # puts "Raw response from ChatGPT:#{response}"
@@ -99,7 +98,7 @@ module LyricLab
 
           # Add the last word
           words << current_word if current_word[:characters]
-
+          # puts "Words: #{words}"
           # check every word has all the required fields for default
           words.map do |word|
             word[:translation] ||= 'unknown'
@@ -111,6 +110,8 @@ module LyricLab
             word
           end
         end
+
+        # puts "Words after processing: #{words}"
         words
       end
 

@@ -127,6 +127,7 @@ describe 'Test API routes' do
           print '_'
         end
         get "/api/v1/vocabularies/#{origin_id}"
+
         _(last_response.status).must_equal 202
         4.times do
           sleep(1)
