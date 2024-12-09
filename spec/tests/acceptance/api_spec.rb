@@ -128,7 +128,7 @@ describe 'Test API routes' do
         end
         get "/api/v1/vocabularies/#{origin_id}"
         _(last_response.status).must_equal 202
-        3.times do
+        4.times do
           sleep(1)
           print('_')
         end
@@ -160,7 +160,7 @@ describe 'Test API routes' do
 
       get "/api/v1/vocabularies/#{song.origin_id}"
       _(last_response.status).must_equal 202
-      3.times do
+      4.times do
         sleep(1)
         print('_')
       end
