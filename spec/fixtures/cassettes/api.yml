@@ -16675,4 +16675,304 @@ http_interactions:
       encoding: UTF-8
       string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
   recorded_at: Mon, 09 Dec 2024 08:47:48 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 09 Dec 2024 09:17:17 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - e0e88fd0-b41f-40c1-9403-9d5fcf4d9feb
+      Sp-Trace-Id:
+      - 555cccb6d1ef2450
+      X-Envoy-Upstream-Service-Time:
+      - '10'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Mon, 09 Dec 2024 09:17:15 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 09 Dec 2024 09:17:19 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 63ea69b9-d81c-42df-84e0-dc26dd2cf7e0
+      Sp-Trace-Id:
+      - e7351fc63df68f35
+      X-Envoy-Upstream-Service-Time:
+      - '14'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Mon, 09 Dec 2024 09:17:17 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 09 Dec 2024 09:17:20 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 32a392a6-9e52-446e-92b2-9a6f043f31bd
+      Sp-Trace-Id:
+      - 1956b1a1bcd268d9
+      X-Envoy-Upstream-Service-Time:
+      - '13'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Mon, 09 Dec 2024 09:17:18 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 09 Dec 2024 09:17:22 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 61e3a3df-4ecf-4eb1-b433-c6314845612e
+      Sp-Trace-Id:
+      - 36e5636b5e40212c
+      X-Envoy-Upstream-Service-Time:
+      - '11'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Mon, 09 Dec 2024 09:17:20 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 09 Dec 2024 09:17:56 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 24b7757a-76c3-4e06-90ef-85507237494b
+      Sp-Trace-Id:
+      - b0ba4c3d05d36792
+      X-Envoy-Upstream-Service-Time:
+      - '11'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Mon, 09 Dec 2024 09:17:54 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 09 Dec 2024 09:18:08 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 066e6bf1-5f5b-4bae-b147-16069b423d92
+      Sp-Trace-Id:
+      - 1b6a3aaacc6ffd30
+      X-Envoy-Upstream-Service-Time:
+      - '12'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Mon, 09 Dec 2024 09:18:06 GMT
 recorded_with: VCR 6.3.1
