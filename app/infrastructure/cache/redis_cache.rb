@@ -7,7 +7,7 @@ module LyricLab
     # Redis client utility
     class Client
       def initialize(config)
-        @redis = Redis.new(url: config.REDIS_URL)
+        @redis = Redis.new(url: config.REDISCLOUD_URL)
       end
 
       def keys

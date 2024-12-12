@@ -89,6 +89,9 @@ module LyricLab
             # return search results in form of song objects
             # GET /api/v1/search_results?search_query={search_query}
             routing.get do
+              App.configure :production do
+                response.cache_control public: true, max_age: 300
+              end
               search_query = Request::EncodedSearchQuery.new(routing.params)
               # puts "Search Query: #{search_query.inspect}"
               result = Service::LoadSearchResults.new.call(search_query)
