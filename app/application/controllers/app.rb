@@ -6,7 +6,6 @@ require 'roda'
 module LyricLab
   # Web App
   class App < Roda
-    # plugin :sessions, secret: config.SESSION_SECRET
     plugin :halt
     plugin :caching
 
@@ -89,9 +88,10 @@ module LyricLab
             # return search results in form of song objects
             # GET /api/v1/search_results?search_query={search_query}
             routing.get do
-              App.configure :production do
-                response.cache_control public: true, max_age: 300
-              end
+              # App.configure :production do
+              #   response.cache_control public: true, max_age: 300
+              # end
+              response.cache_control public: true, max_age: 120
               search_query = Request::EncodedSearchQuery.new(routing.params)
               # puts "Search Query: #{search_query.inspect}"
               result = Service::LoadSearchResults.new.call(search_query)
@@ -153,9 +153,9 @@ module LyricLab
             # return vocabularies
             # GET /api/v1/vocabularies/{origin_id}
             routing.get do
-              App.configure :production do
-                response.cache_control public: true, max_age: 300
-              end
+              # App.configure :production do
+              #   response.cache_control public: true, max_age: 300
+              # end
               result = Service::GenVocabulary.new.call(origin_id)
               # puts "Result: #{result.inspect}"
               # puts 'Vocabulary is generating...'
