@@ -221,3 +221,21 @@ namespace :queues do
     puts "Error purging queue: #{e}"
   end
 end
+
+namespace :redis do
+  desc 'Ping Redis to check the connection'
+  task :ping => :config do
+    require 'redis'
+    require_relative 'config/environment' # load config info
+    @api = LyricLab::App
+    redis_url = @api.config.REDISCLOUD_URL
+    redis = Redis.new(url: redis_url)
+
+    begin
+      response = redis.ping
+      puts "Redis connection successful: #{response}"
+    rescue StandardError => e
+      puts "Error connecting to Redis: #{e.message}"
+    end
+  end
+end
