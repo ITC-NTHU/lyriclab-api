@@ -129,7 +129,7 @@ describe 'Test API routes' do
         get "/api/v1/vocabularies/#{origin_id}"
 
         _(last_response.status).must_equal 202
-        4.times do
+        3.times do
           sleep(1)
           print('_')
         end
@@ -148,6 +148,10 @@ describe 'Test API routes' do
 
       song = songs.first
       _(song['title']).must_include '山海'
+      # puts songs
+      songs.each do |song|
+        _(song['language_difficulty'].to_f >= 1).must_equal true
+      end
     end
   end
 
@@ -161,7 +165,7 @@ describe 'Test API routes' do
 
       get "/api/v1/vocabularies/#{song.origin_id}"
       _(last_response.status).must_equal 202
-      4.times do
+      3.times do
         sleep(1)
         print('_')
       end

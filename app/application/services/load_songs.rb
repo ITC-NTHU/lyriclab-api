@@ -14,7 +14,9 @@ module LyricLab
 
       def load_songs_from_database(input)
         songs = input.map { |i| Repository::For.klass(Entity::Song).find_origin_id(i) }
-        list = Response::SongsList.new(songs) 
+        songs.reject!(&:nil?)
+        puts "Songs: #{songs.inspect}"
+        list = Response::SongsList.new(songs)
         Success(Response::ApiResult.new(status: :ok, message: list))
       rescue StandardError => e
         App.logger.error e
