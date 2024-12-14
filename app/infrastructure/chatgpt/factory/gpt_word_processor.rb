@@ -49,30 +49,56 @@ module LyricLab
         @openai.chat_response(extract_message)
       end
 
-      def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
+      def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
         message = [
-          { role: 'system', content: '現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字，務必確認文本中的每個詞彙都有被解釋到，確保每個Difficulty都有10個詞彙：' },
-          { role: 'user', content: "Please identify these words and respond in this format:
-            Word:繁體中文字
-            Translate:English translation ONLY
-            Pinyin:標註聲調的拼音
-            Difficulty: select one of those：beginner、novice1、novice2、level1、level2、level3、level4, level5
-            Definition: English detailed translation ONLY
-            Word type:[選擇詞性：N,V,Adj,Adv,Pron,Prep,Conj,Num,Int,Classifier,Idiom,Other]
-            Example:[實用的20字內繁體中文例句]
-
-            Focus on words that would be valuable for language learners. Keep example sentences natural and practical.
-
-            Words: #{input_words}" }
+          { 
+            role: 'system', 
+            content: '你現在是一名繁體中文老師，專門指導外國人學習繁體中文。你的目標是逐一解析文本中的每個詞，並提供結構化的回覆資訊，確保每個詞都完整處理，且格式統一。' 
+          },
+          { 
+            role: 'user', 
+            content: <<~MESSAGE
+              請逐一解析以下文本中的每一個詞，並以如下格式回傳：
+              Word: 繁體中文字
+              Translate: English translation ONLY
+              Pinyin: 標註聲調的拼音
+              Difficulty: 選擇以下之一：beginner、novice1、novice2、level1、level2、level3、level4、level5
+              Definition: English detailed translation ONLY
+              Word type: 選擇詞性：N,V,Adj,Adv,Pron,Prep,Conj,Classifier,Idiom,Other
+              Example: 實用的20字內繁體中文例句
+              
+              請一次完整返回以下文本中每一個詞的解析資訊，並按照詞在文本中出現的順序依次回覆。
+              
+              重要：文本可能較長，但請一次回覆所有詞彙的解析資訊，不要讓我再問第二次。
+              
+              文本如下：
+              #{input_words}
+            MESSAGE
+          }
         ]
+      
 
+        words = []
+      
         begin
-
-          response = @openai.chat_response(message)
-          # puts "Raw response from ChatGPT:#{response}"
-          words = []
+     
+          response = @openai.chat_response(
+            model: "gpt-4o-mini",
+            messages: message,
+            temperature: 1.0,         
+            max_tokens: 15000,        
+            top_p: 1.0,               
+            frequency_penalty: 0.0,   
+            presence_penalty: 0.0     
+          )
+      
+          
+          raise "API doesn't reply" if response.nil? || response.empty?
+      
+         
           current_word = {}
-
+      
+          
           response.split("\n").each do |line|
             line = line.strip
             case line
@@ -80,7 +106,6 @@ module LyricLab
               words << current_word if current_word[:characters]
               current_word = { characters: ::Regexp.last_match(1) }
             when /^Translate:\s*(.+)/
-              # current_word[:english] = ::Regexp.last_match(1)
               current_word[:translation] = ::Regexp.last_match(1) || 'unknown'
             when /^Pinyin:\s*(.+)/
               current_word[:pinyin] = ::Regexp.last_match(1) || 'unknown'
@@ -88,19 +113,17 @@ module LyricLab
               current_word[:language_level] = ::Regexp.last_match(1) || nil
             when /^Definition:\s*(.+)/
               current_word[:definition] = ::Regexp.last_match(1) || 'unknown'
-              # current_word[:translation] = combine_definitions(current_word[:english], ::Regexp.last_match(1))
             when /^Word type:\s*(.+)/
               current_word[:word_type] = ::Regexp.last_match(1) || 'unknown'
             when /^Example:\s*(.+)/
               current_word[:example_sentence] = ::Regexp.last_match(1) || 'No example provided'
             end
           end
-
-          # Add the last word
+      
           words << current_word if current_word[:characters]
-          # puts "Words: #{words}"
-          # check every word has all the required fields for default
-          words.map do |word|
+      
+
+          words.map! do |word|
             word[:translation] ||= 'unknown'
             word[:pinyin] ||= 'unknown'
             word[:language_level] ||= nil
@@ -109,11 +132,16 @@ module LyricLab
             word[:example_sentence] ||= 'No example provided'
             word
           end
-        end
+      
+        rescue StandardError => e
+          puts "analysis error：#{e.message}"
 
-        # puts "Words after processing: #{words}"
+          words = []
+        end
+      
         words
       end
+      
 
       def create_word_entity(word_data)
         Entity::Word.new(
@@ -127,13 +155,6 @@ module LyricLab
           word_type: word_data[:word_type] || 'unknown'
         )
       end
-
-      # def combine_definitions(english, chinese)
-      #   parts = []
-      #   parts << english if english
-      #   parts << chinese if chinese
-      #   parts.join(' | ')
-      # end
     end
   end
 end
