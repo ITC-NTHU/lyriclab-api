@@ -13,7 +13,7 @@ module LyricLab
       extend Dry::Initializer
 
       LANGUAGE_LEVELS = %i[beginner novice1 novice2 level1 level2 level3 level4 level5].freeze
-      LEVEL_MULTIPLIERS = {
+      LEVEL_WEIGHT = {
         beginner: 1,
         novice1: 2,
         novice2: 2,
@@ -52,19 +52,19 @@ module LyricLab
           end.count(true)
         end
 
-        diff_sum_with_multipliers, word_num_with_multipliers = get_word_stats_with_multiplier(level_counts)
+        diff_sum_with_weights, word_num_with_weights = get_word_stats_with_weight(level_counts)
 
-        @language_difficulty = diff_sum_with_multipliers.to_f / word_num_with_multipliers
+        @language_difficulty = diff_sum_with_weights.to_f / word_num_with_weights
       end
 
-      def get_word_stats_with_multiplier(level_counts)
-        diff_sum_with_multipliers = level_counts.reduce(0) do |sum, (level, count)|
-          sum + (LANGUAGE_LEVELS.index(level) * count * LEVEL_MULTIPLIERS[level])
+      def get_word_stats_with_weight(level_counts)
+        diff_sum_with_weights = level_counts.reduce(0) do |sum, (level, count)|
+          sum + (LANGUAGE_LEVELS.index(level) * count * LEVEL_WEIGHT[level])
         end
-        word_num_with_multipliers = level_counts.reduce(0) do |sum, (level, count)|
-          sum + (count * LEVEL_MULTIPLIERS[level])
+        word_num_with_weights = level_counts.reduce(0) do |sum, (level, count)|
+          sum + (count * LEVEL_WEIGHT[level])
         end
-        [diff_sum_with_multipliers, word_num_with_multipliers]
+        [diff_sum_with_weights, word_num_with_weights]
       end
 
       def generate_content # rubocop:disable Metrics/AbcSize
