@@ -15,9 +15,8 @@ module LyricLab
 
       DB_ERR = 'could not access database'
 
-      def extract_recommendations(input)
-        # TODO: change to actually do the thing
-        Repository::For.klass(Entity::Recommendation).top_searched_songs
+      def extract_recommendations(input_language_difficulty)
+        Repository::For.klass(Entity::Recommendation).top_songs_for_difficulty(input_language_difficulty)
           .then { |recommendations| Response::RecommendationsList.new(recommendations) }
           .then { |list| Response::ApiResult.new(status: :ok, message: list) }
           .then { |result| Success(result) }

@@ -174,3 +174,68 @@ namespace :cache do
     end
   end
 end
+
+namespace :queues do
+  task :config do # rubocop:disable Rake/Desc
+    require 'aws-sdk-sqs'
+    require_relative 'config/environment' # load config info
+    @api = LyricLab::App
+    @sqs = Aws::SQS::Client.new(
+      access_key_id: @api.config.AWS_ACCESS_KEY_ID,
+      secret_access_key: @api.config.AWS_SECRET_ACCESS_KEY,
+      region: @api.config.AWS_REGION
+    )
+    @q_name = @api.config.VOCABULARY_QUEUE
+    @q_url = @sqs.get_queue_url(queue_name: @q_name).queue_url
+
+    puts "Environment: #{@api.environment}"
+  end
+
+  desc 'Create SQS queue for worker'
+  task :create => :config do
+    @sqs.create_queue(queue_name: @q_name)
+
+    puts 'Queue created:'
+    puts "  Name: #{@q_name}"
+    puts "  Region: #{@api.config.AWS_REGION}"
+    puts "  URL: #{@q_url}"
+  rescue StandardError => e
+    puts "Error creating queue: #{e}"
+  end
+
+  desc 'Report status of queue for worker'
+  task :status => :config do
+    puts 'Queue info:'
+    puts "  Name: #{@q_name}"
+    puts "  Region: #{@api.config.AWS_REGION}"
+    puts "  URL: #{@q_url}"
+  rescue StandardError => e
+    puts "Error finding queue: #{e}"
+  end
+
+  desc 'Purge messages in SQS queue for worker'
+  task :purge => :config do
+    @sqs.purge_queue(queue_url: @q_url)
+    puts "Queue #{@q_name} purged"
+  rescue StandardError => e
+    puts "Error purging queue: #{e}"
+  end
+end
+
+namespace :redis do
+  desc 'Ping Redis to check the connection'
+  task :ping => :config do
+    require 'redis'
+    require_relative 'config/environment' # load config info
+    @api = LyricLab::App
+    redis_url = @api.config.REDISCLOUD_URL
+    redis = Redis.new(url: redis_url)
+
+    begin
+      response = redis.ping
+      puts "Redis connection successful: #{response}"
+    rescue StandardError => e
+      puts "Error connecting to Redis: #{e.message}"
+    end
+  end
+end

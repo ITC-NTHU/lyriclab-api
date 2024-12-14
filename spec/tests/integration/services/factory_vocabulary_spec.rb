@@ -53,7 +53,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         .find(CORRECT_SONG['title'])
       LyricLab::Service::SaveSong.new.call(song)
       LyricLab::Service::GenVocabulary.new.call(song.origin_id)
-      4.times do
+      3.times do
         sleep(1)
         print('_')
       end
@@ -89,11 +89,14 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
 
       LyricLab::Service::GenVocabulary.new.call(rebuilt.origin_id)
 
-      10.times do
+      3.times do
         sleep(1)
         print('_')
       end
-      rebuilt2 = LyricLab::Service::GenVocabulary.new.call(song.origin_id).value!.message
+      rebuilt2 = LyricLab::Service::GenVocabulary.new.call(song.origin_id)
+      raise 'Test failure' if rebuilt2.failure?
+
+      rebuilt2 = rebuilt2.value!.message
 
       _(rebuilt2.vocabulary.unique_words.length).wont_equal(0)
       _(rebuilt2.vocabulary.unique_words.first.characters).wont_be_empty
@@ -108,7 +111,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
       LyricLab::Service::SaveSong.new.call(song)
       rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
       LyricLab::Service::GenVocabulary.new.call(rebuilt.origin_id)
-      4.times do
+      3.times do
         sleep(1)
         print('_')
       end
