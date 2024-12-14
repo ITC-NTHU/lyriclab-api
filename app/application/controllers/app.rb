@@ -5,7 +5,7 @@ require 'roda'
 
 module LyricLab
   # Web App
-  class App < Roda
+  class App < Roda # rubocop:disable Metrics/ClassLength
     plugin :halt
     plugin :caching
 
@@ -32,7 +32,8 @@ module LyricLab
               # request_body = routing.body.read
               # json_data = JSON.parse(request_body)
               language_difficulty = routing.params['language_difficulty']
-              # TODO: write a requests service thingy to verifiy the language_difficulty used
+              # TODO: @Irina write a requests service thingy to verifiy the language_difficulty used
+              # So it stays in the desired range of 0 to 7 just like we did with the search query
               recommendations = Service::ListTargetedRecommendations.new.call(language_difficulty)
 
               if recommendations.failure?
@@ -117,6 +118,7 @@ module LyricLab
             # record recommendation update
             # POST /api/v1/songs/{origin_id}
             routing.post do
+              # TODO: implement to check whether the recommendations are valid to record (voc already genereated or not?)
               result = Service::RecordRecommendation.new.call(origin_id)
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)

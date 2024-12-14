@@ -93,7 +93,10 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         sleep(1)
         print('_')
       end
-      rebuilt2 = LyricLab::Service::GenVocabulary.new.call(song.origin_id).value!.message
+      rebuilt2 = LyricLab::Service::GenVocabulary.new.call(song.origin_id)
+      raise 'Test failure' if rebuilt2.failure?
+
+      rebuilt2 = rebuilt2.value!.message
 
       _(rebuilt2.vocabulary.unique_words.length).wont_equal(0)
       _(rebuilt2.vocabulary.unique_words.first.characters).wont_be_empty
