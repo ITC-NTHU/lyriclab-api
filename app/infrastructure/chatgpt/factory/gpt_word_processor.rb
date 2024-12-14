@@ -51,7 +51,7 @@ module LyricLab
         response
       end
 
-      def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
+      def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
         message = [
           { role: 'system', content: '現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字，務必確認文本中的每個詞彙都有被解釋到，確保每個Difficulty都有10個詞彙：' },
           { role: 'user', content: "Please identify these words and respond in this format:
@@ -69,6 +69,8 @@ module LyricLab
             Words: #{input_words}" }
         ]
 
+        words = []
+
         begin
           puts "Generate Words metadata prompt: #{message}"
           response = @openai.chat_response(message)
@@ -83,7 +85,6 @@ module LyricLab
               words << current_word if current_word[:characters]
               current_word = { characters: ::Regexp.last_match(1) }
             when /^Translate:\s*(.+)/
-              # current_word[:english] = ::Regexp.last_match(1)
               current_word[:translation] = ::Regexp.last_match(1) || 'unknown'
             when /^Pinyin:\s*(.+)/
               current_word[:pinyin] = ::Regexp.last_match(1) || 'unknown'
@@ -91,7 +92,6 @@ module LyricLab
               current_word[:language_level] = ::Regexp.last_match(1) || nil
             when /^Definition:\s*(.+)/
               current_word[:definition] = ::Regexp.last_match(1) || 'unknown'
-              # current_word[:translation] = combine_definitions(current_word[:english], ::Regexp.last_match(1))
             when /^Word type:\s*(.+)/
               current_word[:word_type] = ::Regexp.last_match(1) || 'unknown'
             when /^Example:\s*(.+)/
@@ -99,11 +99,9 @@ module LyricLab
             end
           end
 
-          # Add the last word
           words << current_word if current_word[:characters]
-          # puts "Words: #{words}"
-          # check every word has all the required fields for default
-          words.map do |word|
+
+          words.map! do |word|
             word[:translation] ||= 'unknown'
             word[:pinyin] ||= 'unknown'
             word[:language_level] ||= nil
@@ -112,9 +110,12 @@ module LyricLab
             word[:example_sentence] ||= 'No example provided'
             word
           end
+        rescue StandardError => e
+          puts "analysis error：#{e.message}"
+
+          words = []
         end
 
-        # puts "Words after processing: #{words}"
         words
       end
 
@@ -130,13 +131,6 @@ module LyricLab
           word_type: word_data[:word_type] || 'unknown'
         )
       end
-
-      # def combine_definitions(english, chinese)
-      #   parts = []
-      #   parts << english if english
-      #   parts << chinese if chinese
-      #   parts.join(' | ')
-      # end
     end
   end
 end
