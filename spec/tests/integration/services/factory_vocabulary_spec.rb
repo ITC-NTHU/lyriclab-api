@@ -94,7 +94,7 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         print('_')
       end
       rebuilt2 = LyricLab::Service::GenVocabulary.new.call(song.origin_id)
-      raise 'Test failure' if rebuilt2.failure?
+      _(rebuilt2.failure?).wont_equal true
 
       rebuilt2 = rebuilt2.value!.message
 

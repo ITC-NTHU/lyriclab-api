@@ -9,7 +9,7 @@ module LyricLab
         @openai = openai
       end
 
-      # def extract_words(text) # rubocop:disable Metrics/MethodLength
+      # def extract_words(text)
       #   # should return a list of unique words extracted by ChatGPT
       #   extract_message = [
       #     { role: 'system', content: '你是一個專業的繁體中文老師，可以從文本中提取有意義的繁體中文詞彙單位' },
@@ -67,7 +67,6 @@ module LyricLab
         ]
 
         begin
-
           response = @openai.chat_response(message)
           # puts "Raw response from ChatGPT:#{response}"
           words = []

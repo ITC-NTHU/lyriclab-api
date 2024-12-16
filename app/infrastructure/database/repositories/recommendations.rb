@@ -23,7 +23,7 @@ module LyricLab
           language_difficulty: db_record.language_difficulty,
           cover_image_url_small: db_record.cover_image_url_small
         }
-        puts "rebuilt recommendations language_difficulty: #{record[:language_difficulty]}"
+        # puts "rebuilt recommendations language_difficulty: #{record[:language_difficulty]}"
         Entity::Recommendation.new(record)
       end
 
@@ -55,7 +55,7 @@ module LyricLab
           puts 'Incrementing search count'
           increment_cnt(entity.origin_id)
         else
-          puts 'Creating new recommendation'
+          # puts 'Creating new recommendation'
           db_recommendation = PersistRecommendation.new(entity).create_recommendation
           rebuild_entity(db_recommendation)
         end
@@ -68,8 +68,8 @@ module LyricLab
         end
 
         def create_recommendation
-          puts "Persisting recommendation raw: #{@entity.language_difficulty}"
-          puts "Persisting recommendation with language_difficulty: #{@entity.to_attr_hash[:language_difficulty]}"
+          # puts "Persisting recommendation raw: #{@entity.language_difficulty}"
+          # puts "Persisting recommendation with language_difficulty: #{@entity.to_attr_hash[:language_difficulty]}"
           Database::RecommendationOrm.create(@entity.to_attr_hash)
         end
       end

@@ -23,7 +23,7 @@ describe 'Test Spotify API library' do
       _(song.title).must_equal CORRECT_SONG['title']
       _(song.artist_name_string).must_equal CORRECT_SONG['artist_name_string']
       _(song.popularity).must_equal CORRECT_SONG['popularity']
-      # _(song.preview_url).must_equal CORRECT_SONG['preview_url'] this url is dynamic
+      _(song.preview_url.nil?).must_equal CORRECT_SONG['preview_url'].nil? # this url is dynamic
       _(song.album_name).must_equal CORRECT_SONG['album_name']
       _(song.cover_image_url_big).must_equal CORRECT_SONG['cover_image_url_big']
       _(song.cover_image_url_medium).must_equal CORRECT_SONG['cover_image_url_medium']
