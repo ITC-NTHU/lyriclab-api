@@ -45,6 +45,7 @@
             AWS_REGION: ${{ secrets.AWS_REGION }}
           run: |
             bundle exec shoryuken sqs purge ${{ secrets.VOCABULARY_QUEUE }}
+            sleep 60
 
         - name: Setup test database
           env: # define secrets in Github project -> settings -> secrets
