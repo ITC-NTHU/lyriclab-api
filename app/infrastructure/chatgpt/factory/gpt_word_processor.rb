@@ -45,8 +45,10 @@ module LyricLab
 
         #{text}" }
         ]
-
-        @openai.chat_response(extract_message)
+        puts "Extracting separated text from: #{text}"
+        response = @openai.chat_response(extract_message)
+        puts "Extracted separated text: #{response}"
+        response
       end
 
       def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
@@ -62,13 +64,15 @@ module LyricLab
             Example:[實用的20字內繁體中文例句]
 
             Focus on words that would be valuable for language learners. Keep example sentences natural and practical.
+            It is important that you send the metadata for all #{input_words.length} in a single response)
 
             Words: #{input_words}" }
         ]
 
         begin
+          puts "Generate Words metadata prompt: #{message}"
           response = @openai.chat_response(message)
-          # puts "Raw response from ChatGPT:#{response}"
+          puts "Generated Words metadata:#{response}"
           words = []
           current_word = {}
 

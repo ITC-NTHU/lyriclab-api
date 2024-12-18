@@ -32,7 +32,7 @@ module LyricLab
         end
 
         def chat(messages)
-          post(API_URL, { model: 'gpt-4o-mini', messages: })
+          post(API_URL, { model: 'gpt-4o', max_tokens: 10_000, messages: })
         end
 
         def post(url, payload) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize

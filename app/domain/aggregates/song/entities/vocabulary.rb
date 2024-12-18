@@ -19,9 +19,9 @@ module LyricLab
         novice2: 2,
         level1: 3,
         level2: 3,
-        level3: 3,
-        level4: 3,
-        level5: 4
+        level3: 5,
+        level4: 6,
+        level5: 7
       }.freeze
 
       option :id, proc(&:to_i), optional: true

@@ -33,7 +33,13 @@ module LyricLab
       end
 
       def self.top_songs_for_difficulty(language_difficulty)
-        range = language_difficulty.to_f - 0.1..language_difficulty.to_f + 0.9
+        range = if language_difficulty == 1
+                  0..1.5
+                elsif language_difficulty == 5
+                  4.5..7
+                else
+                  language_difficulty.to_f - 0.5..language_difficulty.to_f + 0.5
+                end
         db_recommendations = Database::RecommendationOrm.where(language_difficulty: range)
           .order(Sequel.desc(:search_cnt)).limit(5)
         db_recommendations.map { |db_recommendation| rebuild_entity(db_recommendation) }

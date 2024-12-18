@@ -47,7 +47,7 @@ class VocabularyFactoryWorker
     vocabulary.generate_content
     after
     puts 'Vocabulary generated'
-    puts "Vocabulary: #{vocabulary.inspect}"
+    # puts "Vocabulary: #{vocabulary.inspect}"
     LyricLab::Repository::Vocabularies.update(vocabulary)
   rescue StandardError => e
     after
