@@ -122,14 +122,14 @@ describe 'Test API routes' do
       searched_origin_ids = LyricLab::Database::SongOrm.all.map(&:origin_id)
       searched_origin_ids.each do |origin_id|
         get "/api/v1/songs/#{origin_id}"
-        4.times do
+        6.times do
           sleep(1)
           print '_'
         end
         get "/api/v1/vocabularies/#{origin_id}"
 
         _(last_response.status).must_equal 202
-        4.times do
+        6.times do
           sleep(1)
           print('_')
         end
@@ -165,7 +165,7 @@ describe 'Test API routes' do
 
       get "/api/v1/vocabularies/#{song.origin_id}"
       _(last_response.status).must_equal 202
-      4.times do
+      6.times do
         sleep(1)
         print('_')
       end
