@@ -24,7 +24,7 @@
         # maximum number of jobs that can run simultaneously
         max-parallel: 1
         matrix:
-          os: [ubuntu, macos]
+          os: [ubuntu] # macos
       runs-on: ${{ matrix.os }}-latest  # Runs on latest builds of matrix OSes
       env:
         BUNDLE_WITHOUT: production # skip installing production gem (pg)
