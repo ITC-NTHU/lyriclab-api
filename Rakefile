@@ -87,6 +87,11 @@ namespace :worker do
       sh 'RACK_ENV=test bundle exec shoryuken -r ./workers/vocabulary_factory_worker.rb -C ./workers/shoryuken_test.yml'
     end
 
+    desc 'Run the background cloning worker in testing mode for Github Actions'
+    task :gh_test => :config do
+      sh 'RACK_ENV=test bundle exec shoryuken -r ./workers/vocabulary_factory_worker.rb -C ./workers/shoryuken_gh_test.yml'
+    end
+
     desc 'Run the background cloning worker in production mode'
     task :production => :config do
       sh 'RACK_ENV=production bundle exec shoryuken -r ./workers/vocabulary_factory_worker.rb -C ./workers/shoryuken.yml'

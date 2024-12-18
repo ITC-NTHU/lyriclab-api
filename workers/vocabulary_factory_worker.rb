@@ -15,6 +15,7 @@ class VocabularyFactoryWorker
   )
   Figaro.load
   def self.config = Figaro.env
+  ENV['VOCABULARY_QUEUE_URL'] = config.VOCABULARY_QUEUE_URL
 
   Shoryuken.sqs_client = Aws::SQS::Client.new(
     access_key_id: config.AWS_ACCESS_KEY_ID,
@@ -26,6 +27,7 @@ class VocabularyFactoryWorker
     require_relative '../spec/helpers/spec_helper'
     require_relative '../spec/helpers/vcr_helper'
     puts 'Running in test mode'
+    puts config.VOCABULARY_QUEUE_URL
     VcrHelper.setup_vcr
   end
 

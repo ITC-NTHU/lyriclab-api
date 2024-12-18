@@ -56,5 +56,5 @@
             VOCABULARY_QUEUE: ${{ secrets.VOCABULARY_QUEUE }}
             VOCABULARY_QUEUE_URL: ${{ secrets.VOCABULARY_QUEUE_URL }}
           run: |
-            rake worker:run:test &
+            rake worker:run:gh_test &
             bundle exec rake spec
