@@ -52,10 +52,10 @@ module LyricLab
       end
 
       def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
-      def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
-        message = [
-          { role: 'system', content: '現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字，務必確認文本中的每個詞彙都有被解釋到，確保每個Difficulty都有10個詞彙：' },
-          { role: 'user', content: "Please identify these words and respond in this format:
+        def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
+          message = [
+            { role: 'system', content: '現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字，務必確認文本中的每個詞彙都有被解釋到，確保每個Difficulty都有10個詞彙：' },
+            { role: 'user', content: "Please identify these words and respond in this format:
             Word:繁體中文字
             Translate:English translation ONLY
             Pinyin:標註聲調的拼音
@@ -68,71 +68,70 @@ module LyricLab
             It is important that you send the metadata for all #{input_words.length} in a single response)
 
             Words: #{input_words}" }
-        ]
+          ]
 
-        words = []
-
-        begin
-          puts "Generate Words metadata prompt: #{message}"
-          response = @openai.chat_response(message)
-          puts "Generated Words metadata:#{response}"
           words = []
-          current_word = {}
 
+          begin
+            puts "Generate Words metadata prompt: #{message}"
+            response = @openai.chat_response(message)
+            puts "Generated Words metadata:#{response}"
+            words = []
+            current_word = {}
 
-          response.split("\n").each do |line|
-            line = line.strip
-            case line
-            when /^Word:\s*(.+)/
-              words << current_word if current_word[:characters]
-              current_word = { characters: ::Regexp.last_match(1) }
-            when /^Translate:\s*(.+)/
-              current_word[:translation] = ::Regexp.last_match(1) || 'unknown'
-            when /^Pinyin:\s*(.+)/
-              current_word[:pinyin] = ::Regexp.last_match(1) || 'unknown'
-            when /^Difficulty:\s*(.+)/
-              current_word[:language_level] = ::Regexp.last_match(1) || nil
-            when /^Definition:\s*(.+)/
-              current_word[:definition] = ::Regexp.last_match(1) || 'unknown'
-            when /^Word type:\s*(.+)/
-              current_word[:word_type] = ::Regexp.last_match(1) || 'unknown'
-            when /^Example:\s*(.+)/
-              current_word[:example_sentence] = ::Regexp.last_match(1) || 'No example provided'
+            response.split("\n").each do |line|
+              line = line.strip
+              case line
+              when /^Word:\s*(.+)/
+                words << current_word if current_word[:characters]
+                current_word = { characters: ::Regexp.last_match(1) }
+              when /^Translate:\s*(.+)/
+                current_word[:translation] = ::Regexp.last_match(1) || 'unknown'
+              when /^Pinyin:\s*(.+)/
+                current_word[:pinyin] = ::Regexp.last_match(1) || 'unknown'
+              when /^Difficulty:\s*(.+)/
+                current_word[:language_level] = ::Regexp.last_match(1) || nil
+              when /^Definition:\s*(.+)/
+                current_word[:definition] = ::Regexp.last_match(1) || 'unknown'
+              when /^Word type:\s*(.+)/
+                current_word[:word_type] = ::Regexp.last_match(1) || 'unknown'
+              when /^Example:\s*(.+)/
+                current_word[:example_sentence] = ::Regexp.last_match(1) || 'No example provided'
+              end
             end
+
+            words << current_word if current_word[:characters]
+
+            words.map! do |word|
+              word[:translation] ||= 'unknown'
+              word[:pinyin] ||= 'unknown'
+              word[:language_level] ||= nil
+              word[:definition] ||= 'unknown'
+              word[:word_type] ||= 'unknown'
+              word[:example_sentence] ||= 'No example provided'
+              word
+            end
+          rescue StandardError => e
+            puts "analysis error：#{e.message}"
+
+            words = []
           end
 
-          words << current_word if current_word[:characters]
-
-          words.map! do |word|
-            word[:translation] ||= 'unknown'
-            word[:pinyin] ||= 'unknown'
-            word[:language_level] ||= nil
-            word[:definition] ||= 'unknown'
-            word[:word_type] ||= 'unknown'
-            word[:example_sentence] ||= 'No example provided'
-            word
-          end
-        rescue StandardError => e
-          puts "analysis error：#{e.message}"
-
-          words = []
+          words
         end
 
-        words
-      end
-
-
-      def create_word_entity(word_data)
-        Entity::Word.new(
-          id: nil,
-          characters: word_data[:characters],
-          pinyin: word_data[:pinyin] || 'unknown',
-          translation: word_data[:translation] || 'unknown',
-          example_sentence: word_data[:example_sentence] || 'No example provided',
-          language_level: word_data[:language_level] || nil,
-          definition: word_data[:definition] || 'No definition provided',
-          word_type: word_data[:word_type] || 'unknown'
-        )
+        def create_word_entity(word_data)
+          Entity::Word.new(
+            id: nil,
+            characters: word_data[:characters],
+            pinyin: word_data[:pinyin] || 'unknown',
+            translation: word_data[:translation] || 'unknown',
+            example_sentence: word_data[:example_sentence] || 'No example provided',
+            language_level: word_data[:language_level] || nil,
+            definition: word_data[:definition] || 'No definition provided',
+            word_type: word_data[:word_type] || 'unknown'
+          )
+        end
       end
     end
   end

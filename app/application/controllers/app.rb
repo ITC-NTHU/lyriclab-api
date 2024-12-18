@@ -160,10 +160,10 @@ module LyricLab
               request_id = [request.env, request.path, Time.now.to_f].hash
 
               result = Service::GenVocabulary.new.call(
-                                                       origin_id: origin_id, 
-                                                       request_id: request_id
-                                                      )
-              
+                origin_id: origin_id,
+                request_id: request_id
+              )
+
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
                 routing.halt failed.http_status_code, failed.to_json
