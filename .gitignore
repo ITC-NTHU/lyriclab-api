@@ -5,4 +5,5 @@ coverage/*
 vendor/*
 *.db
 .bundle/*
+_cache/
 _cache/*

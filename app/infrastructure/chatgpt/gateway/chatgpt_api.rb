@@ -32,7 +32,7 @@ module LyricLab
         end
 
         def chat(messages)
-          post(API_URL, { model: 'gpt-4o', max_tokens: 10_000, messages: })
+          post(API_URL, { model: 'gpt-4o-mini', max_tokens: 16_383, messages: })
         end
 
         def post(url, payload) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
@@ -53,7 +53,7 @@ module LyricLab
             raise(response.error, "HTTP #{response.code}: #{response.body}") unless response.successful?
           end.parse
         rescue RestClient::ExceptionWithResponse => e
-          App.logger.error("REST client error: #{e.response}")
+          App.logger.error("REST client error: #{e.inspect}#{e.response}")
           handle_api_error(e.response)
           nil
         rescue StandardError => e
@@ -106,32 +106,3 @@ module LyricLab
     end
   end
 end
-
-# secret.yaml for api
-# secrets_path = File.expand_path('../../../../../config/secrets.yml', __FILE__)
-# secrets = YAML.load_file(secrets_path)
-# environment = ENV['RACK_ENV'] || 'development'
-
-# API_KEY = if secrets.is_a?(Hash) && secrets.key?(environment)
-#   secrets[environment]['OPENAI_API_KEY']
-# else
-#   secrets['OPENAI_API_KEY']
-# end
-
-# api_client = LyricLab::OpenAI.new(API_KEY)
-# # example
-# messages = [
-#   { role: 'user', content: '好不容易歌詞' }
-# ]
-
-# response = api_client.chat_response(messages)
-
-# if response
-#   output_path = File.expand_path('../../../../../spec/fixtures/chat_response.yml', __FILE__)
-
-#   # puts "Writing response to: #{output_path}"
-
-#   File.open(output_path, 'w') do |file|
-#     file.write({ response: response }.to_yaml)
-#   end
-#     end
