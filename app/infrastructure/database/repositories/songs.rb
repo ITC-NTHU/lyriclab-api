@@ -38,11 +38,8 @@ module LyricLab
       end
 
       def self.update(entity)
-        # puts "Updating song #{entity.id}"
         db_song = Database::SongOrm.first(id: entity.id)
-        # puts "DB SONG: #{db_song}"
         db_song.update(entity.to_attr_hash)
-        # puts "updated DB SONG: #{db_song}"
         Vocabularies.update(entity.vocabulary)
         Lyrics.update(entity.lyrics)
       end

@@ -22,6 +22,7 @@ gem 'puma', '~> 6.0'
 gem 'rack-session', '~> 0.3'
 gem 'roar', '~> 1.0'
 gem 'roda', '~> 3.0'
+gem "uri", "~> 0.13"
 
 # Controllers and services
 gem 'dry-monads', '~> 1.4'
@@ -53,6 +54,7 @@ gem 'sequel', '~> 5.0'
 # Asynchronous processing
 gem 'aws-sdk-sqs'
 gem 'shoryuken'
+gem 'faye', '~> 1.4'
 
 # Word Processing
 gem 'csv'
