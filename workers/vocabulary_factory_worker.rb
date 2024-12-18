@@ -3,6 +3,8 @@
 require_relative '../require_app'
 require_relative 'gen_voc_monitor'
 require_relative 'job_reporter'
+require_relative 'gen_voc_monitor'
+require_relative 'job_reporter'
 require_app
 
 require 'figaro'
@@ -18,7 +20,21 @@ module GenerateVocabulary
     )
     Figaro.load
     def self.config = Figaro.env
+module GenerateVocabulary
+  class VocabularyFactoryWorker
+    # Environment variables setup
+    Figaro.application = Figaro::Application.new(
+      environment: ENV['RACK_ENV'] || 'development',
+      path: File.expand_path('config/secrets.yml')
+    )
+    Figaro.load
+    def self.config = Figaro.env
 
+    Shoryuken.sqs_client = Aws::SQS::Client.new(
+      access_key_id: config.AWS_ACCESS_KEY_ID,
+      secret_access_key: config.AWS_SECRET_ACCESS_KEY,
+      region: config.AWS_REGION
+    )
     Shoryuken.sqs_client = Aws::SQS::Client.new(
       access_key_id: config.AWS_ACCESS_KEY_ID,
       secret_access_key: config.AWS_SECRET_ACCESS_KEY,
@@ -31,10 +47,20 @@ module GenerateVocabulary
       puts 'Running in test mode'
       VcrHelper.setup_vcr
     end
+    if config.RACK_ENV == 'test'
+      require_relative '../spec/helpers/spec_helper'
+      require_relative '../spec/helpers/vcr_helper'
+      puts 'Running in test mode'
+      VcrHelper.setup_vcr
+    end
 
     include Shoryuken::Worker
     shoryuken_options queue: config.VOCABULARY_QUEUE_URL, auto_delete: true
+    include Shoryuken::Worker
+    shoryuken_options queue: config.VOCABULARY_QUEUE_URL, auto_delete: true
 
+    def perform(_sqs_msg, request) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
+      before
     def perform(_sqs_msg, request) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
       before
 

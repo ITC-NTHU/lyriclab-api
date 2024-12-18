@@ -52,6 +52,7 @@ module LyricLab
       end
 
       def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
+      def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
         message = [
           { role: 'system', content: '現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字，務必確認文本中的每個詞彙都有被解釋到，確保每個Difficulty都有10個詞彙：' },
           { role: 'user', content: "Please identify these words and respond in this format:
@@ -77,6 +78,7 @@ module LyricLab
           puts "Generated Words metadata:#{response}"
           words = []
           current_word = {}
+
 
           response.split("\n").each do |line|
             line = line.strip
@@ -118,6 +120,7 @@ module LyricLab
 
         words
       end
+
 
       def create_word_entity(word_data)
         Entity::Word.new(
