@@ -72,6 +72,7 @@ module LyricLab
         raise 'No text to generate vocabulary' if @raw_text.nil?
         raise 'No vocabulary factory' if @vocabulary_factory.nil?
 
+        @raw_text = @vocabulary_factory.convert_to_traditional(@raw_text)
         yield 'extracting' if block_given?
         unique_word_strings = separate_words(@raw_text)
         yield 'filtering' if block_given?
