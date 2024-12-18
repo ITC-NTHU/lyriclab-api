@@ -94,9 +94,7 @@ module LyricLab
               # end
               response.cache_control public: true, max_age: 120
               search_query = Request::EncodedSearchQuery.new(routing.params)
-              # puts "Search Query: #{search_query.inspect}"
               result = Service::LoadSearchResults.new.call(search_query)
-              # puts "Result: #{result.inspect}"
 
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
@@ -158,9 +156,14 @@ module LyricLab
               # App.configure :production do
               #   response.cache_control public: true, max_age: 300
               # end
-              result = Service::GenVocabulary.new.call(origin_id)
-              # puts "Result: #{result.inspect}"
-              # puts 'Vocabulary is generating...'
+
+              request_id = [request.env, request.path, Time.now.to_f].hash
+
+              result = Service::GenVocabulary.new.call(
+                                                       origin_id: origin_id, 
+                                                       request_id: request_id
+                                                      )
+              
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
                 routing.halt failed.http_status_code, failed.to_json
@@ -175,6 +178,8 @@ module LyricLab
 
               http_response = Representer::HttpResponse.new(result.value!)
               response.status = http_response.http_status_code
+
+              puts Representer::Song.new(result.value!.message).to_json
 
               Representer::Song.new(
                 result.value!.message

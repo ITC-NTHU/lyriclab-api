@@ -72,10 +72,14 @@ module LyricLab
         raise 'No text to generate vocabulary' if @raw_text.nil?
         raise 'No vocabulary factory' if @vocabulary_factory.nil?
 
+        yield 'extracting' if block_given?
         unique_word_strings = separate_words(@raw_text)
+        yield 'filtering' if block_given?
         database_word_objects, api_words = @vocabulary_factory.separate_existing_and_new_words(unique_word_strings)
+        yield 'processing' if block_given?
         api_word_data = @vocabulary_factory.generate_words_metadata(api_words)
         api_word_data = clean_difficulty_levels(api_word_data)
+        yield 'finalizing' if block_given?
         api_word_objects = @vocabulary_factory.build_words_from_hash(api_word_data)
 
         @unique_words = database_word_objects.concat(api_word_objects)

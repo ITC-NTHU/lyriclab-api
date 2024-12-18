@@ -1,76 +1,92 @@
 # frozen_string_literal: true
 
 require_relative '../require_app'
+require_relative 'gen_voc_monitor'
+require_relative 'job_reporter'
 require_app
 
 require 'figaro'
 require 'shoryuken'
 
 # Shoryuken worker class to clone repos in parallel
-class VocabularyFactoryWorker
-  # Environment variables setup
-  Figaro.application = Figaro::Application.new(
-    environment: ENV['RACK_ENV'] || 'development',
-    path: File.expand_path('config/secrets.yml')
-  )
-  Figaro.load
-  def self.config = Figaro.env
-  ENV['VOCABULARY_QUEUE_URL'] = config.VOCABULARY_QUEUE_URL
+module GenerateVocabulary
+  class VocabularyFactoryWorker
+    # Environment variables setup
+    Figaro.application = Figaro::Application.new(
+      environment: ENV['RACK_ENV'] || 'development',
+      path: File.expand_path('config/secrets.yml')
+    )
+    Figaro.load
+    def self.config = Figaro.env
 
-  Shoryuken.sqs_client = Aws::SQS::Client.new(
-    access_key_id: config.AWS_ACCESS_KEY_ID,
-    secret_access_key: config.AWS_SECRET_ACCESS_KEY,
-    region: config.AWS_REGION
-  )
+    Shoryuken.sqs_client = Aws::SQS::Client.new(
+      access_key_id: config.AWS_ACCESS_KEY_ID,
+      secret_access_key: config.AWS_SECRET_ACCESS_KEY,
+      region: config.AWS_REGION
+    )
 
-  if config.RACK_ENV == 'test'
-    require_relative '../spec/helpers/spec_helper'
-    require_relative '../spec/helpers/vcr_helper'
-    puts 'Running in test mode'
-    puts config.VOCABULARY_QUEUE_URL
-    VcrHelper.setup_vcr
-  end
+    if config.RACK_ENV == 'test'
+      require_relative '../spec/helpers/spec_helper'
+      require_relative '../spec/helpers/vcr_helper'
+      puts 'Running in test mode'
+      VcrHelper.setup_vcr
+    end
 
-  include Shoryuken::Worker
-  shoryuken_options queue: config.VOCABULARY_QUEUE_URL, auto_delete: true
+    include Shoryuken::Worker
+    shoryuken_options queue: config.VOCABULARY_QUEUE_URL, auto_delete: true
 
-  def perform(_sqs_msg, request) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
-    before
+    def perform(_sqs_msg, request) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
+      before
 
-    request_data = JSON.parse(request)
-    data_struct = OpenStruct.new(request_data['vocabulary'])
-    puts "Request data for: #{request_data['title']}"
+      # request_data = JSON.parse(request)
+      # data_struct = OpenStruct.new(request_data['vocabulary'])
+      # puts "Request data for: #{request_data['title']}"
 
-    check_eligibility(request_data)
+      # check_eligibility(request_data)
 
-    vocabulary = LyricLab::Repository::Vocabularies.rebuild_entity(data_struct)
-    vocabulary.generate_content
-    after
-    puts 'Vocabulary generated'
-    # puts "Vocabulary: #{vocabulary.inspect}"
-    LyricLab::Repository::Vocabularies.update(vocabulary)
-  rescue StandardError => e
-    after
-    puts "Error: #{e}"
-    puts e.backtrace[0...6].join("\n")
-    puts "Input Data was #{data_struct.to_s[0..100]}"
-  end
+      # vocabulary = LyricLab::Repository::Vocabularies.rebuild_entity(data_struct)
+      # vocabulary.generate_content
+      # after
+      # puts 'Vocabulary generated'
+      # puts "Vocabulary: #{vocabulary.inspect}"
+      # LyricLab::Repository::Vocabularies.update(vocabulary)
 
-  def before
-    VcrHelper.configure_vcr_for_gpt if VocabularyFactoryWorker.config.RACK_ENV == 'test'
-  end
+      job = JobReporter.new(request, VocabularyFactoryWorker.config)
 
-  def after
-    VcrHelper.eject_vcr if VocabularyFactoryWorker.config.RACK_ENV == 'test'
-  end
+      job.report(GenerateMonitor.starting_percent)
 
-  def check_eligibility(request_data)
-    db_vocab = LyricLab::Database::VocabularyOrm.first(id: request_data['vocabulary']['id'])
+      vocabulary = LyricLab::Repository::Vocabularies.rebuild_entity(job.song.vocabulary)
+      vocabulary.generate_content do |progress|
+        job.report GenerateMonitor.progress(progress)
+      end
 
-    vocabulary_exists = !db_vocab.nil?
-    raise 'Vocabulary does not exsist in db' unless vocabulary_exists
-    return if request_data['vocabulary']['unique_words'].empty? && db_vocab.unique_words.empty?
+      after
 
-    raise 'Vocabulary already exists'
+      LyricLab::Repository::Vocabularies.update(vocabulary)
+
+      # Keep sending finished status to any latecoming subscribers
+      job.report_each_second(7) { GenerateMonitor.finished_percent }
+    rescue StandardError => e
+      after
+      puts "Error: #{e}"
+    end
+
+    def before
+      VcrHelper.configure_vcr_for_gpt if VocabularyFactoryWorker.config.RACK_ENV == 'test'
+    end
+
+    def after
+      VcrHelper.eject_vcr if VocabularyFactoryWorker.config.RACK_ENV == 'test'
+    end
+
+    def check_eligibility(request_data)
+      db_vocab = LyricLab::Database::VocabularyOrm.first(id: request_data['vocabulary']['id'])
+
+      vocabulary_exists = !db_vocab.nil?
+      raise 'Vocabulary does not exsist in db' unless vocabulary_exists
+      return if request_data['vocabulary']['unique_words'].empty? && db_vocab.unique_words.empty?
+
+      raise 'Vocabulary already exists'
+    end
   end
 end
