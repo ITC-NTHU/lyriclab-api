@@ -27,7 +27,7 @@ module LyricLab
       end
 
       def generate_words_metadata(words)
-        @gpt.get_words_metadata(words)
+        @gpt.get_many_words_metadata(words)
       end
 
       def build_words_from_hash(word_data)

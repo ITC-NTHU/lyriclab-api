@@ -51,6 +51,16 @@ module LyricLab
         response
       end
 
+      require 'concurrent'
+
+      def get_many_words_metadata(input_words)
+        promises = input_words.each_slice(30).map do |words_slice|
+          Concurrent::Promise.execute { get_words_metadata(words_slice) }
+        end
+
+        promises.flat_map(&:value)
+      end
+
       def get_words_metadata(input_words) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
         message = [
           { role: 'system', content: '現在你是一名繁體中文老師，要指導外國人學習中文，分析以下文字，務必確認文本中的每個詞彙都有被解釋到，確保每個Difficulty都有10個詞彙：' },
@@ -64,7 +74,7 @@ module LyricLab
             Example:[實用的20字內繁體中文例句]
 
             Focus on words that would be valuable for language learners. Keep example sentences natural and practical.
-            It is important that you send the metadata for all #{input_words.length} or at least 50 words in a single response)
+            It is important that you send the metadata for all #{input_words.length} in a single response)
 
             Words: #{input_words}" }
         ]

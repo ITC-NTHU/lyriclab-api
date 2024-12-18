@@ -401,6 +401,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk-sqs
+  concurrent-ruby (~> 1.1)
   csv
   dry-monads (~> 1.4)
   dry-struct (~> 1.6)
