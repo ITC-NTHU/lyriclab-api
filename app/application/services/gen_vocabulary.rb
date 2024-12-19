@@ -31,7 +31,7 @@ module LyricLab
                   message: { request_id: input[:request_id], msg: PROCESSING_MSG }
                 ))
       rescue StandardError => e
-        log_error(e)
+        App.logger.error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR))
       end
 
