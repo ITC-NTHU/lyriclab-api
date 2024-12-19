@@ -64,6 +64,7 @@
             AWS_REGION: ${{ secrets.AWS_REGION }}
             VOCABULARY_QUEUE: ${{ secrets.VOCABULARY_QUEUE }}
             VOCABULARY_QUEUE_URL: ${{ secrets.VOCABULARY_QUEUE_URL }}
+            API_HOST: ${{ secrets.API_HOST }}
           run: |
             rake worker:run:gh_test &
             bundle exec rake spec
