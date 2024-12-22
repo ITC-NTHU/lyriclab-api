@@ -8,11 +8,11 @@ require_relative '../../../helpers/simple_cov_helper'
 describe 'Integration test of word processing and GPT to test vocabulary functions' do
   VcrHelper.setup_vcr
   before do
-    # VcrHelper.configure_vcr_for_gpt
+    VcrHelper.configure_vcr_for_gpt
   end
 
   after do
-    # VcrHelper.eject_vcr
+    VcrHelper.eject_vcr
   end
 
   describe 'Retrieve song data, generate Vocabulary' do
@@ -58,9 +58,9 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         origin_id: song.origin_id,
         request_id: request_id
       )
-      60.times do
+      90.times do
         sleep(1)
-        print('_')
+        # print('_')
       end
       rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
 
@@ -99,9 +99,9 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         request_id: request_id
       )
 
-      60.times do
+      90.times do
         sleep(1)
-        print('_')
+        # print('_')
       end
       # request_id = [Time.now.to_f].hash
       request_id = Time.now.to_f.hash
@@ -131,9 +131,9 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         origin_id: rebuilt.origin_id,
         request_id: request_id
       )
-      60.times do
+      90.times do
         sleep(1)
-        print('_')
+        # print('_')
       end
       rebuilt = LyricLab::Service::LoadVocabulary.new.call(song.origin_id).value!.message
       # puts rebuilt.vocabulary.unique_words.map(&:language_level)
