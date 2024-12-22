@@ -67,25 +67,17 @@ module LyricLab
         [diff_sum_with_weights, word_num_with_weights]
       end
 
-      def generate_content # rubocop:disable Metrics/AbcSize
-        raise 'Vocabulary already populated' if !@unique_words.empty? && sep_text
-        raise 'No text to generate vocabulary' if @raw_text.nil?
-        raise 'No vocabulary factory' if @vocabulary_factory.nil?
-
-        @raw_text = @vocabulary_factory.convert_to_traditional(@raw_text)
+      def generate_content
+        validate_content_generation
+        process_raw_text
         yield 'extracting' if block_given?
-        unique_word_strings = separate_words(@raw_text)
+        unique_word_strings = extract_unique_words
         yield 'filtering' if block_given?
-        database_word_objects, api_words = @vocabulary_factory.separate_existing_and_new_words(unique_word_strings)
+        database_word_objects, api_word_data = process_word_data(unique_word_strings)
         yield 'processing' if block_given?
-        api_word_data = @vocabulary_factory.generate_words_metadata(api_words)
-        api_word_data = clean_difficulty_levels(api_word_data)
+        api_word_objects = get_metadata_and_diff(api_word_data)
         yield 'finalizing' if block_given?
-        api_word_objects = @vocabulary_factory.build_words_from_hash(api_word_data)
-
-        @unique_words = database_word_objects.concat(api_word_objects)
-
-        calculate_language_difficulty_from_unique_words unless @unique_words.empty?
+        finalize_vocabulary(database_word_objects, api_word_objects)
       end
 
       def clean_difficulty_levels(api_word_data_list)
@@ -99,6 +91,37 @@ module LyricLab
         text = vocabulary_factory.convert_to_traditional(raw_text)
         @sep_text = vocabulary_factory.extract_separated_text(text)
         @sep_text.split.map(&:strip).reject(&:empty?).uniq
+      end
+
+      private
+
+      def validate_content_generation
+        raise 'Vocabulary already populated' if !@unique_words.empty? && sep_text
+        raise 'No text to generate vocabulary' if @raw_text.nil?
+        raise 'No vocabulary factory' if @vocabulary_factory.nil?
+      end
+
+      def process_raw_text
+        @raw_text = @vocabulary_factory.convert_to_traditional(@raw_text)
+      end
+
+      def extract_unique_words
+        separate_words(@raw_text)
+      end
+
+      def process_word_data(unique_word_strings)
+        database_word_objects, api_words = @vocabulary_factory.separate_existing_and_new_words(unique_word_strings)
+        api_word_data = @vocabulary_factory.generate_words_metadata(api_words)
+        [database_word_objects, clean_difficulty_levels(api_word_data)]
+      end
+
+      def get_metadata_and_diff(api_word_data)
+        @vocabulary_factory.build_words_from_hash(api_word_data)
+      end
+
+      def finalize_vocabulary(database_word_objects, api_word_objects)
+        @unique_words = database_word_objects.concat(api_word_objects)
+        calculate_language_difficulty_from_unique_words unless @unique_words.empty?
       end
     end
   end

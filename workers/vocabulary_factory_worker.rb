@@ -10,6 +10,7 @@ require 'shoryuken'
 
 # Shoryuken worker class to clone repos in parallel
 module GenerateVocabulary
+  # Worker to extract word metadata
   class VocabularyFactoryWorker
     # Environment variables setup
     Figaro.application = Figaro::Application.new(

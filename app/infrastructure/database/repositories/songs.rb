@@ -30,7 +30,7 @@ module LyricLab
       end
 
       def self.create(entity)
-        #raise 'Song already exists' if find(entity)
+        # raise 'Song already exists' if find(entity)
         return entity if find(entity)
 
         db_song = PersistSong.new(entity).call

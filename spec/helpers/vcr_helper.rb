@@ -13,7 +13,7 @@ module VcrHelper # rubocop:disable Metrics/ModuleLength
   SERVICES_CASSETTE_2 = 'services2'
   API_CASSETTE = 'api'
 
-  def self.setup_vcr
+  def self.setup_vcr # rubocop:disable Metrics/MethodLength
     VCR.configure do |vcr_config|
       vcr_config.cassette_library_dir = CASSETTES_FOLDER
       vcr_config.hook_into :webmock

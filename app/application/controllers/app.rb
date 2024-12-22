@@ -116,7 +116,6 @@ module LyricLab
             # record recommendation update
             # POST /api/v1/songs/{origin_id}
             routing.post do
-              # TODO: implement to check whether the recommendations are valid to record (voc already genereated or not?)
               result = Service::RecordRecommendation.new.call(origin_id)
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
