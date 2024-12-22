@@ -1,4 +1,4 @@
 queues:
-  - https://sqs.ap-northeast-1.amazonaws.com/440744214769/lyriclab-irina-q
   - https://sqs.ap-northeast-1.amazonaws.com/440744214769/lyriclab-tristan-q
+  - https://sqs.ap-northeast-1.amazonaws.com/440744214769/lyriclab-irina-q
   - https://sqs.ap-northeast-1.amazonaws.com/440744214769/lyriclab-carrie-q
