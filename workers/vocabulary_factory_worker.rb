@@ -36,7 +36,7 @@ module GenerateVocabulary
     include Shoryuken::Worker
     shoryuken_options queue: config.VOCABULARY_QUEUE_URL, auto_delete: true
 
-    def perform(_sqs_msg, request) # rubocop:disable Metrics/MethodLength
+    def perform(_sqs_msg, request)
       # before
 
       job = JobReporter.new(request, VocabularyFactoryWorker.config)
@@ -55,7 +55,7 @@ module GenerateVocabulary
       # Keep sending finished status to any latecoming subscribers
       job.report_each_second(7) { GenerateMonitor.finished_percent }
     rescue StandardError => e
-      after
+      # after
       puts "Error: #{e}"
     end
 
