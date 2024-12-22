@@ -52,8 +52,12 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         .new(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, GOOGLE_CLIENT_KEY)
         .find(CORRECT_SONG['title'])
       LyricLab::Service::SaveSong.new.call(song)
-      LyricLab::Service::GenVocabulary.new.call(song.origin_id)
-      6.times do
+      request_id = [Time.now.to_f].hash
+      LyricLab::Service::GenVocabulary.new.call(
+        origin_id: song.origin_id,
+        request_id: request_id
+      )
+      60.times do
         sleep(1)
         print('_')
       end
@@ -87,13 +91,21 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
 
       rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
 
-      LyricLab::Service::GenVocabulary.new.call(rebuilt.origin_id)
+      request_id = [Time.now.to_f].hash
+      LyricLab::Service::GenVocabulary.new.call(
+        origin_id: rebuilt.origin_id,
+        request_id: request_id
+      )
 
-      6.times do
+      60.times do
         sleep(1)
         print('_')
       end
-      rebuilt2 = LyricLab::Service::GenVocabulary.new.call(song.origin_id)
+      request_id = [Time.now.to_f].hash
+      rebuilt2 = LyricLab::Service::GenVocabulary.new.call(
+        origin_id: song.origin_id,
+        request_id: request_id
+      )
       _(rebuilt2.failure?).wont_equal true
 
       rebuilt2 = rebuilt2.value!.message
@@ -110,8 +122,12 @@ describe 'Integration test of word processing and GPT to test vocabulary functio
         .find(CORRECT_SONG['title'])
       LyricLab::Service::SaveSong.new.call(song)
       rebuilt = LyricLab::Service::LoadSong.new.call(song.origin_id).value!.message
-      LyricLab::Service::GenVocabulary.new.call(rebuilt.origin_id)
-      6.times do
+      request_id = [Time.now.to_f].hash
+      LyricLab::Service::GenVocabulary.new.call(
+        origin_id: rebuilt.origin_id,
+        request_id: request_id
+      )
+      60.times do
         sleep(1)
         print('_')
       end

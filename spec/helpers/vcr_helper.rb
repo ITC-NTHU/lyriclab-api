@@ -20,6 +20,10 @@ module VcrHelper # rubocop:disable Metrics/ModuleLength
       vcr_config.ignore_hosts 'sqs.us-east-1.amazonaws.com'
       vcr_config.ignore_hosts 'sqs.ap-northeast-1.amazonaws.com'
       vcr_config.ignore_localhost = true # for acceptance tests
+      vcr_config.ignore_request do |request|
+        URI(request.uri).host == 'localhost' && URI(request.uri).port == 9090
+        vcr_config.allow_http_connections_when_no_cassette = true
+      end
     end
   end
 
@@ -57,9 +61,14 @@ module VcrHelper # rubocop:disable Metrics/ModuleLength
 
     VCR.insert_cassette(
       GPT_CASSETTE,
-      record: :new_episodes,
-      match_requests_on: %i[uri]
+      record: :new_episodes, # Allow recording new interactions
+      match_requests_on: %i[method uri body] # Match on method, URI, and body for better accuracy
     )
+
+    # Optional: Add debug logging to diagnose issues
+    VCR.configure do |config|
+      config.debug_logger = File.open('vcr_debug.log', 'w')
+    end
   end
 
   def self.configure_vcr_for_services_record(recording: :new_episodes)

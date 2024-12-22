@@ -321,4 +321,485 @@ http_interactions:
         卻沒能成為自己\n[03:00.97] 他明白 他明白 我給不起\n[03:08.56] 於是轉身向山裡走去\n[03:12.96] 他明白 他明白
         我給不起\n[03:20.61] 於是轉身向大海走去\n[03:25.05] "}'
   recorded_at: Mon, 09 Dec 2024 10:04:28 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-mini","max_tokens":16383,"messages":[{"role":"system","content":"你是一個專業的繁體中文老師，可以從文本中提取有意義的繁體中文詞彙單位，務必確認文本中的每個文字都有被分割成有意義的詞彙單位"},{"role":"user","content":"Separate
+        all the words in the following text from each other and:\n        reply in
+        this format (words separated by spaces):\n        你好 風 雲 天空 I am cool\n\n        我看著
+        天真的我自己\n出現在 沒有我的故事裡\n等待著 我的回應\n一個為何至此 的原因\n\n他明白 他明白 我給不起\n於是轉身向山裡走去\n他明白
+        他明白 我給不起\n於是轉身向大海走去\n\n我聽著那少年的聲音\n在還有未來的過去\n渴望著美好結局\n卻沒能成為自己\n\n他明白 他明白 我給不起\n於是轉身向山裡走去\n他明白
+        他明白 我給不起\n於是轉身向大海走去"}]}'
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.3.5p100
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '949'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 22 Dec 2024 09:04:21 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - itc-sizmvs
+      Openai-Processing-Ms:
+      - '2887'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '10000'
+      X-Ratelimit-Limit-Tokens:
+      - '200000'
+      X-Ratelimit-Remaining-Requests:
+      - '9999'
+      X-Ratelimit-Remaining-Tokens:
+      - '191827'
+      X-Ratelimit-Reset-Requests:
+      - 8.64s
+      X-Ratelimit-Reset-Tokens:
+      - 2.451s
+      X-Request-Id:
+      - req_cc0bf915fddc6ab93316555c15f2cfd8
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8f5ef191992e6a93-TPE
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJpZCI6ICJjaGF0Y21wbC1BaENBa0xyaDVlaWlGbnl3blFZTTh0eTVaZlJSeSIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczNDg1ODI1OCwKICAibW9kZWwiOiAiZ3B0LTRvLW1pbmktMjAyNC0wNy0xOCIsCiAgImNob2ljZXMiOiBbCiAgICB7CiAgICAgICJpbmRleCI6IDAsCiAgICAgICJtZXNzYWdlIjogewogICAgICAgICJyb2xlIjogImFzc2lzdGFudCIsCiAgICAgICAgImNvbnRlbnQiOiAi5oiRIOeci+iRlyDlpKnnnJ8g55qEIOaIkSDoh6rlt7EgIFxu5Ye654++IOWcqCDmspLmnIkg5oiRIOeahCDmlYXkuosg6KOhICBcbuetieW+hSDokZcg5oiRIOeahCDlm57mh4kgIFxu5LiA5YCLIOeCuuS9lSDoh7PmraQg55qEIOWOn+WboCAgXG5cbuS7liDmmI7nmb0g5LuWIOaYjueZvSDmiJEg57WmIOS4jSDotbcgIFxu5pa85pivIOi9iei6qyDlkJEg5bGxIOijoSDotbDljrsgIFxu5LuWIOaYjueZvSDku5Yg5piO55m9IOaIkSDntaYg5LiNIOi1tyAgXG7mlrzmmK8g6L2J6LqrIOWQkSDlpKfmtbcg6LWw5Y67ICBcblxu5oiRIOiBveiRlyDpgqMg5bCR5bm0IOeahCDogbLpn7MgIFxu5ZyoIOmChOaciSDmnKrkvoYg55qEIOmBjuWOuyAgXG7muLTmnJvokZcg576O5aW9IOe1kOWxgCAgXG7ljbsg5rKS6IO9IOaIkOeCuiDoh6rlt7EgIFxuXG7ku5Yg5piO55m9IOS7liDmmI7nmb0g5oiRIOe1piDkuI0g6LW3ICBcbuaWvOaYryDovYnouqsg5ZCRIOWxsSDoo6Eg6LWw5Y67ICBcbuS7liDmmI7nmb0g5LuWIOaYjueZvSDmiJEg57WmIOS4jSDotbcgIFxu5pa85pivIOi9iei6qyDlkJEg5aSn5rW3IOi1sOWOuyAgIiwKICAgICAgICAicmVmdXNhbCI6IG51bGwKICAgICAgfSwKICAgICAgImxvZ3Byb2JzIjogbnVsbCwKICAgICAgImZpbmlzaF9yZWFzb24iOiAic3RvcCIKICAgIH0KICBdLAogICJ1c2FnZSI6IHsKICAgICJwcm9tcHRfdG9rZW5zIjogMjUwLAogICAgImNvbXBsZXRpb25fdG9rZW5zIjogMTg5LAogICAgInRvdGFsX3Rva2VucyI6IDQzOSwKICAgICJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOiB7CiAgICAgICJjYWNoZWRfdG9rZW5zIjogMCwKICAgICAgImF1ZGlvX3Rva2VucyI6IDAKICAgIH0sCiAgICAiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6IHsKICAgICAgInJlYXNvbmluZ190b2tlbnMiOiAwLAogICAgICAiYXVkaW9fdG9rZW5zIjogMCwKICAgICAgImFjY2VwdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMCwKICAgICAgInJlamVjdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMAogICAgfQogIH0sCiAgInN5c3RlbV9maW5nZXJwcmludCI6ICJmcF8wYWE4ZDNlMjBiIgp9Cg==
+  recorded_at: Sun, 22 Dec 2024 09:04:21 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 22 Dec 2024 09:04:24 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 9eda6d28-b4d1-402e-bfe5-dda8086bebc3
+      Sp-Trace-Id:
+      - b1d4a4818a54df74
+      X-Envoy-Upstream-Service-Time:
+      - '12'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sun, 22 Dec 2024 09:04:23 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 22 Dec 2024 09:04:24 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 77f40b9a-bd13-4c71-bd86-01d283ca6641
+      Sp-Trace-Id:
+      - 49151dfd52b92795
+      X-Envoy-Upstream-Service-Time:
+      - '11'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sun, 22 Dec 2024 09:04:23 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 22 Dec 2024 09:04:24 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 3e069fee-9f3c-4ba2-8ecc-ff1b861ed5c6
+      Sp-Trace-Id:
+      - 88ece9f0f1c7d4b7
+      X-Envoy-Upstream-Service-Time:
+      - '11'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sun, 22 Dec 2024 09:04:24 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 22 Dec 2024 09:04:31 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - 1cef6c85-e810-46fc-b925-b3ff4d32300e
+      Sp-Trace-Id:
+      - 4ac4e59e5886a2c5
+      X-Envoy-Upstream-Service-Time:
+      - '8'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sun, 22 Dec 2024 09:04:30 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-mini","max_tokens":16383,"messages":[{"role":"system","content":"你是一個專業的繁體中文老師，可以從文本中提取有意義的繁體中文詞彙單位，務必確認文本中的每個文字都有被分割成有意義的詞彙單位"},{"role":"user","content":"Separate
+        all the words in the following text from each other and:\n        reply in
+        this format (words separated by spaces):\n        你好 風 雲 天空 I am cool\n\n        城市滴答
+        小巷滴答 沈默滴答\n你的手慢熱的體溫\n方向錯亂 天氣預報 不準 雨傘忘了拿\n我的手無處安放\n包括我的心 像旋轉木馬\n\n或許這就是註定\n註定失敗的結局\n成熟帶來的孤寂\n如滾水在心中滿溢\n\n我的心
+        你放在哪裡\n或許你 根本就不在意\n錯把承諾當有趣\n怎麼對得起 你我炙熱的痕跡\n\n你的心 你放在哪裡\n再追究 也毫無意義\n接受慌亂的思緒\n總比到頭來
+        面對無聲的失去\n無法開口 說聲好不容易\n\n城市滴答 小巷滴答 沈默滴答\n你的手慢熱的體溫\n方向錯亂 天氣預報 不準 雨傘忘了拿\n我的手無處安放\n包括我的心
+        像旋轉木馬\n\n或許這就是註定\n註定失敗的結局\n成熟帶來的孤寂\n如滾水在心中滿溢\n\n我的心 你放在哪裡\n或許你 根本就不在意\n錯把承諾當有趣\n怎麼對得起
+        你我炙熱的痕跡\n\n你的心 你放在哪裡\n再追究 也毫無意義\n接受慌亂的思緒\n總比到頭來 面對無聲的失去\n無法開口 說聲好不容易\nWoo
+        woo woo woo woo woo\n\n我的心 你放在哪裡\n或許我 也不再沈迷\n結束不安的遊戲\n認輸就可以 自由自在的掏心\n終於開口\n說聲好不容易"}]}'
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.3.5p100
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1734'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 22 Dec 2024 09:09:11 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - itc-sizmvs
+      Openai-Processing-Ms:
+      - '5240'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '10000'
+      X-Ratelimit-Limit-Tokens:
+      - '200000'
+      X-Ratelimit-Remaining-Requests:
+      - '9999'
+      X-Ratelimit-Remaining-Tokens:
+      - '191827'
+      X-Ratelimit-Reset-Requests:
+      - 8.64s
+      X-Ratelimit-Reset-Tokens:
+      - 2.451s
+      X-Request-Id:
+      - req_77d7350eafd889870781f29b8b4ef1e2
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8f5ef899ef3f4a9c-TPE
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJpZCI6ICJjaGF0Y21wbC1BaENGT0NhY2IxRkNFdG1nMzBEOFh6b05QcWpVeiIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczNDg1ODU0NiwKICAibW9kZWwiOiAiZ3B0LTRvLW1pbmktMjAyNC0wNy0xOCIsCiAgImNob2ljZXMiOiBbCiAgICB7CiAgICAgICJpbmRleCI6IDAsCiAgICAgICJtZXNzYWdlIjogewogICAgICAgICJyb2xlIjogImFzc2lzdGFudCIsCiAgICAgICAgImNvbnRlbnQiOiAi5Z+O5biCIOa7tOetlCDlsI/lt7cg5ru0562UIOayiOm7mCDmu7TnrZQg5L2g55qEIOaJiyDmhaLnhrEg55qEIOmrlOa6qyDmlrnlkJEg6Yyv5LqCIOWkqeawoyDpoJDloLEg5LiN5rqWIOmbqOWCmCDlv5jkuoYg5ou/IOaIkeeahCDmiYsg54Sh6JmVIOWuieaUviDljIXmi6wg5oiR55qEIOW/gyDlg48g5peL6L2JIOacqOmmrCDmiJboqLEg6YCZIOWwseaYryDoqLvlrpog6Ki75a6aIOWkseaVlyDnmoQg57WQ5bGAIOaIkOeGnyDluLbkvoYg55qEIOWtpOWvgiDlpoIg5ru+5rC0IOWcqCDlv4PkuK0g5ru/5rqiIOaIkeeahCDlv4Mg5L2gIOaUvuWcqCDlk6roo6Eg5oiW6KixIOS9oCDmoLnmnKwg5bCxIOS4jeWcqOaEjyDpjK/mioog5om/6Ku+IOeVtiDmnInotqMg5oCO6bq8IOWwjeW+l+i1tyDkvaAg5oiRIOeCmeeGsSDnmoQg55eV6LehIOS9oOeahCDlv4Mg5L2gIOaUvuWcqCDlk6roo6Eg5YaNIOi/veeptiDkuZ8g5q+r54ShIOaEj+e+qSDmjqXlj5cg5oWM5LqCIOeahCDmgJ3nt5Ig57i95q+UIOWIsOmgreS+hiDpnaLlsI0g54Sh6IGyIOeahCDlpLHljrsg54Sh5rOVIOmWi+WPoyDoqqrogbIg5aW9IOS4jeWuueaYkyDln47luIIg5ru0562UIOWwj+W3tyDmu7TnrZQg5rKI6buYIOa7tOetlCDkvaDnmoQg5omLIOaFoueGsSDnmoQg6auU5rqrIOaWueWQkSDpjK/kuoIg5aSp5rCjIOmgkOWgsSDkuI3mupYg6Zuo5YKYIOW/mOS6hiDmi78g5oiR55qEIOaJiyDnhKHomZUg5a6J5pS+IOWMheaLrCDmiJHnmoQg5b+DIOWDjyDml4vovYkg5pyo6aasIOaIluiosSDpgJkg5bCx5pivIOiou+WumiDoqLvlrpog5aSx5pWXIOeahCDntZDlsYAg5oiQ54afIOW4tuS+hiDnmoQg5a2k5a+CIOWmgiDmu77msLQg5ZyoIOW/g+S4rSDmu7/muqIg5oiR55qEIOW/gyDkvaAg5pS+5ZyoIOWTquijoSDmiJboqLEg5L2gIOagueacrCDlsLEg5LiN5Zyo5oSPIOmMr+aKiiDmib/oq74g55W2IOaciei2oyDmgI7purwg5bCN5b6X6LW3IOS9oCDmiJEg54KZ54axIOeahCDnl5Xot6Eg5L2g55qEIOW/gyDkvaAg5pS+5ZyoIOWTquijoSDlho0g6L+956m2IOS5nyDmr6vnhKEg5oSP576pIOaOpeWPlyDmhYzkuoIg55qEIOaAnee3kiDnuL3mr5Qg5Yiw6aCt5L6GIOmdouWwjSDnhKHogbIg55qEIOWkseWOuyDnhKHms5Ug6ZaL5Y+jIOiqquiBsiDlpb0g5LiN5a655piTIFdvbyB3b28gd29vIHdvbyB3b28gd29vIOaIkeeahCDlv4Mg5L2gIOaUvuWcqCDlk6roo6Eg5oiW6KixIOaIkSDkuZ8g5LiN5YaNIOayiOi/tyDntZDmnZ8g5LiN5a6JIOeahCDpgYrmiLIg6KqN6Ly4IOWwsSDlj6/ku6Ug6Ieq55SxIOiHquWcqCDnmoQg5o6P5b+DIOe1guaWvCDplovlj6Mg6Kqq6IGyIOWlvSDkuI3lrrnmmJMiLAogICAgICAgICJyZWZ1c2FsIjogbnVsbAogICAgICB9LAogICAgICAibG9ncHJvYnMiOiBudWxsLAogICAgICAiZmluaXNoX3JlYXNvbiI6ICJzdG9wIgogICAgfQogIF0sCiAgInVzYWdlIjogewogICAgInByb21wdF90b2tlbnMiOiA1MzcsCiAgICAiY29tcGxldGlvbl90b2tlbnMiOiA0ODIsCiAgICAidG90YWxfdG9rZW5zIjogMTAxOSwKICAgICJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOiB7CiAgICAgICJjYWNoZWRfdG9rZW5zIjogMCwKICAgICAgImF1ZGlvX3Rva2VucyI6IDAKICAgIH0sCiAgICAiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6IHsKICAgICAgInJlYXNvbmluZ190b2tlbnMiOiAwLAogICAgICAiYXVkaW9fdG9rZW5zIjogMCwKICAgICAgImFjY2VwdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMCwKICAgICAgInJlamVjdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMAogICAgfQogIH0sCiAgInN5c3RlbV9maW5nZXJwcmludCI6ICJmcF8wYWE4ZDNlMjBiIgp9Cg==
+  recorded_at: Sun, 22 Dec 2024 09:09:11 GMT
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=client_credentials&client_id=<REDACTED>&client_secret=<REDACTED>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Host:
+      - accounts.spotify.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 22 Dec 2024 09:12:07 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      X-Request-Id:
+      - fb443df8-0d59-4f03-9773-331a6841813c
+      Sp-Trace-Id:
+      - a156dd8f971f2423
+      X-Envoy-Upstream-Service-Time:
+      - '9'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<REDACTED>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sun, 22 Dec 2024 09:12:06 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-mini","messages":[{"role":"system","content":"你是一個專業的繁體中文老師，可以從文本中提取有意義的繁體中文詞彙單位，務必確認文本中的每個文字都有被分割成有意義的詞彙單位"},{"role":"user","content":"Separate
+        all the words in the following text from each other and:\n        reply in
+        this format (words separated by spaces):\n        你好 風 雲 天空 I am cool\n\n        我看著
+        天真的我自己\n出現在 沒有我的故事裡\n等待著 我的回應\n一個為何至此 的原因\n\n他明白 他明白 我給不起\n於是轉身向山裡走去\n他明白
+        他明白 我給不起\n於是轉身向大海走去\n\n我聽著那少年的聲音\n在還有未來的過去\n渴望著美好結局\n卻沒能成為自己\n\n他明白 他明白 我給不起\n於是轉身向山裡走去\n他明白
+        他明白 我給不起\n於是轉身向大海走去"}]}'
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.3.5p100
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '930'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.openai.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 22 Dec 2024 09:12:17 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - itc-sizmvs
+      Openai-Processing-Ms:
+      - '2508'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '10000'
+      X-Ratelimit-Limit-Tokens:
+      - '200000'
+      X-Ratelimit-Remaining-Requests:
+      - '9998'
+      X-Ratelimit-Remaining-Tokens:
+      - '199778'
+      X-Ratelimit-Reset-Requests:
+      - 11.014s
+      X-Ratelimit-Reset-Tokens:
+      - 66ms
+      X-Request-Id:
+      - req_74138ef3cf8b9276584d3895c51b633b
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8f5efd31e87f4a66-TPE
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJpZCI6ICJjaGF0Y21wbC1BaENJUWxvYjdWejhqaVcydzQ0dmJOMWs2Q1BxcCIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczNDg1ODczNCwKICAibW9kZWwiOiAiZ3B0LTRvLW1pbmktMjAyNC0wNy0xOCIsCiAgImNob2ljZXMiOiBbCiAgICB7CiAgICAgICJpbmRleCI6IDAsCiAgICAgICJtZXNzYWdlIjogewogICAgICAgICJyb2xlIjogImFzc2lzdGFudCIsCiAgICAgICAgImNvbnRlbnQiOiAi5oiRIOeci+iRlyDlpKnnnJ8g55qEIOaIkSDoh6rlt7EgIFxu5Ye654++IOWcqCDmspLmnIkg5oiRIOeahCDmlYXkuosg6KOhICBcbuetieW+hSDokZcg5oiRIOeahCDlm57mh4kgIFxu5LiA5YCLIOeCuuS9lSDoh7PmraQg55qEIOWOn+WboCAgXG5cbuS7liDmmI7nmb0g5LuWIOaYjueZvSDmiJEg57WmIOS4jSDotbcgIFxu5pa85pivIOi9iei6qyDlkJEg5bGxIOijoSDotbDljrsgIFxu5LuWIOaYjueZvSDku5Yg5piO55m9IOaIkSDntaYg5LiNIOi1tyAgXG7mlrzmmK8g6L2J6LqrIOWQkSDlpKfmtbcg6LWw5Y67ICBcblxu5oiRIOiBveiRlyDpgqMg5bCR5bm0IOeahCDogbLpn7MgIFxu5ZyoIOmChOaciSDmnKrkvoYg55qEIOmBjuWOuyAgXG7muLTmnJsg6JGXIOe+juWlvSDntZDlsYAgIFxu5Y27IOaykiDog70g5oiQ54K6IOiHquW3sSAgXG5cbuS7liDmmI7nmb0g5LuWIOaYjueZvSDmiJEg57WmIOS4jSDotbcgIFxu5pa85pivIOi9iei6qyDlkJEg5bGxIOijoSDotbDljrsgIFxu5LuWIOaYjueZvSDku5Yg5piO55m9IOaIkSDntaYg5LiNIOi1tyAgXG7mlrzmmK8g6L2J6LqrIOWQkSDlpKfmtbcg6LWw5Y67ICAiLAogICAgICAgICJyZWZ1c2FsIjogbnVsbAogICAgICB9LAogICAgICAibG9ncHJvYnMiOiBudWxsLAogICAgICAiZmluaXNoX3JlYXNvbiI6ICJzdG9wIgogICAgfQogIF0sCiAgInVzYWdlIjogewogICAgInByb21wdF90b2tlbnMiOiAyNTAsCiAgICAiY29tcGxldGlvbl90b2tlbnMiOiAxOTAsCiAgICAidG90YWxfdG9rZW5zIjogNDQwLAogICAgInByb21wdF90b2tlbnNfZGV0YWlscyI6IHsKICAgICAgImNhY2hlZF90b2tlbnMiOiAwLAogICAgICAiYXVkaW9fdG9rZW5zIjogMAogICAgfSwKICAgICJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjogewogICAgICAicmVhc29uaW5nX3Rva2VucyI6IDAsCiAgICAgICJhdWRpb190b2tlbnMiOiAwLAogICAgICAiYWNjZXB0ZWRfcHJlZGljdGlvbl90b2tlbnMiOiAwLAogICAgICAicmVqZWN0ZWRfcHJlZGljdGlvbl90b2tlbnMiOiAwCiAgICB9CiAgfSwKICAic3lzdGVtX2ZpbmdlcnByaW50IjogImZwXzBhYThkM2UyMGIiCn0K
+  recorded_at: Sun, 22 Dec 2024 09:12:16 GMT
 recorded_with: VCR 6.3.1

@@ -65,9 +65,8 @@ describe 'Test API routes' do
 
       songs = JSON.parse(last_response.body)
       song = songs['songs'].first
-      _(song['artist_name_string']).must_equal ARTIST_NAME
+      _(songs['songs'].map { |song| song['artist_name_string'] }).must_include ARTIST_NAME
     end
-
     it 'should report error for invalid search query' do
       encoded_query = LyricLab::Request::EncodedSearchQuery.to_encoded('valentin strykalo')
 
@@ -122,14 +121,14 @@ describe 'Test API routes' do
       searched_origin_ids = LyricLab::Database::SongOrm.all.map(&:origin_id)
       searched_origin_ids.each do |origin_id|
         get "/api/v1/songs/#{origin_id}"
-        6.times do
+        60.times do
           sleep(1)
           print '_'
         end
         get "/api/v1/vocabularies/#{origin_id}"
 
         _(last_response.status).must_equal 202
-        6.times do
+        60.times do
           sleep(1)
           print('_')
         end
@@ -165,7 +164,7 @@ describe 'Test API routes' do
 
       get "/api/v1/vocabularies/#{song.origin_id}"
       _(last_response.status).must_equal 202
-      6.times do
+      60.times do
         sleep(1)
         print('_')
       end

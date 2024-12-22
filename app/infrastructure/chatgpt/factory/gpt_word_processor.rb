@@ -87,6 +87,7 @@ module LyricLab
           puts "Generated Words metadata:#{response}"
           words = []
           current_word = {}
+          raise 'No response from GPT' if response.nil? || response.empty?
 
           response.split("\n").each do |line|
             line = line.strip

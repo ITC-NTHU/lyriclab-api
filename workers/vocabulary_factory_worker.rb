@@ -25,18 +25,18 @@ module GenerateVocabulary
       region: config.AWS_REGION
     )
 
-    if config.RACK_ENV == 'test'
-      require_relative '../spec/helpers/spec_helper'
-      require_relative '../spec/helpers/vcr_helper'
-      puts 'Running in test mode'
-      VcrHelper.setup_vcr
-    end
+    # if config.RACK_ENV == 'test'
+    #   require_relative '../spec/helpers/spec_helper'
+    #   require_relative '../spec/helpers/vcr_helper'
+    #   puts 'Running in test mode'
+    #   VcrHelper.setup_vcr
+    # end
 
     include Shoryuken::Worker
     shoryuken_options queue: config.VOCABULARY_QUEUE_URL, auto_delete: true
 
-    def perform(_sqs_msg, request) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
-      before
+    def perform(_sqs_msg, request) # rubocop:disable Metrics/MethodLength
+      # before
 
       job = JobReporter.new(request, VocabularyFactoryWorker.config)
 
@@ -47,7 +47,7 @@ module GenerateVocabulary
         job.report GenerateMonitor.progress(progress)
       end
 
-      after
+      # after
 
       LyricLab::Repository::Vocabularies.update(vocabulary)
 
