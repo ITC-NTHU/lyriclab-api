@@ -8,11 +8,11 @@ require_relative '../../../helpers/simple_cov_helper'
 describe 'Integration test of word processing and GPT to test vocabulary functions' do
   VcrHelper.setup_vcr
   before do
-    VcrHelper.configure_vcr_for_gpt
+    # VcrHelper.configure_vcr_for_gpt
   end
 
   after do
-    VcrHelper.eject_vcr
+    # VcrHelper.eject_vcr
   end
 
   describe 'Retrieve song data, generate Vocabulary' do

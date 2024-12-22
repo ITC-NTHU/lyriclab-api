@@ -59,13 +59,13 @@ module GenerateVocabulary
       puts "Error: #{e}"
     end
 
-    def before
-      VcrHelper.configure_vcr_for_gpt if VocabularyFactoryWorker.config.RACK_ENV == 'test'
-    end
+    # def before
+    #  VcrHelper.configure_vcr_for_gpt if VocabularyFactoryWorker.config.RACK_ENV == 'test'
+    # end
 
-    def after
-      VcrHelper.eject_vcr if VocabularyFactoryWorker.config.RACK_ENV == 'test'
-    end
+    # def after
+    #  VcrHelper.eject_vcr if VocabularyFactoryWorker.config.RACK_ENV == 'test'
+    # end
 
     def check_eligibility(request_data)
       db_vocab = LyricLab::Database::VocabularyOrm.first(id: request_data['vocabulary']['id'])
