@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 
 require_relative 'progress_publisher'
@@ -10,7 +9,8 @@ module GenerateVocabulary
 
     def initialize(request_json, config)
       voc_request = LyricLab::Representer::VocabularyRequest
-        .new(OpenStruct.new)
+        .new(Struct.new)
+        # .new(OpenStruct.new)
         .from_json(request_json)
 
       @song = voc_request.song

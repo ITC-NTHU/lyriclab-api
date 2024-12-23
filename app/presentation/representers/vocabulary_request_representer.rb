@@ -10,7 +10,8 @@ module LyricLab
     class VocabularyRequest < Roar::Decorator
       include Roar::JSON
 
-      property :song, extend: Representer::Song, class: OpenStruct
+      # property :song, extend: Representer::Song, class: OpenStruct
+      property :song, extend: Representer::Song, class: Struct
       property :id
     end
   end

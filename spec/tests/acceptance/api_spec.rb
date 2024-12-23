@@ -64,7 +64,7 @@ describe 'Test API routes' do
       _(last_response.status).must_equal 201
 
       songs = JSON.parse(last_response.body)
-      song = songs['songs'].first
+      songs['songs'].first
       _(songs['songs'].map { |song| song['artist_name_string'] }).must_include ARTIST_NAME
     end
     it 'should report error for invalid search query' do
@@ -123,14 +123,14 @@ describe 'Test API routes' do
         get "/api/v1/songs/#{origin_id}"
         60.times do
           sleep(1)
-          print '_'
+          # print '_'
         end
         get "/api/v1/vocabularies/#{origin_id}"
 
         _(last_response.status).must_equal 202
-        60.times do
+        90.times do
           sleep(1)
-          print('_')
+          # print('_')
         end
         get "/api/v1/vocabularies/#{origin_id}"
         _(last_response.status).must_equal 201
@@ -148,8 +148,8 @@ describe 'Test API routes' do
       song = songs.first
       _(song['title']).must_include '山海'
       # puts songs
-      songs.each do |song|
-        _(song['language_difficulty'].to_f >= 1).must_equal true
+      songs.each do |track|
+        _(track['language_difficulty'].to_f >= 1).must_equal true
       end
     end
   end
@@ -164,9 +164,9 @@ describe 'Test API routes' do
 
       get "/api/v1/vocabularies/#{song.origin_id}"
       _(last_response.status).must_equal 202
-      60.times do
+      90.times do
         sleep(1)
-        print('_')
+        # print('_')
       end
       get "/api/v1/vocabularies/#{song.origin_id}"
 

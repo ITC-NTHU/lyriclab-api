@@ -10,6 +10,7 @@ require 'shoryuken'
 
 # Shoryuken worker class to clone repos in parallel
 module GenerateVocabulary
+  # Worker to extract word metadata
   class VocabularyFactoryWorker
     # Environment variables setup
     Figaro.application = Figaro::Application.new(
@@ -35,7 +36,7 @@ module GenerateVocabulary
     include Shoryuken::Worker
     shoryuken_options queue: config.VOCABULARY_QUEUE_URL, auto_delete: true
 
-    def perform(_sqs_msg, request) # rubocop:disable Metrics/MethodLength
+    def perform(_sqs_msg, request)
       # before
 
       job = JobReporter.new(request, VocabularyFactoryWorker.config)
@@ -54,17 +55,17 @@ module GenerateVocabulary
       # Keep sending finished status to any latecoming subscribers
       job.report_each_second(7) { GenerateMonitor.finished_percent }
     rescue StandardError => e
-      after
+      # after
       puts "Error: #{e}"
     end
 
-    def before
-      VcrHelper.configure_vcr_for_gpt if VocabularyFactoryWorker.config.RACK_ENV == 'test'
-    end
+    # def before
+    #  VcrHelper.configure_vcr_for_gpt if VocabularyFactoryWorker.config.RACK_ENV == 'test'
+    # end
 
-    def after
-      VcrHelper.eject_vcr if VocabularyFactoryWorker.config.RACK_ENV == 'test'
-    end
+    # def after
+    #  VcrHelper.eject_vcr if VocabularyFactoryWorker.config.RACK_ENV == 'test'
+    # end
 
     def check_eligibility(request_data)
       db_vocab = LyricLab::Database::VocabularyOrm.first(id: request_data['vocabulary']['id'])
