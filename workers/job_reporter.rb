@@ -9,8 +9,7 @@ module GenerateVocabulary
 
     def initialize(request_json, config)
       voc_request = LyricLab::Representer::VocabularyRequest
-        .new(Struct.new)
-        # .new(OpenStruct.new)
+        .new(OpenStruct.new) # rubocop:disable Style/OpenStructUse
         .from_json(request_json)
 
       @song = voc_request.song
